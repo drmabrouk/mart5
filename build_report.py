@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 
-# Define CSS styles
+# Define CSS styles for A4 Portrait Simulation
 CSS_STYLES = """
 :root {
     --primary: #0f172a;       /* كحلي ملكي عميق */
@@ -31,14 +31,14 @@ CSS_STYLES = """
     body {
         background-color: #ffffff;
         color: #000000;
-        font-size: 9.5pt;
-        line-height: 1.5;
+        font-size: 9pt;
+        line-height: 1.45;
     }
     .page-container {
         width: 210mm;
         height: 297mm;
         margin: 0 !important;
-        padding: 12mm 15mm 12mm 15mm !important;
+        padding: 10mm 15mm 10mm 15mm !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         page-break-after: always;
@@ -61,7 +61,7 @@ CSS_STYLES = """
         height: 297mm;
         margin: 0 auto 30px auto;
         background-color: var(--bg-card);
-        padding: 12mm 15mm 12mm 15mm;
+        padding: 10mm 15mm 10mm 15mm;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         position: relative;
@@ -78,7 +78,7 @@ CSS_STYLES = """
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
-    line-height: 1.5;
+    line-height: 1.45;
     background-color: var(--bg-base);
     text-align: right;
     -webkit-print-color-adjust: exact;
@@ -86,44 +86,44 @@ body {
 }
 
 h1 {
-    font-size: 15pt;
+    font-size: 14pt;
     border-bottom: 3px solid var(--accent);
-    padding-bottom: 6px;
-    margin-bottom: 12px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: var(--primary);
     font-weight: 800;
 }
 
 h2 {
-    font-size: 11.5pt;
+    font-size: 11pt;
     border-right: 4px solid var(--gold);
     padding-right: 8px;
-    margin-top: 12px;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 6px;
     background-color: #f8fafc;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     color: var(--primary);
     font-weight: 700;
 }
 
 h3 {
-    font-size: 10pt;
+    font-size: 9.5pt;
     color: var(--accent);
-    margin-top: 8px;
-    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-bottom: 4px;
     font-weight: 700;
 }
 
 p {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-align: justify;
     color: #334155;
-    font-size: 8.8pt;
-    line-height: 1.5;
+    font-size: 8.5pt;
+    line-height: 1.45;
 }
 
 .doc-header {
@@ -132,7 +132,7 @@ p {
     align-items: center;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     height: 8mm;
 }
 
@@ -153,7 +153,7 @@ p {
 }
 
 .doc-header .meta-info {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     color: var(--text-muted);
 }
 
@@ -166,14 +166,14 @@ p {
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--border-color);
-    padding-top: 6px;
-    font-size: 7.5pt;
+    padding-top: 4px;
+    font-size: 7.2pt;
     color: var(--text-muted);
     height: 6mm;
 }
 
 .page-content {
-    height: 255mm;
+    height: 257mm;
     overflow: hidden;
     position: relative;
 }
@@ -187,11 +187,11 @@ p {
 }
 
 .cover-title-main {
-    font-size: 24pt;
+    font-size: 22pt;
     font-weight: 900;
     color: var(--primary);
-    line-height: 1.3;
-    margin-bottom: 12px;
+    line-height: 1.35;
+    margin-bottom: 10px;
 }
 
 .cover-title-main span {
@@ -199,42 +199,42 @@ p {
 }
 
 .cover-subtitle {
-    font-size: 11.5pt;
+    font-size: 10.5pt;
     color: var(--text-muted);
     font-weight: 500;
-    margin-bottom: 25px;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .cover-divider {
     width: 120px;
     height: 5px;
     background: linear-gradient(to left, var(--accent), var(--gold));
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 3px;
 }
 
 .cover-meta-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
     text-align: right;
     background-color: var(--bg-base);
     border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 15px;
+    padding: 16px;
+    border-radius: 6px;
+    margin-top: 10px;
 }
 
 .meta-item {
-    font-size: 8.5pt;
+    font-size: 8pt;
 }
 
 .meta-item strong {
     color: var(--primary);
     display: block;
-    margin-bottom: 3px;
-    font-size: 9pt;
+    margin-bottom: 2px;
+    font-size: 8.5pt;
 }
 
 .meta-item span {
@@ -245,24 +245,24 @@ p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 8px 0;
-    font-size: 8pt;
+    margin: 6px 0;
+    font-size: 7.8pt;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
 }
 
 th, td {
-    padding: 5px 7px;
+    padding: 4px 6px;
     text-align: right;
     border-bottom: 1px solid var(--border-color);
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 th {
     background-color: var(--primary);
     color: #ffffff;
     font-weight: 700;
-    font-size: 8.2pt;
+    font-size: 8pt;
     border-left: 1px solid #334155;
 }
 
@@ -280,34 +280,34 @@ tr:nth-child(even) td {
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 8px 0;
+    gap: 8px;
+    margin: 6px 0;
 }
 
 .kpi-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-top: 3px solid var(--accent);
-    padding: 8px;
+    padding: 6px;
     border-radius: 4px;
     text-align: center;
 }
 
 .kpi-title {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: var(--text-muted);
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     font-weight: 600;
 }
 
 .kpi-value {
-    font-size: 11pt;
+    font-size: 10.5pt;
     font-weight: 800;
     color: var(--primary);
 }
 
 .kpi-unit {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: var(--text-muted);
 }
 
@@ -318,83 +318,83 @@ tr:nth-child(even) td {
 .info-callout {
     background-color: #f0f9ff;
     border-right: 4px solid var(--accent);
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: 0 4px 4px 0;
-    margin: 8px 0;
-    font-size: 8.5pt;
+    margin: 6px 0;
+    font-size: 8pt;
 }
 
 .info-callout h5 {
     color: var(--accent);
     margin-bottom: 2px;
     font-weight: 700;
-    font-size: 8.8pt;
+    font-size: 8.5pt;
 }
 
 .gold-callout {
     background-color: #fffbeb;
     border-right: 4px solid var(--gold);
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: 0 4px 4px 0;
-    margin: 8px 0;
-    font-size: 8.5pt;
+    margin: 6px 0;
+    font-size: 8pt;
 }
 
 .gold-callout h5 {
     color: var(--gold);
     margin-bottom: 2px;
     font-weight: 700;
-    font-size: 8.8pt;
+    font-size: 8.5pt;
 }
 
 .danger-callout {
     background-color: #fef2f2;
     border-right: 4px solid var(--danger);
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: 0 4px 4px 0;
-    margin: 8px 0;
-    font-size: 8.5pt;
+    margin: 6px 0;
+    font-size: 8pt;
 }
 
 .danger-callout h5 {
     color: var(--danger);
     margin-bottom: 2px;
     font-weight: 700;
-    font-size: 8.8pt;
+    font-size: 8.5pt;
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 8px 0;
+    gap: 10px;
+    margin: 6px 0;
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 8px 0;
+    gap: 8px;
+    margin: 6px 0;
 }
 
 .card-box {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 8px;
+    padding: 6px;
     border-radius: 4px;
 }
 
 .card-box h4 {
     color: var(--primary);
-    font-size: 9pt;
-    margin-bottom: 4px;
+    font-size: 8.5pt;
+    margin-bottom: 2px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 3px;
+    padding-bottom: 2px;
     font-weight: 700;
 }
 
 .card-box p {
-    font-size: 8pt;
+    font-size: 7.8pt;
     margin-bottom: 0;
 }
 
@@ -404,7 +404,7 @@ tr:nth-child(even) td {
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 700;
-    font-size: 7.5pt;
+    font-size: 7pt;
 }
 
 .badge-gold {
@@ -413,7 +413,7 @@ tr:nth-child(even) td {
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 700;
-    font-size: 7.5pt;
+    font-size: 7pt;
 }
 
 .badge-accent {
@@ -422,7 +422,134 @@ tr:nth-child(even) td {
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 700;
+    font-size: 7pt;
+}
+
+.step-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    position: relative;
+}
+
+.step-timeline::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.timeline-node {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 18%;
+}
+
+.node-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 auto 4px auto;
     font-size: 7.5pt;
+}
+
+.timeline-node.completed .node-circle {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.node-text {
+    font-size: 7pt;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.product-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 6px 0;
+}
+
+.product-spec-card {
+    background: #fafafb;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.product-spec-header {
+    font-weight: 700;
+    font-size: 8pt;
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+}
+
+.product-spec-item {
+    font-size: 7pt;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.product-spec-item span:first-child { color: var(--text-muted); }
+.product-spec-item span:last-child { font-weight: 600; }
+
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.org-level {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.org-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    width: 48%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.org-box.accent { border-top-color: var(--accent); }
+.org-box.gold { border-top-color: var(--gold); }
+
+.org-title {
+    font-weight: 800;
+    font-size: 8.5pt;
+    color: var(--primary);
+    margin-bottom: 3px;
+}
+
+.org-desc {
+    font-size: 7.2pt;
+    color: var(--text-muted);
+    line-height: 1.35;
 }
 
 /* SVGs and Icons */
