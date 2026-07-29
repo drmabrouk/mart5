@@ -6,1192 +6,2568 @@
     <!-- خطوط متميزة ومحملة عبر الويب للتصميم الرقمي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* ==========================================================================
-           1. نظام الألوان والمتغيرات والتجهيزات الأساسية (Design Tokens)
-           ========================================================================== */
-        :root {
-            --primary: #0f172a;       /* كحلي ملكي عميق */
-            --primary-light: #1e293b; /* كحلي متوسط */
-            --accent: #0284c7;        /* أزرق سفاير */
-            --accent-light: #e0f2fe;  /* أزرق فاتح جداً */
-            --gold: #b45309;          /* ذهبي برونزي */
-            --gold-light: #fef3c7;    /* ذهبي فاتح */
-            --success: #10b981;       /* أخضر زمردي */
-            --success-light: #d1fae5; /* أخضر فاتح */
-            --danger: #ef4444;        /* أحمر مرجاني */
-            --danger-light: #fee2e2;  /* أحمر فاتح */
-            --bg-base: #f1f5f9;       /* رمادي فاتح جداً للخلفية */
-            --bg-card: #ffffff;       /* أبيض ناصع للبطاقات */
-            --text-dark: #1e293b;     /* أسود نصي */
-            --text-muted: #64748b;    /* رمادي للنصوص الجانبية */
-            --border-color: #cbd5e1;  /* لون الحدود */
-            --font-main: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
 
-        /* ==========================================================================
-           2. ضبط الطباعة والصفحات (Print & Page Optimization)
-           ========================================================================== */
-        @page {
-            size: A4 portrait;
-            margin: 0; 
-        }
+:root {
+    --primary: #0f172a;       /* كحلي ملكي عميق */
+    --primary-light: #1e293b; /* كحلي متوسط */
+    --accent: #0284c7;        /* أزرق سفاير */
+    --accent-light: #e0f2fe;  /* أزرق فاتح جداً */
+    --gold: #b45309;          /* ذهبي برونزي */
+    --gold-light: #fef3c7;    /* ذهبي فاتح */
+    --success: #10b981;       /* أخضر زمردي */
+    --success-light: #d1fae5; /* أخضر فاتح */
+    --danger: #ef4444;        /* أحمر مرجاني */
+    --danger-light: #fee2e2;  /* أحمر فاتح */
+    --bg-base: #f1f5f9;       /* رمادي فاتح جداً للخلفية */
+    --bg-card: #ffffff;       /* أبيض ناصع للبطاقات */
+    --text-dark: #1e293b;     /* أسود نصي */
+    --text-muted: #64748b;    /* رمادي للنصوص الجانبية */
+    --border-color: #cbd5e1;  /* لون الحدود */
+    --font-main: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-        @media print {
-            body {
-                background-color: #ffffff;
-                color: #000000;
-                font-size: 10pt;
-                line-height: 1.6;
-            }
-            .page-container {
-                width: 210mm;
-                height: 297mm;
-                margin: 0 !important;
-                padding: 15mm 15mm 15mm 15mm !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                page-break-after: always;
-                break-after: page;
-                position: relative;
-                box-sizing: border-box;
-            }
-            .no-print {
-                display: none !important;
-            }
-        }
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
 
-        /* ضبط العرض الرقمي كمعاينة دقيقة لصفحات الطباعة (A4 Simulation) */
-        @media screen {
-            body {
-                background-color: #cbd5e1;
-                padding: 30px 0;
-            }
-            .page-container {
-                width: 210mm;
-                height: 297mm;
-                margin: 0 auto 30px auto;
-                background-color: var(--bg-card);
-                padding: 15mm 15mm 15mm 15mm;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                border-radius: 6px;
-                position: relative;
-                box-sizing: border-box;
-            }
-        }
+@media print {
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 9.5pt;
+        line-height: 1.5;
+    }
+    .page-container {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 12mm 15mm 12mm 15mm !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
 
-        /* ==========================================================================
-           3. التنسيقات العامة والخطوط (Reset & Global Typography)
-           ========================================================================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+@media screen {
+    body {
+        background-color: #cbd5e1;
+        padding: 30px 0;
+    }
+    .page-container {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto 30px auto;
+        background-color: var(--bg-card);
+        padding: 12mm 15mm 12mm 15mm;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        position: relative;
+        box-sizing: border-box;
+    }
+}
 
-        body {
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--bg-base);
-            text-align: right;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        /* العناوين والفقرات */
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.5;
+    background-color: var(--bg-base);
+    text-align: right;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
 
-        h1 {
-            font-size: 16pt;
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+h1 {
+    font-size: 15pt;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-weight: 800;
+}
 
-        h2 {
-            font-size: 12.5pt;
-            border-right: 5px solid var(--gold);
-            padding-right: 10px;
-            margin-top: 15px;
-            margin-bottom: 12px;
-            background-color: var(--bg-base);
-            padding-top: 4px;
-            padding-bottom: 4px;
-        }
+h2 {
+    font-size: 11.5pt;
+    border-right: 4px solid var(--gold);
+    padding-right: 8px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    background-color: #f8fafc;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: var(--primary);
+    font-weight: 700;
+}
 
-        h3 {
-            font-size: 11.5pt;
-            color: var(--accent);
-            margin-top: 10px;
-            margin-bottom: 8px;
-        }
+h3 {
+    font-size: 10pt;
+    color: var(--accent);
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
 
-        p {
-            margin-bottom: 10px;
-            text-align: justify;
-            color: #334155;
-            font-size: 9.5pt;
-        }
+p {
+    margin-bottom: 8px;
+    text-align: justify;
+    color: #334155;
+    font-size: 8.8pt;
+    line-height: 1.5;
+}
 
-        /* الهيدر والفوتر */
-        .doc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-            height: 10mm;
-        }
-        .doc-header .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .doc-header .logo-text {
-            font-weight: 800;
-            font-size: 11pt;
-            color: var(--primary);
-        }
-        .doc-header .logo-text span {
-            color: var(--accent);
-        }
-        .doc-header .meta-info {
-            font-size: 8pt;
-            color: var(--text-muted);
-            text-align: left;
-        }
+.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    height: 8mm;
+}
 
-        .doc-footer {
-            position: absolute;
-            bottom: 10mm;
-            left: 15mm;
-            right: 15mm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 8px;
-            font-size: 8pt;
-            color: var(--text-muted);
-            height: 8mm;
-        }
+.doc-header .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-        .page-content {
-            height: 244mm; 
-            overflow: hidden;
-            position: relative;
-        }
+.doc-header .logo-text {
+    font-weight: 800;
+    font-size: 10pt;
+    color: var(--primary);
+}
 
-        /* ==========================================================================
-           4. صفحة الغلاف (Cover Page Style)
-           ========================================================================== */
-        .cover-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .cover-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .cover-badge {
-            background-color: var(--accent-light);
-            color: var(--accent);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 9pt;
-            font-weight: 700;
-            border: 1px solid rgba(2, 132, 199, 0.3);
-        }
-        .cover-center {
-            margin: auto 0;
-            text-align: center;
-        }
-        .cover-title-main {
-            font-size: 24pt;
-            font-weight: 900;
-            color: var(--primary);
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
-        .cover-title-main span {
-            color: var(--accent);
-        }
-        .cover-subtitle {
-            font-size: 12pt;
-            color: var(--text-muted);
-            font-weight: 500;
-            max-width: 90%;
-            margin: 0 auto 25px auto;
-            line-height: 1.6;
-        }
-        .cover-divider {
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to left, var(--accent), var(--gold));
-            margin: 0 auto 25px auto;
-            border-radius: 3px;
-        }
-        .cover-meta-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            text-align: right;
-            background-color: var(--bg-base);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-        .meta-item {
-            font-size: 9pt;
-        }
-        .meta-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 3px;
-            font-size: 9.5pt;
-        }
-        .meta-item span {
-            color: var(--text-muted);
-        }
-        .cover-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-            font-size: 8.5pt;
-            color: var(--text-muted);
-        }
+.doc-header .logo-text span {
+    color: var(--accent);
+}
 
-        /* ==========================================================================
-           5. العناصر الرسومية المتقدمة (Charts, Dashboards & Metrics)
-           ========================================================================== */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-            font-size: 8.2pt;
-            background-color: var(--bg-card);
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-        th, td {
-            padding: 6px 8px;
-            text-align: right;
-            border-bottom: 1px solid var(--border-color);
-            line-height: 1.4;
-        }
-        th {
-            background-color: var(--primary);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 8.5pt;
-        }
-        tr:nth-child(even) td { background-color: #f8fafc; }
-        tr:hover td { background-color: #f1f5f9; }
-        .table-total {
-            font-weight: 800;
-            background-color: #e2e8f0 !important;
-            border-top: 2px solid var(--primary);
-        }
+.doc-header .meta-info {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+}
 
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 12px 0;
-        }
-        .kpi-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--accent);
-            padding: 10px;
-            border-radius: 6px;
-            text-align: center;
-        }
-        .kpi-title {
-            font-size: 8pt;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .kpi-value {
-            font-size: 13pt;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 2px;
-        }
-        .kpi-unit {
-            font-size: 8pt;
-            color: var(--text-muted);
-        }
-        .kpi-card.gold { border-top-color: var(--gold); }
-        .kpi-card.success { border-top-color: var(--success); }
-        .kpi-card.danger { border-top-color: var(--danger); }
+.doc-footer {
+    position: absolute;
+    bottom: 8mm;
+    left: 15mm;
+    right: 15mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 6px;
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    height: 6mm;
+}
 
-        .info-callout {
-            background-color: #f0f9ff;
-            border-right: 4px solid var(--accent);
-            padding: 10px 12px;
-            border-radius: 0 4px 4px 0;
-            margin: 10px 0;
-            font-size: 8.8pt;
-        }
-        .info-callout h5 {
-            color: var(--accent);
-            margin-bottom: 3px;
-            font-weight: 700;
-            font-size: 9pt;
-        }
+.page-content {
+    height: 255mm;
+    overflow: hidden;
+    position: relative;
+}
 
-        .gold-callout {
-            background-color: #fffbeb;
-            border-right: 4px solid var(--gold);
-            padding: 10px 12px;
-            border-radius: 0 4px 4px 0;
-            margin: 10px 0;
-            font-size: 8.8pt;
-        }
-        .gold-callout h5 {
-            color: var(--gold);
-            margin-bottom: 3px;
-            font-weight: 700;
-            font-size: 9pt;
-        }
+/* Cover Styling */
+.cover-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
-        .step-timeline {
-            display: flex;
-            justify-content: space-between;
-            margin: 15px 0;
-            position: relative;
-        }
-        .step-timeline::before {
-            content: "";
-            position: absolute;
-            top: 12px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--border-color);
-            z-index: 1;
-        }
-        .timeline-node {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            width: 14%;
-        }
-        .node-circle {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background-color: var(--bg-card);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--accent);
-            margin: 0 auto 5px auto;
-            font-size: 8pt;
-        }
-        .timeline-node.completed .node-circle {
-            background-color: var(--accent);
-            color: #ffffff;
-        }
-        .node-text {
-            font-size: 7.5pt;
-            font-weight: 600;
-            line-height: 1.3;
-        }
+.cover-title-main {
+    font-size: 24pt;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
 
-        .product-spec-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 10px 0;
-        }
-        .product-spec-card {
-            background: #fafafb;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 8px;
-        }
-        .product-spec-header {
-            font-weight: 700;
-            font-size: 8.5pt;
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 3px;
-            margin-bottom: 6px;
-        }
-        .product-spec-item {
-            font-size: 7.5pt;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2px;
-        }
-        .product-spec-item span:first-child { color: var(--text-muted); }
-        .product-spec-item span:last-child { font-weight: 600; }
+.cover-title-main span {
+    color: var(--accent);
+}
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 10px 0;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 10px 0;
-        }
-        .card-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            border-radius: 6px;
-        }
-        .card-box h4 {
-            color: var(--accent);
-            font-size: 9.5pt;
-            margin-bottom: 6px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 4px;
-        }
-        .card-box p {
-            font-size: 8.5pt;
-            margin-bottom: 0;
-        }
+.cover-subtitle {
+    font-size: 11.5pt;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
 
-        /* تنسيقات الهيكل التنظيمي (Org Chart) */
-        .org-chart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-            position: relative;
-        }
-        .org-level {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            width: 100%;
-        }
-        .org-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-top: 4px solid var(--primary);
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
-            width: 45%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .org-box.accent { border-top-color: var(--accent); }
-        .org-box.gold { border-top-color: var(--gold); }
-        .org-title {
-            font-weight: 800;
-            font-size: 10pt;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        .org-desc {
-            font-size: 8pt;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
+.cover-divider {
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(to left, var(--accent), var(--gold));
+    margin-bottom: 25px;
+    border-radius: 3px;
+}
 
-        .toc-list { list-style: none; padding: 0; margin: 10px 0; }
-        .toc-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 4px 0;
-            border-bottom: 1px dashed var(--border-color);
-            font-size: 9pt;
-        }
-        .toc-title { font-weight: 600; color: var(--primary); }
-        .toc-page { font-weight: 700; color: var(--accent); }
-        .page-num { font-weight: 700; color: var(--accent); }
+.cover-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    text-align: right;
+    background-color: var(--bg-base);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.meta-item {
+    font-size: 8.5pt;
+}
+
+.meta-item strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 9pt;
+}
+
+.meta-item span {
+    color: var(--text-muted);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 8pt;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 5px 7px;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.4;
+}
+
+th {
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 8.2pt;
+    border-left: 1px solid #334155;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8fafc;
+}
+
+.table-total {
+    font-weight: 800;
+    background-color: #cbd5e1 !important;
+    border-top: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.kpi-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.kpi-title {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.kpi-value {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.kpi-unit {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+}
+
+.kpi-card.gold { border-top-color: var(--gold); }
+.kpi-card.success { border-top-color: var(--success); }
+.kpi-card.danger { border-top-color: var(--danger); }
+
+.info-callout {
+    background-color: #f0f9ff;
+    border-right: 4px solid var(--accent);
+    padding: 8px 10px;
+    border-radius: 0 4px 4px 0;
+    margin: 8px 0;
+    font-size: 8.5pt;
+}
+
+.info-callout h5 {
+    color: var(--accent);
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 8.8pt;
+}
+
+.gold-callout {
+    background-color: #fffbeb;
+    border-right: 4px solid var(--gold);
+    padding: 8px 10px;
+    border-radius: 0 4px 4px 0;
+    margin: 8px 0;
+    font-size: 8.5pt;
+}
+
+.gold-callout h5 {
+    color: var(--gold);
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 8.8pt;
+}
+
+.danger-callout {
+    background-color: #fef2f2;
+    border-right: 4px solid var(--danger);
+    padding: 8px 10px;
+    border-radius: 0 4px 4px 0;
+    margin: 8px 0;
+    font-size: 8.5pt;
+}
+
+.danger-callout h5 {
+    color: var(--danger);
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 8.8pt;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.card-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.card-box h4 {
+    color: var(--primary);
+    font-size: 9pt;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 3px;
+    font-weight: 700;
+}
+
+.card-box p {
+    font-size: 8pt;
+    margin-bottom: 0;
+}
+
+.badge-success {
+    background-color: var(--success-light);
+    color: var(--success);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 7.5pt;
+}
+
+.badge-gold {
+    background-color: var(--gold-light);
+    color: var(--gold);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 7.5pt;
+}
+
+.badge-accent {
+    background-color: var(--accent-light);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 7.5pt;
+}
+
+/* SVGs and Icons */
+.svg-icon {
+    vertical-align: middle;
+}
+
     </style>
 </head>
 <body>
 
-    <!-- ================= PAGE 1: COVER PAGE ================= -->
+    <!-- ================= PAGE 1 ================= -->
     <div class="page-container" id="page-1">
-        <div class="cover-wrapper">
-            <div class="cover-top">
-                <div class="logo-area">
-                    <svg class="svg-icon" style="width: 42px; height: 42px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <div style="text-align: right;">
-                        <div class="logo-text">تاجر <span>سمارت</span></div>
-                        <div style="font-size: 7.5pt; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">TAGER SMART</div>
-                    </div>
-                </div>
-                <span class="cover-badge">دراسة جدوى استراتيجية شاملة V6.0</span>
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
 
-            <div class="cover-center">
-                <div class="cover-title-main">دراسة الجدوى الاستثمارية والتشغيلية<br>لمشروع <span>تاجر سمارت</span></div>
-                <div class="cover-subtitle">المنصة والمنظومة الرقمية اللوجستية المتكاملة لتجارة السلع الاستهلاكية الأساسية والخدمات التموينية وحوكمة المستودعات الذكية في جمهورية مصر العربية</div>
-                <div class="cover-divider"></div>
-                
-                <div class="cover-meta-grid">
-                    <div class="meta-item">
-                        <strong>اسم المشروع التجاري:</strong>
-                        <span>تاجر سمارت للتجارة والخدمات الرقمية (Tager Smart)</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>النظام البرمجي والتكنولوجي:</strong>
-                        <span>منصة، موقع، وتطبيق تاجر سمارت الإلكتروني</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>طبيعة النشاط الاستثماري:</strong>
-                        <span>تجارة الجملة وسلاسل التوريد الهجينة وإدارة المخازن المؤتمتة</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>الأسواق والمناطق المستهدفة:</strong>
-                        <span>محافظات الدلتا والوجه البحري، مدن القناة، ومناطق التوزيع اللوجستي</span>
-                    </div>
-                </div>
+<div class="cover-wrapper" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="cover-top" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+        <div class="logo-area" style="display: flex; align-items: center; gap: 10px;">
+            <svg class="svg-icon" style="width: 50px; height: 50px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div style="text-align: right;">
+                <div class="logo-text" style="font-size: 14pt; font-weight: 800; color: var(--primary);">تاجر <span style="color: var(--accent);">سمارت</span></div>
+                <div style="font-size: 8pt; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">TAGER SMART</div>
             </div>
+        </div>
+        <span class="badge-accent" style="font-size: 9pt; padding: 6px 12px; border-radius: 50px;">دراسة جدوى استراتيجية شاملة V6.0</span>
+    </div>
 
-            <div class="cover-bottom">
-                <div>إعداد: قسم الاستشارات وتطوير الأعمال - تاجر سمارت للحلول الرقمية</div>
-                <div>تاريخ الإصدار: 2026 م</div>
+    <div class="cover-center" style="margin: auto 0; text-align: center;">
+        <div class="cover-title-main" style="font-size: 24pt; font-weight: 900; color: var(--primary); line-height: 1.4; margin-bottom: 15px;">
+            دراسة الجدوى الاستثمارية والتشغيلية المتكاملة<br>لمشروع <span style="color: var(--accent);">تاجر سمارت (Tager Smart)</span>
+        </div>
+        <div class="cover-subtitle" style="font-size: 11pt; color: var(--text-muted); max-width: 90%; margin: 0 auto 20px auto; line-height: 1.6;">
+            المنصة والمنظومة الرقمية اللوجستية المتكاملة لتجارة السلع الاستهلاكية الأساسية والخدمات التموينية وحوكمة المستودعات الذكية في جمهورية مصر العربية
+        </div>
+        <div class="cover-divider" style="width: 150px; height: 6px; background: linear-gradient(to left, var(--accent), var(--gold)); margin: 0 auto 25px auto; border-radius: 3px;"></div>
+
+        <div class="cover-meta-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; text-align: right; background-color: var(--bg-base); border: 1px solid var(--border-color); padding: 25px; border-radius: 8px;">
+            <div class="meta-item">
+                <strong>اسم الكيان التجاري:</strong>
+                <span>تاجر سمارت للتجارة والخدمات الرقمية (Tager Smart)</span>
+            </div>
+            <div class="meta-item">
+                <strong>المنظومة التكنولوجية المدمجة:</strong>
+                <span>موقع، تطبيق جوال، منصة WMS، وبرامج POS ذكية</span>
+            </div>
+            <div class="meta-item">
+                <strong>طبيعة النشاط الاستثماري:</strong>
+                <span>سلاسل التوريد الهجينة، تجارة السلع الاستهلاكية وحوكمة التوزيع</span>
+            </div>
+            <div class="meta-item">
+                <strong>الأسواق والمناطق المستهدفة:</strong>
+                <span>جمهورية مصر العربية (الدلتا، القاهرة الكبرى، مدن القناة)</span>
             </div>
         </div>
     </div>
 
-    <!-- ================= PAGE 2: TABLE OF CONTENTS ================= -->
+    <div class="cover-bottom" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 8.5pt; color: var(--text-muted);">
+        <div>قسم الاستشارات الاستراتيجية والحلول الرقمية - تاجر سمارت</div>
+        <div>عام الإصدار والاعتماد: 2026 م</div>
+    </div>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 1 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
     <div class="page-container" id="page-2">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">دراسة الجدوى الشاملة الماستر V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>جدول المحتويات والفهرس الاستراتيجي</h1>
-            <p>تم تصميم هذا الفهرس لتوفير وصول سريع ومباشر إلى كافة جوانب وأقسام دراسة الجدوى الخاصة بمشروع "تاجر سمارت":</p>
-            
-            <ul class="toc-list" style="margin-top: 15px;">
-                <li class="toc-item"><span class="toc-title">1. الملخص التنفيذي والرؤية الاستثمارية للمشروع</span><span class="toc-page">الصفحة 3</span></li>
-                <li class="toc-item"><span class="toc-title">2. نموذج العمل التجاري المبتكر (Business Model Matrix)</span><span class="toc-page">الصفحة 4</span></li>
-                <li class="toc-item"><span class="toc-title">3. العمليات اللوجستية وإدارة المستودعات وسلسلة الإمداد</span><span class="toc-page">الصفحة 5</span></li>
-                <li class="toc-item"><span class="toc-title">4. استراتيجية المشتريات وسياسات تسعير البضائع الأساسية</span><span class="toc-page">الصفحة 6</span></li>
-                <li class="toc-item"><span class="toc-title">5. قنوات التوزيع، البيع، وهيكل العملاء المستهدفين</span><span class="toc-page">الصفحة 7</span></li>
-                <li class="toc-item"><span class="toc-title">6. التحول الرقمي: منظومة تاجر سمارت التقنية والذكاء الاصطناعي</span><span class="toc-page">الصفحة 8</span></li>
-                <li class="toc-item"><span class="toc-title">7. خصائص ومكونات تطبيق تاجر سمارت للهواتف الذكية والموقع</span><span class="toc-page">الصفحة 9</span></li>
-                <li class="toc-item"><span class="toc-title">8. البنية الأمنية والتحليلات وقواعد البيانات بالمنصة</span><span class="toc-page">الصفحة 10</span></li>
-                <li class="toc-item"><span class="toc-title">9. الهيكل التنظيمي، الأدوار، الحوكمة والرقابة اللامركزية</span><span class="toc-page">الصفحة 11</span></li>
-                <li class="toc-item"><span class="toc-title">10. تحليل سوق تجارة الجملة والسلع الغذائية في جمهورية مصر العربية</span><span class="toc-page">الصفحة 12</span></li>
-                <li class="toc-item"><span class="toc-title">11. دراسة تفصيلية لفئات المنتجات ذات الأولوية (1 - 5)</span><span class="toc-page">الصفحة 13</span></li>
-                <li class="toc-item"><span class="toc-title">12. التكاليف الرأسمالية والتشغيلية المبدئية وميزانية التأسيس</span><span class="toc-page">الصفحة 14</span></li>
-                <li class="toc-item"><span class="toc-title">13. الإيرادات المتوقعة وتوقعات المبيعات والتدفقات النقدية</span><span class="toc-page">الصفحة 15</span></li>
-            </ul>
 
-            <div class="gold-callout" style="margin-top: 15px;">
-                <h5>توجيه استشاري هام للطباعة والتصدير:</h5>
-                <p>تم تحسين وتنسيق كافة الصفحات وفقاً للمواصفات الدولية لمكاتب الاستشارات العالمية لضمان الحفاظ على الهيكل العام والترقيم أثناء التصدير لملفات PDF وتداولها بين الشركاء والمستثمرين وجهات التمويل.</p>
-            </div>
+<h1>جدول المحتويات والفهرس الاستراتيجي للمشروع</h1>
+<p>تم إعداد هذه الدراسة وتوزيعها على 30 صفحة مستقلة ومتوازنة بدقة لتغطية الجوانب الاستراتيجية، التشغيلية، التقنية، المالية، والقانونية لمشروع "تاجر سمارت":</p>
+
+<table style="margin-top: 10px; font-size: 7.8pt;">
+    <thead>
+        <tr>
+            <th width="10%">م</th>
+            <th width="45%">القسم / المحور الاستراتيجي</th>
+            <th width="15%">الصفحة</th>
+            <th width="10%">م</th>
+            <th width="45%">القسم / المحور الاستراتيجي</th>
+            <th width="15%">الصفحة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><strong>الملخص التنفيذي والرؤية الاستثمارية</strong></td>
+            <td>صفحة 3</td>
+            <td>16</td>
+            <td><strong>حوكمة المخزون وتكامل الباركود الذكي</strong></td>
+            <td>صفحة 16</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>نموذج العمل التجاري (Business Model Matrix)</strong></td>
+            <td>صفحة 4</td>
+            <td>17</td>
+            <td><strong>إدارة أسطول النقل والخدمات اللوجستية</strong></td>
+            <td>صفحة 17</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><strong>تحليل SWOT التنافسي ومصفوفة الفرص</strong></td>
+            <td>صفحة 5</td>
+            <td>18</td>
+            <td><strong>إدارة وتوجيه مناديب المبيعات الميدانية</strong></td>
+            <td>صفحة 18</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><strong>هيكل الملكية والمساهمة الرأسمالية للشركاء</strong></td>
+            <td>صفحة 6</td>
+            <td>19</td>
+            <td><strong>استراتيجيات التسويق الرقمي واستقطاب العملاء</strong></td>
+            <td>صفحة 19</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><strong>الهيكل التنظيمي العام وتوزيع المهام</strong></td>
+            <td>صفحة 7</td>
+            <td>20</td>
+            <td><strong>معمارية الأنظمة والتحول الرقمي بالمنصة</strong></td>
+            <td>صفحة 20</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><strong>بروتوكول الإدارة والرقابة عن بعد (الشارقة - مصر)</strong></td>
+            <td>صفحة 8</td>
+            <td>21</td>
+            <td><strong>تطبيقات الجوال وموقع تاجر سمارت الإلكتروني</strong></td>
+            <td>صفحة 21</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><strong>تحليل سوق السلع الاستهلاكية (FMCG) في مصر</strong></td>
+            <td>صفحة 9</td>
+            <td>22</td>
+            <td><strong>منظومة نقاط البيع (POS) وتجهيز المناديب</strong></td>
+            <td>صفحة 22</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><strong>فئة المنتجات الأولى: السكر، الأرز، الزيت، الدقيق</strong></td>
+            <td>صفحة 10</td>
+            <td>23</td>
+            <td><strong>نظام إدارة المستودعات (WMS) السحابي</strong></td>
+            <td>صفحة 23</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><strong>فئة المنتجات الثانية: المكرونة، المياه، المشروبات، الشاي</strong></td>
+            <td>صفحة 11</td>
+            <td>24</td>
+            <td><strong>معايير الأمان البرمجي، النسخ الاحتياطي وحفظ البيانات</strong></td>
+            <td>صفحة 24</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><strong>فئة المنتجات الثالثة: الألبان، المنظفات، التصبينات، المعلبات</strong></td>
+            <td>صفحة 12</td>
+            <td>25</td>
+            <td><strong>الميزانية الرأسمالية والتشغيلية وتكاليف التأسيس</strong></td>
+            <td>صفحة 25</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><strong>استراتيجية المشتريات وإدارة علاقات الموردين</strong></td>
+            <td>صفحة 13</td>
+            <td>26</td>
+            <td><strong>توقعات المبيعات السنوية الخمس وحركة التدفقات النقدية</strong></td>
+            <td>صفحة 26</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><strong>نموذج التسعير وحرب "فوارق الجنيهات" التنافسية</strong></td>
+            <td>صفحة 14</td>
+            <td>27</td>
+            <td><strong>تحليل نقطة التعادل والعائد الاستثماري (ROI)</strong></td>
+            <td>صفحة 27</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><strong>مخطط وتصميم المستودعات الذكية الهيكلي</strong></td>
+            <td>صفحة 15</td>
+            <td>28</td>
+            <td><strong>ميثاق الشركاء، توزيع الحصص وحوكمة الصلاحيات</strong></td>
+            <td>صفحة 28</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td><strong>حقوق الملكية الفكرية، البنية السحابية والعلامة التجارية</strong></td>
+            <td>صفحة 29</td>
+            <td>29</td>
+            <td><strong>آليات التخارج، تصفية الكيان وحوكمة فض النزاعات</strong></td>
+            <td>صفحة 29</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td><strong>إعلان الحوكمة والقوة التنظيمية والامتثال القانوني</strong></td>
+            <td>صفحة 30</td>
+            <td>30</td>
+            <td><strong>ملحق الحوكمة والتوقيعات الرسمية المعتمدة للشركاء</strong></td>
+            <td>صفحة 30</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>توجيه تنفيذي لتجانس العرض:</h5>
+    <p>تم تصميم هذا التقرير ليعمل كـ وثيقة قانونية وتشغيلية موحدة ومستقلة، قابلة للطباعة والتصدير لملفات PDF بأعلى جودة وعرض دقيق للصفحات دون الحاجة للاتصال بالإنترنت.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 2 من 15</div>
+            <div class="page-num">صفحة 2 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 3: EXECUTIVE SUMMARY ================= -->
+    <!-- ================= PAGE 3 ================= -->
     <div class="page-container" id="page-3">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">الملخص التنفيذي V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>1. الملخص التنفيذي والرؤية الاستثمارية</h1>
-            <p>يعتبر قطاع تجارة السلع الاستهلاكية والمواد الغذائية في جمهورية مصر العربية من أكثر القطاعات حيوية ومقاومة للركود الاقتصادي نتيجة للتنامي السكاني المستمر والطلب اليومي غير المرن على السلع الأساسية. يأتي مشروع <strong>"تاجر سمارت" (Tager Smart)</strong> ليمثل نقلة نوعية تدمج بين تجارة الجملة التقليدية وسلاسل الإمداد اللوجستية الحديثة، مدعوماً ببنية تقنية سحابية قوية ومستودعات لوجستية متطورة تدار بأحدث الأساليب الرقمية.</p>
-            
-            <h2>الرؤية وفلسفة التأسيس</h2>
-            <p>تتمحور فلسفتنا حول تقديم نموذج عمل ريادي يهدف إلى تمكين صغار التجار وأصحاب المحلات الغذائية من تأمين بضائعهم الاستراتيجية والأساسية بأعلى كفاءة وأقل تكلفة وبأقصى سرعة ممكنة. من خلال توظيف تكنولوجيا المعلومات وأجهزة الـ POS والتحليلات البيانية الذكية، يهدف المشروع إلى خفض الهدر والفاقد اللوجستي ورفع كفاءة تدوير رأس المال ليتجاوز المعدلات التجارية المعتادة بالسوق المصري.</p>
 
-            <div class="kpi-grid">
-                <div class="kpi-card">
-                    <div class="kpi-title">رأس مال الفرع التأسيسي</div>
-                    <div class="kpi-value">200,000</div>
-                    <div class="kpi-unit">جنيه مصري</div>
-                </div>
-                <div class="kpi-card gold">
-                    <div class="kpi-title">مساهمة الشريك الواحد</div>
-                    <div class="kpi-value">50,000</div>
-                    <div class="kpi-unit">جنيه مصري</div>
-                </div>
-                <div class="kpi-card success">
-                    <div class="kpi-title">العائد المتوقع للسنوات الخمس</div>
-                    <div class="kpi-value">34.5%</div>
-                    <div class="kpi-unit">متوسط سنوي</div>
-                </div>
-                <div class="kpi-card danger">
-                    <div class="kpi-title">فترة الاسترداد المستهدفة</div>
-                    <div class="kpi-value">14</div>
-                    <div class="kpi-unit">شهراً تشغيلياً</div>
-                </div>
-            </div>
+<h1>1. الملخص التنفيذي والرؤية الاستثمارية</h1>
+<p>تمثل تجارة المواد الغذائية والسلع الاستهلاكية سريعة الدوران (FMCG) في جمهورية مصر العربية الركيزة الأساسية للأمن الغذائي والاقتصادي اليومي لأكثر من 105 مليون نسمة. يتميز هذا سوق بالطلب غير المرن والثابت، إلا أنه يعاني من فجوات لوجستية وسلسلة وسطاء معقدة ترفع الأسعار وتعيق وصول صغار التجار للسلع المباشرة.</p>
 
-            <h2>التميز اللوجستي وقوة الانتشار</h2>
-            <p>لا يعتمد المشروع على قنوات البيع التقليدية الثابتة فحسب، بل يوفر منظومة رقمية مرنة تتضمن متجراً إلكترونياً وتطبيقاً ذكياً يربط المستودع بالعملاء مباشرة. يتيح ذلك للعملاء من محلات التجزئة طلب بضائعهم بشكل فوري ومتابعة حركة التوصيل، مما يعزز الولاء ويقلل من الحاجة لتنقلات المندوبين غير المخططة، مما ينعكس إيجاباً على تقليل الهدر وتحسين كفاءة النقل اللوجستي.</p>
+<h2>رؤية المشروع وفلسفة التشغيل</h2>
+<p>يهدف مشروع <strong>"تاجر سمارت" (Tager Smart)</strong> إلى ردم هذه الفجوة عبر إعادة صياغة نموذج تجارة الجملة وتوزيع السلع الأساسية من خلال حل هجين مبتكر يدمج بين قوة الأصول الميدانية (المستودع الذكي وأسطول التوزيع الخفيف) ومرونة الأدوات الرقمية السحابية (التطبيق الذكي، منصة WMS، والـ POS المتطور).</p>
 
-            <div class="info-callout">
-                <h5>ركائز التنافسية بمشروع تاجر سمارت:</h5>
-                <p>1. التحول الرقمي الكامل لعمليات البيع، الجرد وحساب التكاليف بشكل فوري.<br>
-                2. تطبيق استراتيجية "فوارق الجنيهات" لسحق المنافسين والسيطرة الفورية على الحصة السوقية.<br>
-                3. نظام الشراكة المرن واللامركزي الذي يحقق التكامل بين مهارات الشركاء الإدارية والتقنية والمالية.</p>
-            </div>
+<div class="kpi-grid">
+    <div class="kpi-card">
+        <div class="kpi-title">رأس المال التأسيسي الافتتاحي</div>
+        <div class="kpi-value">200,000</div>
+        <div class="kpi-unit">جنيه مصري</div>
+    </div>
+    <div class="kpi-card gold">
+        <div class="kpi-title">عدد حصص الشركاء بالتساوي</div>
+        <div class="kpi-value">4</div>
+        <div class="kpi-unit">شركاء مؤسسين</div>
+    </div>
+    <div class="kpi-card success">
+        <div class="kpi-title">صافي هامش الربح المستهدف</div>
+        <div class="kpi-value">4.5%</div>
+        <div class="kpi-unit">متوسط تدوير</div>
+    </div>
+    <div class="kpi-card danger">
+        <div class="kpi-title">فترة الاسترداد المتوقعة</div>
+        <div class="kpi-value">14</div>
+        <div class="kpi-unit">شهراً تشغيلياً</div>
+    </div>
+</div>
+
+<h2>الركائز الثلاث للتميز والريادة</h2>
+<p>1. <strong>الهيمنة السعرية الذكية:</strong> تطبيق استراتيجية "فوارق الجنيهات" لتقديم أسعار تتفوق على تجار الجملة التقليديين في المنطقة، والاعتماد على سرعة تدوير رأس المال الكاش لتعظيم الأرباح التراكمية.<br>
+2. <strong>التحول الرقمي المتكامل:</strong> إلغاء الدورة الورقية تماماً؛ حيث تتم المبيعات، الجرد، مراقبة المخازن وحوكمة الخزينة والتحصيل الميداني عبر باركود المنظومة البرمجية الحركية السحابية.<br>
+3. <strong>انضباط العمليات الصارم:</strong> الاستفادة من الخلفية الإدارية والعملياتية الصارمة للمؤسسين لضمان التزام كامل بالمواعيد، تصفير نسب الهدر والسرقة، وتحقيق دقة 100% في توريد وتسوية الأرصدة النقدية يومياً.</p>
+
+<div class="info-callout">
+    <h5>الجدوى العامة والتكامل:</h5>
+    <p>يتكامل التوجه التقني عالي الكفاءة مع الأصول الميدانية الرشيقة لتقديم خدمة استثنائية لصغار تجار التجزئة، مما يخلق شراكة تجارية متينة ويؤمن حصة سوقية قوية لـ "تاجر سمارت" من الشهر الأول للإطلاق.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 3 من 15</div>
+            <div class="page-num">صفحة 3 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 4: BUSINESS MODEL MATRIX ================= -->
+    <!-- ================= PAGE 4 ================= -->
     <div class="page-container" id="page-4">
-        <!-- نفس المحتوى السابق المرفق في طلبك لصفحة نموذج العمل -->
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">نموذج العمل التجاري V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>2. نموذج العمل التجاري المبتكر (Business Model Matrix)</h1>
-            <p>يرتكز نموذج عمل "تاجر سمارت" على تقديم قيمة مضافة فريدة ومستدامة للتجار من خلال تبسيط قنوات الطلب وتوفير خدمات توصيل سريعة وموثوقة، مع تحويل المستودعات الذكية إلى مراكز لوجستية حركية قادرة على إدارة وتعبئة وتوزيع السلع الأساسية بكفاءة عالية وبأقل تكلفة تشغيلية.</p>
 
-            <h2>مصفوفة نموذج العمل التجاري لتاجر سمارت</h2>
-            <table style="margin-top: 15px;">
-                <thead>
-                    <tr>
-                        <th width="20%">الشركاء الرئيسيون</th>
-                        <th width="20%">الأنشطة الاستراتيجية</th>
-                        <th width="20%">القيم والحلول المقدمة</th>
-                        <th width="20%">علاقات العملاء</th>
-                        <th width="20%">شرائح العملاء</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            • كبار مزارعي ومصنعي المواد الغذائية.<br>
-                            • شركات التعبئة والتغليف المحلية.<br>
-                            • مزودو الخدمات السحابية والمدفوعات الإلكترونية.<br>
-                            • شركات النقل والخدمات اللوجستية.
-                        </td>
-                        <td>
-                            • إدارة سلاسل التوريد واللوجستيات والمشتريات.<br>
-                            • تطوير وتشغيل منصة وتطبيق تاجر سمارت.<br>
-                            • الجرد اللحظي ومراقبة الجودة وفلترة الأصناف البطيئة.
-                        </td>
-                        <td>
-                            • توفير السلع الأساسية بأسعار تنافسية للغاية.<br>
-                            • رقمنة عملية الطلب والتسليم بالكامل.<br>
-                            • تقليل النقدية المفقودة وتأمين التوصيل الآمن والسريع.
-                        </td>
-                        <td>
-                            • دعم فني مخصص على مدار الساعة عبر التطبيق.<br>
-                            • برامج ولاء ومكافآت وتوفير خصومات كمية.<br>
-                            • تقارير استشارية للتجار لتوجيه مشترياتهم الذكية.
-                        </td>
-                        <td>
-                            • محلات البقالة والسوبر ماركت الصغيرة والمتوسطة.<br>
-                            • المطاعم، المقاهي، وقاعات المناسبات الكبرى.<br>
-                            • تجار الجملة الإقليميون الفرعيون بالقرى والمدن.
-                        </td>
-                    </tr>
-                    <tr class="table-total">
-                        <td colspan="3">هيكل التكاليف والمصاريف:<br>• إيجارات وتجهيز المستودعات • السيرفرات والبنية البرمجية والـ POS • تكاليف الأسطول والنقل • أجور الموظفين والمندوبين</td>
-                        <td colspan="2">مصادر تدفقات الإيرادات المخططة:<br>• مبيعات السلع والمنتجات المباشرة • عمولات التوصيل والتجهيز السريع • إعلانات الشركات الكبرى بالتطبيق • خدمات الاشتراك الشهري والتحليلات</td>
-                    </tr>
-                </tbody>
-            </table>
+<h1>2. نموذج العمل التجاري المبتكر (Business Model Canvas)</h1>
+<p>يرتكز نموذج عمل "تاجر سمارت" على دمج التقنية الحديثة بنشاط تجارة الجملة والتوريد، محولاً مستودعاتنا إلى خلايا لوجستية ذكية تخدم العملاء بمرونة وكفاءة متناهية، وبأقل تكلفة تشغيلية ممكنة.</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.5pt;">
+    <thead>
+        <tr>
+            <th width="20%">الشركاء الرئيسيون (Key Partners)</th>
+            <th width="20%">الأنشطة الاستراتيجية (Key Activities)</th>
+            <th width="20%">القيم والحلول المقترحة (Value Propositions)</th>
+            <th width="20%">علاقات العملاء (Customer Relationships)</th>
+            <th width="20%">شرائح العملاء (Customer Segments)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 6px;">
+                • مصانع ومطاحن ومزارع السلع الأساسية الكبرى بمصر.<br>
+                • شركات تعبئة وتغليف المواد الغذائية والمكرونات.<br>
+                • مزودو الخدمات السحابية وقواعد البيانات الآمنة.<br>
+                • شبكات موزعي النقل والشركاء المحليين بالدلتا.
+            </td>
+            <td valign="top" style="padding: 6px;">
+                • إدارة التوريد والمشتريات وحوكمة المخازن.<br>
+                • تطوير وتحديث خوارزميات التسعير السريعة بالتطبيق.<br>
+                • تشغيل وإدارة رحلات التوصيل اليومية وجدولة الخطوط.<br>
+                • تسوية النقدية والعمليات الحسابية بشكل لحظي.
+            </td>
+            <td valign="top" style="padding: 6px;">
+                • سلع استراتيجية بأسعار منافسة (بنموذج فوارق قروش).<br>
+                • طلب رقمي لحظي بضغطة زر وتفادي جشع الوسطاء.<br>
+                • توصيل سريع وآمن مباشرة للمحل ومحلات البقالة.<br>
+                • معلومات دقيقة عن السلع الأكثر مبيعاً لمساعدة التاجر.
+            </td>
+            <td valign="top" style="padding: 6px;">
+                • دعم فني لحظي ومباشر عبر التطبيق والواتساب.<br>
+                • حوافز ولاء ومكافآت وخصومات عند الوصول للمستهدفات.<br>
+                • زيارات ميدانية دورية من مناديب المبيعات الفنيين.
+            </td>
+            <td valign="top" style="padding: 6px;">
+                • محلات السوبرماركت ومحلات البقالة الصغيرة والمتوسطة.<br>
+                • المطاعم، الفنادق، الكافيهات، والمنشآت الغذائية الإقليمية.<br>
+                • كبار المستهلكين الأفراد والجمعيات الخدمية بالمنطقة.
+            </td>
+        </tr>
+        <tr class="table-total">
+            <td colspan="3" valign="top" style="padding: 6px;">
+                <strong>هيكل التكاليف والمصاريف (Cost Structure):</strong><br>
+                • تكاليف تأسيس وتطوير البرمجيات والـ POS والـ ERP • إيجار وتجهيز المستودعات الدوارة ومعدات النقل • مصاريف النقل والوقود وصيانة المركبات الخفيفة • أجور الموظفين والمناديب الميدانيين
+            </td>
+            <td colspan="2" valign="top" style="padding: 6px;">
+                <strong>مصادر تدفقات الإيرادات (Revenue Streams):</strong><br>
+                • مبيعات السلع المباشرة بهامش ربح تنافسي • عمولات تحضير وتسليم البضائع الفورية • رسوم الإعلانات الممولة للشركات الكبرى داخل التطبيق • خدمات التحليلات والبيانات الاستشارية للتجار
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>المرونة والربحية:</h5>
+    <p>يتيح هذا النموذج تحقيق نقطة تعادل سريعة جداً، لكونه يحد من الأصول الثابتة الضخمة ويركز على الاستفادة القصوى من سرعة تدوير رأس المال، وتوظيف البنية البرمجية لزيادة نطاق العمل دون زيادة التكلفة التشغيلية.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 4 من 15</div>
+            <div class="page-num">صفحة 4 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 5: WAREHOUSE OPERATIONS ================= -->
+    <!-- ================= PAGE 5 ================= -->
     <div class="page-container" id="page-5">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">إدارة المستودعات وسلسلة الإمداد V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>3. العمليات اللوجستية وإدارة المستودعات</h1>
-            <p>تعتمد "تاجر سمارت" على نظام لوجستي متكامل يضمن تدفق البضائع بسلاسة وأمان من الموردين إلى المستودع ومن ثم للعميل النهائي. تم تصميم مستودعاتنا لتكون ذكية ومرنة، حيث يتم ترتيب البضائع وتخزينها هندسياً لتقليل وقت التجهيز والتحميل وتحقيق أقصى درجات حوكمة المخزون.</p>
-            
-            <div class="step-timeline">
-                <div class="timeline-node completed">
-                    <div class="node-circle">1</div>
-                    <div class="node-text">استلام البضائع وفحص الجودة</div>
-                </div>
-                <div class="timeline-node completed">
-                    <div class="node-circle">2</div>
-                    <div class="node-text">مسح الباركود والترميز الرقمي</div>
-                </div>
-                <div class="timeline-node completed">
-                    <div class="node-circle">3</div>
-                    <div class="node-text">التخزين الهيكلي المنظم</div>
-                </div>
-                <div class="timeline-node">
-                    <div class="node-circle">4</div>
-                    <div class="node-text">استقبال الطلبات عبر التطبيق</div>
-                </div>
-                <div class="timeline-node">
-                    <div class="node-circle">5</div>
-                    <div class="node-text">تجهيز الطلبات وفلترتها</div>
-                </div>
-                <div class="timeline-node">
-                    <div class="node-circle">6</div>
-                    <div class="node-text">الشحن والتسليم الذكي للعملاء</div>
-                </div>
-            </div>
 
-            <h2>تفاصيل العمليات التشغيلية بالمخازن</h2>
-            <p>1. <strong>استلام البضائع وفحص الجودة:</strong> يتم فحص كل شحنة بدقة للتأكد من سلامتها وتاريخ صلاحيتها فور وصولها من المصدر.<br>
-            2. <strong>مسح الباركود والترميز الرقمي:</strong> يتم تسجيل البضائع فوراً بالنظام عبر قارئ الباركود، مما يمنع الأخطاء البشرية بالتسجيل الدفتري التقليدي.<br>
-            3. <strong>التخزين الهيكلي:</strong> يتم تقسيم المستودع إلى قطاعات مخصصة؛ السلع الثقيلة وسريعة الحركة تقع بالقرب من بوابات التجهيز، بينما تخزن المواد الأقل حركة بالخلف لتحسين انسيابية حركات العمال والمندوبين.</p>
+<h1>3. تحليل SWOT التنافسي ومصفوفة الفرص بالسوق المصري</h1>
+<p>لضمان تموضع استراتيجي قوي ومستدام، تم إجراء تحليل SWOT شامل للبيئة الداخلية والخارجية لمشروع "تاجر سمارت"، مع ربطه بالواقع الاقتصادي وتجارة الجملة في مصر:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+    <thead>
+        <tr>
+            <th width="50%" style="background-color: var(--success); color: white;">نقاط القوة (Strengths) - بيئة داخلية</th>
+            <th width="50%" style="background-color: var(--danger); color: white;">نقاط الضعف (Weaknesses) - بيئة داخلية</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 8px;">
+                • <strong>تكامل خبرات المؤسسين:</strong> دمج القيادة الإدارية والتشغيلية الصارمة بالتطوير البرمجي الاحترافي والإدارة المالية المحكمة.<br>
+                • <strong>البنية البرمجية المملوكة:</strong> تطوير وتعديل البرمجيات داخلياً يصفر تكلفة التراخيص الخارجية ويسرع الاستجابة البرمجية.<br>
+                • <strong>التحكم اللحظي بالأرصدة والنقدية:</strong> نظام تتبع حركي يمنع السرقة والتلاعب وسرقة المخزون بنسبة 100%.<br>
+                • <strong>مرونة الأصول:</strong> مستودع ذكي رصين بصفات ممتازة ومركبات توصيل خفيفة واقتصادية في استهلاك الوقود.
+            </td>
+            <td valign="top" style="padding: 8px;">
+                • <strong>رأس مال تأسيسي محدود أولياً:</strong> رأس مال 200,000 ج.م يتطلب دورة جرد وتداول بالغة السرعة لشراء بضائع مستمرة.<br>
+                • <strong>حداثة اسم الكيان:</strong> يحتاج لبناء الثقة الأولية مع كبار وصغار التجار لمنافسة الأسماء التقليدية العتيقة بالمنطقة.<br>
+                • <strong>الحد الجغرافي الأولي:</strong> التركيز على منطقة تشغيلية محددة في المرحلة الأولى لتثبيت نموذج العمل واختبار اللوجستيات.
+            </td>
+        </tr>
+        <tr>
+            <th style="background-color: var(--accent); color: white;">الفرص الواعدة (Opportunities) - بيئة خارجية</th>
+            <th style="background-color: var(--gold); color: white;">المخاطر والتهديدات (Threats) - بيئة خارجية</th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 8px;">
+                • <strong>الرقمنة المتسارعة للتجار:</strong> زيادة اعتماد صغار البقالين على الهواتف الذكية وتطبيقات التواصل لطلب البضائع.<br>
+                • <strong>الفجوة اللوجستية للمصانع:</strong> رغبة المصانع الكبرى بالتعامل مع منصة رقمية تؤمن لها الانتشار بدلاً من المندوبين الفرديين.<br>
+                • <strong>تطوير علامات تجارية خاصة:</strong> إمكانية إبرام صفقات تعبئة سكر وأرز باسم "تاجر سمارت" في فترات لاحقة وهوامش ربح أعلى.<br>
+                • <strong>الشمول المالي والمدفوعات:</strong> إمكانية دمج المدفوعات الإلكترونية لاحقاً كمصدر إيرادات وعمولات مستمر.
+            </td>
+            <td valign="top" style="padding: 8px;">
+                • <strong>تذبذب أسعار السلع السريع:</strong> تغيرات الأسعار المتتالية تتطلب نظام تسعير شديد الاستجابة ومرونة في الشراء اللحظي.<br>
+                • <strong>المنافسة من الحيتان التقليديين:</strong> رد فعل كبار تجار الجملة بالمنطقة عبر حرق الأسعار المؤقت للاحتفاظ بعملائهم.<br>
+                • <strong>تقلب تكاليف الطاقة والتشغيل:</strong> ارتفاع أسعار المحروقات والكهرباء مما يزيد من تكلفة النقل والتخزين ويضغط على الهوامش الربحية.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>الاستراتيجية الدفاعية والهجومية:</h5>
+    <p>يتغلب المشروع على ضعف رأس المال التأسيسي الأولي عبر تسريع حركة تدوير البضائع واستخدام الكاش الفوري، مع استباق هجمات المنافسين التقليديين عبر تقديم قيمة مضافة فريدة هي التوصيل المجاني والسريع والتتبع اللحظي للطلب دون عناء السفر لمخازن الجملة.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 5 من 15</div>
+            <div class="page-num">صفحة 5 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 8: DIGITAL STRATEGY ================= -->
+    <!-- ================= PAGE 6 ================= -->
+    <div class="page-container" id="page-6">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>4. هيكل الملكية وحصص المساهمة الرأسمالية للشركاء</h1>
+<p>يتأسس مشروع "تاجر سمارت" على شراكة استراتيجية عادلة ومكتوبة تضمن تكامل القدرات والجهود وتوزع المخاطر والمسؤوليات بالتساوي لضمان النجاح الطويل والأمان القانوني الكامل للكيان.</p>
+
+<h2>مكونات وتوزيع رأس المال التأسيسي</h2>
+<p>تم تحديد رأس المال التأسيسي المبدئي لإطلاق المشروع بـ <strong>200,000 جنيه مصري (مائتان ألف جنيه مصري لا غير)</strong>، مقسم بالتساوي التام بين الشركاء الأربعة، لتمويل المستودع والمخزون الافتتاحي:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 8.2pt;">
+    <thead>
+        <tr>
+            <th>الشريك المساهم</th>
+            <th>قيمة المساهمة النقدية</th>
+            <th>نسبة الحصة الملكية</th>
+            <th>نوع المساهمة الإضافية الملتزم بها</th>
+            <th>طبيعة الدور التشغيلي والرقابي</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>الشريك الأول</strong></td>
+            <td>50,000 ج.م</td>
+            <td>25.0%</td>
+            <td>التطوير الفني والبرمجيات الكلية</td>
+            <td>الإدارة التقنية والبرمجية وإدارة خوادم السحاب والتطبيق</td>
+        </tr>
+        <tr>
+            <td><strong>الشريك الثاني</strong></td>
+            <td>50,000 ج.م</td>
+            <td>25.0%</td>
+            <td>تجهيز الشؤون المالية والحسابات</td>
+            <td>المدير المالي وحوكمة الخزينة والرقابة وتدقيق النقدية</td>
+        </tr>
+        <tr>
+            <td><strong>الشريك الثالث</strong></td>
+            <td>50,000 ج.م</td>
+            <td>25.0%</td>
+            <td>علاقات الموردين وميدان التوزيع</td>
+            <td>تطوير الأعمال والتعاقدات الاستراتيجية وإدارة المبيعات</td>
+        </tr>
+        <tr>
+            <td><strong>الشريك الرابع</strong></td>
+            <td>50,000 ج.م</td>
+            <td>25.0%</td>
+            <td>العمليات اللوجستية والمستودع</td>
+            <td>إدارة العمليات اليومية بالمخزن والتعبئة والإشراف اللوجستي</td>
+        </tr>
+        <tr class="table-total">
+            <td>الإجمالي الكلي</td>
+            <td>200,000 ج.م</td>
+            <td>100%</td>
+            <td>الجهد المشترك والتكامل الحركي</td>
+            <td>التوافق التام ومجلس الإدارة الرباعي المشترك</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>آلية استدعاء رأس المال وإيداعه</h2>
+<p>1. <strong>الإيداع النقدي:</strong> يتم إيداع مبالغ المساهمة النقدية بالكامل في الحساب البنكي الموحد والمشترك المخصص لعمليات الكيان قبل الشروع في أي نشاط تأسيسي ملموس.<br>
+2. <strong>تقييم الحصص الفنية:</strong> تعتبر كافة المساهمات الفنية والبرمجية التي يقدمها الشريك التقني أصولاً تجارية استراتيجية مملوكة للشركة بالكامل وتخضع لشروط الملكية الفكرية الموحدة.<br>
+3. <strong>الالتزام المالي:</strong> يلتزم كل شريك بعدم سحب أي مبالغ من رأس المال التأسيسي تحت أي بند شخصي، وتعتبر كافة المبالغ مخصصة حصرياً لشراء المخزون وتأمين أصول المستودع الافتتاحي.</p>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>قوة هيكل الشراكة المتساوية:</h5>
+    <p>يضمن التوزيع المتساوي (25% لكل شريك) صوتاً متكافئاً في عملية اتخاذ القرار، ويحفز الجميع على بذل أقصى طاقة لإنجاح المشروع لكون الجميع يملكون مصلحة مالية وتشغيلية متطابقة تماماً في تنمية وتوسيع حجم أعمال "تاجر سمارت".</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 6 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 7 ================= -->
+    <div class="page-container" id="page-7">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>5. الهيكل التنظيمي العام وتوزيع المهام الإدارية والعملياتية</h1>
+<p>تم تصميم الهيكل التنظيمي لمشروع "تاجر سمارت" ليكون هيكلاً مرناً ورشيقاً، يحدد المسؤوليات بدقة تامة ويمنع تداخل الصلاحيات، مع ضمان الرقابة المتبادلة والانسياب السلس للمعلومات والتقارير المالية واللوجستية.</p>
+
+<div class="org-chart" style="margin: 15px 0;">
+    <div class="org-level">
+        <div class="org-box" style="border-top: 4px solid var(--primary); width: 80%;">
+            <div class="org-title" style="font-size: 11pt;">مجلس الإدارة والشركاء (Board of Partners)</div>
+            <div class="org-desc">الرسم الاستراتيجي، إقرار الميزانيات، تخطيط النمو والتوسع، والموافقة على الصفقات التجارية الكبرى</div>
+        </div>
+    </div>
+
+    <!-- خطوط ربط هيكلية وهمية عبر التقسيم -->
+    <div class="org-level" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%;">
+        <div class="org-box accent" style="width: 100%;">
+            <div class="org-title" style="font-size: 9pt; color: var(--accent);">الشريك الأول</div>
+            <div class="org-desc" style="font-size: 7.2pt;"><strong>المدير التقني والبرمجي (CTO)</strong><br>إدارة الكود، قواعد البيانات السحابية، تتبع الـ POS والتحسين المستمر للمنصة.</div>
+        </div>
+        <div class="org-box gold" style="width: 100%;">
+            <div class="org-title" style="font-size: 9pt; color: var(--gold);">الشريك الثاني</div>
+            <div class="org-desc" style="font-size: 7.2pt;"><strong>المدير المالي والرقابة (CFO)</strong><br>حوكمة الخزينة، جرد النقدية اليومي، مطابقة حسابات البنوك، وتحليل الميزانيات.</div>
+        </div>
+        <div class="org-box" style="border-top-color: var(--success); width: 100%;">
+            <div class="org-title" style="font-size: 9pt; color: var(--success);">الشريك الثالث</div>
+            <div class="org-desc" style="font-size: 7.2pt;"><strong>مدير العلاقات الاستراتيجية</strong><br>التعاقد مع المصانع والموردين، المبيعات والانتشار الميداني، ودعم كبار العملاء.</div>
+        </div>
+        <div class="org-box" style="border-top-color: var(--danger); width: 100%;">
+            <div class="org-title" style="font-size: 9pt; color: var(--danger);">الشريك الرابع</div>
+            <div class="org-desc" style="font-size: 7.2pt;"><strong>مدير العمليات واللوجستيات</strong><br>إدارة حركة المستودع، التعبئة والتجزيء، الإشراف على الشحن وأسطول النقل.</div>
+        </div>
+    </div>
+</div>
+
+<h2>حوكمة الأدوار والمكملات التنفيذية</h2>
+<p>• <strong>الشفافية المطلقة:</strong> يلتزم الشركاء بتقديم تقرير تشغيلي ومالي أسبوعي موحد يعرض حركة المبيعات والمخزون وحركة الخزينة، لضمان اطمئنان كافة الشركاء لسير العمل بكفاءة واقتدار.<br>
+• <strong>تكامل التخصص الميداني:</strong> يتولى الشركاء الميدانيون إدارة وتوجيه العمال المؤقتين، سائقي سيارات النقل الخفيفة، ومناديب التوزيع اليومي، لضمان الالتزام بمواعيد التسليم وخفض هدر البضائع أثناء النقل الشحني.</p>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>قواعد التكليف والنيابة:</h5>
+    <p>في حال غياب أي شريك تنفيذي ميداني بداعي السفر أو المرض، ينوب عنه الشريك الميداني الآخر لضمان عدم توقف العمل التشغيلي للمستودع لثانية واحدة، مع إخطار الإدارة المالية والتقنية فورا.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 7 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 8 ================= -->
     <div class="page-container" id="page-8">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">منظومة التحول الرقمي V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>6. التحول الرقمي: منظومة تاجر سمارت التقنية والذكاء الاصطناعي</h1>
-            <p>يتميز مشروع "تاجر سمارت" بكونه منصة ريادية تقود التحول الرقمي في قطاع تجارة الجملة التقليدي بمصر. يتعدى دور المنصة مجرد وسيلة لعرض المنتجات، بل يمتد ليكون نظاماً تشغيلياً سحابياً متكاملاً (Enterprise Resource Planning - ERP) يدير ويراقب كل تفاصيل وحركات العمل التشغيلية والمالية بدقة فائقة ولحظة بلحظة.</p>
 
-            <h2>بنية ومكونات النظام التقني المتكامل لتاجر سمارت</h2>
-            <p>تم تصميم النظام التقني ليتكون من ثلاثة أركان برمجية رئيسية تعمل بتكامل تام وقواعد بيانات سحابية موحدة، مع <strong>الاستفادة المباشرة من السجل الحافل للمهندس أحمد مبروك في تصميم وبناء أنظمة الـ POS وبرمجيات إدارة المتاجر الفعالة لضمان بنية تقنية لا تشوبها شائبة:</strong></p>
+<h1>6. بروتوكول الإدارة والرقابة عن بعد والضبط اللوجستي</h1>
+<p>يتطلب النجاح الاستثنائي لمشروع "تاجر سمارت" أساليب إدارة حديثة وغير تقليدية قادرة على التوفيق التام بين المتابعة التقنية المتقدمة من الشارقة بدولة الإمارات العربية المتحدة والتشغيل الميداني الحركي في جمهورية مصر العربية.</p>
 
-            <div class="grid-3">
-                <div class="card-box" style="border-top: 3px solid var(--accent);">
-                    <h4 style="color: var(--accent);">الموقع الإلكتروني والمنصة السحابية</h4>
-                    <p style="font-size: 8pt; color: #475569;">بوابة الويب الشاملة المخصصة للشركات، كبار الموردين والمشترين للطلبات الضخمة، والتحكم بالإدارة المالية للشركاء.</p>
-                </div>
-                <div class="card-box" style="border-top: 3px solid var(--gold);">
-                    <h4 style="color: var(--gold);">تطبيق تاجر سمارت للهواتف</h4>
-                    <p style="font-size: 8pt; color: #475569;">تطبيق خفيف وسريع ومتجاوب مع الهواتف الذكية للعملاء ومحلات التجزئة لطلب البضائع وتتبع الشحنات والمستحقات المالية.</p>
-                </div>
-                <div class="card-box" style="border-top: 3px solid var(--success);">
-                    <h4 style="color: var(--success);">لوحة تحكم إدارة المستودعات والمندوبين</h4>
-                    <p style="font-size: 8pt; color: #475569;">تطبيق لوحي متكامل مع المندوبين لمراقبة المبيعات وتأكيد استلام المبالغ النقدية وتوثيق التسليم بالباركود والجغرافي.</p>
-                </div>
-            </div>
+<h2>بروتوكول الإدارة والرقابة عن بعد (Remote Management Protocol)</h2>
+<p>لتحقيق أعلى درجات الحوكمة والأمان، يرتكز بروتوكول الإدارة عن بعد على ركيزتين تقنيتين وبشريتين:</p>
+<p>1. <strong>المتابعة الرقمية اللحظية (Real-Time ERP Tracking):</strong> كافة العمليات التشغيلية (استلام بضائع، صرف طلبيات، استلام نقدية من العملاء) مسجلة لحظة بلحظة على خادم السحاب. يمكن للإدارة التقنية في الشارقة والمالية مراجعة الأرصدة النقدية والمخزنية ومطابقتها فورا وبأقل مجهود تشغيلي.<br>
+2. <strong>منظومة كاميرات المراقبة السحابية (Cloud IP Cameras):</strong> يتم تغطية كافة قطاعات المستودع، مداخل البوابات، ومناطق تعبئة وتجهيز البضائع بكاميرات IP ذكية تعمل على مدار الساعة ومتصلة بالإنترنت تتيح للإدارة المتابعة البصرية المباشرة والاطمئنان الكامل على سير العمل اللوجستي والتزام العمال.</p>
 
-            <h2>مزايا حوكمة التشغيل الرقمي ورقابة حركة النقدية</h2>
-            <p>يساهم النظام السحابي في حوكمة حركة النقدية بالشركة والحد من المخاطر التشغيلية، حيث يتم ربط كل فاتورة مبيعات برقم الباركود الخاص بكل سلعة ومسحه وتأكيده عند خروجه من المستودع وعند استلام العميل للمنتج. يتم تسجيل المبالغ النقدية وتأكيدها ففقدان أو تبديد الأصول أو النقدية يصبح مستحيلاً بوجود هذه الدورة التوثيقية التامة والمراقبة من جميع الشركاء والمستثمرين والمدير المالي.</p>
+<h2>الضبط والالتزام العملياتي المستمر</h2>
+<p>يتميز الكادر التنفيذي الميداني للمشروع بانضباط والتزام تام نابع من خلفية عملية وانضباط عالي المستوى، وهو ما ينعكس إيجاباً على أساليب إدارة المستودعات وفرق التوزيع:</p>
+
+<div class="grid-2">
+    <div class="card-box" style="border-right: 3px solid var(--accent);">
+        <h4>الانضباط في إدارة الأزمات</h4>
+        <p style="font-size: 7.8pt;">• جاهزية تامة وسريعة للتعامل مع أي طارئ تشغيلي أو لوجستي (مثل انقطاع الكهرباء، تعطل مركبات، تقلبات الطقس).<br>
+        • الالتزام الصارم بمواعيد فتح وإغلاق المستودع وجدولة رحلات الشحن والتوزيع دون أي تساهل أو تأخير.</p>
+    </div>
+    <div class="card-box" style="border-right: 3px solid var(--gold);">
+        <h4>تصفير نسب التلاعب والهدر المالي</h4>
+        <p style="font-size: 7.8pt;">• تطبيق مبدأ "المسؤولية" المباشرة للعمال في الحفاظ على سلامة المخزون والكراتين.<br>
+        • نظام محاسبة صارم للمناديب والتحصيل لضمان تسوية الخزائن اليومية دون مليم واحد من العجز المالي.</p>
+    </div>
+</div>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>خلاصة بروتوكول التشغيل:</h5>
+    <p>يؤمن دمج الرقابة السحابية الذكية مع الجدية والانضباط العملياتي الميداني للشركة بيئة تشغيلية خالية تماما من التراخي أو التلاعب، مما يوفر للمستثمرين والشركاء طمأنينة تامة على سلامة وأمن واستدامة أصولهم المالية.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 8 من 15</div>
+            <div class="page-num">صفحة 8 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 11: PARTNER STRUCTURE & REMOTE MANAGEMENT ================= -->
+    <!-- ================= PAGE 9 ================= -->
+    <div class="page-container" id="page-9">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>7. تحليل سوق السلع الاستهلاكية وتجارة الجملة في جمهورية مصر العربية</h1>
+<p>يعد سوق الأغذية والمشروبات والسلع الاستهلاكية سريعة الدوران (FMCG) في مصر من أضخم الأسواق في أفريقيا والشرق الأوسط، حيث يستأثر بحوالي ثلث الإنفاق الاستهلاكي للأسر المصرية، وهو قطاع يتميز بكونه مرناً وحيوياً ويتحمل كافة التغيرات الهيكلية بفضل تزايد الطلب اليومي المستمر.</p>
+
+<h2>مؤشرات السوق والديناميكيات الاقتصادية لعام 2026</h2>
+<p>يشهد السوق المصري تحولاً مهماً؛ فبينما يواجه التجار الكبار صعوبات في تعديل هياكلهم التكليفية المرتفعة لمواكبة التضخم، تبرز فرصة عظيمة لشبكات التوزيع المرنة والرشيقة مثل "تاجر سمارت" لتقديم حلول توصيل سريعة وأكثر اقتصادية:</p>
+
+<div class="grid-3">
+    <div class="card-box">
+        <h4>105+ مليون مستهلك</h4>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">نمو سكاني مستمر يحافظ على استقرار وتصاعد الطلب اليومي على السلع والمنتجات الأساسية التي لا يمكن الاستغناء عنها تحت أي ظرف.</p>
+    </div>
+    <div class="card-box">
+        <h4>90% تجزئة تقليدية</h4>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">تعتمد مصر بشكل أساسي على محلات البقالة الصغيرة والـ Kiosks للتجزئة، وهم الشريحة المستهدفة الرئيسية لمنصة تاجر سمارت.</p>
+    </div>
+    <div class="card-box">
+        <h4>توقعات تضخم السلع</h4>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">يتجه صغار التجار لتقليل أحجام طلبياتهم وزيادة معدل الشراء الأسبوعي لتفادي ركود الأموال، مما يزيد الحاجة لمنصة توصيل رشيقة.</p>
+    </div>
+</div>
+
+<h2>تحليل قنوات البيع وسلسلة التوريد الحالية في مصر</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>القناة التقليدية الحالية</th>
+            <th>نقاط الضعف والمشاكل للتاجر</th>
+            <th>الحل المبدع من "تاجر سمارت"</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>حيتان الجملة الإقليميين</strong></td>
+            <td>احتكار الأسعار، فرض بضائع كاسدة (تحميل أصناف)، وفرض الشراء النقدي والذهاب للمخازن.</td>
+            <td>شفافية كاملة بالأسعار بالتطبيق، اختيار حر للأصناف، وتوصيل مجاني لباب المحل بمرونة تامة.</td>
+        </tr>
+        <tr>
+            <td><strong>مناديب المصانع المباشرين</strong></td>
+            <td>مواعيد توريد متباعدة (مرة كل أسبوعين)، والاشتراط المسبق لطلبيات ضخمة جداً تفوق قدرة البقال.</td>
+            <td>تأمين كميات مرنة (بالكرتونة والعلبة)، وتوصيل خلال 24 ساعة فقط لتعزيز استمرارية رأس ماله العامل.</td>
+        </tr>
+        <tr>
+            <td><strong>شبكات النقل الفردية (تروسيكلات)</strong></td>
+            <td>افتقار التنظيم، تقلب أسعار النقل والعمولات العشوائية، ومخاطر تلف أو ضياع البضائع.</td>
+            <td>أسطول توصيل خفيف منظم ومنسق، خطوط سير يومية مجدولة رقمياً، ومسؤولية كاملة عن جودة وأمان السلع.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>تموقع تاجر سمارت الاستراتيجي:</h5>
+    <p>يتمركز المشروع كوسيط رقمي لوجستي ذكي يخدم صغار التجار بكفاءة فائقة، متفادياً التكاليف الإدارية الثابتة والضخمة لشركات التوزيع الكبيرة، ومحققا مستويات ربحية متميزة بفضل سرعة تدوير المخزون.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 9 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 10 ================= -->
+    <div class="page-container" id="page-10">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>8. دراسة فئات المنتجات ذات الأولوية - المجموعة الأولى</h1>
+<p>تركز استراتيجية الإطلاق والمبيعات لمشروع "تاجر سمارت" على السلع والمنتجات الأساسية التموينية غير المرنة ذات الاستهلاك والطلب اليومي الكثيف، لضمان استمرار دوران كاش المبيعات وسرعة تسييل المخزون في الـ 30 يوماً الأولى:</p>
+
+<h2>1. فئة زيوت الطعام والسمن النباتي</h2>
+<p>تعتبر زيوت الطعام من أكثر السلع مبيعاً ودوراناً بالسوق المصري لطلبها المطلق من المنازل ومطاعم الفول والفلافل ومحلات الأغذية الإقليمية:</p>
+
+<div class="grid-2">
+    <div class="card-box" style="border-right: 3px solid var(--accent);">
+        <h4>مواصفات التداول والتوريد</h4>
+        <p style="font-size: 7.8pt;">• <strong>الأصناف:</strong> زيت خليط (قلي)، زيت عباد شمس، زيت ذرة، وسمن نباتي معبأ.<br>
+        • <strong>الأحجام المعتمدة:</strong> عبوات تجارية (20 لتر) ومنازل (700 مل - 1 لتر).<br>
+        • <strong>أهم العلامات:</strong> سلايت، كريستال، حلوة، قلية، سندباد.</p>
+    </div>
+    <div class="card-box" style="border-right: 3px solid var(--gold);">
+        <h4>المؤشرات المالية للتدوير</h4>
+        <p style="font-size: 7.8pt;">• <strong>سرعة الدوران:</strong> 1-3 أيام في المخزن (فائقة السرعة).<br>
+        • <strong>هامش الربح المتوقع:</strong> 2.0% - 3.5% (هامش منخفض يعوضه كثافة البيع).<br>
+        • <strong>مخاطر التخزين:</strong> منخفضة للغاية (تخزين بدرجة حرارة الغرفة).</p>
+    </div>
+</div>
+
+<h2>2. فئة السكر والأرز المعبأ والفلت</h2>
+<p>الركيزة الأساسية لكل بيت ومطبخ مصري، وهي سلع تُسهم بقوة في جذب التجار للتسجيل بالمنصة لتسهيل حصولهم على باقة المشتريات الكاملة:</p>
+
+<div class="product-spec-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">السكر الأبيض (المعبأ والفلت)</div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>التعبئة:</span><strong>أكياس 1 كجم / شيكارة 50 كجم</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>معدل تدوير المخزون:</span><strong>أقل من 3 أيام</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>العلامات المقترحة:</span><strong>الأسرة، ريحانة، الدلتا</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>متوسط هامش الربح:</span><strong>1.5% - 2.5% (مغناطيس العملاء)</strong></div>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">الأرز البلدي المصري</div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>التعبئة:</span><strong>أكياس 1 كجم كسر 5% - 10% / شيكارة 25 كجم</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>معدل تدوير المخزون:</span><strong>3 - 5 أيام</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>العلامات المقترحة:</span><strong>الضحى، ريحانة، أرز المزارعين</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>متوسط هامش الربح:</span><strong>3.0% - 5.0% (هامش متزن وممتاز)</strong></div>
+    </div>
+</div>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>استراتيجية البيع المترابط (Loss Leader Strategy):</h5>
+    <p>يتم تسعير السكر والزيت بهامش ربح منخفض يقارب التكلفة لجذب البقال، مما يشجعه على إضافة منتجات مكملة ومربحة للغاية مثل السمن المعبأ والمكرونات والأرز والتوابل إلى طلبيته، مما يرفع إجمالي الهامش المحقق للطلب ككل.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 10 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 11 ================= -->
     <div class="page-container" id="page-11">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">الهيكل الإداري والرقابة اللامركزية V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>9. الهيكل التنظيمي، الأدوار، الحوكمة والرقابة اللامركزية</h1>
-            <p>يمثل تنوع وتكامل خبرات الشركاء المؤسسين لمشروع "تاجر سمارت" صمام الأمان والنجاح للمشروع. ولضمان تسيير الأعمال بكفاءة تامة وتجنب أي تعارض في الاختصاصات أو تعثر تشغيلي، تم صياغة وتحديد المهام والمسؤوليات التفصيلية لكل شريك بالهيكل التالي:</p>
 
-            <div class="org-chart">
-                <div class="org-level">
-                    <div class="org-box">
-                        <div class="org-title">مجلس الإدارة والشركاء</div>
-                        <div class="org-desc">صياغة الاستراتيجيات العامة وتخطيط النمو والتوسع</div>
-                    </div>
-                </div>
-                <div class="org-level">
-                    <div class="org-box accent">
-                        <div class="org-title">أحمد مبروك (دكتوراة)</div>
-                        <div class="org-desc">الريادة التقنية، تطوير أنظمة الـ POS، والتشغيل السحابي والإدارة التقنية من الإمارات (الشارقة).</div>
-                    </div>
-                    <div class="org-box gold">
-                        <div class="org-title">محمد مبروك</div>
-                        <div class="org-desc">المدير المالي والرقابة الحسابية والحوكمة البنكية</div>
-                    </div>
-                </div>
-                <div class="org-level">
-                    <div class="org-box">
-                        <div class="org-title">محمد وليد الباز</div>
-                        <div class="org-desc">إدارة العلاقات الاستراتيجية والتعاقدات الكبرى والتوريد</div>
-                    </div>
-                    <div class="org-box">
-                        <div class="org-title">محمد وليد حمودة</div>
-                        <div class="org-desc">لوجستيات النقل وتنسيق المشتريات وتوطيد علاقات الموردين</div>
-                    </div>
-                </div>
-            </div>
+<h1>9. دراسة فئات المنتجات ذات الأولوية - المجموعة الثانية</h1>
+<p>نستعرض فئات السلع الاستهلاكية سريعة الدوران الإضافية التي تشكل عماد سلة مشتريات محلات البقالة وتجارة التجزئة، وتتكامل في هوامشها الربحية المرتفعة مع السلع الجاذبة السابقة:</p>
 
-            <h2>استراتيجية الإدارة والرقابة عن بُعد (Remote Management Protocol)</h2>
-            <p>نظراً لتواجد الإدارة التقنية في الشارقة بدولة الإمارات العربية المتحدة ولطبيعة الأعمال، تم وضع بروتوكول رقابة صارم يتضمن:</p>
-            <p>• <strong>الضبط العسكري اللوجستي:</strong> تطبيق انضباط عملياتي صارم مستمد من الخبرة العسكرية للشركاء (كخبرة العمل كضابط لمدة ثلاث سنوات) في إدارة الأزمات اللوجستية وإدارة فرق التوزيع بصرامة ودقة متناهية.<br>
-            • <strong>المركزية التقنية واللامركزية التشغيلية:</strong> ربط المستودعات ميدانياً بنظام الـ ERP والـ POS وتغطية المستودعات بكاميرات مراقبة IP للتمكين من المتابعة والاطمئنان التام على حركة العمل اليومي والأرصدة النقدية والمخزنية بكفاءة تامة من أي مكان في العالم.</p>
+<h2>3. فئة المكرونة والدقيق المعبأ</h2>
+<p>تحتل المكرونة مكانة مرموقة في وجبات الغذاء والطهي اليومية بمصر لسهولة تحضيرها وسعرها المناسب، وتقدم هوامش ربح أفضل بكثير من الأرز والسكر:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+    <thead>
+        <tr>
+            <th>المنتج / الصنف</th>
+            <th>معدل دوران المخزون</th>
+            <th>أهم العلامات التجارية</th>
+            <th>الهامش الربحي المتوقع</th>
+            <th>متطلبات التخزين وسلامة العبوات</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>المكرونة المعبأة (350جم-400جم)</strong></td>
+            <td>سريع جداً (3-6 أيام)</td>
+            <td>الملكة، حواء، إيطاليانو، ستار، بساطة</td>
+            <td>4.0% - 6.5%</td>
+            <td>التراص الأفقي في كرتونة مغلقة لمنع تكسر الأكياس.</td>
+        </tr>
+        <tr>
+            <td><strong>الدقيق الأبيض الفاخر (1كجم)</strong></td>
+            <td>متوسط (4-8 أيام)</td>
+            <td>الضحى، ريحانة، فايف ستارز، الأصيل</td>
+            <td>3.5% - 5.5%</td>
+            <td>منطقة تخزين جافة خالية تماماً من الرطوبة والمياه.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>4. فئة المياه المعبأة والمشروبات الغازية والشاي</h2>
+<p>تعتبر هذه الفئة موسمية وحيوية بامتياز، حيث يتصاعد استهلاك المياه المعبأة والمشروبات والغازيات بقوة في فترات الصيف والحر، بينما يتزايد الطلب على الشاي على مدار الساعة:</p>
+
+<div class="product-spec-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">مياه معبأة ومشروبات غازية</div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الأصناف:</span><strong>زجاجات مياه، عبوات كانز ومشروبات</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>العلامات:</span><strong>نستله، داساني، بيبسي، كوكاكولا، سبيرو سباتس</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الهامش:</span><strong>5.0% - 8.5% (ممتاز ومرتفع)</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الدوران:</span><strong>سريع جداً صيفاً (1-2 يوم)</strong></div>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">الشاي والقهوة والمشروبات الساخنة</div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الأصناف:</span><strong>شاي خرز وناعم، بن محوج وسادة، نسكافيه</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>العلامات:</span><strong>العروسة، ليبتون، الكابوس، شاهين</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الهامش:</span><strong>4.0% - 6.0% (مستقر وعالي الطلب)</strong></div>
+        <div class="product-spec-item" style="display: flex; justify-content: space-between; font-size: 7.5pt; margin-bottom: 2px;"><span>الدوران:</span><strong>يومي على مدار فصول العام</strong></div>
+    </div>
+</div>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>استغلال المواسم الترويجية:</h5>
+    <p>يتيح التنبؤ المبكر بدخول فترات الصيف وشهر رمضان شراء كميات كبرى مسبقاً من فئة المشروبات والغازيات والحصول على بونص إضافي وخصومات نقدية من الشركات المصنعة، مما يرفع هوامشنا المحققة لأكثر من 10%.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 11 من 15</div>
+            <div class="page-num">صفحة 11 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 12: MARKET ANALYSIS ================= -->
+    <!-- ================= PAGE 12 ================= -->
     <div class="page-container" id="page-12">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">تحليل سوق تجارة الجملة والسلع الغذائية V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>10. تحليل سوق تجارة الجملة والسلع الغذائية في جمهورية مصر العربية</h1>
-            <p>يتميز السوق المصري بكونه أكبر سوق استهلاكي في منطقة الشرق الأوسط وشمال أفريقيا بقوة شرائية تتجاوز 105 مليون نسمة. يمثل قطاع الأغذية والمشروبات والسلع الأساسية (FMCG) الركيزة الأساسية لهذا الاستهلاك، حيث يستحوذ على أكثر من 30% من إجمالي إنفاق الأسرة المصرية المتوسطة.</p>
 
-            <h2>الدوافع الاستراتيجية لنجاح المشروع في السوق الحالي</h2>
-            
-            <div class="grid-2">
-                <div class="card-box">
-                    <h4 style="color: var(--primary);">حجم الطلب غير المرن</h4>
-                    <p>الطلب على السلع الاستراتيجية كالسكر، الزيت، والأرز هو طلب يومي غير مرن لا يتأثر بشكل كبير بالتقلبات الاقتصادية. التاجر المحلي يحتاج إلى تعويض مخزونه بشكل دوري (2-3 مرات أسبوعياً) لضمان استمرار أعماله.</p>
-                </div>
-                <div class="card-box">
-                    <h4 style="color: var(--primary);">الفجوة اللوجستية في الأقاليم</h4>
-                    <p>تعاني محافظات الدلتا والقرى من ضعف التغطية المباشرة من الشركات الكبرى المصنعة، مما يجبر صغار التجار على التعامل مع شبكة معقدة من الوسطاء (تجار الجملة ونصف الجملة) وهو ما يرفع السعر النهائي ويخلق فرصة ذهبية لتاجر سمارت لكسر هذه السلسلة.</p>
-                </div>
-            </div>
+<h1>10. دراسة فئات المنتجات ذات الأولوية - المجموعة الثالثة</h1>
+<p>نستعرض الفئات الاستهلاكية المكملة والداعمة لربحية المشروع، والتي تضمن تغطية كاملة لاحتياجات محلات التجزئة وتمنع تسرب العملاء لمنصات منافسة تقليدية:</p>
 
-            <h2>التحليل التنافسي (SWOT Analysis)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th width="50%" style="background-color: var(--success); color: white;">نقاط القوة (Strengths)</th>
-                        <th width="50%" style="background-color: var(--danger); color: white;">نقاط الضعف (Weaknesses)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            • بنية تقنية حديثة وتطبيق هاتف مخصص.<br>
-                            • هيكل إداري قوي وانضباط عملياتي عالي.<br>
-                            • دورة نقدية سريعة ومصاريف تشغيلية منخفضة.
-                        </td>
-                        <td>
-                            • حداثة العلامة التجارية في السوق المحلي.<br>
-                            • الاعتماد الأولي على نطاق جغرافي محدد قبل التوسع.<br>
-                            • الحاجة لسيولة عالية للحصول على خصومات المصانع.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="background-color: var(--accent); color: white;">الفرص المتاحة (Opportunities)</th>
-                        <th style="background-color: var(--gold); color: white;">التهديدات والمخاطر (Threats)</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            • تزايد اعتماد التجار على الهواتف الذكية للطلب.<br>
-                            • إمكانية التوسع في تقديم علامة تجارية خاصة (White Label).<br>
-                            • ضعف المنافسة التقنية لدى تجار الجملة التقليديين.
-                        </td>
-                        <td>
-                            • تقلبات أسعار الصرف التي قد تؤثر على تكلفة السلع المستوردة.<br>
-                            • دخول منافسين كبار في قطاع الـ B2B الرقمي.<br>
-                            • تغير السياسات التموينية والتسعيرية الحكومية فجأة.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<h2>5. فئة منتجات الألبان والأجبان المصنعة</h2>
+<p>تشكل الألبان المعبأة طويلة الأجل والأجبان المعبأة (العلب الكرتون) عصب وجبة الفطور والعشاء اليومية وتتميز بثبات أسعارها ودوام صلاحيتها لفترات طويلة دون الحاجة لتبريد معقد:</p>
+
+<div class="grid-2">
+    <div class="card-box" style="border-right: 3px solid var(--success);">
+        <h4>الألبان والأجبان المعبأة</h4>
+        <p style="font-size: 7.8pt;">• <strong>المنتجات:</strong> لبن كامل الدسم (1 لتر)، جبنة فيتا واسطنبولي (250جم و500جم).<br>
+        • <strong>أهم العلامات:</strong> جهينة، المراعي، بخيره، عبور لاند، دومتي.<br>
+        • <strong>هوامش الأرباح:</strong> 4.5% - 6.0% (ثابتة وممتازة).<br>
+        • <strong>معدل التدوير:</strong> سريع (3-5 أيام).</p>
+    </div>
+    <div class="card-box" style="border-right: 3px solid var(--gold);">
+        <h4>المعلبات واللحوم المصنعة والتونة</h4>
+        <p style="font-size: 7.8pt;">• <strong>المنتجات:</strong> تونة مفتتة وسهلة الفتح، صلصة طماطم معبأة، فول مدمج معلب.<br>
+        • <strong>أهم العلامات:</strong> دولفين، صن شاين، هاينز، هارفست، حدائق كاليفورنيا.<br>
+        • <strong>هوامش الأرباح:</strong> 5.0% - 8.0% (مرتفعة وعالية القيمة).<br>
+        • <strong>معدل التدوير:</strong> متوسط (5-10 أيام).</p>
+    </div>
+</div>
+
+<h2>6. فئة المنظفات المنزلية ومواد العناية الشخصية والتصبينات</h2>
+<p>تتمتع هذه الفئة بهوامش ربحية هي الأعلى على الإطلاق وتتميز بعمر افتراضي وصلاحية طويلة جداً لا تسبب أي قلق لوجستي أو تلفيات مخزنية:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+    <thead>
+        <tr>
+            <th>الصنف / الفئة</th>
+            <th>أهم العلامات التجارية</th>
+            <th>معدل الدوران</th>
+            <th>متوسط الهامش الربحي</th>
+            <th>الميزة التشغيلية</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>منظفات ومساحيق الغسيل</strong></td>
+            <td>أريال، برسيل، أوكسي، باهي، فيري، بريل</td>
+            <td>متوسط (4-7 أيام)</td>
+            <td>6.0% - 9.0%</td>
+            <td>كراتين قوية وسهلة التخزين المرتفع.</td>
+        </tr>
+        <tr>
+            <td><strong>صابون الوجه ومواد العناية</strong></td>
+            <td>لوكس، دوف، ديتول، كامي، جونسون</td>
+            <td>ثابت (5-9 أيام)</td>
+            <td>7.0% - 10.5%</td>
+            <td>أحجام صغيرة ذات قيمة مالية مركزة وممتازة.</td>
+        </tr>
+        <tr>
+            <td><strong>تصبينات وأوراق صحية</strong></td>
+            <td>فاين، زينة، بابيا، وايت، فاميلي</td>
+            <td>سريع (3-6 أيام)</td>
+            <td>5.5% - 8.0%</td>
+            <td>خفيفة الوزن لكن تحتاج لمساحة تخزينية جافة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info-callout" style="margin-top: 8px;">
+    <h5>توجيه تنظيمي للمخزن:</h5>
+    <p>يجب فصل مساحيق ومواد المنظفات تماماً عن فئات المواد الغذائية كالأرز والسكر والدقيق في المستودع بفاصل حائط أو حواجز مانعة للتسرب والروائح لضمان أقصى درجات الصحة والسلامة وتجنب تلف المنتجات الغذائية.</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 12 من 15</div>
+            <div class="page-num">صفحة 12 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 13: PRODUCT CATEGORIES (1-5) ================= -->
+    <!-- ================= PAGE 13 ================= -->
     <div class="page-container" id="page-13">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">دراسة فئات المنتجات ذات الأولوية V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>11. دراسة تفصيلية لفئات المنتجات ذات الأولوية (1 - 5)</h1>
-            <p>لتحقيق أعلى معدلات دوران لرأس المال (Fast Turnover Rate)، تركز استراتيجية الإطلاق الأولية لتاجر سمارت على السلع الأساسية الخمس الأكثر استهلاكاً وطلباً من قبل البقالات والمطاعم، والتي تمثل حجر الأساس لأي منشأة تجارية غذائية.</p>
 
-            <h2>الفئة الأولى: زيوت الطعام والسمن النباتي</h2>
-            <div class="product-spec-grid">
-                <div class="product-spec-card" style="grid-column: span 3;">
-                    <div class="product-spec-header">زيوت القلي والطبخ (أحجام تجارية ومنزلية)</div>
-                    <p style="font-size: 8.5pt; color: var(--text-muted); margin-bottom: 5px;">تمثل هذه الفئة عصب المبيعات وتتميز بطلب يومي كثيف جداً من المطاعم (أحجام 20 لتر) والمنازل (أحجام 700 مل - 1 لتر).</p>
-                    <div class="grid-3" style="margin:0;">
-                        <div class="product-spec-item"><span>معدل الدوران:</span><span>يومي (سريع جداً)</span></div>
-                        <div class="product-spec-item"><span>هامش الربح المتوقع:</span><span>2% - 4%</span></div>
-                        <div class="product-spec-item"><span>شروط التخزين:</span><span>حرارة الغرفة العادية</span></div>
-                    </div>
-                </div>
-            </div>
+<h1>11. استراتيجية المشتريات والتعاقد وإدارة علاقات الموردين</h1>
+<p>تعتبر إدارة المشتريات بحق هي "محرك الربحية الحقيقي" في تجارة الجملة؛ فالربح المتميز يصنع أثناء عملية الشراء الصحيحة وليس فقط عند عملية البيع والتحصيل.</p>
 
-            <h2>الفئة الثانية: السكر والأرز المعبأ</h2>
-            <div class="product-spec-grid">
-                <div class="product-spec-card" style="grid-column: span 3;">
-                    <div class="product-spec-header">السكر الأبيض والأرز المحلي والمستورد</div>
-                    <p style="font-size: 8.5pt; color: var(--text-muted); margin-bottom: 5px;">يستخدم السكر كطُعم (Loss Leader أو هامش صفري) لجذب العملاء لشراء باقي المنتجات. الأرز سلعة استراتيجية بوزن 1كجم للبيع بالتجزئة و25كجم للجملة.</p>
-                    <div class="grid-3" style="margin:0;">
-                        <div class="product-spec-item"><span>معدل الدوران:</span><span>يومي (عالي الكثافة)</span></div>
-                        <div class="product-spec-item"><span>هامش الربح المتوقع:</span><span>1% - 3%</span></div>
-                        <div class="product-spec-item"><span>مخاطر التخزين:</span><span>الرطوبة والقوارض</span></div>
-                    </div>
-                </div>
-            </div>
+<h2>هيكل وسياسة الشراء وتأمين البضائع</h2>
+<p>تتبنى "تاجر سمارت" سياسة شراء صارمة ومرنة تعتمد على الكاش والسرعة للحصول على أفضل الميزات التنافسية:</p>
 
-            <h2>الفئات الثالثة والرابعة والخامسة: المكرونة، الشاي، والمعلبات</h2>
-            <table style="margin-top: 10px;">
-                <thead>
-                    <tr>
-                        <th>المنتج / الفئة</th>
-                        <th>طبيعة الطلب ومواسم الذروة</th>
-                        <th>أهم العلامات التجارية المقترحة</th>
-                        <th>الهامش الربحي</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>المكرونة المعبأة</strong></td>
-                        <td>طلب مستقر طوال العام، يزداد في المواسم الدراسية والشتاء.</td>
-                        <td>حواء، الملكة، إيطاليانو، ستار</td>
-                        <td>4% - 6%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>الشاي والمشروبات</strong></td>
-                        <td>سلعة استراتيجية لا يمكن الاستغناء عنها بالمقاهي والمنازل.</td>
-                        <td>ليبتون، العروسة، الكابوس</td>
-                        <td>3% - 5%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>الصلصة والمعلبات</strong></td>
-                        <td>تعد مكملاً غذائياً رئيسياً، سهلة التخزين وتاريخ صلاحية طويل.</td>
-                        <td>هاينز، فاين فودز، هارفست</td>
-                        <td>5% - 8%</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="step-timeline" style="margin: 15px 0;">
+    <div class="timeline-node completed">
+        <div class="node-circle">1</div>
+        <div class="node-text">رصد نواقص السوق وتغير الأسعار</div>
+    </div>
+    <div class="timeline-node completed">
+        <div class="node-circle">2</div>
+        <div class="node-text">التواصل المباشر مع المصانع</div>
+    </div>
+    <div class="timeline-node completed">
+        <div class="node-circle">3</div>
+        <div class="node-text">إبرام صفقات الدفع الكاش الفوري</div>
+    </div>
+    <div class="timeline-node completed">
+        <div class="node-circle">4</div>
+        <div class="node-text">فحص الجودة وتواريخ الصلاحية</div>
+    </div>
+    <div class="timeline-node">
+        <div class="node-circle">5</div>
+        <div class="node-text">شحن سريع للمستودع والترميز</div>
+    </div>
+</div>
 
-            <div class="info-callout">
-                <h5>الاستراتيجية التشغيلية للمنتجات:</h5>
-                <p>بالرغم من انخفاض هوامش الربح للزيوت والسكر، إلا أن سرعة تدوير رأس المال (شراء وبيع البضاعة خلال 3 إلى 5 أيام) تضمن تحقيق عائد تراكمي ممتاز بنهاية الشهر، وهو ما يعوض الانخفاض النسبي في هوامش ربح القطعة الواحدة.</p>
-            </div>
+<h2>الركائز الاستراتيجية لإدارة الموردين والمشتروات</h2>
+<p>1. <strong>سحق شبكة الوسطاء:</strong> يلتزم مدير العلاقات الاستراتيجية بالوصول المباشر للمصانع والمنتجين الكبار ومطاحن الدقيق وتجنب سماسرة الجملة تماماً، مما يوفر من 3% إلى 7% من تكلفة السلع الإجمالية.<br>
+2. <strong>قوة الكاش الفوري (Cash is King):</strong> الاستفادة الكبرى من سيولة رأس المال العامل في الدفع الفوري الفوري للموردين، مما يتيح للشركة الحصول على "خصومات تعجيل الدفع" وبونص عيني مجاني يرفع أرباحنا.<br>
+3. <strong>تنويع مصادر التوريد:</strong> تأمين مصدرين بديلين على الأقل لكل سلعة أساسية (مثل تأمين توريد السكر من مصنعين مختلفين) لضمان عدم انقطاع المخزون في حالات الأزمات أو الاحتكار السعري.</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>فئة الموردين</th>
+            <th>الأصناف والسلع المستهدفة</th>
+            <th>طبيعة التعاقد المقترحة</th>
+            <th>شروط التوريد والدفع</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>شركات ومصانع الأغذية الكبرى</strong></td>
+            <td>زيوت، سكر، دقيق، أجبان، منظفات ومساحيق</td>
+            <td>عقود توزيع معتمدة سنوية / طلبيات كاش مستمرة</td>
+            <td>دفع كاش فوري مقابل خصم نقدي مباشر لا يقل عن 5%</td>
+        </tr>
+        <tr>
+            <td><strong>المطاحن ومضارب الأرز الكبرى</strong></td>
+            <td>أرز بلدي، مكرونة، دقيق معبأ وفلت</td>
+            <td>طلبيات موسمية ضخمة / توريد أسبوعي مرن</td>
+            <td>دفع 70% مقدماً و30% عند فحص واستلام الشحنات بالمستودع</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>حوكمة ومراقبة المشتريات:</h5>
+    <p>يتم تسجيل كافة فواتير المشتريات ومطابقتها واعتمادها رقمياً بواسطة المدير المالي قبل تحويل أي مبالغ نقدية للموردين، لضمان تطابق الأرقام مع الأرصدة المستلمة فعلياً في مخزن "تاجر سمارت".</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 13 من 15</div>
+            <div class="page-num">صفحة 13 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 14: CAPITAL COSTS ================= -->
+    <!-- ================= PAGE 14 ================= -->
     <div class="page-container" id="page-14">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">التكاليف الرأسمالية والتشغيلية V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>12. التكاليف الرأسمالية والتشغيلية المبدئية وميزانية التأسيس</h1>
-            <p>تم إعداد هذه الميزانية التقديرية بناءً على الأسعار السائدة في الربع الثاني من العام لضمان تأسيس بنية تحتية قوية ومستودع مركزي مؤهل بالكامل قبل الانطلاق الرسمي لمنصة تاجر سمارت في المناطق المستهدفة.</p>
 
-            <h2>أولاً: المصروفات التأسيسية والرأسمالية (تدفع مرة واحدة)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th width="50%">بند التأسيس والتجهيزات</th>
-                        <th width="25%">التكلفة التقديرية (ج.م)</th>
-                        <th width="25%">ملاحظات استشارية</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>تطوير المنصة البرمجية وتطبيقات الهواتف (iOS & Android)</td>
-                        <td>35,000</td>
-                        <td>يتم التنفيذ داخلياً عبر الإدارة التقنية لتوفير التكاليف.</td>
-                    </tr>
-                    <tr>
-                        <td>تجهيزات المستودع (أرفف تخزين، منصات تحميل نقالة، إضاءة)</td>
-                        <td>25,000</td>
-                        <td>أرفف حديدية ثقيلة تتحمل الأوزان.</td>
-                    </tr>
-                    <tr>
-                        <td>أجهزة تقنية (قارئات باركود، أجهزة POS للمندوبين، حواسيب، كاميرات IP)</td>
-                        <td>15,000</td>
-                        <td>مرتبطة مباشرة بالسحابة.</td>
-                    </tr>
-                    <tr>
-                        <td>تراخيص قانونية، سجل تجاري، وبطاقة ضريبية</td>
-                        <td>5,000</td>
-                        <td>رسوم حكومية واشتراكات الغرفة التجارية.</td>
-                    </tr>
-                    <tr class="table-total">
-                        <td>إجمالي المصروفات التأسيسية والرأسمالية الثابتة</td>
-                        <td>80,000 ج.م</td>
-                        <td>يُستهلك على 3 سنوات محاسبياً.</td>
-                    </tr>
-                </tbody>
-            </table>
+<h1>12. استراتيجية التسعير المبتكرة ونموذج "فوارق الجنيهات"</h1>
+<p>ترتكز فلسفة التسعير لدى "تاجر سمارت" على مفهوم "الحجم الكبير والربح التراكمي" بدلاً من الربح المرتفع للقطعة الواحدة، مما يسهم في اكتساح الحصة السوقية بالمنطقة بسرعة هائلة وتوطيد الولاء المطلق.</p>
 
-            <h2>ثانياً: رأس المال العامل (لشراء البضائع وتغطية دورة التشغيل)</h2>
-            <p>نظراً لطبيعة تجارة الجملة، يتم تخصيص الجزء الأكبر من رأس المال لضخ سيولة نقدية في شراء البضائع بخصومات الدفع الفوري (الكاش) لتحقيق ميزة السعر التنافسي.</p>
+<h2>نموذج "فوارق الجنيهات والقروش" التنافسي (Difference of Pounds)</h2>
+<p>في تجارة السلع والمنتجات الأساسية، يمثل فارق نصف جنيه أو جنيه كامل في كرتونة السكر أو الزيت الدافع الرئيسي للبقال لتغيير المورد فورا. نوضح كفاءة وجدوى هذا النموذج بالمثال الرقمي المعتمد التالي لسلعة الزيت والسكر:</p>
 
-            <div class="kpi-grid">
-                <div class="kpi-card gold">
-                    <div class="kpi-title">ميزانية شراء المخزون الافتتاحي</div>
-                    <div class="kpi-value">100,000</div>
-                    <div class="kpi-unit">جنيه مصري</div>
-                </div>
-                <div class="kpi-card success">
-                    <div class="kpi-title">احتياطي سيولة تشغيلية (شهرين)</div>
-                    <div class="kpi-value">20,000</div>
-                    <div class="kpi-unit">جنيه مصري</div>
-                </div>
-            </div>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>البيان والتحليل المالي</th>
+            <th>سعر السوق (جملة تقليدي)</th>
+            <th>سعر "تاجر سمارت" الرقمي</th>
+            <th>فارق السعر للبقال</th>
+            <th>هامش ربح تاجر سمارت المحقق</th>
+            <th>سرعة تدوير السلعة أسبوعياً</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>كرتونة زيت خليط (12 عبوة 700مل)</strong></td>
+            <td>620 جنيه مصري</td>
+            <td><strong>614 جنيه مصري</strong></td>
+            <td>توفير 6 جنيه للكرتونة</td>
+            <td>1.5% - 2.0% (نقدي مباشر)</td>
+            <td>3 مرات دوران (شراء وبيع كاش)</td>
+        </tr>
+        <tr>
+            <td><strong>شيكارة سكر أبيض مميز (50 كجم)</strong></td>
+            <td>1,450 جنيه مصري</td>
+            <td><strong>1,438 جنيه مصري</strong></td>
+            <td>توفير 12 جنيه للشيكارة</td>
+            <td>1.2% - 1.8% (نقدي مباشر)</td>
+            <td>3.5 مرة دوران (سريع للغاية)</td>
+        </tr>
+        <tr>
+            <td><strong>كرتونة مكرونة معبأة (20 كيس 400جم)</strong></td>
+            <td>180 جنيه مصري</td>
+            <td><strong>174 جنيه مصري</strong></td>
+            <td>توفير 6 جنيه للكرتونة</td>
+            <td>3.5% - 4.5% (ممتاز ومرن)</td>
+            <td>2.5 مرة دوران بالمتوسط أسبوعياً</td>
+        </tr>
+    </tbody>
+</table>
 
-            <div class="gold-callout">
-                <h5>ملخص هيكل التمويل والشراكة:</h5>
-                <p>إجمالي رأس المال الاستثماري المطلوب للانطلاق هو <strong>200,000 جنيه مصري</strong>. يتم توفيره عبر حصص استثمارية متساوية للشركاء الأربعة، بواقع <strong>50,000 جنيه مصري لكل شريك</strong>. يضمن هذا الهيكل توزيعاً عادلاً للمخاطر وتوفير سيولة نقدية كافية (Cash-Flow) لتسيير أعمال الشهور الأولى بثبات دون الحاجة لقروض بنكية مرهقة.</p>
-            </div>
+<h2>آلية التسعير الحركي السريع (Dynamic Pricing Engine)</h2>
+<p>يتميز سوق الأغذية والسلع الأساسية بمصر بالتغير المستمر في الأسعار نتيجة لتقلبات العرض والطلب وأسعار الصرف والمواد الأولية. نعتمد لحل هذه المشكلة على نظام تسعير حركي رقمي:</p>
+<p>• <strong>المراقبة اللحظية للمنافسين:</strong> يتولى المندوب الميداني تسجيل أسعار بيع كبار تجار الجملة بالمنطقة على تطبيقه يومياً فورا.<br>
+• <strong>تحديث الأسعار التلقائي بالمنصة:</strong> يقوم محرك النظام بتعديل أسعار بيع البضائع بالتطبيق فورا وبنقرة زر واحدة بناءً على تكلفة الشراء الفورية وهامش الربح الأدنى المقبول، مما يضمن بقاءنا دوماً الخيار الأرخص والأكثر جذباً للبقال.</p>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>سر وجاذبية استراتيجية فوارق الجنيهات:</h5>
+    <p>عندما يلاحظ البقال أنه يوفر من 150 إلى 250 جنيهاً في طلبيته المتوسطة الشاملة لجميع السلع مقارنة بسيارة الجملة التقليدية، بالإضافة لحصوله على ميزة التوصيل المجاني والسريع لباب محله، يصبح زبوناً دائماً وملتزماً لـ "تاجر سمارت".</p>
+</div>
+
         </div>
         <div class="doc-footer">
             <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 14 من 15</div>
+            <div class="page-num">صفحة 14 من 30</div>
         </div>
     </div>
 
-    <!-- ================= PAGE 15: REVENUES & ROI ================= -->
+    <!-- ================= PAGE 15 ================= -->
     <div class="page-container" id="page-15">
         <div class="doc-header">
             <div class="logo-area">
                 <span class="logo-text">تاجر <span>سمارت</span></span>
             </div>
-            <div class="meta-info">الإيرادات وتوقعات المبيعات V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
         <div class="page-content">
-            <h1>13. الإيرادات المتوقعة وتوقعات المبيعات والتدفقات النقدية</h1>
-            <p>تعتمد توقعات الإيرادات على استراتيجية البيع بكثافة وحجم كبير (High Volume) بهوامش ربح منخفضة تتراوح بين 2% إلى 7% في المتوسط العام لجميع الأصناف، مع تحقيق سرعة دوران للمخزون بمعدل مرتين إلى ثلاث مرات شهرياً.</p>
 
-            <h2>تحليل دورة رأس المال والمبيعات الشهرية المتوقعة (السنة الأولى)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>البيان المالي</th>
-                        <th>الربع الأول (تأسيسي)</th>
-                        <th>الربع الثاني (نمو)</th>
-                        <th>الربع الثالث (استقرار)</th>
-                        <th>الربع الرابع (توسع)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>معدل الدوران الشهري للبضاعة</td>
-                        <td>1.5 مرة</td>
-                        <td>2.5 مرة</td>
-                        <td>3 مرات</td>
-                        <td>3.5 مرات</td>
-                    </tr>
-                    <tr>
-                        <td>متوسط إجمالي المبيعات الشهرية</td>
-                        <td>150,000 ج.م</td>
-                        <td>250,000 ج.م</td>
-                        <td>300,000 ج.م</td>
-                        <td>350,000 ج.م</td>
-                    </tr>
-                    <tr>
-                        <td>متوسط إجمالي الربح الشهري (بافتراض هامش 4.5%)</td>
-                        <td>6,750 ج.م</td>
-                        <td>11,250 ج.م</td>
-                        <td>13,500 ج.م</td>
-                        <td>15,750 ج.م</td>
-                    </tr>
-                    <tr>
-                        <td>المصاريف التشغيلية الشهرية (إيجار، عمالة، نقل)</td>
-                        <td>(4,500) ج.م</td>
-                        <td>(5,500) ج.م</td>
-                        <td>(6,000) ج.م</td>
-                        <td>(7,000) ج.م</td>
-                    </tr>
-                    <tr class="table-total">
-                        <td>صافي الربح الشهري المتوقع للشركة</td>
-                        <td>2,250 ج.م</td>
-                        <td>5,750 ج.م</td>
-                        <td>7,500 ج.م</td>
-                        <td>8,750 ج.م</td>
-                    </tr>
-                </tbody>
-            </table>
+<h1>13. العمليات اللوجستية وتصميم المستودعات الذكية</h1>
+<p>يمثل تصميم المستودع اللوجستي وتنسيقه الداخلي عاملاً حاسماً في خفض تكاليف مناولة البضائع وتسهيل وسرعة عمليات التجهيز والشحن، وتصفير نسب الهدر والتلف.</p>
 
-            <h2>العائد على الاستثمار (ROI) وفترة الاسترداد</h2>
-            <div class="grid-2">
-                <div class="card-box" style="border-top: 3px solid var(--success);">
-                    <h4>العائد السنوي المتوقع (السنة الأولى)</h4>
-                    <p>بناءً على التوقعات المتحفظة، يتوقع أن يحقق المشروع صافي أرباح سنوية تقدر بحوالي 72,000 جنيه مصري في سنته التشغيلية الأولى، مما يمثل عائداً على الاستثمار <strong>(ROI) بنسبة 36%</strong> من إجمالي رأس المال المدفوع.</p>
-                </div>
-                <div class="card-box" style="border-top: 3px solid var(--danger);">
-                    <h4>فترة الاسترداد (Payback Period)</h4>
-                    <p>بافتراض استقرار واستمرار نمو المبيعات بالمعدلات المذكورة، وتبني سياسة إعادة استثمار 50% من الأرباح في شراء بضائع إضافية، من المتوقع استرداد أصل رأس المال كاملاً خلال <strong>14 إلى 16 شهراً تشغيلياً</strong>.</p>
-                </div>
-            </div>
+<h2>مخطط التصميم الهيكلي الداخلي للمستودع الذكي لتاجر سمارت (Warehouse Layout)</h2>
+<p>تم تصميم المستودع بنظام تدفق طولي باتجاه واحد (Straight-Line Flow) يضمن عدم تقاطع مسارات استلام البضائع مع مسارات شحنها وتسليمها للبقالين، مستخدماً أفضل النماذج الهندسية للمساحات:</p>
 
-            <div class="info-callout">
-                <h5>الخلاصة والتوصية النهائية:</h5>
-                <p>مشروع <strong>"تاجر سمارت"</strong> يمثل فرصة استثمارية واعدة وآمنة المخاطر لاعتماده المباشر على السلع الأساسية. بفضل التكامل اللوجستي، الانضباط الإداري، والأنظمة التقنية المتقدمة التي يملكها الشركاء المؤسسون، يتمتع المشروع بقدرة فائقة على النمو السريع واكتساح الحصة السوقية في المناطق المستهدفة بنجاح.</p>
-            </div>
+<div style="text-align: center; margin: 12px 0;">
+    <svg class="svg-icon" style="width: 100%; height: 160px; background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 6px;" viewBox="0 0 600 160">
+        <!-- حدود المستودع الخارجي -->
+        <rect x="10" y="10" width="580" height="140" rx="6" fill="none" stroke="var(--primary)" stroke-width="3"/>
+        <text x="300" y="25" font-family="Cairo" font-size="10" font-weight="bold" fill="var(--primary)" text-anchor="middle">مخطط مستودع تاجر سمارت الذكي (سلسلة التدفق أحادي الاتجاه)</text>
+
+        <!-- رصيف الاستلام والتنزيل -->
+        <rect x="20" y="45" width="90" height="90" rx="4" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="65" y="85" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--accent)" text-anchor="middle">1. رصيف الاستلام</text>
+        <text x="65" y="105" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(تفريغ وفحص الجودة)</text>
+
+        <!-- سهم التدفق 1 -->
+        <path d="M 120 90 L 140 90" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+        <!-- منطقة التخزين الثقيل -->
+        <rect x="150" y="45" width="120" height="40" rx="4" fill="#fef3c7" stroke="var(--gold)" stroke-width="2"/>
+        <text x="210" y="68" font-family="Cairo" font-size="8" font-weight="bold" fill="var(--gold)" text-anchor="middle">2. سلع ثقيلة سريعة</text>
+        <text x="210" y="80" font-family="Cairo" font-size="7" fill="var(--text-muted)" text-anchor="middle">(سكر، أرز، زيوت)</text>
+
+        <!-- منطقة التخزين الخفيف والمنظفات -->
+        <rect x="150" y="95" width="120" height="40" rx="4" fill="#fee2e2" stroke="var(--danger)" stroke-width="2"/>
+        <text x="210" y="118" font-family="Cairo" font-size="8" font-weight="bold" fill="var(--danger)" text-anchor="middle">3. تخزين مكمل وخفيف</text>
+        <text x="210" y="130" font-family="Cairo" font-size="7" fill="var(--text-muted)" text-anchor="middle">(مكرونات، معلبات، شاي)</text>
+
+        <!-- سهم التدفق 2 -->
+        <path d="M 280 90 L 300 90" fill="none" stroke="var(--accent)" stroke-width="2"/>
+
+        <!-- منطقة التجهيز والفرز والتعبئة -->
+        <rect x="310" y="45" width="120" height="90" rx="4" fill="#d1fae5" stroke="var(--success)" stroke-width="2"/>
+        <text x="370" y="85" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--success)" text-anchor="middle">4. الفرز والتجهيز</text>
+        <text x="370" y="105" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(تجميع وتغليف الطلبات)</text>
+
+        <!-- سهم التدفق 3 -->
+        <path d="M 440 90 L 460 90" fill="none" stroke="var(--accent)" stroke-width="2"/>
+
+        <!-- رصيف التنزيل والتحميل والسيارات -->
+        <rect x="470" y="45" width="100" height="90" rx="4" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="520" y="85" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--accent)" text-anchor="middle">5. رصيف الشحن</text>
+        <text x="520" y="105" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(تحميل سيارات التوزيع)</text>
+
+        <!-- تعريف رأس السهم -->
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+            </marker>
+        </defs>
+    </svg>
+</div>
+
+<h2>العمليات التشغيلية اليومية بالمستودع</h2>
+<p>1. <strong>الاستلام والفحص:</strong> تقف سيارات الموردين أمام بوابات الاستلام، وتفرغ الشحنات على منصات خشبية (Pallets)، ويقوم عامل المخزن بفحص التواريخ والباركود ومطابقتها بفاتورة الشراء فورا.<br>
+2. <strong>التخزين الرصين والمنظم:</strong> تخزن البضائع بنظام رفوف حديدية مرتفعة ومتينة. السلع سريعة الدوران والوزن الثقيل تقع دوماً في الرفوف السفلية والأقرب لرصيف الفرز لتقليل زمن المناولة والرفع.<br>
+3. <strong>التعبئة وجدولة التحميل:</strong> يستقبل نظام الـ WMS الطلبيات ويوجه العمال لتجهيزها، وتوضع الطلبيات المكتملة في رصيف الشحن، لتوزع وتوضع بالسيارات بترتيب خطوط السير الجغرافية (آخر عميل بالرحلة يوضع بضاعته أولاً بالسيارة لتسهيل إنزالها).</p>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>تطبيق معايير السلامة المهنية:</h5>
+    <p>يتم تجهيز المستودع بطفايات حريق كيميائية معتمدة، وتأمين التهوية المستمرة والشفاطات الهوائية الكهربائية لضمان درجات حرارة مناسبة (أقل من 28 درجة مئوية)، وتطبيق بروتوكول صارم لمنع التدخين نهائياً داخل أو حول قطاعات التخزين.</p>
+</div>
+
         </div>
         <div class="doc-footer">
-            <div>تاجر سمارت للتجارة والتقنية - نهاية دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة 15 من 15</div>
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 15 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 16 ================= -->
+    <div class="page-container" id="page-16">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>14. إدارة المخزون، الباركود الذكي وتأمين رقابة الجودة</h1>
+<p>تمثل إدارة وحوكمة المخزون عصب الاستقرار المالي في تجارة التجزئة والجملة، حيث تضمن توفر السلع باستمرار مع حظر تكدس أو تلف أي منتجات، ومنع التلاعب البشري في التسجيل اليدوي التقليدي.</p>
+
+<h2>الترميز والمسح الرقمي الكامل بالباركود</h2>
+<p>1. <strong>مسح الباركود عند الدخول (Inbound Scanning):</strong> فور استلام أي شحنة من الموردين، يتم استخدام قارئات الباركود اللاسلكية لمسح وتسجيل كل صنف على النظام فورا، مع إدخال تاريخ الصلاحية وسعر التكلفة لكل وحدة محاسبية.<br>
+2. <strong>تتبع المواقع المخزنية (Storage Bin Tracking):</strong> يتم تقسيم أرفف المستودع هندسياً وتعيين باركود مستقل لكل رف أو موقع تخزيني، مما يتيح للنظام توجيه العمال لموقع البضاعة بدقة وسرعة متناهية.<br>
+3. <strong>مسح الباركود عند الخروج (Outbound Scanning):</strong> لا يمكن صرف أو خروج أي كرتونة بضاعة من المستودع إلا بعد مسح باركود الصنف ومطابقته بفاتورة العميل المعتمدة إلكترونياً، مما يمنع الأخطاء البشرية بنسبة 100%.</p>
+
+<h2>سياسة مراقبة الجودة وإدارة تواريخ الصلاحية</h2>
+<p>تتبنى "تاجر سمارت" أحدث المعايير اللوجستية العالمية لإدارة جودة وسلامة المنتجات المخزنة:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>السياسة والمنهج المتبع</th>
+            <th>الوصف وآلية التطبيق اللوجستية</th>
+            <th>الفوائد المالية والعملياتية المحققة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>منهج FEFO (ما ينتهي أولاً يخرج أولاً)</strong></td>
+            <td>يقوم نظام الـ WMS بترتيب البضائع وفقاً لتواريخ صلاحيتها، ويوجه العمال لصرف المنتجات ذات الصلاحية الأقرب أولاً تلقائياً.</td>
+            <td>تصفير نسب الهدر والتلف، والتخلص الفعال والذكي من البضائع قبل انتهاء صلاحيتها بفترات كافية.</td>
+        </tr>
+        <tr>
+            <td><strong>الجرد الدوري المفاجئ والدوري</strong></td>
+            <td>مطابقة رصيد المخزن الفعلي مع الرصيد الدفتري للنظام أسبوعياً وبشكل آلي مفاجئ لقطاعات مخزنية محددة.</td>
+            <td>الوقوف الفوري على أي عجز أو فروقات، وحظر وضبط السرقات والتلاعبات من البداية وبشكل فوري وحاسم.</td>
+        </tr>
+        <tr>
+            <td><strong>تصنيف المنتجات بطيئة الحركة</strong></td>
+            <td>إصدار تقرير أسبوعي تلقائي بالسلع التي لم تتحرك طوال 14 يوماً لإقرار ترويج سعرها والتخلص السريع منها كاش.</td>
+            <td>تحرير رأس المال العامل الراكد، وإتاحة المساحات التخزينية للسلع الأعلى طلباً ودوراناً.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="danger-callout" style="margin-top: 10px;">
+    <h5>حوكمة ومراقبة التلفيات:</h5>
+    <p>يتم تسجيل أي كرتونة تالفة أو معيبة بسبب النقل أو عيوب المصنع فوراً بنظام المستودع ورفع صور موثقة لها للوحة التحكم، ليتسنى للمدير المالي مطالبة الموردين بالتعويض واستبدال السلع أو خصم قيمتها من المطالبات المالية المعلقة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 16 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 17 ================= -->
+    <div class="page-container" id="page-17">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>15. إدارة أسطول النقل، خطوط السير والتوصيل اللوجستي</h1>
+<p>تمثل اللوجستيات الذكية صمام الأمان لتأمين رضا التجار وتوصيل السلع بمواعيدها وبأقل كلفة وقود وصيانة ممكنة، مما يدعم بشكل مباشر كفاءة وهوامش ربحية المشروع.</p>
+
+<h2>تأمين وتجهيز أسطول النقل اللوجستي الرشيق</h2>
+<p>يتجنب المشروع في مرحلته الأولى تحمل ديون أو تكاليف باهظة في شراء سيارات توزيع ضخمة، ويركز بدلاً من ذلك على أسلوب هجين يجمع الكفاءة والاقتصادية:</p>
+<p>• <strong>مركبات التوزيع الخفيفة (التروسيكلات والسيارات الربع نقل المجهزة):</strong> نعتمد على استئجار أو توظيف سائقين بمركباتهم مع وضع حوافز وحمولات مجدولة، مما يوفر مرونة فائقة وتخفيض كامل للأصول الثابتة الثقيلة.<br>
+• <strong>التوجيه والمتابعة الجغرافية بالـ GPS:</strong> يتم تزويد وتوجيه كل سيارة توصيل بخرائط ومتابعة جغرافية، وتحديد مسار الرحلة وسرعة السائق والتزامه الميداني لحظة بلحظة لضمان أمان الشحنات.</p>
+
+<h2>خوارزمية جدولة رحلات التوزيع اليومية</h2>
+<div class="product-spec-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">1. تجميع وتصنيف الطلبات</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">يقوم النظام في نهاية اليوم بتجميع كافة الطلبيات المستلمة وتصنيفها جغرافياً حسب المناطق والقرى المستهدفة تلقائياً.</p>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">2. تخطيط أقصر مسار سير</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">تحديد أنسب مسار لسيارة التوزيع لخدمة أكبر عدد من محلات البقالة بأقل كليومترات مقطوعة لتقليل استهلاك البنزين.</p>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">3. شحن وتهيئة الحمولة</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">تجهيز وترتيب الكراتين داخل السيارة حسب أولويات النزول والتسليم، مما يسرع عملية المناولة والتسليم النهائي.</p>
+    </div>
+</div>
+
+<h2>أرقام ومستهدفات اللوجستيات لفرع التشغيل الأول</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>المؤشر اللوجستي المستهدف</th>
+            <th>القيمة الرقمية المخططة</th>
+            <th>الآلية والضمانة البرمجية والميدانية للتحقيق</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>زمن التوصيل للعميل البقال</strong></td>
+            <td>أقل من 24 ساعة فقط</td>
+            <td>تجهيز البضائع ليلاً وانطلاق رحلات التوزيع في تمام السابعة صباحاً يومياً.</td>
+        </tr>
+        <tr>
+            <td><strong>معدل استهلاك الوقود لكل طلبية</strong></td>
+            <td>أقل من 8.0 جنيه مصري</td>
+            <td>تجميع طلبيات المنطقة الواحدة في سيارة توزيع واحدة وتحريم الرحلات الفردية المشتتة.</td>
+        </tr>
+        <tr>
+            <td><strong>نسبة كفاءة ودقة التوصيل</strong></td>
+            <td>أكثر من 99.2% دقة</td>
+            <td>مطابقة وتوثيق التسليم بمسح باركود الفاتورة وصرفها الجغرافي أمام باب المحل مباشرة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>الأمن والسلامة لأسطول النقل اللوجستي:</h5>
+    <p>يلتزم سائقو سيارات التوزيع بميثاق سلامة صارم يتضمن حظر التجاوز المروري، فحص ضغط الإطارات والمحرك أسبوعياً، واستخدام حبال وأغطية متينة واقية للمطر وأشعة الشمس الحارقة للحفاظ على جودة وتكامل البضائع والكراتين المعبأة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 17 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 18 ================= -->
+    <div class="page-container" id="page-18">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>16. إدارة وتوجيه مناديب المبيعات الميدانية وحوكمة التحصيل</h1>
+<p>يمثل مناديب المبيعات الميدانيين الواجهة المباشرة وبناة العلاقات الإنسانية والتجارية المتينة مع صغار تجار البقالة، وهم المحرك الرئيسي للتسجيل في المنصة والطلب اليومي المستمر.</p>
+
+<h2>آلية وهيكل عمل مناديب المبيعات</h2>
+<p>ينقسم عمل مناديب المبيعات الميدانيين لـ "تاجر سمارت" إلى محورين رئيسيين يتكاملان لتأمين أعلى مستويات المبيعات الممكنة وبأقل جهد وتتطلفة مهدورة:</p>
+<p>1. <strong>المندوب المروج (Promoter / Registration Agent):</strong> تتركز مسؤوليته الكاملة في مسح القرى جغرافياً وزيارة كافة محلات البقالة والسوبرماركت لشرح فكرة المنصة وتثبيت التطبيق على هواتفهم، وتسجيل حساباتهم وجمع بياناتهم الأساسية.<br>
+2. <strong>المندوب اللوجستي المحصل (Logistics & Cash Agent):</strong> يتحرك بسيارة التوصيل ومعه جهاز الـ POS اللوحي المحمول لتسليم البضائع المطلوبة سلفاً عبر التطبيق، وتحصيل المبالغ النقدية وتوثيق العملية وحفظ وتأمين كاش الخزينة.</p>
+
+<h2>حوكمة وضبط تحصيل الكاش المالي والعهدة</h2>
+<p>نظراً للتعامل الكثيف بالسيولة النقدية (الكاش) في قطاع تجارة السلع والمنتجات الأساسية بمصر، يطبق المدير المالي بروتوكولاً محاسبياً غاية في الحزم والصرامة لحماية الأموال وتسويتها:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>الخطوة والآلية المحاسبية</th>
+            <th>الجهة والمسؤول المباشر</th>
+            <th>الشرح وآلية التحصيل والتوثيق والضبط الصارم</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>مطابقة الفاتورة مع الـ POS</strong></td>
+            <td>المندوب والتاجر البقال</td>
+            <td>عند تسليم الطلب، يتم مسح باركود الفاتورة من جهاز الـ POS، مما يصدر رسالة تأكيد بقيمة المبلغ الكاش المطلوب دفعه بالتمام.</td>
+        </tr>
+        <tr>
+            <td><strong>التحصيل النقدي والتوثيق</strong></td>
+            <td>المندوب اللوجستي</td>
+            <td>يستلم المندوب الكاش ويدخله بالجهاز فورا، ويطبع إيصال تأكيد الدفع والتحصيل للتاجر ويرسل إشعاراً فورياً للوحة تحكم المدير المالي.</td>
+        </tr>
+        <tr>
+            <td><strong>تصفية العهدة اليومية والبنك</strong></td>
+            <td>المندوب والمدير المالي</td>
+            <td>فور عودة المندوب للمستودع مساءً، يتم مطابقة مبالغ الكاش المجموع بالتمام مع تقرير الـ POS وتوريدها فوراً لخزينة المستودع الحديدية المؤمنة أو إيداعها فورا في ماكينة الصراف الآلي (ATM) لحساب الشركة البنكي الموحد.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="danger-callout" style="margin-top: 10px;">
+    <h5>سياسة العجز المالي والعهدة:</h5>
+    <p>يتحمل المندوب الميداني المسؤولية القانونية والمادية الكاملة عن أي عجز مالي (ولو بقيمة جنيه واحد) يظهر بين تقرير مبيعات جهاز الـ POS والمبالغ النقدية المسلمة لمدير الحسابات والمالية بنهاية يوم العمل، ويتم خصمه فورا من راتبه الأساسي لضمان أعلى درجات الانضباط المالي والمهني.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 18 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 19 ================= -->
+    <div class="page-container" id="page-19">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>17. استراتيجيات التسويق الرقمي وبناء الولاء واستقطاب التجار</h1>
+<p>لا يقتصر التسويق في مشروع "تاجر سمارت" على الترويج التقليدي، بل نتبنى مزيجاً متكاملاً من التسويق الميداني المباشر والترويج الرقمي عبر شبكات التواصل، لتعظيم ولاء التجار واكتساح المنطقة الجغرافية المستهدفة بسرعة قياسية.</p>
+
+<h2>1. التسويق الميداني المباشر (B2B Field Marketing)</h2>
+<p>يمثل التسويق الميداني المباشر حجر الزاوية لجذب التجار لكون العلاقات الإنسانية والثقة المباشرة تلعب الدور الأهم بالتجارة المحلية بمصر:</p>
+<p>• <strong>حملة طرق الأبواب الترويجية:</strong> ينفذ مناديب الترويج زيارات مكثفة ومرتبة لجميع محلات البقالة في القرى والمدن المستهدفة، ويقدمون شرحاً ممتعاً ومبسطاً للتطبيق مع تقديم هدايا عينية (أقلام، مفكرات فواتير، لافتات صغيرة تحمل شعار تاجر سمارت).<br>
+• <strong>باقة الترحيب للتجربة الأولى:</strong> تقديم خصم مباشر قدره 50 جنيهاً مصرياً على الطلبية التأسيسية الأولى للتأكيد على مصداقيتنا والتشجيع على كسر حاجز الخوف من التقنيات وتجربتها بأمان.</p>
+
+<h2>2. التسويق الرقمي الإقليمي المستهدف</h2>
+<div class="grid-2">
+    <div class="card-box" style="border-right: 3px solid var(--accent);">
+        <h4>مجموعات الواتساب وتليجرام التفاعلية</h4>
+        <p style="font-size: 7.8pt;">• إنشاء مجموعات مغلقة وخاصة لتجار السوبرماركت في كل مركز أو قرية لعرض عروض الأسعار الصباحية فورا.<br>
+        • تتيح للتجار حجز طلبياتهم والتفاعل المباشر، مما يخلق مجتمعاً تجارياً متفاعلاً ويوفر تكاليف الإعلانات المدفوعة.</p>
+    </div>
+    <div class="card-box" style="border-right: 3px solid var(--gold);">
+        <h4>الإعلانات الجغرافية الممولة بالفيس بوك</h4>
+        <p style="font-size: 7.8pt;">• إطلاق حملات إعلانية ممولة ومحددة جغرافياً تستهدف أصحاب المصالح التجارية ومحلات البقالة بالمنطقة المستهدفة.<br>
+        • تعرض الإعلانات مزايا التوصيل السريع لتاجر سمارت ومقارنة الأسعار وسرعة التوفير لإقناعهم بالتحول الرقمي فورا.</p>
+    </div>
+</div>
+
+<h2>3. برنامج ولاء التجار المميز ومكافآت النقاط (Loyalty Program)</h2>
+<p>لضمان احتفاظنا بالعملاء ومنعهم من التحول للمنافسين التقليديين، نطبق برنامج ولاء ومكافآت فريد مدمج برمجياً في التطبيق:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+    <thead>
+        <tr>
+            <th>فئة العضوية والولاء</th>
+            <th>مستهدف المشتريات الشهري</th>
+            <th>المكافآت والحوافز الممنوحة للتاجر</th>
+            <th>الميزة التنافسية المحققة للمنصة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>الفئة البرونزية (التاجر الصديق)</strong></td>
+            <td>10,000 ج.م - 20,000 ج.م</td>
+            <td>تجميع نقاط تستبدل بهدايا عينية (كرتونة مكرونة أو سكر مجاني).</td>
+            <td>ضمان تكرار العميل للشراء وتأمين الحد الأدنى من الطلبات.</td>
+        </tr>
+        <tr>
+            <td><strong>الفئة الفضية (التاجر الشريك)</strong></td>
+            <td>20,000 ج.م - 40,000 ج.م</td>
+            <td>أولوية قصوى بالتوصيل الصباحي، خصم فوري 1% على إجمالي الفاتورة.</td>
+            <td>زيادة قيمة السلة الشرائية للبقال وتفادي استخدام منافسينا.</td>
+        </tr>
+        <tr>
+            <td><strong>الفئة الذهبية (التاجر الذهبي)</strong></td>
+            <td>أكثر من 40,000 ج.م</td>
+            <td>إمكانية الحصول على بضائع بآجال دفع قصيرة (بحدود ضيقة ومؤمنة)، خصم 2% وهدايا ترويجية ضخمة.</td>
+            <td>الهيمنة الكاملة على مشتريات كبار المحلات بالمنطقة واحتكار توريداتها.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 8px;">
+    <h5>رصد وقياس تكلفة الاستحواذ (CAC):</h5>
+    <p>يتابع المدير المالي والتقني مؤشر "تكلفة الاستحواذ على العميل" (Customer Acquisition Cost) ونعمل على إبقائه بأقل من 30 جنيهاً مصرياً لكل بقال ينشط حسابه الفعلي، مما يضمن كفاءة وجدوى الإنفاق الإعلاني والتسويقي للشركة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 19 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 20 ================= -->
+    <div class="page-container" id="page-20">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>18. معمارية التحول الرقمي والمنظومة التقنية لتاجر سمارت</h1>
+<p>يتميز مشروع "تاجر سمارت" ببنية تحتية رقمية برمجية متكاملة وقوية، تم تصميمها وهندستها داخلياً بالكامل لتوفير التراخيص الخارجية، وتحقيق أقصى درجات حوكمة العمليات اللوجستية والمالية.</p>
+
+<h2>مخطط هندسة البنية البرمجية المتكاملة لتاجر سمارت</h2>
+<p>تم تصميم المعمارية بنظام الأنظمة المترابطة (Interconnected Software Ecosystem) حيث تصب كافة العمليات في قاعدة بيانات سحابية موحدة ومؤمنة بالكامل:</p>
+
+<div style="text-align: center; margin: 12px 0;">
+    <svg class="svg-icon" style="width: 100%; height: 165px; background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 6px;" viewBox="0 0 600 165">
+        <!-- خادم السحاب المركزي وقاعدة البيانات -->
+        <rect x="230" y="55" width="140" height="60" rx="6" fill="var(--primary)" stroke="#334155" stroke-width="2"/>
+        <text x="300" y="75" font-family="Cairo" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">قاعدة البيانات السحابية</text>
+        <text x="300" y="90" font-family="Cairo" font-size="8" fill="var(--accent-light)" text-anchor="middle">(Cloud MySQL Database)</text>
+        <text x="300" y="105" font-family="Cairo" font-size="7.5" fill="#94a3b8" text-anchor="middle">نظام الاستضافة الآمن</text>
+
+        <!-- نظام 1: تطبيق العميل التاجر -->
+        <rect x="20" y="15" width="160" height="40" rx="4" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="100" y="32" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--accent)" text-anchor="middle">1. تطبيق الجوال للعميل</text>
+        <text x="100" y="45" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(طلب السلع، تتبع الشحن والمكافآت)</text>
+
+        <!-- سهم ربط 1 -->
+        <path d="M 180 35 L 230 65" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- نظام 2: لوحة تحكم الإدارة المالية للشركاء -->
+        <rect x="20" y="110" width="160" height="40" rx="4" fill="#fffbeb" stroke="var(--gold)" stroke-width="2"/>
+        <text x="100" y="127" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--gold)" text-anchor="middle">2. منصة الإدارة والمالية</text>
+        <text x="100" y="140" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(التقارير الحية، الفواتير، الأرباح)</text>
+
+        <!-- سهم ربط 2 -->
+        <path d="M 180 130 L 230 110" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- نظام 3: تطبيق POS ونقاط البيع للمناديب -->
+        <rect x="420" y="15" width="160" height="40" rx="4" fill="#fee2e2" stroke="var(--danger)" stroke-width="2"/>
+        <text x="500" y="32" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--danger)" text-anchor="middle">3. تطبيق POS وحوكمة الكاش</text>
+        <text x="500" y="45" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(مسح الباركود ميدانياً، إثبات التسوية)</text>
+
+        <!-- سهم ربط 3 -->
+        <path d="M 420 35 L 370 65" fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- نظام 4: نظام إدارة المستودعات WMS -->
+        <rect x="420" y="110" width="160" height="40" rx="4" fill="#d1fae5" stroke="var(--success)" stroke-width="2"/>
+        <text x="500" y="127" font-family="Cairo" font-size="8.5" font-weight="bold" fill="var(--success)" text-anchor="middle">4. منصة WMS للمستودعات</text>
+        <text x="500" y="140" font-family="Cairo" font-size="7.5" fill="var(--text-muted)" text-anchor="middle">(الجرد بالباركود، التخزين الهيكلي)</text>
+
+        <!-- سهم ربط 4 -->
+        <path d="M 420 130 L 370 110" fill="none" stroke="var(--success)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    </svg>
+</div>
+
+<h2>مميزات وقوة البنية التحتية البرمجية للشركة</h2>
+<p>• <strong>مرونة تعديل وتحديث الكود:</strong> لكون الكود البرمجي بالكامل مملوكاً ومطوراً داخلياً، يمكن للإدارة التقنية إضافة أو تعديل أي ميزات برمجية وتجربتها فورا دون الحاجة لطلب مطورين خارجيين بتكاليف باهظة.<br>
+• <strong>توفير الرسوم الدورية والتراخيص:</strong> يوفر هذا النموذج على الشركة دفع مئات الآلاف من الجنيهات سنوياً كاشتراكات وتراخيص برامج ERP أو WMS تجارية، مما يرفع من ربحيتها التراكمية ويدعم استدامتها المالية.<br>
+• <strong>التحكم المطلق والخصوصية:</strong> كافة خوادم المنظومة وقواعد بيانات عملائنا وتجارنا سرية ومحمية تماماً على السحابة، مما يحظر ويمنع تسرب أي بيانات تسويقية أو مالية هامة لشركات ومواقع منافسة.</p>
+
+<div class="info-callout" style="margin-top: 8px;">
+    <h5>قيمة تكنولوجية مضافة:</h5>
+    <p>تعتبر هذه البنية البرمجية المتكاملة أحد أهم الأصول غير الملموسة للشركة، وتضفي قيمة تجارية وتقنية ممتازة ترفع من القيمة السوقية لـ "تاجر سمارت" عند دخول أي مستثمرين جدد أو شركاء تمويل في مراحل النمو اللاحقة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 20 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 21 ================= -->
+    <div class="page-container" id="page-21">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>19. تطبيقات الجوال وموقع تاجر سمارت الإلكتروني للعملاء</h1>
+<p>يمثل التطبيق الذكي والموقع الإلكتروني لـ "تاجر سمارت" القناة الرئيسية ونقطة الاتصال الأولى التي يطلب من خلالها البقال بضائعه بيسر وسهولة متناهية وعلى مدار الساعة.</p>
+
+<h2>واجهة وتجربة المستخدم للتطبيق الذكي (UI/UX)</h2>
+<p>تم تصميم وهندسة التطبيق ليكون غاية في السلاسة والسرعة ليناسب صغار التجار والبقالين الذين يفضلون السرعة والوضوح البصري الكلي:</p>
+<p>• <strong>التحميل فائق السرعة والعمل بلا إنترنت:</strong> التطبيق مصمم ومبرمج ليكون خفيف الوزن للغاية (أقل من 15 ميجابايت) ومتوافق مع الهواتف الذكية القديمة، ويعمل بكفاءة وسرعة فائقة حتى في حالات اتصال الإنترنت البطيء في القرى الريفية.<br>
+• <strong>الطلب الذكي بخطوتين فقط (2-Step Checkout):</strong> البقال يستطيع فتح التطبيق، تصفح السلع المصنفة بذكاء، اختيار الكمية المطلوبة بالكرتونة أو العلبة، وتأكيد الطلب فورا ودون أي شاشات معقدة أو إجراءات تسجيل طويلة ومملة.</p>
+
+<h2>أهم الخصائص والمميزات البرمجية للتطبيق والموقع</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>الخاصية البرمجية</th>
+            <th>الشرح وآلية التطبيق العملي للتاجر</th>
+            <th>القيمة المضافة للبقال ومنصة تاجر سمارت</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>التسعير الحركي اللحظي</strong></td>
+            <td>عرض تحديثات الأسعار للسلع فورا وبدقة تامة بناءً على العروض والكميات المحددة.</td>
+            <td>مواكبة تقلبات السوق بنسبة 100% وبناء مصداقية تامة مع البقال دون تلاعب بالأسعار.</td>
+        </tr>
+        <tr>
+            <td><strong>محرك البحث الذكي بالباركود</strong></td>
+            <td>يتيح للبقال مسح باركود أي علبة بضاعية بمحله عبر كاميرا هاتفه، ليجد الصنف مباشرة بالتطبيق لطلبه فورا.</td>
+            <td>توفير كامل لوقت البحث والتفتيش للتاجر، وتسهيل تكرار الطلب السريع بضغطة زر.</td>
+        </tr>
+        <tr>
+            <td><strong>تتبع التوصيل الجغرافي للرحلة</strong></td>
+            <td>شاشة خريطة ذكية توضح للبقال موقع سيارة التوزيع اللوجستية وموعد وصولها المتوقع بالدقائق.</td>
+            <td>تجهيز البقال للمبلغ المالي الكاش للتسوية الفورية وتفادي تضييع وقت السائق بانتظار التحصيل.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>قناة الويب لكبار المستهلكين والمطاعم:</h5>
+    <p>يتكامل تطبيق الجوال مع بوابة ويب مخصصة للشركات والمطاعم وقاعات المناسبات الكبرى، تتيح لهم طلب كميات ضخمة ومجدولة، مضافاً إليها محرك فواتير إلكترونية معتمدة ضريبياً، مما يفتح آفاق مبيعات استثنائية لـ "تاجر سمارت".</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 21 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 22 ================= -->
+    <div class="page-container" id="page-22">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>20. نظام نقاط البيع (POS) وتجهيز المناديب لتسليم البضائع</h1>
+<p>تمثل منظومة نقاط البيع (POS) المدمجة حجر الزاوية في تتبع مبيعات المناديب وتأكيد استلام وتسجيل وتحصيل السيولة النقدية بشكل حاسم ولحظي من الميدان.</p>
+
+<h2>معمارية وتكامل تطبيق الـ POS للمناديب</h2>
+<p>يحمل كل مندوب سيارة توصيل جهاز تابلت أو هاتف أندرويد محمول مثبت عليه تطبيق <strong>Tager Smart POS</strong> المطور خصيصاً للمناديب والمربوط بالخادم المركزي:</p>
+<p>1. <strong>مطابقة الحمولة الرقمية:</strong> عند انطلاق سيارة التوزيع صباحاً، يظهر على شاشة المندوب قائمة بالعملاء المجدولين بالرحلة وإجمالي كراتين البضائع المحملة بسيارته ومواقعهم الجغرافية بدقة.<br>
+2. <strong>تأكيد التسليم بالباركود:</strong> لا يمكن للمندوب تأكيد تسليم أي طلبية للبقال إلا بعد مسح باركود الكراتين فعلياً أمام المحل للتأكد من تسليم البضاعة الصحيحة بالتمام والكمال ومنع تبديل الأصناف أو خلط الشحنات.<br>
+3. <strong>تأكيد استلام النقدية والتحصيل (Cash Clearance):</strong> يتم إدخال مبالغ التحصيل المالي الكاش على التطبيق فورا وتوثيقها، ليرسل خادم السحاب إشعاراً فورياً للمدير المالي والتاجر البقال بتأكيد استلام وتأمين السداد بالتمام والكمال.</p>
+
+<h2>هيكل ومزايا شاشة الـ POS ومطابقة المدفوعات للشركاء</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>عنصر الشاشة والميزة</th>
+            <th>البيان والوظيفة اللوجستية والمالية</th>
+            <th>الضمانة البرمجية والرقابية ضد الهدر المالي</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>لوحة الرحلة الحالية</strong></td>
+            <td>توضح خط السير المجدول جغرافياً للسيارة، وترتب زيارات العملاء حسب الأقرب للأبعد تلقائياً.</td>
+            <td>منع السائقين من استخدام سيارات الشركة في رحلات شخصية وتخفيض تكاليف الوقود والاستهلاك.</td>
+        </tr>
+        <tr>
+            <td><strong>مسح باركود الفاتورة</strong></td>
+            <td>يقارن البضائع المسلمة بالبضائع التي خرجت محاسبياً من المستودع لتفادي أي أخطاء أو تبديل.</td>
+            <td>تصفير الفروقات المخزنية والأصناف المعيبة والتأكيد اللحظي على سلامة وتطابق البضائع.</td>
+        </tr>
+        <tr>
+            <td><strong>تصفية الخزينة اللحظية</strong></td>
+            <td>تجمع وتسجل كافة المبالغ المحصلة كاش وتطابقها مع مبيعات اليوم لتوريدها الفوري للبنك.</td>
+            <td>منع المندوب من الاحتفاظ بكاش التحصيل لفترات طويلة وتصفير فرص ضياع أو تبديد أموال الشركة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="danger-callout" style="margin-top: 10px;">
+    <h5>سياسة تأمين النقدية بالميدان:</h5>
+    <p>يتم تزويد سيارات التوزيع الكبرى بخزنة حديدية مصغرة ومحكمة الإغلاق ومثبتة بهيكل السيارة، ويلتزم المندوب بوضع المبالغ المالية الكبيرة داخلها فور تحصيلها من البقالين لحظر وضد مخاطر السرقات أثناء الرحلات الميدانية.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 22 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 23 ================= -->
+    <div class="page-container" id="page-23">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>21. نظام إدارة المستودعات (WMS) والتحليلات وقواعد البيانات</h1>
+<p>يوفر نظام إدارة المستودعات (WMS) السحابي لـ "تاجر سمارت" كفاءة بالغة الدقة في مراقبة حركة تداول وتخزين السلع الأساسية، وربطها التام مع منصة الإدارة والمالية المشتركة للشركاء.</p>
+
+<h2>لوحة تحكم إدارة المستودعات (WMS Control Center)</h2>
+<p>تتيح لوحة التحكم السحابية لمدير العمليات واللوجستيات مراقبة المستودع وحالته بكفاءة مطلقة دقيقة:</p>
+<p>• <strong>مراقبة مستويات المخزون اللحظية (Live Inventory):</strong> رسم بياني حركي يوضح كمية كل صنف متوفرة بالمستودع بدقة (بالكرتونة والقطعة)، وإصدار إشعار فوري عند اقتراب أي سلعة من حد إعادة الطلب.<br>
+• <strong>توجيه العمال الرقمي (Task Queueing):</strong> يصدر النظام المهام اليومية للعمال على أجهزة قارئ الباركود الخاصة بهم تلقائياً (مثال: "اذهب للموقع رف A3 لتجهيز 5 كرتونة زيت لرحلة الدلتا")، مما يسرع عملية التحضير ويمنع الفوضى.</p>
+
+<h2>التقارير التحليلية والذكاء البياني للشركاء</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>نوع التقرير المالي والتشغيلي</th>
+            <th>محتوى وتحليلات التقرير التفصيلية</th>
+            <th>الفائدة والمنفعة الاستراتيجية والربحية للشركاء</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>تقرير معدل دوران المخزون (Turns)</strong></td>
+            <td>يوضح عدد مرات تجديد وصرف كل صنف خلال الشهر، وتحديد البضائع سريعة وبطيئة الحركة بالكامل.</td>
+            <td>اتخاذ قرارات شراء ذكية ومدروسة وتفادي تجميد كاش الشركة في بضائع راكدة وبطيئة البيع.</td>
+        </tr>
+        <tr>
+            <td><strong>تقرير تتبع هوامش الربح الحقيقية</strong></td>
+            <td>يقارن سعر الشراء الفعلي من المورد وسعر البيع للبقال لجميع السلع ويحسب صافي الأرباح.</td>
+            <td>تعديل أسعار البيع بالتطبيق فورا لضمان تحقيق المستهدف المالي العام وتغطية كلفة التشغيل.</td>
+        </tr>
+        <tr>
+            <td><strong>تقرير كفاءة وتوصيل مناديب البيع</strong></td>
+            <td>يقيس حجم مبيعات كل مندوب، عدد المحلات التي زارها، دقة مواعيده، وقيمة المبالغ الكاش المحصلة.</td>
+            <td>إقرار المكافآت والحوافز للمناديب المتميزين وتعديل مسارات أو تدريب المناديب بطيئي التوزيع.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>قواعد البيانات السحابية الآمنة (Cloud Security):</h5>
+    <p>تخفظ قواعد البيانات بنظام نسخ احتياطي فوري متكرر على خوادم سحابية منفصلة ومحاطة بأقوى جدران الحماية السيبرانية وتشفير البيانات (AES-256)، لمنع تدمير أو فقدان البيانات في حالات الطوارئ.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 23 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 24 ================= -->
+    <div class="page-container" id="page-24">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>22. معايير الأمان الرقمي، البنية التحتية السحابية والنسخ الاحتياطي</h1>
+<p>تعتبر حماية أصول الشركة البرمجية وقواعد بيانات المبيعات والموردين حجر الزاوية لاستمرارية الأعمال وتجنب الاختراقات الإلكترونية، مما يمنح الشركاء والمستثمرين طمأنينة مطلقة على سرية عملياتهم.</p>
+
+<h2>البنية التحتية السحابية وقواعد الأمان البرمجية</h2>
+<p>تم تصميم وهندسة المنظومة التقنية لـ "تاجر سمارت" بالاعتماد على خوادم سحابية متميزة وتطبيق أقوى معايير الأمان الرقمية الدولية:</p>
+<p>• <strong>تشفير البيانات التام (End-to-End Encryption):</strong> كافة الاتصالات بين تطبيقات الجوال والـ POS مع الخادم المركزي مشفرة بالكامل عبر بروتوكول HTTPS الآمن لمنع أي تلاعب أو اعتراض للبيانات.<br>
+• <strong>جدران الحماية السحابية وصلاحيات الدخول الصارمة:</strong> يتم استخدام جدران حماية ذكية تعوق وتحظر أي محاولات اختراق أو وصول غير مصرح به لقواعد البيانات، مع تطبيق سياسة حوكمة الصلاحيات الفردية للمستخدمين.</p>
+
+<h2>بروتوكول النسخ الاحتياطي التلقائي وضمان استمرارية التشغيل</h2>
+<div class="product-spec-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">1. نسخ احتياطي لحظي</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">تسجيل ونسخ كل فاتورة مبيعات وحركة تحصيل كاش تلقائياً وفوراً على خادم احتياطي موازي لضمان عدم ضياع أي معلومة مالية.</p>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">2. نسخ يومي مشفر منفصل</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">في تمام الساعة 12 منتصف الليل، يقوم النظام بسحب نسخة كاملة ومجمعة لقواعد البيانات وتشفيرها ورفعها لخوادم سحابية منفصلة تماماً.</p>
+    </div>
+    <div class="product-spec-card" style="background-color: #f8fafc; border: 1px solid var(--border-color); padding: 8px; border-radius: 4px;">
+        <div class="product-spec-header" style="font-weight: 700; font-size: 8.5pt; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 3px; margin-bottom: 6px;">3. بروتوكول استعادة النظام</div>
+        <p style="font-size: 7.5pt; color: var(--text-muted);">في حال تعطل الخادم الرئيسي لأي سبب خارج عن الإرادة، يتم تفعيل الخادم الاحتياطي تلقائياً خلال 5 دقائق فقط ودون انقطاع للخدمة.</p>
+    </div>
+</div>
+
+<h2>معايير حماية وسلامة السيرفرات وقواعد الأمان</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>عنصر الأمان والحماية</th>
+            <th>الوصف التقني الدقيق للصيانة والأمان</th>
+            <th>الهدف المباشر لتجنب التلاعب والمخاطر</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>تشفير حسابات المستخدمين</strong></td>
+            <td>حفظ كلمات السر للمستخدمين والعمال والمناديب مشفرة بنظام تشفير قوي غير قابل للكسر بالتمام.</td>
+            <td>منع الموظفين أو المتسللين من سرقة حسابات زملائهم أو تعديل بيانات فواتير العملاء.</td>
+        </tr>
+        <tr>
+            <td><strong>تسجيل حركة الإدارة (Admin Logs)</strong></td>
+            <td>تسجيل كل عملية تعديل أو صرف أو إلغاء لفاتورة مع اسم المستخدم الذي قام بها والوقت بدقة.</td>
+            <td>حوكمة تامة لقرارات الشركاء والعمال وتصفير احتمالية حدوث تعديلات غير موثقة بالأرصدة.</td>
+        </tr>
+        <tr>
+            <td><strong>اختبارات الاختراق الدورية</strong></td>
+            <td>فحص ومراجعة الكود البرمجي والثغرات بواسطة الإدارة التقنية بشكل أسبوعي ومنتظم.</td>
+            <td>سد أي ثغرة برمجية فور ظهورها وقبل استغلالها من أي جهة خارجية أو منافسين بالمنطقة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>سياسة حظر الإضافات الخارجية:</h5>
+    <p>يحظر تماماً استخدام أي برمجيات أو إضافات (Plugins) غير مطورة أو مفحوصة بالكامل بواسطة الشريك التقني للشركة، لضمان استقرار وسلامة كود المنصة وخلوه التام من برمجيات التجسس أو الاختراق الضارة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 24 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 25 ================= -->
+    <div class="page-container" id="page-25">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>23. الميزانية الرأسمالية والتشغيلية وميزانية التأسيس المفصلة</h1>
+<p>تم إعداد هذه الميزانية التقديرية بناءً على الأسعار السائدة بدقة تامة لضمان توفير بنية تحتية قوية ومستودع مركزي مؤهل لتنفيذ رحلات التوزيع من اليوم الأول للإطلاق الرسمي للمشروع.</p>
+
+<h2>أولاً: المصروفات الرأسمالية والتأسيسية (CAPEX) - تدفع لمرة واحدة</h2>
+<table>
+    <thead>
+        <tr>
+            <th>بند التجهيز والتأسيس الرأسمالي</th>
+            <th>التكلفة التقديرية (ج.م)</th>
+            <th>تفاصيل البند والمواصفات اللوجستية والفنية بالتأسيس</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>تجهيزات المستودع الداخلي (رفوف حديد ثقيلة، بالتات، إضاءة)</td>
+            <td>25,000</td>
+            <td>رفوف صلبة تتحمل الأحمال الضخمة للزيت والسكر والأرز المعبأ.</td>
+        </tr>
+        <tr>
+            <td>شراء أجهزة تقنية وقارئ باركود وأجهزة POS ذكية مجهزة للمناديب</td>
+            <td>15,000</td>
+            <td>أجهزة لوحية متينة ومحمولة للتحصيل ومسح الباركود الميداني.</td>
+        </tr>
+        <tr>
+            <td>تطوير وتكامل البرمجيات وبناء السحابة وتطبيق الجوال وموقع الويب</td>
+            <td>35,000</td>
+            <td>يتم التنفيذ داخلياً بالكامل لتوفير التراخيص والرسوم الدورية والوقت.</td>
+        </tr>
+        <tr>
+            <td>التراخيص القانونية، سجل تجاري، وبطاقة ضريبية وتأسيس الكيان</td>
+            <td>5,000</td>
+            <td>رسوم حكومية واشتراكات الغرفة التجارية لضمان قانونية التشغيل التام.</td>
+        </tr>
+        <tr class="table-total">
+            <td><strong>إجمالي المصروفات الرأسمالية والتأسيسية (CAPEX)</strong></td>
+            <td><strong>80,000 جنيه مصري</strong></td>
+            <td>يستهلك محاسبياً على مدار 3 سنوات لدعم الأرباح الصافية للشركة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>ثانياً: رأس المال العامل والدورة التشغيلية (OPEX & Working Capital)</h2>
+<p>يمثل رأس المال العامل المحرك الحقيقي لتأمين السلع والبضائع بخصومات ممتازة وتغطية مصاريف الشهور الأولى للتشغيل بثبات وقوة:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>مكون رأس المال العامل المخصص</th>
+            <th>القيمة المخصصة (ج.م)</th>
+            <th>تفاصيل الوظيفة والمستهدفات المالية بالتداول</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>شراء المخزون الافتتاحي (الزيوت، السكر، الأرز، المكرونة، السمن)</td>
+            <td>100,000</td>
+            <td>ضخ كامل السيولة في شراء سلع استراتيجية كاش للحصول على خصم الموردين.</td>
+        </tr>
+        <tr>
+            <td>احتياطي كاش تشغيلي وتأمين نفقات الوقود وإيجار المستودع لشهرين</td>
+            <td>20,000</td>
+            <td>أمان مالي لتغطية إيجار المستودع ووقود سيارات التوزيع ورواتب المساعدين.</td>
+        </tr>
+        <tr class="table-total">
+            <td><strong>إجمالي رأس المال العامل المخصص</strong></td>
+            <td><strong>120,000 جنيه مصري</strong></td>
+            <td>سيولة دوارة بنسبة 100% ويتم تسييلها وإعادة الشراء بها كل 5 أيام بالمتوسط.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info-callout" style="margin-top: 10px;">
+    <h5>هيكل التمويل والاعتماد الرسمي للشركاء:</h5>
+    <p>إجمالي رأس المال المطلوب للفرع والتشغيل التأسيسي الأول هو <strong>200,000 جنيه مصري</strong>، ممول بالكامل ومناصفة بين الشركاء الأربعة بواقع <strong>50,000 جنيه مصري لكل شريك</strong>، ولا تتبنى الشركة أي قروض أو تمويلات بنكية خارجية تجنباً للفوائد المنهكة ولدعم الأمان المالي للكيان.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 25 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 26 ================= -->
+    <div class="page-container" id="page-26">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>24. توقعات المبيعات الخمس وحركة التدفقات النقدية والأرباح الصافية</h1>
+<p>بناءً على وتيرة نمو السوق ومستويات الطلب المتوقعة في الفترات المقبلة، نوضح التوقعات المالية الخمس المفصلة لنمو مبيعات وأرباح "تاجر سمارت" للفرع التأسيسي الأول:</p>
+
+<h2>الخطة الخمسية لتطور المبيعات وصافي الأرباح التقديرية (بجنية مصري)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>السنة المالية</th>
+            <th>إجمالي المبيعات السنوية</th>
+            <th>معدل دوران المخزون السنوي</th>
+            <th>إجمالي الهامش المحقق (الربح الإجمالي)</th>
+            <th>المصاريف التشغيلية والإدارية</th>
+            <th>صافي الأرباح السنوية للشركة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>السنة الأولى</strong></td>
+            <td>3,150,000 ج.م</td>
+            <td>28 مرة دوران</td>
+            <td>141,750 ج.م (بمتوسط 4.5%)</td>
+            <td>69,750 ج.م (شاملة نقل ومستودع)</td>
+            <td><strong>72,000 جنيه مصري</strong></td>
+        </tr>
+        <tr>
+            <td><strong>السنة الثانية</strong></td>
+            <td>4,500,000 ج.م</td>
+            <td>32 مرة دوران</td>
+            <td>225,000 ج.م (بمتوسط 5.0%)</td>
+            <td>85,000 ج.م</td>
+            <td><strong>140,000 جنيه مصري</strong></td>
+        </tr>
+        <tr>
+            <td><strong>السنة الثالثة</strong></td>
+            <td>6,200,000 ج.م</td>
+            <td>35 مرة دوران</td>
+            <td>341,000 ج.م (بمتوسط 5.5%)</td>
+            <td>110,000 ج.م</td>
+            <td><strong>231,000 جنيه مصري</strong></td>
+        </tr>
+        <tr>
+            <td><strong>السنة الرابعة</strong></td>
+            <td>8,500,000 ج.م</td>
+            <td>38 مرة دوران</td>
+            <td>510,000 ج.م (بمتوسط 6.0%)</td>
+            <td>140,000 ج.م</td>
+            <td><strong>370,000 جنيه مصري</strong></td>
+        </tr>
+        <tr>
+            <td><strong>السنة الخامسة</strong></td>
+            <td>11,500,000 ج.م</td>
+            <td>40 مرة دوران</td>
+            <td>747,500 ج.م (بمتوسط 6.5%)</td>
+            <td>180,000 ج.م</td>
+            <td><strong>567,500 جنيه مصري</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>تحليل المبررات والدوافع للنمو المالي الخماسي المتوقع</h2>
+<p>1. <strong>تصاعد هوامش الأرباح:</strong> يرتفع متوسط هامش الربح الإجمالي من 4.5% بالسنة الأولى إلى 6.5% بالسنة الخامسة نتيجة لزيادة القدرة التفاوضية مع زيادة حجم المبيعات والحصول على خصومات كبرى وبونصات ترويجية عينية من المصانع مباشرة.<br>
+2. <strong>ثبات المصاريف التشغيلية النسبية:</strong> لا تزيد المصاريف التشغيلية بنفس وتيرة المبيعات نتيجة لاستغلال الطاقة الكاملة للمستودع وتطوير المنظومة اللوجستية والاعتماد على البرمجيات المملوكة التي توفر رسوم الاشتراك والتطوير الخارجي.</p>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>سياسة التدفقات النقدية والأمان المالي:</h5>
+    <p>تتبنى الشركة سياسة بالغة الحذر تمنع البيع الآجل للبقالين إلا في أضيق الحدود وللعملاء الممتازين الملتزمين بنظام السداد خلال 48 ساعة فقط، لضمان استقرار حركة التدفقات النقدية (Cash-Flow) وحمايتها الكاملة من التجميد أو الديون المعيبة.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 26 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 27 ================= -->
+    <div class="page-container" id="page-27">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>25. تحليل نقطة التعادل، العائد على الاستثمار (ROI) واسترداد رأس المال</h1>
+<p>تم إجراء تحليل الجدوى المالية الشامل لـ "تاجر سمارت" للوقوف بدقة على مدى أمان الاستثمار وفترات استرداد رأس المال المخصصة وتوقعات الأرباح الصافية للشركاء.</p>
+
+<h2>أولاً: تحليل نقطة التعادل الشهرية (Break-Even Point)</h2>
+<p>تُعرف نقطة التعادل بأنها حجم المبيعات الشهري الذي تتساوى عنده إجمالي إيرادات الشركة مع إجمالي تكاليفها الثابتة والتشغيلية (أي تحقيق صفر أرباح وخسائر):</p>
+<p>• <strong>متوسط المصاريف التشغيلية الشهرية الثابتة (إيجار، وقود، عمالة، صيانة):</strong> 5,500 جنيه مصري.<br>
+• <strong>متوسط هامش الربح الإجمالي للسلع:</strong> 4.5% بالمتوسط العام لجميع فئات المنتجات.<br>
+• <strong>حجم مبيعات نقطة التعادل الشهري المطلوب:</strong> <strong>122,222 جنيه مصري</strong> (أي تحقيق مبيعات يومية تقدر بحوالي 4,000 ج.م فقط لتغطية كافة التكاليف بالكامل والبدء بتحقيق أرباح فورية ومباشرة).</p>
+
+<h2>ثانياً: العائد على الاستثمار (ROI) وفترة استرداد رأس المال كاملاً</h2>
+<p>نوضح المؤشرات المالية المعتمدة للجدوى الاستثمارية التأسيسية للمشروع:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>المؤشر المالي للجدوى والاستثمار</th>
+            <th>القيمة والمستهدف المالي المحتسب</th>
+            <th>توجيهات وتحليلات استشارية حول الأمان المالي للمشروع</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>صافي ربح السنة الأولى المتوقع</strong></td>
+            <td>72,000 جنيه مصري</td>
+            <td>يمثل عائداً ممتازاً ومحققاً بظروف السوق الاستهلاكية بمصر.</td>
+        </tr>
+        <tr>
+            <td><strong>معدل العائد على الاستثمار (ROI) للسنة الأولى</strong></td>
+            <td><strong>36.0% من رأس المال</strong></td>
+            <td>أعلى بكثير من العوائد البنكية التقليدية، مع الحفاظ على أصول المخزون كاش.</td>
+        </tr>
+        <tr>
+            <td><strong>فترة استرداد رأس المال التأسيسي كاملاً</strong></td>
+            <td><strong>14 شهراً تشغيلياً فقط</strong></td>
+            <td>فترة استرداد بالغة القصر والأمان نظراً لانخفاض الأصول الثابتة غير القابلة للتسييل فورا.</td>
+        </tr>
+        <tr>
+            <td><strong>معدل الأمان الاستثماري العام للمشروع</strong></td>
+            <td>مرتفع جداً وبصفات ممتازة</td>
+            <td>السيولة الكلية مستثمرة في سلع غذائية تموينية يسهل تسييلها وبيعها كاش خلال 24 ساعة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>استراتيجية تقليل المخاطر الرأسمالية:</h5>
+    <p>نظراً لكون ما يزيد عن 60% من رأس المال التأسيسي مستثمر في بضائع حية ومرغوبة ومطلوبة يومياً (أرز، سكر، زيت)، فإن مخاطر خسارة رأس المال تكاد تكون منعدمة؛ ففي أسوأ السيناريوهات، يمكن بيع وتسييل المخزون بالكامل فورا بسعر التكلفة واستعادة رأس المال العامل كاملاً دون أي معوقات.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 27 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 28 ================= -->
+    <div class="page-container" id="page-28">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>26. ميثاق الشركاء، توزيع الحصص وحوكمة الصلاحيات المالية</h1>
+<p>يمثل هذا الميثاق والاتفاقية القانونية والتشغيلية المكتوبة صمام الأمان والضمانة المطلقة للحفاظ على تماسك الكيان وتوضيح كافة الحقوق والمسؤوليات وحوكمة الشراكة الاستراتيجية للشركاء.</p>
+
+<h2>هيكل ومكونات ميثاق الشراكة الحاكم</h2>
+<p>1. <strong>توزيع الحصص والملكية:</strong> يتأسس الكيان كشركة تضامن وتوصية بسيطة، ويمتلك الشركاء الأربعة حصصاً متساوية تماماً بالشركة (25% لكل شريك)، ولا يجوز لأي شريك رهن أو بيع حصته إلا بموافقة كتابية جماعية من باقي الشركاء.<br>
+2. <strong>توزيع الأرباح والخسائر:</strong> يتم توزيع صافي الأرباح المحققة بعد استقطاع المصاريف والضرائب والاحتياطيات بالتساوي التام (25% لكل شريك) بنهاية كل ربع سنة مالي، مع الالتزام بإعادة استثمار 30% على الأقل من الأرباح لتوسيع المخزون بالسنة الأولى لتنمية رأس المال العامل.</p>
+
+<h2>حوكمة الصلاحيات المالية والبنكية الصارمة</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>القيمة المالية للمعاملة</th>
+            <th>الصلاحية والتوقيع المعتمد المطلوب</th>
+            <th>آلية التطبيق المحاسبي والرقابة الحسابية للشركاء</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>المصروفات العادية التشغيلية (أقل من 5,000 ج.م)</strong></td>
+            <td>توقيع شريكين من بينهم المدير المالي</td>
+            <td>صرف فوري وبسيط لتأمين نفقات الوقود والمشتريات الطارئة للمستودع وتوثيقها فورا.</td>
+        </tr>
+        <tr>
+            <td><strong>المشتريات والطلبيات الكبيرة (5,000 - 20,000 ج.م)</strong></td>
+            <td>توقيع ثلاثة شركاء واعتماد مالي مسبق</td>
+            <td>تحويل بنكي أو شيك مصرفي معتمد لشراء السلع والمخزون، وتوثيق الفاتورة بالنظام فورا.</td>
+        </tr>
+        <tr>
+            <td><strong>الصفقات الاستراتيجية والمصروفات (أكثر من 20,000 ج.م)</strong></td>
+            <td>موافقة جماعية كتابية بالإجماع من الشركاء</td>
+            <td>عقود رسمية موقعة من جميع الشركاء لإقرار شراء أصول ثابتة أو فتح فروع أو إبرام صفقات مصانع كبرى.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="danger-callout" style="margin-top: 10px;">
+    <h5>الالتزام الشخصي والقانوني للشراكة:</h5>
+    <p>يتعهد كل شريك بالامتناع التام عن ممارسة أي نشاط تجاري منافس أو مشابه لنشاط "تاجر سمارت" في النطاق الجغرافي للشركة طوال فترة مساهمته وبأثر رجعي لمدة سنتين بعد خروجه أو تخارجه، حفاظاً على المصالح التجارية والسرية للكيان.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 28 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 29 ================= -->
+    <div class="page-container" id="page-29">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>27. حقوق الملكية الفكرية، البنية السحابية والعلامة التجارية للشركة</h1>
+<p>تعتبر المنظومة البرمجية، الموقع الإلكتروني، تطبيقات الجوال، نظام الـ WMS والـ POS، وقواعد بيانات عملائنا وتجارنا، أصولاً تجارية استراتيجية بالغة القيمة للشركة ويجب حمايتها قانونياً وفنياً بكل حزم.</p>
+
+<h2>حقوق الملكية الفكرية والبرمجية وقواعد حماية الكود</h2>
+<p>1. <strong>سرية وملكية السورس كود (Source Code):</strong> يعتبر الكود المصدري لكافة تطبيقات ومنصات "تاجر سمارت" ملكاً فكرياً خالصاً وحصرياً للشركة ككيان قانوني موحد، ولا يحق لأي شريك منفرداً بيعه أو ترخيصه أو استخدامه في أي مشروعات شخصية خارج إطار هذه الشراكة.<br>
+2. <strong>العلامة التجارية والاسم التجاري (Tager Smart):</strong> يتم تسجيل العلامة التجارية واللوجو المميز رسمياً بوزارة التجارة والصناعة بجمهورية مصر العربية لحماية الاسم من التقليد أو الاستغلال التجاري غير المشروع من المنافسين بالمنطقة.</p>
+
+<h2>ترخيص وحوكمة الخدمات السحابية والبرمجيات</h2>
+<p>تعتبر المنظومة الرقمية لـ "تاجر سمارت" منتجاً برمجياً متطوراً قابلاً للتسويق والترخيص اللاحق كمصدر إيرادات مستقبلي واعد للشركة (Software as a Service - SaaS):</p>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>الخدمة البرمجية القابلة للترخيص</th>
+            <th>الشريحة التجارية المستهدفة</th>
+            <th>طبيعة نموذج الترخيص والإيرادات المتوقعة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>نظام الـ POS وإدارة المبيعات للمناديب</strong></td>
+            <td>شركات توزيع الأغذية والمشروبات الإقليمية الصغيرة</td>
+            <td>اشتراك شهري أو سنوي لكل جهاز POS فعال مع خدمات الدعم والترقية الفنية المستمرة.</td>
+        </tr>
+        <tr>
+            <td><strong>نظام الـ WMS وإدارة الأرصدة للمخازن</strong></td>
+            <td>أصحاب مخازن الجملة والتبريد التقليديين بمصر</td>
+            <td>ترخيص برمجيات سحابي شهري لإدارة وتتبع المخزون وتصفير نسب العجز والهدر والسرقات.</td>
+        </tr>
+        <tr>
+            <td><strong>منصة التوزيع المتكاملة (White Label)</strong></td>
+            <td>رواد الأعمال والموزعين في المحافظات والبلدان العربية</td>
+            <td>بناء نسخة كاملة ومخصصة باللوجو والاسم الخاص بالعميل مقابل نسبة مبيعات ورسوم تأسيس وصيانة سنوية ضخمة.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>حماية وسرية قواعد البيانات:</h5>
+    <p>تخضع كافة قواعد بيانات العملاء وتجار البقالة وسجلات الشراء والمبيعات لاتفاقيات سرية بالغة الصرامة، ويحظر تماماً على أي موظف أو شريك سحب أو مشاركة هذه البيانات مع أي جهات خارجية، وتعتبر أي مخالفة لذلك خيانة للأمانة وجريمة يعاقب عليها القانون المدني والجنائي المصري.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 29 من 30</div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 30 ================= -->
+    <div class="page-container" id="page-30">
+        <div class="doc-header">
+            <div class="logo-area">
+                <span class="logo-text">تاجر <span>سمارت</span></span>
+            </div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+        </div>
+        <div class="page-content">
+
+<h1>28. آليات التخارج، التصفية وحوكمة النزاعات واستمرارية الأعمال</h1>
+<p>نختتم دراسة الجدوى بوضع إعلان الحوكمة وبنود التخارج وفض النزاعات القانونية لضمان الوضوح المطلق وحفظ حقوق جميع الشركاء تحت كافة الظروف والمستجدات المستقبلية.</p>
+
+<h2>أولاً: آليات التخارج والانسحاب وفترات الإخطار (Exit Strategy)</h2>
+<p>• <strong>فترة الإخطار بالانسحاب:</strong> يلتزم الشريك الراغب بالانسحاب بتقديم إخطار كتابي رسمي لباقي الشركاء قبل موعد الانسحاب المحدد بـ <strong>90 يوماً على الأقل</strong> ليتسنى للشركة ترتيب السيولة الكافية وتجنب إحداث أي ارتباك للدورة المالية والتشغيلية للمخزن.<br>
+• <strong>حق الشفعة والتعويض المالي للشريك:</strong> يتم تقييم الحصة المالية للشريك المنسحب عبر محاسب قانوني مستقل ومحايد يعينه مجلس الإدارة، ويكون لباقي الشركاء القائمين حق الشفعة والأولوية المطلقة في شراء هذه الحصة بالتقسيط المريح على مدار 12 شهراً لتجنب سحب السيولة العاملة دفعة واحدة.</p>
+
+<h2>ثانياً: تصفية الكيان وحوكمة فض النزاعات واستمرارية الأعمال</h2>
+<p>1. <strong>فض النزاعات بالطرق الودية والتحكيم:</strong> في حال حدوث أي خلاف أو تباين في وجهات النظر الإدارية أو المالية بين الشركاء، يلتزم الجميع بحله ودياً خلال 30 يوماً، وفي حال تعذر ذلك، يتم اللجوء للتحكيم التجاري المعتمد وفقاً لأحكام القانون المصري لحل الخلاف بسرعة وحسم تكميلي.<br>
+2. <strong>تصفية وحل الشركة وقواعد التوزيع:</strong> لا يتم اللجوء لخيار تصفية الشركة وحلها إلا بموافقة إجماعية مكتوبة من الشركاء الأربعة، وفي هذه الحالة، يتم بيع وتسييل البضائع والمخزون وسداد كافة الالتزامات المالية والديون والمستحقات للموردين والعمال أولاً، ومن ثم توزيع المبالغ النقدية المتبقية بالتساوي التام (25% لكل شريك).<br>
+3. <strong>بروتوكول استمرارية الأعمال والطوارئ (Business Continuity):</strong> يضمن ميثاق الشركاء استمرار عمل الكيان ونشاطه التجاري دون توقف في حالات الوفاة أو العجز لأحد الشركاء، حيث تنتقل حصته لورثته الشرعيين مع إمكانية تعيين ممثل واحد للورثة بمجلس الإدارة بالتوافق مع الشركاء القائمين.</p>
+
+<div class="gold-callout" style="margin-top: 10px;">
+    <h5>إعلان وتعهد الحوكمة والالتزام القانوني النهائي:</h5>
+    <p>يقر ويتعهد الشركاء المؤسسون لمشروع <strong>"تاجر سمارت" (Tager Smart)</strong> بأن كافة العلاقات المالية، التجارية، التشغيلية، والبرمجية الموضحة في هذه الدراسة ستخضع وتوثق حصرياً عبر عقود واتفاقيات قانونية رسمية وموثقة لدى مكاتب المحاماة والشهر العقاري بجمهورية مصر العربية، حماية لحقوق الجميع وتأكيداً على المصداقية والالتزام والنجاح الطويل.</p>
+</div>
+
+        </div>
+        <div class="doc-footer">
+            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة 30 من 30</div>
         </div>
     </div>
 
