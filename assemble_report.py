@@ -32,7 +32,7 @@ html_out = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>دراسة جدوى تفصيلية شاملة - منصة ومستودعات تاجر سمارت (Tager Smart)</title>
+    <title>دراسة جدوى تفصيلية شاملة - منصة ومستودعات تاجر (Tager)</title>
     <!-- خطوط متميزة ومحملة عبر الويب للتصميم الرقمي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -52,7 +52,7 @@ for page_num in sorted(ALL_PAGES.keys()):
     <div class="page-container" id="page-{page_num}">
         <div class="doc-header">
             <div class="logo-area">
-                <span class="logo-text">تاجر <span>سمارت</span></span>
+                <span class="logo-text">تاجر</span>
             </div>
             <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
         </div>
@@ -62,7 +62,7 @@ for page_num in sorted(ALL_PAGES.keys()):
     html_out += f"""
         </div>
         <div class="doc-footer">
-            <div>تاجر سمارت للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
+            <div>تاجر للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
             <div class="page-num">صفحة {page_num} من 30</div>
         </div>
     </div>
