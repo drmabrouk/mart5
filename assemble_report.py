@@ -19,13 +19,15 @@ for k, v in PAGES_CONTENT.items():
 for k, v in PAGES_11_15.items():
     ALL_PAGES[k] = v
 
-# Pages 16 to 20
+# Pages 16 to 31
 for k, v in PAGES_16_20.items():
     ALL_PAGES[k] = v
 
-# Pages 21 to 30 (should be empty for our 20-page document)
+# Pages 32 to 48
 for k, v in PAGES_21_30.items():
     ALL_PAGES[k] = v
+
+total_pages = len(ALL_PAGES)
 
 # Start compiling MART.html
 html_out = """<!DOCTYPE html>
@@ -62,8 +64,8 @@ for page_num in sorted(ALL_PAGES.keys()):
     html_out += f"""
         </div>
         <div class="doc-footer">
-            <div>تاجر للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة {page_num} من 20</div>
+            <div>V Smart General Trading L.L.C. - دراسة الجدوى الاستثمارية</div>
+            <div class="page-num">صفحة {page_num} من {total_pages}</div>
         </div>
     </div>
 """
@@ -77,4 +79,4 @@ html_out += """
 with open("MART.html", "w", encoding="utf-8") as f:
     f.write(html_out)
 
-print("MART.html compiled successfully with exactly 20 pages!")
+print(f"MART.html compiled successfully with exactly {total_pages} pages!")
