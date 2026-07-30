@@ -688,6 +688,59 @@ tr:nth-child(even) td {
     font-size: 5.5pt;
     font-weight: bold;
 }
+
+/* Custom Write-In / Spacious fields as requested */
+.custom-write-line {
+    border-bottom: 1px solid #94a3b8;
+    display: inline-block;
+    height: 16px;
+    margin: 0 4px;
+    vertical-align: bottom;
+}
+.custom-form-group {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+.custom-form-label {
+    font-weight: bold;
+    color: #1e293b;
+    white-space: nowrap;
+    font-size: 7.5pt;
+}
+.custom-form-input {
+    flex-grow: 1;
+    border-bottom: 1.2px solid #64748b;
+    margin-right: 6px;
+    height: 16px;
+}
+.dashed-stamp-box {
+    border: 1.8px dashed #0284c7;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0284c7;
+    font-size: 5.8pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin: 4px auto;
+}
+.legal-warning-notice {
+    background-color: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #9f1239;
+    font-size: 7pt;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.35;
+}
 """
 
 print("CSS variables defined successfully")

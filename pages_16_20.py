@@ -74,25 +74,34 @@ def get_contract_page_wrapper(title_ar, doc_num, body_html, footer_html):
     return f"""
 <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Cairo', sans-serif;">
     <div style="flex-grow: 1;">
+        <!-- Legal Warning Notice at the very top -->
+        <div class="legal-warning-notice">إن أي كشط أو تعديل في هذا المستند باليد دون توقيع وإقرار الشركاء الأربعة مجتمعين يلغيه تماماً ويجعله باطلاً قانوناً وبدون أي أثر.</div>
+
         <!-- Top Simple Header -->
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 18px;">
-            <div style="font-size: 10.5pt; font-weight: 800; color: #0f172a;">مجموعة المستندات التشغيلية والقانونية</div>
-            <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">وثيقة رقم: {doc_num} / 10</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 12px;">
+            <div style="font-size: 9.5pt; font-weight: 800; color: #0f172a;">مجموعة المستندات التشغيلية والقانونية - شركة مارتديا للتجارة والتوزيع</div>
+            <div style="font-size: 8.5pt; color: #64748b; font-weight: bold;">وثيقة رقم: {doc_num} / 12</div>
         </div>
 
-        <!-- Document Date -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <div style="font-size: 11pt; color: #1e293b; font-weight: bold;">تاريخ المستند: ............................................</div>
-            <div style="font-size: 11pt; color: #1e293b; font-weight: bold;">الرقم المرجعي: MT-DOC-{doc_num:02d}</div>
+        <!-- Document Date & Reference with clean underline fields -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="font-size: 9pt; color: #1e293b; font-weight: bold; display: flex; align-items: center; width: 60%;">
+                <span class="custom-form-label">تاريخ المستند:</span>
+                <span class="custom-form-input" style="width: 150px;"></span>
+            </div>
+            <div style="font-size: 9pt; color: #1e293b; font-weight: bold; display: flex; align-items: center; width: 35%; justify-content: flex-end;">
+                <span class="custom-form-label" style="margin-left: 6px;">الرقم المرجعي:</span>
+                <span style="font-family: monospace; font-size: 9.5pt; color: #0284c7; font-weight: bold;">MT-DOC-{doc_num:02d}</span>
+            </div>
         </div>
 
         <!-- Document Title -->
-        <div style="text-align: center; margin: 20px 0; padding: 10px; background-color: #f1f5f9; border: 1.5px solid #0f172a; border-radius: 4px;">
-            <h2 style="font-size: 14pt; font-weight: 800; color: #0f172a; border: none; background: transparent; padding: 0; margin: 0; text-align: center;">{title_ar}</h2>
+        <div style="text-align: center; margin: 10px 0 8px 0; padding: 5px; background-color: #f1f5f9; border: 1.5px solid #0f172a; border-radius: 4px;">
+            <h2 style="font-size: 10.5pt; font-weight: 800; color: #0f172a; border: none; background: transparent; padding: 0; margin: 0; text-align: center;">{title_ar}</h2>
         </div>
 
         <!-- Document Body -->
-        <div style="font-size: 10pt; line-height: 1.7; color: #1e293b; text-align: justify; margin-bottom: 20px;">
+        <div style="font-size: 8.2pt; line-height: 1.45; color: #1e293b; text-align: justify; margin-bottom: 10px;">
             {body_html}
         </div>
     </div>
@@ -106,77 +115,80 @@ def get_contract_page_wrapper(title_ar, doc_num, body_html, footer_html):
 
 # ----------------- PAGE 17: Document 1 - Founding Partnership Agreement -----------------
 doc_1_body = """
-<p style="margin-bottom: 12px; font-size: 10.5pt;">بموجب أحكام القوانين التجارية المعمول بها بجمهورية مصر العربية، تم صياغة هذا العقد التأسيسي وميثاق الشراكة لتنظيم تأسيس وإدارة وتوزيع الحصص والمسؤوليات لمشروع <strong>"تاجر" (Tager)</strong> للخدمات اللوجستية وتوزيع السلع الغذائية تحت الحوكمة القانونية والتشغيلية الكاملة لشركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong>:</p>
+<p style="margin-bottom: 8px;">بموجب أحكام القوانين التجارية المعمول بها بجمهورية مصر العربية، تم صياغة هذا العقد التأسيسي وميثاق الشراكة لتنظيم تأسيس وإدارة وتوزيع الحصص والمسؤوليات لمشروع <strong>"مارتديا" (Martdia)</strong> للخدمات اللوجستية وتوزيع السلع الغذائية تحت الحوكمة القانونية والتشغيلية الكاملة لشركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong>:</p>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الأول: الشركاء المؤسسون والحصص التأسيسية</div>
-<p style="margin-bottom: 10px; font-size: 10pt;">اتفق الشركاء الأربعة الموقّعون أدناه على تأسيس الكيان برأس مال تأسيسي مخصص كلياً لشراء السلع والمخزون كالتالي:</p>
+<div class="legal-section-title" style="margin-top: 8px;">البند الأول: الشركاء المؤسسون والحصص التأسيسية</div>
+<p style="margin-bottom: 6px;">اتفق الشركاء الأربعة الموقّعون أدناه على تأسيس الكيان برأس مال تأسيسي مخصص كلياً لشراء السلع والمخزون كالتالي:</p>
 
-<table style="width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.5pt;">
+<table style="width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 7.2pt;">
     <thead>
         <tr style="background-color: #0f172a; color: white;">
-            <th style="padding: 8px; border: 1px solid #cbd5e1; text-align: right;">اسم الشريك المؤسس</th>
-            <th style="padding: 8px; border: 1px solid #cbd5e1; text-align: right;">الصفة والملف التنفيذي</th>
-            <th style="padding: 8px; border: 1px solid #cbd5e1; text-align: right;">الحصة النقدية كاش</th>
-            <th style="padding: 8px; border: 1px solid #cbd5e1; text-align: right;">نسبة الشراكة</th>
+            <th style="padding: 4px; border: 1px solid #cbd5e1; text-align: right;">اسم الشريك المؤسس</th>
+            <th style="padding: 4px; border: 1px solid #cbd5e1; text-align: right;">الصفة والملف التنفيذي</th>
+            <th style="padding: 4px; border: 1px solid #cbd5e1; text-align: right;">الحصة النقدية كاش</th>
+            <th style="padding: 4px; border: 1px solid #cbd5e1; text-align: right;">نسبة الشراكة</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">1. أحمد مبروك</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1;">المدير التقني والتقني العام للشركة</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">1. أحمد مبروك</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">المدير التقني والتقني العام للشركة</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
         </tr>
         <tr>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">2. محمد مبروك</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1;">المدير المالي المركزي المركزي للشركة</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">2. محمد مبروك</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">المدير المالي المركزي المركزي للشركة</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
         </tr>
         <tr>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">3. محمد وليد حمودة</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1;">مدير الجودة والسلامة والعمليات</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">3. محمد وليد حمودة</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">مدير الجودة والسلامة والعمليات</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
         </tr>
         <tr>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">4. محمد وليد الباز</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1;">مدير المبيعات والتسويق الميداني</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">4. مازن السيد</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">مدير المبيعات والتسويق الميداني</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">50,000 جنيه مصري</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; color: #0284c7;">25%</td>
         </tr>
         <tr style="background-color: #cbd5e1; font-weight: bold; color: #0f172a;">
-            <td style="padding: 8px; border: 1px solid #cbd5e1;" colspan="2">إجمالي رأس مال المخزون التأسيسي كاش</td>
-            <td style="padding: 8px; border: 1px solid #cbd5e1;" colspan="2">200,000 جنيه مصري (مساهمات متساوية بالكامل)</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;" colspan="2">إجمالي رأس مال المخزون التأسيسي كاش</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;" colspan="2">200,000 جنيه مصري (مساهمات متساوية بالكامل)</td>
         </tr>
     </tbody>
 </table>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثاني: أحكام الإدارة والأغلبية والتفويض</div>
-<p style="margin-bottom: 10px; font-size: 10pt;">يتعهد الشركاء بالعمل التضامني لإدارة أصول مستودعات تاجر وتطبيق آليات المراقبة السحابية وحوكمة الباركود. وتصدر القرارات الاستراتيجية والمصروفات التي تزيد عن 1,000 ج.م بموافقة كتابية مسبقة من المدير المالي محمد مبروك لضمان سلامة خزينة الشركة.</p>
+<div class="legal-section-title" style="margin-top: 8px;">البند الثاني: أحكام الإدارة والأغلبية والتفويض</div>
+<p style="margin-bottom: 6px;">يتعهد الشركاء بالعمل التضامني لإدارة أصول مستودعات مارتديا وتتعهد الإدارة بمسح الباركود والمراقبة السحابية وحوكمة الموارد الفورية. وتصدر القرارات الاستراتيجية والمصروفات التي تزيد عن 1,000 ج.م بموافقة كتابية مسبقة من المدير المالي محمد مبروك لضمان سلامة الخزينة المركزية.</p>
 """
 
 doc_1_footer = """
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
-    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: center; border-radius: 4px;">
-        <div style="font-size: 8pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">توقيع: أحمد مبروك</div>
-        <div style="height: 12mm; border-bottom: 1px dotted #64748b; margin-bottom: 4px;"></div>
-        <div style="font-size: 7.5pt; color: #64748b;">التوقيع: ...................</div>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr) 60px; gap: 8px; margin-top: 10px; border-top: 1.5px solid #0f172a; padding-top: 8px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: center; border-radius: 4px;">
+        <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">توقيع: أحمد مبروك</div>
+        <div style="height: 10mm; border-bottom: 1.2px solid #64748b; margin-bottom: 2px;"></div>
+        <div style="font-size: 7pt; color: #64748b;">التوقيع يدوياً</div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: center; border-radius: 4px;">
-        <div style="font-size: 8pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">توقيع: محمد مبروك</div>
-        <div style="height: 12mm; border-bottom: 1px dotted #64748b; margin-bottom: 4px;"></div>
-        <div style="font-size: 7.5pt; color: #64748b;">التوقيع: ...................</div>
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: center; border-radius: 4px;">
+        <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">توقيع: محمد مبروك</div>
+        <div style="height: 10mm; border-bottom: 1.2px solid #64748b; margin-bottom: 2px;"></div>
+        <div style="font-size: 7pt; color: #64748b;">التوقيع يدوياً</div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: center; border-radius: 4px;">
-        <div style="font-size: 8pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">توقيع: محمد وليد حمودة</div>
-        <div style="height: 12mm; border-bottom: 1px dotted #64748b; margin-bottom: 4px;"></div>
-        <div style="font-size: 7.5pt; color: #64748b;">التوقيع: ...................</div>
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: center; border-radius: 4px;">
+        <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">توقيع: م.وليد حمودة</div>
+        <div style="height: 10mm; border-bottom: 1.2px solid #64748b; margin-bottom: 2px;"></div>
+        <div style="font-size: 7pt; color: #64748b;">التوقيع يدوياً</div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: center; border-radius: 4px;">
-        <div style="font-size: 8pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">توقيع: محمد وليد الباز</div>
-        <div style="height: 12mm; border-bottom: 1px dotted #64748b; margin-bottom: 4px;"></div>
-        <div style="font-size: 7.5pt; color: #64748b;">التوقيع: ...................</div>
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: center; border-radius: 4px;">
+        <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">توقيع: مازن السيد</div>
+        <div style="height: 10mm; border-bottom: 1.2px solid #64748b; margin-bottom: 2px;"></div>
+        <div style="font-size: 7pt; color: #64748b;">التوقيع يدوياً</div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="dashed-stamp-box" style="margin: 0;"></div>
     </div>
 </div>
 """
@@ -191,41 +203,53 @@ PAGES_CONTENT_16_20[17] = get_contract_page_wrapper(
 
 # ----------------- PAGE 18: Document 2 - Warehouse Lease Agreement -----------------
 doc_2_body = """
-<p style="margin-bottom: 12px; font-size: 10.5pt;">إنه في تاريخه المذكور أعلاه، تم تحرير هذا العقد بالتراضي والقبول التام بين كل من:</p>
-<p style="margin-bottom: 8px; font-size: 10pt;"><strong>الطرف الأول (المؤجر):</strong> السيد/ة ............................................................................................................ <br>
-الحامل لبطاقة الرقم القومي رقم: .................................................... والمقيم في: ....................................................................</p>
-<p style="margin-bottom: 12px; font-size: 10pt;"><strong>الطرف الثاني (المستأجر):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> وممثلها الشريك المفوّض: السيد محمد وليد الباز <br>
-رقم السجل التجاري / رقم الهوية: ............................................................................................................................</p>
+<p style="margin-bottom: 8px;">إنه في تاريخه المذكور أعلاه، تم تحرير هذا العقد بالتراضي والقبول التام بين كل من:</p>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الأول: موضوع الإيجار والموقع والمساحة</div>
-<p style="margin-bottom: 10px; font-size: 10pt;">أجر الطرف الأول للطرف الثاني بموجب هذا العقد مستودعاً مخصصاً لتخزين المواد الغذائية والمشروبات سريعة الدوران والمنظفات، يقع في <strong>طوخ الأقلام، مركز السنبلاوين، الدقهلية</strong> وبمساحة إجمالية تبلغ 150 متر مربع كاملة الحيازة والصلاحية الإنشائية واللوجستية.</p>
+<div class="custom-form-group">
+    <span class="custom-form-label">الطرف الأول (المؤجر):</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">رقم بطاقة الرقم القومي للمؤجر:</span>
+    <span class="custom-form-input" style="width: 300px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">المقيم في:</span>
+    <span class="custom-form-input"></span>
+</div>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثاني: القيمة الإيجارية وطريقة السداد</div>
-<p style="margin-bottom: 8px; font-size: 10pt;">اتفق الطرفان على أن تكون القيمة الإيجارية الشهرية للمستودع وفقاً لما يلي:</p>
-<p style="font-size: 10.5pt; font-weight: bold; background-color: #f8fafc; padding: 10px; border: 1px dashed #cbd5e1; border-radius: 4px; text-align: center; margin: 10px 0;">
-الأجرة الشهرية المتفق عليها كتابةً وقدرها: ............................................................................................ ج.م شهرياً.<br>
-(تُكتب بالكلمات): ................................................................................................................................................ جنيه مصري.
-</p>
-<p style="margin-bottom: 8px; font-size: 10pt;">• يقر الطرفان بمساهمة ودعم الشريك محمد وليد الباز بتوفير المستودع مجاناً بالكامل دون أي قيمة إيجارية طوال الستة أشهر الأولى للنشاط كدعم عيني استراتيجي لانطلاقة الشركة، على أن تطبق الأجرة المحددة أعلاه بعد انقضاء الستة أشهر الأولى للنشاط.</p>
+<p style="margin-bottom: 8px; margin-top: 8px;"><strong>الطرف الثاني (المستأجر):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ويمثلها الشريك المفوّض: السيد <strong>مازن السيد</strong>.</p>
+
+<div class="legal-section-title" style="margin-top: 10px;">البند الأول: موضوع الإيجار والموقع والمساحة</div>
+<p style="margin-bottom: 6px;">أجر الطرف الأول للطرف الثاني بموجب هذا العقد مستودعاً مخصصاً لتخزين المواد الغذائية والمشروبات سريعة الدوران والمنظفات، يقع في <strong>طوخ الأقلام، مركز السنبلاوين، الدقهلية</strong> وبمساحة إجمالية تبلغ 150 متر مربع كاملة الحيازة والصلاحية الإنشائية واللوجستية.</p>
+
+<div class="legal-section-title" style="margin-top: 10px;">البند الثاني: القيمة الإيجارية وطريقة السداد</div>
+<p style="margin-bottom: 6px;">• يقر الطرفان بمساهمة ودعم الشريك <strong>مازن السيد</strong> بتوفير المستودع مجاناً بالكامل دون أي قيمة إيجارية طوال الستة أشهر الأولى للنشاط كدعم عيني استراتيجي لانطلاقة الشركة وتسهيل العمل الميداني.<br>
+• بعد انتهاء فترة الدعم المجانية، يتفق الطرفان على أجرة شهرية متفق عليها كتابةً تبلغ قيمتها بالجنيه المصري:</p>
+<div class="custom-form-group" style="margin-top: 10px; background-color: #f8fafc; padding: 6px; border: 1.2px dashed #cbd5e1; border-radius: 4px;">
+    <span class="custom-form-label">الأجرة الشهرية المعتمدة لاحقاً:</span>
+    <span class="custom-form-input" style="width: 150px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">كتابةً بالكلمات:</span>
+    <span class="custom-form-input"></span>
+</div>
 """
 
 doc_2_footer = """
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 6px;">توقيع الطرف الأول (المؤجر)</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 80px; gap: 15px; margin-top: 10px; border-top: 1.5px solid #0f172a; padding-top: 8px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">توقيع الطرف الأول (المؤجر)</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
             الاسم الكامل: .....................................................<br>
-            رقم الهوية: ........................................................<br>
-            التوقيع: ............................................................
+            التوقيع اليدوي: ..................................................
         </div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 4px; margin-bottom: 6px;">توقيع الطرف الثاني (المستأجر - شركة مارتديا)</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
-            الاسم الكامل: .....................................................<br>
-            الصفة المفوّضة: ..................................................<br>
-            التوقيع والختم: ...................................................
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px;">توقيع الطرف الثاني (شركة مارتديا)</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
+            الممثل المفوّض: مازن السيد<br>
+            التوقيع والختم: ..................................................
         </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="dashed-stamp-box"></div>
     </div>
 </div>
 """
@@ -240,47 +264,64 @@ PAGES_CONTENT_16_20[18] = get_contract_page_wrapper(
 
 # ----------------- PAGE 19: Document 3 - Employment Contract -----------------
 doc_3_body = """
-<p style="margin-bottom: 12px; font-size: 10.5pt;">بموجب أحكام قانون العمل المصري رقم 12 لسنة 2003، تم إبرام هذا العقد المبدئي بين كل من:</p>
-<p style="margin-bottom: 8px; font-size: 10pt;"><strong>الطرف الأول (صاحب العمل):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ومقرها طوخ الأقلام، مركز السنبلاوين، الدقهلية، ويمثلها المدير المالي السيد محمد مبروك.</p>
-<p style="margin-bottom: 12px; font-size: 10pt;"><strong>الطرف الثاني (الموظف):</strong> السيد/ة ............................................................................................................ <br>
-رقم الهوية الوطنية: .................................................... العنوان الفعلي المقيم فيه: ........................................................ <br>
-رقم الهاتف المحمول: .................................................... البريد الإلكتروني: ................................................................</p>
+<p style="margin-bottom: 8px;">بموجب أحكام قانون العمل المصري رقم 12 لسنة 2003، تم إبرام هذا العقد المبدئي للعمل الفردي بين كل من:</p>
+<p style="margin-bottom: 6px;"><strong>الطرف الأول (صاحب العمل):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ويمثلها المدير المالي السيد محمد مبروك.</p>
+<p style="margin-bottom: 6px;"><strong>الطرف الثاني (الموظف):</strong></p>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الأول: المسمى الوظيفي والمسؤوليات اليومية الموكلة</div>
-<p style="font-size: 10pt; line-height: 1.6; margin-bottom: 10px;">
-الوظيفة الموكلة للطرف الثاني هي: ............................................................................................................<br>
-طبيعة العمل والمسؤوليات: يلتزم الطرف الثاني بتأدية مهامه المتمثلة في استلام ورص السلع الغذائية والمشروبات والمنظفات بمستودعات تاجر، وتجميع وإعداد الشحنات للبقالات، ومطابقة الأرصدة والباركود بكل أمانة ودقة تحت توجيه الممثل الميداني للموقع.
-</p>
+<div class="custom-form-group">
+    <span class="custom-form-label">الاسم الكامل للموظف:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">رقم بطاقة الرقم القومي للموظف:</span>
+    <span class="custom-form-input" style="width: 250px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">عنوان الإقامة الحالي:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">رقم الهاتف المحمول:</span>
+    <span class="custom-form-input" style="width: 200px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">المسمى الوظيفي:</span>
+    <span class="custom-form-input"></span>
+</div>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثاني: الراتب والبدلات وفترة الاختبار المعتمدة</div>
-<p style="font-size: 10pt; line-height: 1.6; margin-bottom: 8px;">• الراتب الشهري الإجمالي المتفق عليه وقدره: ............................................................................................ ج.م شهرياً.<br>
-(تُكتب بالكلمات): ................................................................................................................................................ جنيه مصري.<br>
-• فترة الاختبار المعتمدة للطرف الثاني هي ثلاثة أشهر تبدأ من تاريخ توقيع واستلام العقد، ويخضع العقد للتجديد بعد رضا الطرفين.</p>
+<div class="legal-section-title" style="margin-top: 10px;">البند الأول: طبيعة العمل والمسؤوليات اليومية الموكلة</div>
+<p style="margin-bottom: 6px;">يلتزم الطرف الثاني بتأدية مهامه المتمثلة في استلام ورص السلع الغذائية والمشروبات والمنظفات بمستودعات مارتديا، وتجميع وإعداد الشحنات للبقالات والمقاهي، ومطابقة الأرصدة والباركود ميكانيكياً بكل أمانة ودقة تحت توجيه الممثل الميداني للموقع.</p>
+
+<div class="legal-section-title" style="margin-top: 10px;">البند الثاني: الراتب والبدلات وفترة الاختبار المعتمدة</div>
+<div class="custom-form-group" style="background-color: #f8fafc; padding: 4px; border: 1px dashed #cbd5e1; border-radius: 4px;">
+    <span class="custom-form-label">الراتب الشهري المتفق عليه:</span>
+    <span class="custom-form-input" style="width: 150px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">كتابةً بالكلمات:</span>
+    <span class="custom-form-input"></span>
+</div>
+<p style="margin-bottom: 4px; margin-top: 4px;">• يخضع الموظف لفترة اختبار معتمدة مدتها ثلاثة أشهر تبدأ من تاريخ توقيع واستلام العقد الميداني، ويسري التجديد باتفاق الطرفين.</p>
 """
 
 doc_3_footer = """
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 6px;">توقيع الموظف (الطرف الثاني)</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
-            الاسم الكامل: .....................................................<br>
-            التوقيع الشخصي: ................................................<br>
-            التاريخ: ............................................................
+<div style="display: grid; grid-template-columns: 1fr 1fr 80px; gap: 15px; margin-top: 10px; border-top: 1.5px solid #0f172a; padding-top: 8px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 30mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">توقيع الموظف (الطرف الثاني)</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
+            الاسم: .....................................................<br>
+            التوقيع اليدوي: ..................................................
         </div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 4px; margin-bottom: 6px;">عن إدارة الشركة (الطرف الأول - شركة مارتديا)</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
-            الاسم: محمد مبروك (المدير المالي)<br>
-            التوقيع والاعتماد المالي: ..........................................<br>
-            خاتم الشركة الرسمي: .............................................
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 30mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px;">عن إدارة الشركة (الطرف الأول)</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
+            الاسم والاعتماد: محمد مبروك (المدير المالي)<br>
+            التوقيع والختم: ..................................................
         </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="dashed-stamp-box"></div>
     </div>
 </div>
 """
 
 PAGES_CONTENT_16_20[19] = get_contract_page_wrapper(
-    "3. عقد العمل الفردي المعتمد لعمال وموظفي مستودعات تاجر",
+    "3. عقد العمل الفردي المعتمد لعمال وموظفي مستودعات مارتديا",
     3,
     doc_3_body,
     doc_3_footer
@@ -289,52 +330,68 @@ PAGES_CONTENT_16_20[19] = get_contract_page_wrapper(
 
 # ----------------- PAGE 20: Document 4 - Advance Payment Request Form -----------------
 doc_4_body = """
-<p style="margin-bottom: 12px; font-size: 10.5pt;">يقدم هذا الطلب رسمياً للإدارة المالية والمدير المالي المركزي السيد محمد مبروك لاعتماد وصرف سلفة مالية أو دفعة مقدمة:</p>
+<p style="margin-bottom: 8px;">يقدم هذا الطلب رسمياً للإدارة المالية والمدير المالي المركزي السيد محمد مبروك لاعتماد وصرف سلفة مالية أو دفعة مقدمة كاش:</p>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الأول: بيانات مقدم الطلب (شريك أو موظف)</div>
-<p style="margin-bottom: 8px; font-size: 10pt;">اسم طالب السلفة المالي: .................................................................................................................................... <br>
-الصفة / المسمى الوظيفي بالمستودع: .................................................... رقم الهاتف: ........................................................</p>
-<p style="margin-bottom: 12px; font-size: 10pt;">المبلغ المطلوب سلفة كاش وقدره: ............................................................................................................................ ج.م <br>
-(تُكتب بالكلمات): ................................................................................................................................................ جنيه مصري.</p>
-
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثاني: الغرض الميداني المبرر لصرف السلفة</div>
-<p style="margin-bottom: 10px; font-size: 10pt;">برجاء توضيح مبرر الصرف الميداني والتفاصيل الطارئة لخدمة مستودع تاجر:</p>
-<div style="border: 1px dashed #cbd5e1; background-color: #f8fafc; padding: 12px; font-size: 9.5pt; line-height: 1.8; border-radius: 4px; margin-bottom: 12px; min-height: 30mm;">
-......................................................................................................................................................................................<br>
-......................................................................................................................................................................................<br>
-......................................................................................................................................................................................
+<div class="custom-form-group">
+    <span class="custom-form-label">اسم طالب السلفة المالي:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">الصفة / المسمى الوظيفي:</span>
+    <span class="custom-form-input" style="width: 250px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">رقم الهاتف:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group" style="background-color: #f8fafc; padding: 4px; border: 1px dashed #cbd5e1; border-radius: 4px; margin-top: 8px;">
+    <span class="custom-form-label">المبلغ المطلوب سلفة كاش:</span>
+    <span class="custom-form-input" style="width: 150px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">كتابةً بالكلمات:</span>
+    <span class="custom-form-input"></span>
 </div>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثالث: آلية وتواريخ السداد والاستقطاع المالي من الراتب</div>
-<p style="margin-bottom: 8px; font-size: 10pt;">آلية وتواريخ السداد المقترحة: ................................................................................................................................ <br>
-• الحساب البنكي المسجل المعتمد لمطابقة الخصم: ............................................................................................................</p>
+<div class="legal-section-title" style="margin-top: 10px;">البند الأول: الغرض الميداني المبرر لصرف السلفة</div>
+<p style="margin-bottom: 6px;">برجاء كتابة تفاصيل ومبرر الصرف الميداني لخدمة مستودعات مارتديا وسير المبيعات:</p>
+<div style="border: 1.2px solid #cbd5e1; background-color: #fdfdfd; border-radius: 4px; height: 16mm; padding: 6px;">
+    <span class="custom-form-input" style="width: 100%; display: block; margin-bottom: 6px;"></span>
+    <span class="custom-form-input" style="width: 100%; display: block;"></span>
+</div>
+
+<div class="legal-section-title" style="margin-top: 10px;">البند الثاني: آلية وتواريخ السداد والاستقطاع المالي</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">آلية وتواريخ السداد المقترحة:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">الحساب البنكي المسجل المعتمد:</span>
+    <span class="custom-form-input"></span>
+</div>
 """
 
 doc_4_footer = """
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
-    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">توقيع مقدم الطلب</div>
-        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+<div style="display: grid; grid-template-columns: repeat(3, 1fr) 70px; gap: 8px; margin-top: 10px; border-top: 1.5px solid #0f172a; padding-top: 8px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: right; border-radius: 4px; height: 28mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">توقيع مقدم الطلب</div>
+        <div style="font-size: 7.2pt; line-height: 1.3;">
             الاسم: .............................<br>
-            التوقيع: ...........................<br>
-            التاريخ: ............................
-        </div>
-    </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px; margin-bottom: 4px;">رأي ومراجعة المحاسب المالي</div>
-        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
-            الحالة: [  ] مقبول  [  ] مرفوض<br>
-            ملاحظات: ........................<br>
             التوقيع: ...........................
         </div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 8.5pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px; margin-bottom: 4px;">اعتماد وتوقيع المدير المالي</div>
-        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
-            الاسم: محمد مبروك<br>
-            القرار: [  ] يعتمد  [  ] يرفض<br>
-            التوقيع والختم: ...................
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: right; border-radius: 4px; height: 28mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 1px;">رأي ومراجعة المحاسب</div>
+        <div style="font-size: 7.2pt; line-height: 1.3;">
+            الحالة: [  ] مقبول  [  ] مرفوض<br>
+            التوقيع: ...........................
         </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 4px; text-align: right; border-radius: 4px; height: 28mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 1px;">اعتماد المدير المالي</div>
+        <div style="font-size: 7.2pt; line-height: 1.3;">
+            الاسم: محمد مبروك<br>
+            التوقيع: ...........................
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="dashed-stamp-box" style="margin: 0; width: 52px; height: 52px;"></div>
     </div>
 </div>
 """
@@ -349,65 +406,68 @@ PAGES_CONTENT_16_20[20] = get_contract_page_wrapper(
 
 # ----------------- PAGE 21: Document 5 - Bank Account Registration Form -----------------
 doc_5_body = """
-<p style="margin-bottom: 12px; font-size: 10.5pt;">تستخدم هذه الاستمارة لتسجيل وحفظ وتفويض الحساب البنكي المعتمد والمسجل باسم الشريك لتلقي كافة التحويلات والأرباح الصافية:</p>
+<p style="margin-bottom: 8px;">تستخدم هذه الاستمارة لتسجيل وحفظ وتفويض الحساب البنكي المعتمد والمسجل باسم الشريك لتلقي كافة التحويلات وأرباح منصة ومستودعات مارتديا:</p>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الأول: بيانات الشريك التعريفية</div>
-<p style="margin-bottom: 8px; font-size: 10pt;">الاسم الكامل للشريك المؤسس: ............................................................................................................................ <br>
-رقم الهوية الوطنية / جواز السفر: .................................................... النسبة الملكية المعتمدة بالشركة: 25% حصراً بالكامل.</p>
+<div class="custom-form-group">
+    <span class="custom-form-label">الاسم الكامل للشريك المؤسس:</span>
+    <span class="custom-form-input"></span>
+</div>
+<div class="custom-form-group">
+    <span class="custom-form-label">رقم بطاقة الرقم القومي للشريك:</span>
+    <span class="custom-form-input" style="width: 250px;"></span>
+    <span class="custom-form-label" style="margin-right: 15px;">النسبة الملكية المعتمدة:</span>
+    <span class="custom-form-input" style="font-weight: bold; color: #0284c7;">25% (متساوية تماماً)</span>
+</div>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثاني: التفاصيل الفنية والبنكية للحساب المعتمد للتحويل</div>
-<table style="width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.5pt;">
+<div class="legal-section-title" style="margin-top: 10px;">التفاصيل الفنية والبنكية للحساب المعتمد للتحويل المالي كاش</div>
+<table style="width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 7.5pt;">
     <tbody>
         <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; width: 30%; font-weight: bold; background-color: #f8fafc;">اسم البنك المستلم بالكامل:</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; width: 70%;">........................................................................................................................</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; width: 30%; font-weight: bold; background-color: #f8fafc;">اسم البنك المستلم بالكامل:</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">اسم فرع البنك الفعلي:</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">اسم فرع البنك الفعلي:</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">اسم صاحب الحساب بالكامل (طبقاً للبنك):</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">اسم صاحب الحساب (بنفس البنك):</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">رقم الحساب البنكي الجاري:</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">........................................................................................................................</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">رقم الحساب البنكي الجاري:</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">........................................................................................................................</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">رمز الآيبان الدولي IBAN:</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">........................................................................................................................</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">رمز السويفت كود SWIFT CODE:</td>
-            <td style="padding: 10px; border: 1px solid #cbd5e1;">........................................................................................................................</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold; background-color: #f8fafc;">رمز الآيبان الدولي IBAN:</td>
+            <td style="padding: 4px; border: 1px solid #cbd5e1; font-weight: bold;">........................................................................................................................</td>
         </tr>
     </tbody>
 </table>
 
-<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">البند الثالث: إقرار وتعهد الوفاء والاستلام المالي المركزي</div>
-<p style="font-size: 9pt; line-height: 1.5; color: #475569; text-align: justify; margin-top: 5px;">
+<p style="font-size: 7.5pt; line-height: 1.4; color: #475569; text-align: justify; margin-top: 6px;">
 بموجب توقيعي أدناه، أقر وأصادق نحن الشريك المؤسس بأن هذا الحساب البنكي المسجل هو الحساب الرسمي والوحيد المعتمد لتلقي كافة مستحقاتي وتوزيعات الأرباح والتحويلات من شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong>، ويعتبر استلام التحويل عليه بمثابة مخالصة وإقرار باستلام الدفعات وبراءة ذمة كاملة للإدارة والمدير المالي المركزي.
 </p>
 """
 
 doc_5_footer = """
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 6px;">توقيع وإقرار الشريك المعني</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 80px; gap: 15px; margin-top: 10px; border-top: 1.5px solid #0f172a; padding-top: 8px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 28mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">توقيع وإقرار الشريك المعني</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
             الاسم الكامل: .....................................................<br>
-            التوقيع الشخصي: ................................................<br>
-            التاريخ واليوم: ....................................................
+            التوقيع اليدوي: ................................................
         </div>
     </div>
-    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="font-size: 9pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 4px; margin-bottom: 6px;">اعتماد وتصديق المدير المالي للمطابقة</div>
-        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+    <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 28mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px;">اعتماد وتصديق المدير المالي</div>
+        <div style="font-size: 7.5pt; line-height: 1.5;">
             الاسم: محمد مبروك (المدير المالي)<br>
-            حالة الحساب: [  ] تم التحقق والتسجيل بنجاح في النظام السحابي<br>
             التوقيع والختم: ...................................................
         </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="dashed-stamp-box"></div>
     </div>
 </div>
 """
