@@ -1,338 +1,375 @@
 # -*- coding: utf-8 -*-
 import sys
 
-# Define Pages 16 to 20 for Tager Smart
+# Define Pages 16 to 20 for Tager
 PAGES_CONTENT_16_20 = {}
 
 # ----------------- PAGE 16 -----------------
 PAGES_CONTENT_16_20[16] = """
-<h1>14. المخطط الهندسي واللوجستي لمستودع طوخ الأقلام الذكي</h1>
-<p>تم تصميم التوزيع الجغرافي للمساحة التشغيلية لمستودع طوخ الأقلام (طريق السنبلاوين الرئيسي) لرفع كفاءة تداول البضائع بنسبة 40%، وتقليل زمن تجهيز الطلبات إلى أقل من 15 دقيقة فقط، مع ضمان الفصل البيئي التام للمنظفات:</p>
+<h1>15. الامتثال التنظيمي والحماية المدنية وسلامة المستودعات</h1>
+<p>تلتزم شركة <strong>"تاجر" (Tager)</strong> بتطبيق معايير صارمة للأمن والسلامة المهنية والامتثال التنظيمي، لحماية المخزون الاستثماري وضمان استمرارية الأعمال دون أي انقطاع أو عقوبات تنظيمية. ونوضح هنا ضوابط وإجراءات السلامة والحفاظ على جودة المنتجات المعتمدة بمستودعاتنا:</p>
 
-<h2>المخطط الداخلي المعتمد لمستودع طوخ الأقلام الذكي (مساحة 150 متر مربع)</h2>
+<h2>الامتثال لمتطلبات وتراخيص الحماية المدنية وسلامة المخزون</h2>
+<p>• <strong>نظام مكافحة الحريق والحرائق:</strong> يتجهز المستودع بطاقة إطفاء أولية تشتمل على طفايات حريق بودرة جافة (حجم 6 كجم) موزعة عند بوابات الدخول ومخارج الطوارئ وممرات التخزين بانتظام، مع تدريب النواب الميدانيين (آدم ومحمود) على تشغيلها السريع في حالات الطوارئ.<br>
+• <strong>الوقاية والتهوية الطبيعية:</strong> يثبت بالمستودع 4 شفاطات كهربائية كبرى لضمان تدفق مستمر للهواء وخفض درجات الحرارة والرطوبة داخل المستودع صيفاً لحماية الزيت والألبان والمنظفات من التلف المباشر.<br>
+• <strong>التحوط ضد الرطوبة وعزل البضائع:</strong> يتم رص جميع كراتين الأغذية والمشروبات والمياه والمنظفات على طبالي بلاستيكية وخشبية مرتفعة عن الأرض بمسافة لا تقل عن 15 سم وعن الحوائط بمسافة 10 سم لتأمين تهوية مثالية ومنع تسرب الرطوبة الأرضية للمنتجات.</p>
+
+<h2>إجراءات الصيانة والنظافة والوقاية من الآفات خلال مرحلة التأسيس</h2>
+<p>تماشياً مع سياسة الرشاقة والنمو التدريجي وضغط النفقات التأسيسية، تقرر عدم التعاقد مع شركات خارجية لمكافحة الآفات أو شركات نظافة متخصصة خلال فترات التشغيل الأولى وحساسية التدفق المالي. وبدلاً من ذلك، نعتمد على بروتوكول داخلي صارم يقوم به طاقم عمل المستودع لضمان جودة البيئة التخزينية:</p>
+<p>• <strong>النظافة والتعقيم الدوري اليومي:</strong> يلتزم عمال المستودع بإجراء عمليات تنظيف وكنس دوري يومي لكافة الممرات والأرفف والزوايا، واستخدام مواد تنظيف ومطهرات قياسية عادية عالية الكفاءة لتأمين خلو المستودع التام من الغبار والأوساخ.<br>
+• <strong>بروتوكول تصفير النفايات:</strong> تفرغ صناديق النفايات وتخرج كرتون التغليف التالف خارج المستودع في نهاية كل نوبة عمل، لمنع تراكم أي بقايا تجذب الحشرات أو تضر ببيئة تخزين الألبان والمشروبات.<br>
+• <strong>الفحص الوقائي الأسبوعي:</strong> يقوم الممثل الميداني محمود حمودة بفحص زوايا المستودع ومخارج الصرف الصحي أسبوعياً للتأكد من إقفالها التام، وتطبيق معالجات وقائية يدوية بمواد آمنة مصرح بها لضمان حماية المخزون من القوارض والآفات حتى تتوسع أعمال الشركة تجارياً.</p>
+
+<h2>مخطط بياني يوضح خطوات الرقابة اليومية لسلامة المستودع</h2>
 <div style="text-align: center; margin: 15px 0;">
-    <svg viewBox="0 0 700 320" style="width: 100%; height: auto; font-family: 'Cairo', sans-serif; background: #fafafa; border: 1px solid #ddd; border-radius: 6px;">
-        <!-- Warehouse Outline -->
-        <rect x="10" y="10" width="680" height="300" rx="8" fill="#ffffff" stroke="#1E3A8A" stroke-width="3" />
+    <svg viewBox="0 0 600 130" style="width: 100%; height: auto; font-family: 'Cairo', sans-serif; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px;">
+        <!-- Step 1 -->
+        <rect x="20" y="25" width="160" height="45" fill="#0f172a" rx="4" />
+        <text x="100" y="43" fill="#ffffff" font-size="8pt" font-weight="bold" text-anchor="middle">1. الجرد والتنظيف اليومي</text>
+        <text x="100" y="58" fill="#cbd5e1" font-size="6.5pt" text-anchor="middle">كنس الممرات بمطهرات عادية</text>
 
-        <!-- Grid/Wall separation -->
-        <line x1="10" y1="210" x2="690" y2="210" stroke="#CBD5E1" stroke-dasharray="5 5" />
-        <line x1="450" y1="10" x2="450" y2="210" stroke="#475569" stroke-width="2" />
-        <line x1="220" y1="10" x2="220" y2="210" stroke="#475569" stroke-width="2" />
+        <!-- Arrow -->
+        <line x1="185" y1="47" x2="210" y2="47" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)" />
 
-        <!-- Sector A: Basic Commodities -->
-        <rect x="25" y="25" width="180" height="170" rx="4" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5" />
-        <text x="115" y="55" font-size="12" font-weight="bold" fill="#1E3A8A" text-anchor="middle">القطاع (أ): السلع الأساسية</text>
-        <text x="115" y="80" font-size="9" fill="#2563EB" text-anchor="middle">السكر، الزيت، الأرز، المكرونة</text>
-        <text x="115" y="105" font-size="8.5" fill="#475569" text-anchor="middle">وزن ثقيل • تدوير فائق السرعة</text>
-        <rect x="40" y="130" width="150" height="50" rx="3" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" />
-        <text x="115" y="160" font-size="9.5" font-weight="bold" fill="#1E3A8A" text-anchor="middle">منصات خشبية هيدروليكية</text>
+        <!-- Step 2 -->
+        <rect x="215" y="25" width="170" height="45" fill="#0284c7" rx="4" />
+        <text x="300" y="43" fill="#ffffff" font-size="8pt" font-weight="bold" text-anchor="middle">2. فحص الرص والصلاحية</text>
+        <text x="300" y="58" fill="#e0f2fe" font-size="6.5pt" text-anchor="middle">رص على طبالي مرتفعة 15سم</text>
 
-        <!-- Sector B: Beverages & Tea -->
-        <rect x="235" y="25" width="200" height="170" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" />
-        <text x="335" y="55" font-size="12" font-weight="bold" fill="#78350F" text-anchor="middle">القطاع (ب): المشروبات والشاي</text>
-        <text x="335" y="80" font-size="9" fill="#B45309" text-anchor="middle">المياه المعبأة، الكانز، الشاي والبن</text>
-        <text x="335" y="105" font-size="8.5" fill="#78350F" text-anchor="middle">وزن متوسط • حماية جافة تامة</text>
-        <rect x="250" y="130" width="170" height="50" rx="3" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" />
-        <text x="335" y="160" font-size="9.5" font-weight="bold" fill="#78350F" text-anchor="middle">أرفف تخزين حديدية متينة</text>
+        <!-- Arrow -->
+        <line x1="390" y1="47" x2="415" y2="47" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)" />
 
-        <!-- Sector C: Detergents & Care (Environmentally Isolated) -->
-        <rect x="465" y="25" width="210" height="170" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" />
-        <text x="570" y="55" font-size="12" font-weight="bold" fill="#991B1B" text-anchor="middle">القطاع (ج): المنظفات والمسابح</text>
-        <text x="570" y="80" font-size="9" fill="#DC2626" text-anchor="middle">صابون، مساحيق، كلور، شامبو</text>
-        <text x="570" y="105" font-size="8.5" fill="#991B1B" text-anchor="middle">عزل كيميائي تام لمنع الروائح</text>
-        <rect x="480" y="130" width="180" height="50" rx="3" fill="#FEE2E2" stroke="#EF4444" stroke-width="1" />
-        <text x="570" y="160" font-size="9.5" font-weight="bold" fill="#991B1B" text-anchor="middle">حاجز هوائي مغلق مع المستودع</text>
+        <!-- Step 3 -->
+        <rect x="420" y="25" width="160" height="45" fill="#b45309" rx="4" />
+        <text x="500" y="43" fill="#ffffff" font-size="8pt" font-weight="bold" text-anchor="middle">3. تصفير الهدر والقمامة</text>
+        <text x="500" y="58" fill="#fef3c7" font-size="6.5pt" text-anchor="middle">إخراج العوادم بنهاية كل نوبة</text>
 
-        <!-- Loading & Dispatch Zone -->
-        <rect x="25" y="225" width="280" height="70" rx="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5" />
-        <text x="165" y="250" font-size="12" font-weight="bold" fill="#065F46" text-anchor="middle">منطقة الاستلام والتنزيل (الرباط المالي)</text>
-        <text x="165" y="275" font-size="9" fill="#059669" text-anchor="middle">فحص الجودة • تسجيل الباركود الفوري بنظام WMS</text>
+        <!-- Marker definition for arrows -->
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0284c7" />
+            </marker>
+        </defs>
 
-        <!-- Packing & Logistics Zone -->
-        <rect x="325" y="225" width="350" height="70" rx="4" fill="#F5F5F7" stroke="#1F2937" stroke-width="1.5" />
-        <text x="500" y="250" font-size="12" font-weight="bold" fill="#111827" text-anchor="middle">منطقة تجهيز الطلبيات وشحن سيارات التوزيع</text>
-        <text x="500" y="275" font-size="9" fill="#4B5563" text-anchor="middle">تحميل تروسيكل التوزيع • طباعة الفواتير اللاسلكية</text>
+        <text x="300" y="105" fill="#64748b" font-size="8pt" font-weight="bold" text-anchor="middle">شعار إدارة الجودة لـ تاجر: "بيئة تخزين معقمة وجافة تضمن نضارة المنتج وأمن رأس المال"</text>
     </svg>
 </div>
 
-<h2>الامتثال لمتطلبات وتراخيص الحماية المدنية وسلامة المخزون</h2>
-<p>• <strong>نظام إطفاء الحريق والسلامة المهنية:</strong> يشتمل المستودع على طفايات حريق بودرة جافة (حجم 6 كجم) موزعة عند البوابات والمخارج بانتظام، مع تركيب خراطيم مياه مرنة وموصلة بشبكة مياه طوخ الأقلام الرئيسية.<br>
-• <strong>الوقاية من الآفات والرطوبة:</strong> يثبت الشركاء بالتعاقد مع شركة معتمدة أجهزة طرد القوارض والموجات فوق الصوتية، مع رص البضائع على طبالي بلاستيكية مرتفعة عن الأرض بـ 15 سم لضمان جفاف البضاعة تاما.<br>
-• <strong>التهوية والإضاءة الطبيعية:</strong> يثبت بالمستودع 4 شفاطات كهربائية كبرى لضمان تدفق الهواء وتقليل درجات الحرارة داخل المستودع صيفاً لحماية الزيت والألبان من التلف المباشر.</p>
+<div class="danger-callout" style="margin-top: 10px;">
+    <h5>قوانين جودة وفرز المخزون الغذائي:</h5>
+    <p>يحظر تماماً رص المواد الكيميائية والكلور والمنظفات في نفس ممرات تخزين المياه والسلع الغذائية، وتلتزم إدارة الجودة بالفصل المادي التام لمنع تضرر المنتجات الغذائية الحساسة بروائح المنظفات.</p>
+</div>
 """
 
 # ----------------- PAGE 17 -----------------
 PAGES_CONTENT_16_20[17] = """
-<h1>15. كفاءة استغلال السعة التخزينية ومستهدفات الأداء التشغيلي للمستودع</h1>
-<p>تعتمد كفاءة ربحية المستودع على رفع نسبة استخدام المساحة الرأسية والأفقية إلى أقصى حد ممكن لتقليل التكلفة الثابتة لكل طن مخزون.</p>
+<h1>16. ملحق النماذج القانونية - عقد الشراكة وتنازل الحصص</h1>
+<p>يحتوي هذا الملحق على قوالب وصيغ قانونية معتمدة ومجهزة ببيانات وفراغات بيضاء كاملة للشركة، وجاهزة للتعبئة اليدوية والتوقيع الفوري عقب طباعة المستند لتسيير الحوكمة وضبط الشراكة قانوناً:</p>
 
-<h2>مؤشرات قياس الأداء والأهداف التشغيلية لمستودع طوخ الأقلام (طاقم العمل والتشغيل)</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8pt;">
-    <thead>
-        <tr>
-            <th>مؤشر الأداء اللوجستي</th>
-            <th>الوصف والمحتوى الرياضي واللوجستي</th>
-            <th>المستهدف الفعلي (المخطط)</th>
-            <th>الوضع الحالي لافتتاح المستودع</th>
-            <th>الإجراء الميداني للتحسين المستمر</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>نسبة استغلال المساحة التخزينية</strong></td>
-            <td>حجم البضائع المخزنة فعلياً مقسوماً على الطاقة القصوى المتاحة بالمستودع.</td>
-            <td><strong>85.0%</strong></td>
-            <td>35.0% (الافتتاح الأولي)</td>
-            <td>رص الأرفف أفقياً واستخدام المنصات الهيدروليكية لزيادة السعة الرأسية.</td>
-        </tr>
-        <tr>
-            <td><strong>معدل دوران المخزون الإجمالي</strong></td>
-            <td>متوسط عدد مرات تفريغ وإعادة تعبئة البضائع بالمستودع شهرياً.</td>
-            <td><strong>6.5 مرة / شهر</strong></td>
-            <td>3.0 مرة / شهر</td>
-            <td>تقديم عروض ترويجية للسلع البطيئة الدوران لتحرير رأس المال.</td>
-        </tr>
-        <tr>
-            <td><strong>دقة جرد البضائع الفعلي</strong></td>
-            <td>نسبة مطابقة كميات الأصناف بين النظام الرقمي والجرد العيني الميداني.</td>
-            <td><strong>99.9%</strong></td>
-            <td>99.0%</td>
-            <td>إلزام موظف الجرد بقراءة باركود الأصناف إجبارياً على الـ POS لضمان دقة النظام.</td>
-        </tr>
-        <tr>
-            <td><strong>زمن تداول البضائع الداخلي</strong></td>
-            <td>الوقت المستغرق من نزول البضائع من المورد إلى رصها بالرف المخصص.</td>
-            <td><strong>أقل من 30 دقيقة</strong></td>
-            <td>50 دقيقة</td>
-            <td>تحسين ممرات المستودع وإزالة أي معوقات لوجستية أمام طاقم التحميل.</td>
-        </tr>
-        <tr>
-            <td><strong>نسبة هدر وتلفيات المخزون</strong></td>
-            <td>إجمالي خسائر المنتجات التالفة أو منتهية الصلاحية مقسوماً على المشتريات.</td>
-            <td><strong>أقل من 0.2%</strong></td>
-            <td>0.1% (مستوى ممتاز)</td>
-            <td>تفعيل نظام التنبيه المبكر لتواريخ الصلاحية وتدوير بضائع الأقرب انتهاءً أولاً.</td>
-        </tr>
-    </tbody>
-</table>
+<div class="print-box">
+    <div class="print-title">نموذج عقد شراكة تأسيسي (شركة تضامن تاجر)</div>
+    <p>إنه في يوم <span class="print-field" style="min-width:60px;"></span> الموافق <span class="print-field" style="min-width:80px;"></span> تحرر هذا العقد بين كل من:<br>
+    1. الشريك الأول: أحمد مبروك، بطاقة رقم: <span class="print-field" style="min-width:120px;"></span> المقيم في: <span class="print-field" style="min-width:100px;"></span><br>
+    2. الشريك الثاني: محمد محجوب مبروك، بطاقة رقم: <span class="print-field" style="min-width:120px;"></span> المقيم في: <span class="print-field" style="min-width:100px;"></span><br>
+    3. الشريك الثالث: محمد وليد حمودة، بطاقة رقم: <span class="print-field" style="min-width:120px;"></span> المقيم في: <span class="print-field" style="min-width:100px;"></span><br>
+    4. الشريك الرابع: مازن السيد، بطاقة رقم: <span class="print-field" style="min-width:120px;"></span> المقيم في: <span class="print-field" style="min-width:100px;"></span><br>
+    <strong>البند الأول:</strong> اتفق الأطراف على تأسيس شركة تضامن باسم <strong>"تاجر" (Tager)</strong> برأس مال إجمالي قدره 200,000 ج.م موزعة بالتساوي (50,000 ج.م لكل شريك).<br>
+    <strong>البند الثاني:</strong> غرض الشركة هو تجارة الجملة والتجزئة للسلع الاستهلاكية وإدارة المستودعات الرقمية، ويكون مركزها الرئيسي: طوخ الأقلام، السنبلاوين.<br>
+    <strong>توقيعات الشركاء:</strong><br>
+    الشريك الأول: <span class="print-field" style="min-width:100px;"></span> الشريك الثاني: <span class="print-field" style="min-width:100px;"></span> الشريك الثالث: <span class="print-field" style="min-width:100px;"></span> الشريك الرابع: <span class="print-field" style="min-width:100px;"></span>
+    </p>
+</div>
 
-<h2>آلية جدولة النوبات وتكامل أدوار الشركاء بالمستودع</h2>
-<p>• <strong>نوبة العمل الصباحية (7 ص - 3 م):</strong> تركز على استلام طلبيات الموردين وفحص الجودة وإدخالها على النظام وتجهيز فواتير التوزيع الفوري.<br>
-• <strong>نوبة العمل المسائية (3 م - 11 م):</strong> تركز على تحميل سيارات وتروسيكلات التوزيع استعداداً للانطلاق فجر اليوم التالي، وتلقي طلبات البقالات من المنصة.<br>
-• <strong>الفصل والمسؤولية الميدانية:</strong> يلتزم النائب الميداني محمود حمودة بتقديم تقرير الإغلاق المالي والكمي اليومي للجروب المركزي للمراجعة من قبل المدير المالي محمد مبروك قبل إقفال حساب اليومية.</p>
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">نموذج اتفاقية تنازل ونقل ملكية حصة (حفظ الشفعة)</div>
+    <p>أقر أنا الشريك المتنازل: <span class="print-field" style="min-width:120px;"></span> بأنني قد تنازلت بموجب هذه الاتفاقية عن حصتي البالغة <span class="print-field" style="min-width:40px;"></span>% من رأس مال شركة <strong>"تاجر"</strong> إلى الشريك (أو المشتري): <span class="print-field" style="min-width:120px;"></span> لقاء مبلغ مالي متفق عليه وقدره <span class="print-field" style="min-width:80px;"></span> ج.م.<br>
+    ويقر المشتري بقبوله هذا التنازل والالتزام بكافة بنود عقد الشراكة الأساسي وميثاق الحوكمة للشركة.<br>
+    وقد تم عرض الحصة على باقي الشركاء بموجب حق الشفعة القانوني ووافقوا على نقل الملكية كتابة.<br>
+    <strong>المتنازل (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>المتنازل إليه (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>شاهد أول:</strong> <span class="print-field" style="min-width:80px;"></span> <strong>شاهد ثاني:</strong> <span class="print-field" style="min-width:80px;"></span>
+    </p>
+</div>
 
-<div class="info-callout" style="margin-top: 10px;">
-    <h5>قانون دوران المخزون:</h5>
-    <p>المستودع الذكي ليس مكاناً لتخزين وتجميع السلع لأشهر، بل هو منطقة عبور سريع للبضائع (Cross-Docking Node). كل يوم إضافي تقضيه السلعة في المخزن يقلل من هامش ربحها ويزيد من تكلفة حمايتها التشغيلية.</p>
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">طلب رسمي لانسحاب شريك من الشركة (إخطار 90 يوماً)</div>
+    <p>السادة شركاء ومجلس إدارة شركة <strong>تاجر</strong> المحترمين،<br>
+    أتقدم أنا الشريك: <span class="print-field" style="min-width:120px;"></span> بطلب رسمي لانسحابي طوعاً واختيارياً من الشركة، وذلك اعتباراً من تاريخ <span class="print-field" style="min-width:80px;"></span>، وأطلب تسوية مستحقاتي المالية عن حصتي البالغة 25% طبقاً للقواعد المحاسبية المنصوص عليها بميثاق الحوكمة للشركة وتقسيطها على أربع دفعات ربع سنوية متساوية.<br>
+    <strong>مقدم الطلب (توقيع):</strong> <span class="print-field" style="min-width:120px;"></span> <strong>التاريخ:</strong> <span class="print-field" style="min-width:80px;"></span> <strong>موقف الشركاء:</strong> مقبول [  ] مرفوض [  ]
+    </p>
+</div>
+
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">اتفاقية تصفية وإنهاء شراكة (حل تضامني ودي)</div>
+    <p>اتفق الشركاء الأربعة الموقعون أدناه على حل شركة <strong>تاجر</strong> وتصفيتها ودياً وتعيين المحاسب القانوني السيد: <span class="print-field" style="min-width:120px;"></span> مصفياً قانونياً للشركة، وتؤول نواتج تصفية الأصول العينية والبرمجية والمستودع للشركاء بالتساوي بعد سداد الديون والمستحقات.<br>
+    <strong>توقيعات الشركاء الأربعة بالتصفية:</strong><br>
+    1. <span class="print-field" style="min-width:80px;"></span> 2. <span class="print-field" style="min-width:80px;"></span> 3. <span class="print-field" style="min-width:80px;"></span> 4. <span class="print-field" style="min-width:80px;"></span> <strong>التاريخ:</strong> <span class="print-field" style="min-width:80px;"></span>
+    </p>
 </div>
 """
 
 # ----------------- PAGE 18 -----------------
 PAGES_CONTENT_16_20[18] = """
-<h1>16. نظام الباركود الإلكتروني والتحكم اللحظي في المخزون (WMS)</h1>
-<p>لتجنب المشاكل التقليدية لأسواق الجملة الورقية، تعمل مستودعات <strong>"تاجر" (Tager)</strong> بنظام كود موحد وقوي لتبسيط الرقابة اللحظية (Barcode Inventory & POS System). حيث يتم تعيين كود باركود (Barcode) فريد مخصص لكل كرتونة، صندوق، أو عبوة جملة يتم استلامها أو شحنها (مثل زجاجات المياه المعبأة، المياه الغازية، العصائر، كراتين زيت الطعام، شيكارات السكر والأرز، أو أي سلعة استهلاكية أخرى في المستودع). ولا يسمح بخروج أي سلعة نهائياً من المستودع إلا بعد مسح باركود الصنف ميكانيكياً بواسطة قارئ الليزر فورا، لضمان تحديث مستمر للمخزون وتحقيق أقصى درجات الرقابة:</p>
+<h1>17. ملحق النماذج القانونية - الإخطارات وقرارات الشركاء والمحاضر</h1>
+<p>نستعرض الجزء الثاني من النماذج والإخطارات القانونية وصيغ إثبات الإخلالات بالالتزامات وفقد الأهلية وقرارات مجلس الإدارة المشترك، وهي مجهزة بالكامل بفراغات وتوقيعات كتابية لإتمام حوكمة الشركة يدوياً عقب الطباعة:</p>
 
-<h2>هيكل تدفق البيانات الرقمية بالباركود من الاستلام إلى التسليم</h2>
-<p>تبدأ دورة حياة السلعة على نظامنا اللوجستي من لحظة شرائها من المصنع لضمان الشفافية المطلقة، وفقاً للخطوات المعيارية التالية:</p>
+<div class="print-box">
+    <div class="print-title">إشعار رسمي كتابي بالانسحاب (إعلان رسمي للشركاء)</div>
+    <p>بموجب هذا الإخطار الرسمي، أحيطكم علماً أنا الشريك: <span class="print-field" style="min-width:140px;"></span> برغبتي في التخارج التام من الشركة بانتهاء السنة المالية الحالية في تاريخ <span class="print-field" style="min-width:80px;"></span> وتفويض مجلس الإدارة لتقييم الحصة طبقاً للميزانية المعتمدة من المحاسب الخارجي.<br>
+    <strong>مستلم الإخطار (المدير المالي):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>توقيع المستلم:</strong> <span class="print-field" style="min-width:100px;"></span> <strong>التاريخ:</strong> <span class="print-field" style="min-width:80px;"></span>
+    </p>
+</div>
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8pt;">
-    <thead>
-        <tr>
-            <th>الخطوة والمسار اللوجستي</th>
-            <th>الحدث المادي الفعلي بالمستودع</th>
-            <th>الإجراء الرقمي وتفاعل النظام</th>
-            <th>البيانات المسجلة بالخادم</th>
-            <th>المسؤول المباشر عن الإجراء</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>1. استلام الطلبية من المورد</strong></td>
-            <td>وصول سيارة الشحن التابعة للمورد لبوابة المستودع طوخ الأقلام.</td>
-            <td>مسح الباركود الدولي للمنتجات بواسطة قارئ الليزر اللاسلكي.</td>
-            <td>الصنف، الكمية بالكرتونة، تاريخ الانتهاء، السعر الفعلي للشراء.</td>
-            <td>النائب الميداني (محمود حمودة / آدم مبروك)</td>
-        </tr>
-        <tr>
-            <td><strong>2. تصنيف وتخزين السلعة</strong></td>
-            <td>رص البضائع بالمنصات المخصصة لها بالقطاع (أ، ب، ج) جغرافيا.</td>
-            <td>توليد رمز موقع التخزين (Bin Location Code) وربطه بباركود السلعة.</td>
-            <td>رقم القطاع، رقم الرف، رقم الطبلية، مستوى الارتفاع الرأسي.</td>
-            <td>أمين المخزن وعامل رص المنتجات</td>
-        </tr>
-        <tr>
-            <td><strong>3. إتاحة البضاعة للبيع</strong></td>
-            <td>تحديث الأرصدة وإتاحتها للبيع في تطبيق البقالات فورا.</td>
-            <td>ظهور الكمية الجديدة تلقائياً بالتطبيق بأسعار بيع محينة فوراً.</td>
-            <td>الكمية المتاحة للطلب، السعر الحالي، العروض والخصومات المطبقة.</td>
-            <td>النظام الرقمي لـ تاجر (WMS Cloud)</td>
-        </tr>
-        <tr>
-            <td><strong>4. الفرز وتجميع الطلب</strong></td>
-            <td>استلام طلب البقالة والبدء في تجميع الأصناف داخل الصناديق.</td>
-            <td>طباعة إذن التجميع (Picking List) موجهاً أمين المخزن للممر والرف الدقيق.</td>
-            <td>رقم الطلب، اسم العميل، موقع الأصناف داخل الممرات، ترتيب التجميع.</td>
-            <td>عامل التجميع والتعبئة اللوجستية</td>
-        </tr>
-        <tr>
-            <td><strong>5. التسليم والتحصيل الفوري</strong></td>
-            <td>تسليم الطلبية للبقال في محله التجاري بمدينة السنبلاوين أو المنصورة.</td>
-            <td>مسح باركود إذن التسليم وتوقيع العميل وتحصيل الكاش المالي.</td>
-            <td>حالة الدفع (مدفوع كاش)، وقت التسليم، اسم المندوب، ملاحظات العميل.</td>
-            <td>مندوب التوزيع الميداني (سائق التروسيكل)</td>
-        </tr>
-    </tbody>
-</table>
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">نموذج إثبات إخلال شريك بالتزامات الشراكة التجارية</div>
+    <p>أقر نحن الشركاء الموقعون أدناه بحدوث إخلال جسيم بالالتزامات المنصوص عليها بعقد الشراكة من قبل الشريك: <span class="print-field" style="min-width:120px;"></span> والمتمثل في: <span class="print-field" style="min-width:150px;"></span> مما ترتب عليه ضرر مادي بالشركة وقدره <span class="print-field" style="min-width:80px;"></span> ج.م. وبناءً عليه تقرر تجميد صلاحياته الإدارية وحظر التراخيص البرمجية لحين تسوية الخسائر.<br>
+    <strong>توقيع الشركاء المتضررين:</strong> 1. <span class="print-field" style="min-width:80px;"></span> 2. <span class="print-field" style="min-width:80px;"></span> 3. <span class="print-field" style="min-width:80px;"></span> <strong>التاريخ:</strong> <span class="print-field" style="min-width:80px;"></span>
+    </p>
+</div>
 
-<h2>الفوائد المالية والرقابية للتحكم الفوري بالباركود والـ POS</h2>
-<p>• <strong>التحكم اللحظي التام ومسح البضائع الصادرة:</strong> يتم إجبار جميع العمال على مسح باركود كل كرتونة أو صنف خارج من المستودع قبل الشحن، مما يحدث الأرصدة والكميات بقاعدة البيانات السحابية فوراً وبلا أي تأخير.<br>
-• <strong>لوحات التحكم السحابية والتقارير المالية عن بعد:</strong> يقوم نظام "تاجر" الرقمي بتوليد تقارير مالية لحظية، كشوفات جرد الأرصدة الحالية، سجل حركة تدفق المنتجات (Stock Movement History)، وملخصات المبيعات اليومية، والتي ترفع تلقائياً على لوحة تحكم رقمية مشفرة (Executive Remote Dashboards). يتيح هذا لجميع الشركاء الأربعة مراقبة ومتابعة سير الأعمال وإدارة ومراجعة الخزينة والواردات عن بعد وبدقة متناهية دون أدنى حاجة للتواجد الميداني اليومي المستمر في المستودع.<br>
-• <strong>منع التلاعب وتصفير السرقة والعجز:</strong> يحظر النظام خروج أو تداول أي كرتونة دون فاتورة POS رسمية مميكنة ومربوطة بمسح الباركود، مما يمنع نهائياً أي ثغرات مالية أو عجز مخزني غير مبرر.</p>
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">نموذج إقرار بفقد الأهلية القانونية أو العجز الكامل لأحد الشركاء</div>
+    <p>بناءً على التقارير الطبية الرسمية الصادرة من الجهات المختصة بجمهورية مصر العربية والمرفقة بهذا الإقرار، ثبت عجز / فقد أهلية الشريك: <span class="print-field" style="min-width:120px;"></span> عن إدارة ومتابعة مهامه بشركة <strong>تاجر</strong>. وبناءً عليه تنتقل ملكية حصته البالغة 25% للورثة الشرعيين بموجب إعلام الوراثة الرسمي مع بقائهم كشركاء صامتين.<br>
+    <strong>ممثل الورثة (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>المدير المالي (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>التاريخ:</strong> <span class="print-field" style="min-width:80px;"></span>
+    </p>
+</div>
 
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>سياسة التدوير المعيارية (FIFO - First In First Out):</h5>
-    <p>يلتزم عمال التجميع بصرامة بصرف الكراتين القديمة المستلمة أولاً (ذات الصلاحية الأقصر) ووضع المنتجات الجديدة بالمؤخرة، لضمان أعلى سلامة ونضارة ممكنة للمخزون.</p>
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">نموذج قرار وموافقة الشركاء (مجلس الإدارة المشترك)</div>
+    <p>بناءً على اجتماع مجلس الإدارة المشترك المنعقد بتاريخ <span class="print-field" style="min-width:80px;"></span> تقرر بأغلبية الأصوات الموافقة على:<br>
+    الموضوع المعتمد للقرار: <span class="print-field" style="min-width:260px;"></span><br>
+    وقد وافق الشركاء بنسبة أصوات بلغت <span class="print-field" style="min-width:40px;"></span>% وتوقيعاتهم أدناه تفيد بالالتزام والتنفيذ الفوري للقرار.<br>
+    <strong>الموافقون (توقيع):</strong> 1. <span class="print-field" style="min-width:80px;"></span> 2. <span class="print-field" style="min-width:80px;"></span> 3. <span class="print-field" style="min-width:80px;"></span> 4. <span class="print-field" style="min-width:80px;"></span>
+    </p>
+</div>
+
+<div class="print-box" style="margin-top: 5px;">
+    <div class="print-title">نموذج محاضر اجتماعات الشركاء الدورية لمشروع تاجر</div>
+    <p>إنه في يوم <span class="print-field" style="min-width:60px;"></span> المنعقد بمستودع <span class="print-field" style="min-width:80px;"></span> تم مناقشة جدول الأعمال التالي:<br>
+    1. <span class="print-field" style="min-width:200px;"></span> 2. <span class="print-field" style="min-width:200px;"></span><br>
+    وقد تم الاتفاق والتوصية بـ: <span class="print-field" style="min-width:260px;"></span><br>
+    <strong>رئيس الجلسة (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span> <strong>أمين السر (توقيع):</strong> <span class="print-field" style="min-width:100px;"></span>
+    </p>
 </div>
 """
 
 # ----------------- PAGE 19 -----------------
 PAGES_CONTENT_16_20[19] = """
-<h1>17. التوزيع اللوجستي وإدارة حركة أسطول النقل البري</h1>
-<p>تتبنى <strong>"تاجر" (Tager)</strong> نموذجاً مرناً وتدريجياً للتوزيع اللوجستي للتغلب على كلفة الوقود وصغر الميزانية الأولية. نظراً لمحدودية الموارد اللوجستية عند مرحلة الإطلاق وصفر سيارات مملوكة، لن يتم اقتناء سيارة شحن أو تروسيكل فوراً في اليوم الأول. وبدلاً من ذلك، ستتم الاستعانة بوسائل نقل ريفية محلية واقتصادية للغاية مثل <strong>التوك توك (Tuk-Tuk)</strong> أو عربات النقل الخفيفة المؤجرة لتوصيل الطلبات للقرى القريبة الملاصقة للمستودع الأول بطوخ الأقلام. ومع زيادة حجم المبيعات ونمو الإيرادات والتدفق المالي، سنقوم بالانتقال التدريجي لتملك وتشغيل أسطول لوجستي منظم يتكامل كالآتي:</p>
+<h1>18. ملحق السجلات الدفترية والإدارية والمالية للمستودع</h1>
+<p>نستعرض السجلات والحسابات الإدارية والمالية والدفترية المصممة لشركة <strong>"تاجر" (Tager)</strong>. وهي عبارة عن قوالب جداول ممتازة ومبوبة وجاهزة للطباعة والملء اليدوي المباشر بالمستودع لتوثيق حركة الكاش المالي وحالة المخزون، لضمان أعلى مستويات الرقابة والالتزام:</p>
 
-<h2>هيكل ومراحل أسطول التوزيع وتكلفته اللوجستية المخططة للشركة</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8pt;">
+<h2>1. سجل الحركة المالية وحصص إيداع رأس المال التأسيسي</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7pt;">
     <thead>
         <tr>
-            <th>نوع وسيلة النقل اللوجستية</th>
-            <th>الحمولة القصوى المعتمدة</th>
-            <th>النطاق الجغرافي للتشغيل الميداني</th>
-            <th>كلفة التشغيل لكل 100 كم (وقود وصيانة)</th>
-            <th>المبرر الاقتصادي والتشغيلي للاختيار</th>
+            <th>تاريخ الإيداع الفعلي</th>
+            <th>اسم الشريك المؤسس</th>
+            <th>قيمة الحصة كاش (ج.م)</th>
+            <th>حالة الإيداع المالي</th>
+            <th>توقيع الشريك المودع</th>
+            <th>توقيع واعتماد المدير المالي</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><strong>التوك توك والحلول المحلية (عند الإطلاق)</strong></td>
-            <td>0.4 طن بضائع</td>
-            <td>طوخ الأقلام والقرى المجاورة المباشرة (شعاع ضيق 1-5 كم).</td>
-            <td><strong>40 جنيه مصري للرحلة</strong></td>
-            <td>حل محلي بالغ التوفير والمرونة لتأمين الطلبيات الأولى بموارد لوجستية محدودة ومؤجرة.</td>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>أحمد مبروك</strong></td>
+            <td>50,000 ج.م</td>
+            <td>[  ] كاش  [  ] بنكي</td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
         </tr>
-        <tr>
-            <td><strong>التروسيكل التجاري (المرحلة اللاحقة)</strong></td>
-            <td>1.0 طن بضائع</td>
-            <td>تغطية مدينة السنبلاوين والقرى المحيطة بالكامل (شعاع 5-10 كم).</td>
-            <td><strong>80 جنيه مصري فقط</strong> (اقتصادي للغاية)</td>
-            <td>القدرة الفائقة على التوصيل السريع والمناورة في الشوارع الريفية الضيقة عقب نمو السيولة.</td>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>محمد محجوب مبروك</strong></td>
+            <td>50,000 ج.م</td>
+            <td>[  ] كاش  [  ] بنكي</td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
         </tr>
-        <tr>
-            <td><strong>السيارة الربع نقل (مرحلة التوسع)</strong></td>
-            <td>2.2 طن بضائع</td>
-            <td>نقيطة مركز المنصورة، مدينة المنصورة، ومراكز الدقهلية (شعاع 10-25 كم).</td>
-            <td><strong>260 جنيه مصري</strong> (متوسط الكلفة)</td>
-            <td>سرعة الحركة على الطرق الإقليمية لنقل شحنات كبار بقالي ومطاعم نقيطة مركز المنصورة والمنصورة.</td>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>محمد وليد حمودة</strong></td>
+            <td>50,000 ج.م</td>
+            <td>[  ] كاش  [  ] بنكي</td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
         </tr>
-        <tr>
-            <td><strong>سيارة النقل الجامبو (استئجار خارجي)</strong></td>
-            <td>5.0 طن بضائع</td>
-            <td>محافظة الإسماعيلية الإقليمية ومصانع القاهرة (شعاع 50-120 كم).</td>
-            <td>تعتمد على عقود التوريد المتفق عليها (مدرجة بالتكلفة)</td>
-            <td>تستخدم فقط لشحن البضائع بكميات ضخمة من مصانع السكر والزيت الكبرى للمستودع.</td>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>مازن السيد</strong></td>
+            <td>50,000 ج.م</td>
+            <td>[  ] كاش  [  ] بنكي</td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
         </tr>
     </tbody>
 </table>
 
-<h2>مخطط مناطق التوصيل المتدرجة جغرافياً (Scalable Delivery Zones)</h2>
-<p>تم تصميم البنية البرمجية لمنصة "تاجر" لتدعم تقسيم قطاعات التوصيل إلى مناطق ديناميكية متدرجة (Zone-Based Logistics) تتوسع تدريجياً بالتوازي مع تطور القدرات اللوجستية والمعدات، كالآتي:</p>
-<p>• <strong>المنطقة الأولى (شعاع 5 كم):</strong> تشمل قرية طوخ الأقلام والمحيط الزراعي الملاصق، وتخدم بالكامل في الأسبوع الأول بالاعتماد على حلول النقل المحلية والتوكتوك.<br>
-• <strong>المنطقة الثانية (شعاع 10 كم):</strong> تمتد لتغطي كامل أطراف مركز السنبلاوين والقرى الكبرى المحيطة به، ويبدأ خدمتها مع اقتناء التروسيكل التجاري الأول لتسريع وتيرة التحميل والتعبئة.<br>
-• <strong>المنطقة الثالثة (شعاع 15 كم فما فوق):</strong> نطاق التوصيل والانتشار الإقليمي المتقدم الذي يربط فروع مستودعات طوخ الأقلام ومستودع <strong>نقيطة مركز المنصورة</strong> بالمنصورة، مما يتيح تخديم وتغذية كبرى المحلات والمدن المجاورة تدريجياً لضمان تكامل السيطرة الجغرافية لشبكة مستودعات الشركة دون تحميل السيولة أي تكاليف تشغيل ضخمة في البدايات.</p>
+<h2>2. سجل الإيرادات وتحصيل النقدية اليومي (Cash Collection Register)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7pt;">
+    <thead>
+        <tr>
+            <th>التاريخ</th>
+            <th>رقم الفاتورة POS</th>
+            <th>اسم البقالة / العميل</th>
+            <th>المبلغ المستلم كاش</th>
+            <th>اسم مندوب التحصيل</th>
+            <th>المطابقة والعجز المالي</th>
+            <th>توقيع أمين الخزينة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>[ ] مطابق [ ] عجز بقيمة:</td><td>&nbsp;</td></tr>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>[ ] مطابق [ ] عجز بقيمة:</td><td>&nbsp;</td></tr>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>[ ] مطابق [ ] عجز بقيمة:</td><td>&nbsp;</td></tr>
+    </tbody>
+</table>
 
-<h2>نظام تحديد المسارات الجغرافية المزدوج لتوفير كلفة الوقود (Routing Strategy)</h2>
-<p>يتجنب مندوبو التوزيع الخروج العشوائي للسيارات، حيث يتم برمجة خطوط السير وتخطيطها آلياً عبر خوارزمية الذكاء اللوجستي بالتطبيق:</p>
-<p>1. <strong>المسار اللوجستي الدائري (Circular Route):</strong> تجميع كافة طلبيات قرى السنبلاوين المتجاورة وترتيبها جغرافياً، لتتحرك وسيلة النقل في مسار دائري يوزع لـ 15 بقالاً في رحلة ذهاب واحدة دون العودة للمستودع لتوفير 45% من استهلاك الوقود.<br>
-2. <strong>جدولة التحميل المسبق:</strong> يتم تجهيز وتحميل وسيلة التوصيل المتاحة بكراتين الطلبيات ليلاً بناءً على تقارير الخروج، لتبدأ حركة التوزيع في تمام الساعة 6:00 صباحاً كحد أقصى لضمان تسليم البضائع للبقال قبل فتح محله التجاري.</p>
+<h2>3. سجل المصروفات التشغيلية والعموميات للمستودع (Expense Register)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7pt;">
+    <thead>
+        <tr>
+            <th>التاريخ</th>
+            <th>البند والمصروف (كهرباء/إنترنت/إيجار)</th>
+            <th>القيمة المسددة (ج.م)</th>
+            <th>رقم مستند الصرف الفعلي</th>
+            <th>اسم موظف الصرف</th>
+            <th>اعتماد واعتماد الشريك المالي</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+</table>
 
-<div class="danger-callout" style="margin-top: 10px;">
-    <h5>ضوابط ومعايير حماية وسلامة السائقين والأسطول:</h5>
-    <p>يمنع تماماً شحن أي وسيلة نقل أو تروسيكل بحمولة زائدة عن طاقتها الاستيعابية المعتمدة لتفادي حوادث الطرق وتجنب تكرار الصيانة، مع فحص ضغط الإطارات ومستوى الزيت والمكابح أسبوعياً بمعرفة النائب الميداني محمود حمودة لضمان أمن حركة النقل.</p>
-</div>
+<h2>4. سجل الأصول وجرد المخزون الفعلي بالمستودع (Asset & Inventory Register)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7pt;">
+    <thead>
+        <tr>
+            <th>التاريخ</th>
+            <th>كود الصنف بالباركود</th>
+            <th>اسم المنتج الغذائي</th>
+            <th>الرصيد الدفتري (بالنظام)</th>
+            <th>الرصيد الفعلي (بالجرد)</th>
+            <th>التالفات والعجز الفعلي</th>
+            <th>توقيع مسؤول الجرد</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr style="height: 16px;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+</table>
 """
 
 # ----------------- PAGE 20 -----------------
 PAGES_CONTENT_16_20[20] = """
-<h1>18. مسارات المندوبين الميدانيين وبرمجة خطوط السير الذكية بالتطبيق</h1>
-<p>تعتمد قوة المبيعات الميدانية لـ "تاجر" على الوجود المباشر والفعال بين البقالات وتجار التجزئة. نوجه مندوبي المبيعات باستخدام خريطة مسارات متطورة تحدد جدول الزيارات بدقة تضمن تغطية كل بقالة بالمنطقة مرتين أسبوعياً على الأقل:</p>
+<h1>19. سجل مبيعات وتوزيع أرباح ومحاضر الشركاء والشهود</h1>
+<p>نختتم هذا الملحق بتقديم الصيغ والسجلات الدفترية النهائية لإثبات المبيعات اليومية وتوزيع الأرباح السنوية للشركاء الأربعة، وصفحة التوقيعات القانونية الكبرى والمصادقة على دراسة الجدوى الاستراتيجية:</p>
 
-<h2>مخطط برمجة المسار الأسبوعي لزيارات المندوبين (تقسيم قطاع السنبلاوين)</h2>
-<p>تم تقسيم منطقة النشاط حول مستودع طوخ الأقلام إلى 6 خطوط سير جغرافية محددة بدقة لتوفير الوقت والجهد، كالآتي:</p>
-
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8pt;">
+<h2>1. سجل المبيعات اليومي للمستودع (Daily Sales Register)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7.2pt;">
     <thead>
         <tr>
-            <th>اليوم الفعلي للزيارات</th>
-            <th>المنطقة الجغرافية المستهدفة</th>
-            <th>عدد البقالات المسجلة المخطط زيارتها</th>
-            <th>أهداف مبيعات اليوم المستهدفة (ج.م)</th>
-            <th>طريقة التسويق المطبقة ميدانياً</th>
+            <th>التاريخ الفعلي</th>
+            <th>إجمالي عدد الطلبيات المنجزة</th>
+            <th>إجمالي قيمة المبيعات (ج.م)</th>
+            <th>طريقة السداد المحصلة</th>
+            <th>المبلغ المودع بالبنك كاش</th>
+            <th>توقيع المدير المالي للشركة</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><strong>السبت</strong></td>
-            <td>مركز طوخ الأقلام والقرى الملاصقة للمستودع الرئيسي.</td>
-            <td>35 بقالة ومحل تجاري</td>
-            <td>25,000 ج.م</td>
-            <td>زيارات مباشرة لعرض التطبيق وتحميل البضائع للمجربين الأوائل.</td>
+        <tr style="height: 20px;">
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td>[  ] كاش بالكامل  [  ] أخرى</td>
+            <td><span class="print-field" style="min-width:80px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
         </tr>
-        <tr>
-            <td><strong>الأحد</strong></td>
-            <td>مدينة السنبلاوين (المنطقة الشمالية وحي المعاهدة).</td>
-            <td>40 بقالة ومحل تجاري</td>
-            <td>35,000 ج.م</td>
-            <td>تسجيل التجار الجدد وتثبيت التطبيق على هواتفهم، وتوزيع الهدايا الترويجية.</td>
-        </tr>
-        <tr>
-            <td><strong>الإثنين</strong></td>
-            <td>قرى غرب السنبلاوين (الروضة، برقين، وغيرها من القرى).</td>
-            <td>30 بقالة ومحل تجاري</td>
-            <td>22,000 ج.م</td>
-            <td>توزيع كتل السكر والزيت الأساسية كبوابة استقطاب للبقال الريفي.</td>
-        </tr>
-        <tr>
-            <td><strong>الثلاثاء</strong></td>
-            <td>مدينة السنبلاوين (المنطقة الجنوبية وحي البستان).</td>
-            <td>42 بقالة ومحل تجاري</td>
-            <td>38,000 ج.م</td>
-            <td>طرح عروض المنظفات والمشروبات الغازية لرفع قيمة الفاتورة الإجمالية.</td>
-        </tr>
-        <tr>
-            <td><strong>الأربعاء</strong></td>
-            <td>قرى شرق السنبلاوين والحدود المشتركة مع ديرب نجم.</td>
-            <td>28 بقالة ومحل تجاري</td>
-            <td>20,000 ج.م</td>
-            <td>توسيع مسارات الانتشار الميداني وحصر تجار التجزئة المتميزين الجدد بالمنطقة.</td>
-        </tr>
-        <tr>
-            <td><strong>الخميس</strong></td>
-            <td>مدينة المنصورة (نقيطة مركز المنصورة والنطاق السكني المحيط بها).</td>
-            <td>25 بقالة ومحل كبير</td>
-            <td>40,000 ج.م</td>
-            <td>استهداف كبار البقالات ذات معدل الشراء والطلب المالي المرتفع.</td>
+        <tr style="height: 20px;">
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td>[  ] كاش بالكامل  [  ] أخرى</td>
+            <td><span class="print-field" style="min-width:80px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
         </tr>
     </tbody>
 </table>
 
-<h2>تكامل المندوب الميداني مع تطبيق الـ POS المحمول</h2>
-<p>• <strong>نظام الـ GPS والمطابقة:</strong> لا يسمح النظام للمندوب بتسجيل طلب البقال إلا إذا أظهرت إحداثيات الـ GPS تواجده الفعلي داخل النطاق الجغرافي للمحل بمسافة لا تزيد عن 20 متراً، مما يضمن جدية العمل والالتزام التام بجدول الزيارات.<br>
-• <strong>الطلب الفوري اللاسلكي:</strong> يسجل المندوب طلبية التاجر على هاتف البقال عبر التطبيق، لتصل الطلبية فوراً لوحدة لوحة تجهيز الطلبات بالمستودع طوخ الأقلام وتبدأ عملية التعبئة والتحميل خلال دقائق معدودة.</p>
+<h2>2. سجل توزيع الأرباح السنوية المعتمد للشركاء المؤسسين (30% أرباح موزعة)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 7.2pt;">
+    <thead>
+        <tr>
+            <th>العام المالي</th>
+            <th>اسم الشريك المؤسس القانوني</th>
+            <th>النسبة من الحصص</th>
+            <th>قيمة الأرباح المستحقة (ج.م)</th>
+            <th>تاريخ وسند الصرف المالي</th>
+            <th>توقيع الشريك بالاستلام</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>أحمد مبروك</strong></td>
+            <td>25.0%</td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>محمد محجوب مبروك</strong></td>
+            <td>25.0%</td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>محمد وليد حمودة</strong></td>
+            <td>25.0%</td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td><span class="print-field" style="min-width:50px; border-bottom:none;"></span></td>
+            <td><strong>مازن السيد</strong></td>
+            <td>25.0%</td>
+            <td><span class="print-field" style="min-width:60px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+            <td><span class="print-field" style="min-width:70px; border-bottom:none;"></span></td>
+        </tr>
+    </tbody>
+</table>
 
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>مستهدفات مندوب المبيعات اليومية (DSR Target):</h5>
-    <p>يتوقع من كل مندوب تسجيل ما لا يقل عن 15 طلبية جديدة يومياً، بنسبة إتمام تسليم مالي تزيد عن 95%، وتمنح الشركة حوافز مالية مجزية للمندوبين المتميزين عند تجاوز المستهدف بنسبة 10%.</p>
+<h2>3. صفحة المصادقة والتوقيعات القانونية الكبرى للشركاء المؤسسين والشهود</h2>
+<p style="font-size: 7.2pt; line-height: 1.35; margin-bottom: 4px;">بموجب التوقيعات أدناه، يصادق الشركاء الأربعة على كافة البنود الواردة بهذه دراسة الجدوى الاستثمارية والتشغيلية، ويلتزمون بالعمل المشترك وبذل أقصى جهد لإنجاح مشروع <strong>"تاجر"</strong> والتضامن المالي والقانوني التام لحماية وتنمية الكيان التجاري:</p>
+
+<div class="print-grid" style="margin-top: 5px;">
+    <div class="print-box">
+        <strong>توقيع الشركاء الأربعة المؤسسين:</strong><br><br>
+        الشريك الأول (أحمد مبروك): <span class="print-field" style="min-width:100px;"></span><br>
+        الشريك الثاني (محمد محجوب مبروك): <span class="print-field" style="min-width:100px;"></span><br>
+        الشريك الثالث (محمد وليد حمودة): <span class="print-field" style="min-width:100px;"></span><br>
+        الشريك الرابع (مازن السيد): <span class="print-field" style="min-width:100px;"></span>
+    </div>
+    <div class="print-box">
+        <strong>توقيع واعتماد الشهود ومعد الدراسة:</strong><br><br>
+        شاهد أول (قانوني): <span class="print-field" style="min-width:100px;"></span><br>
+        شاهد ثاني (قانوني): <span class="print-field" style="min-width:100px;"></span><br>
+        معد ومراجع الدراسة المالي: <span class="print-field" style="min-width:100px;"></span><br>
+        التاريخ والاعتماد النهائي: <span class="print-field" style="min-width:100px;"></span>
+    </div>
+</div>
+
+<div style="text-align: center; border-top: 1px solid #1E3A8A; padding-top: 5px; margin-top: 5px;">
+    <p style="font-size: 8pt; font-weight: bold; color: #1E3A8A; margin-bottom: 0;">تم إعداد واعتماد هذه الدراسة بحمد الله وتوفيقه للشركاء في تاريخ: 29 يوليو 2026</p>
 </div>
 """
 
-print("Pages 16 to 20 generated successfully.")
+print("pages_16_20.py updated with 5 pages successfully!")
