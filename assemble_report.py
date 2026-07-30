@@ -23,7 +23,7 @@ for k, v in PAGES_11_15.items():
 for k, v in PAGES_16_20.items():
     ALL_PAGES[k] = v
 
-# Documents 6-10 (Pages 22-26)
+# Documents 6-12 (Pages 22-28)
 for k, v in PAGES_21_30.items():
     ALL_PAGES[k] = v
 
@@ -34,7 +34,7 @@ html_out = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>دراسة جدوى تفصيلية شاملة - شركة مارتديا للتجارة والتوزيع ذ.م.م (تاجر)</title>
+    <title>دراسة جدوى تفصيلية شاملة - شركة مارتديا للتجارة والتوزيع ذ.م.م</title>
     <!-- خطوط متميزة ومحملة عبر الويب للتصميم الرقمي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -49,6 +49,12 @@ html_out += """
 """
 
 for page_num in sorted(ALL_PAGES.keys()):
+    # Dynamic header metadata for Appendix documents (Pages 17-28)
+    if page_num >= 17:
+        header_meta = "أي كشط أو تغيير أو تعديل غير مصرح به يجعل هذا المستند باطلاً"
+    else:
+        header_meta = "دراسة جدوى استراتيجية متكاملة"
+
     html_out += f"""
     <!-- ================= PAGE {page_num} ================= -->
     <div class="page-container" id="page-{page_num}">
@@ -56,7 +62,7 @@ for page_num in sorted(ALL_PAGES.keys()):
             <div class="logo-area">
                 <span class="logo-text">مارتديا</span>
             </div>
-            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.5</div>
+            <div class="meta-info">{header_meta}</div>
         </div>
         <div class="page-content">
 """
