@@ -563,7 +563,7 @@ tr:nth-child(even) td {
 .print-field {
     border-bottom: 1px dashed #475569;
     display: inline-block;
-    min-width: 150px;
+    min-width: 100px;
     height: 14px;
     margin: 0 4px;
 }
@@ -588,6 +588,105 @@ tr:nth-child(even) td {
     margin-bottom: 3px;
     border-bottom: 1px solid var(--accent);
     padding-bottom: 2px;
+}
+
+/* Legal Document Package Styles */
+.legal-header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+}
+.legal-header-table td {
+    border: 1px solid #94a3b8;
+    font-size: 6.5pt;
+    padding: 2px 4px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+.legal-title {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 4px 0;
+    padding: 3px;
+    border: 1.5px solid #1e293b;
+    background-color: #f1f5f9;
+}
+.legal-body {
+    font-size: 7pt;
+    line-height: 1.35;
+    color: #334155;
+    margin-bottom: 5px;
+}
+.legal-body p {
+    font-size: 7pt;
+    margin-bottom: 3px;
+}
+.legal-section-title {
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #0f172a;
+    border-right: 2.5px solid #0284c7;
+    padding-right: 4px;
+    margin: 4px 0 2px 0;
+}
+.legal-form-table {
+    width: 100%;
+    margin: 4px 0;
+    border-collapse: collapse;
+}
+.legal-form-table td {
+    padding: 3px 5px;
+    font-size: 7pt;
+    border: 1px solid #cbd5e1;
+}
+.legal-footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    gap: 6px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 4px;
+}
+.legal-footer-grid-witness {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 4px;
+}
+.legal-footer-box {
+    border: 1px dashed #94a3b8;
+    padding: 3px;
+    text-align: center;
+    font-size: 6.5pt;
+    background-color: #fafafa;
+    border-radius: 3px;
+    height: 38mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.stamp-box {
+    border: 1.5px dotted #64748b;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 5.5pt;
+    font-weight: bold;
 }
 """
 
