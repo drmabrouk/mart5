@@ -1,776 +1,395 @@
 # -*- coding: utf-8 -*-
 import sys
 
-# Define Pages 32 to 48 for V Smart General Trading L.L.C.
+# Define Pages 22 to 26 for Martdia Trading & Distribution Co. (L.L.C.)
 PAGES_CONTENT_21_30 = {}
 
-
-def render_legal_document(title_ar, title_en, doc_ref, body_html, footer_type="standard", partner_label="الشريك المعني"):
-    """
-    Renders a unified, extremely professional standalone A4 legal document with corporate headers,
-    metadata table, body, signature fields, financial manager signoff, and company stamp placeholder.
-    """
-    html = f"""
-    <!-- Legal Header Table -->
-    <table class="legal-header-table">
-        <tr>
-            <td style="width: 25%; font-weight: bold;">اسم الشركة:</td>
-            <td style="width: 40%;">شركة في سمارت للتجارة العامة ذ.م.م</td>
-            <td style="width: 15%; font-weight: bold;">رقم المستند:</td>
-            <td style="width: 20%;">{doc_ref}</td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">الإدارة المصدرة:</td>
-            <td>الإدارة القانونية والمالية المشتركة</td>
-            <td style="font-weight: bold;">تاريخ الإصدار:</td>
-            <td>29 يوليو 2026</td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">إعداد:</td>
-            <td>الشؤون القانونية والمحاسبة</td>
-            <td style="font-weight: bold;">مراجعة واعتماد:</td>
-            <td>مجلس إدارة V Smart General Trading</td>
-        </tr>
-    </table>
-
-    <div class="legal-title">
-        <div style="font-size: 11pt; font-weight: 800; color: #0f172a; letter-spacing: 0.5px;">{title_ar}</div>
-        <div style="font-size: 7.5pt; font-weight: bold; color: #475569; margin-top: 2px;">{title_en}</div>
-    </div>
-
-    <div class="legal-body">
-        {body_html}
-    </div>
-    """
-
-    if footer_type == "witness":
-        html += f"""
-        <div class="legal-footer-grid-witness">
-            <div class="legal-footer-box">
-                <span style="font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; display: block; margin-bottom: 4px;">توقيع الطرف المعني / الشركاء</span>
-                <div style="text-align: right; font-size: 6.5pt; flex-grow: 1;">
-                    الاسم: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    الصفة: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    التوقيع: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span>
-                </div>
-            </div>
-            <div class="legal-footer-box" style="border-style: solid; border-color: #0284c7;">
-                <span style="font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px; display: block; margin-bottom: 4px;">اعتماد وختم الشركة الرسمي</span>
-                <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                    <div class="stamp-box">V SMART STAMP</div>
-                    <span style="font-size: 5pt; color: #64748b; margin-top: 3px;">خاتم الشركة القانوني والتشغيلي</span>
-                </div>
-            </div>
-            <div class="legal-footer-box">
-                <span style="font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; display: block; margin-bottom: 4px;">الشهود القانونيون (Witnesses)</span>
-                <div style="text-align: right; font-size: 6.5pt; flex-grow: 1; line-height: 1.35;">
-                    شاهد 1: <span class="print-field" style="min-width: 80px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    التوقيع: <span class="print-field" style="min-width: 80px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    شاهد 2: <span class="print-field" style="min-width: 80px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    التوقيع: <span class="print-field" style="min-width: 80px; height: 10px; border-bottom-style: dotted;"></span>
-                </div>
-            </div>
+# Helper function to generate clean contract layouts with simple Date and beautiful spacious writing lines.
+def get_contract_page_wrapper(title_ar, doc_num, body_html, footer_html):
+    return f"""
+<div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Cairo', sans-serif;">
+    <div style="flex-grow: 1;">
+        <!-- Top Simple Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 18px;">
+            <div style="font-size: 10.5pt; font-weight: 800; color: #0f172a;">مجموعة المستندات التشغيلية والقانونية</div>
+            <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">وثيقة رقم: {doc_num} / 10</div>
         </div>
-        """
-    else:
-        html += f"""
-        <div class="legal-footer-grid">
-            <div class="legal-footer-box">
-                <span style="font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; display: block; margin-bottom: 4px;">توقيع ومصادقة الشركاء</span>
-                <div style="text-align: right; font-size: 6.5pt; flex-grow: 1; line-height: 1.45;">
-                    الاسم: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    الصفة: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    البطاقة: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span><br>
-                    التوقيع: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span>
-                </div>
-            </div>
-            <div class="legal-footer-box" style="border-style: solid; border-color: #0f172a;">
-                <span style="font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; display: block; margin-bottom: 4px;">مساحة الختم والمطابقة</span>
-                <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                    <div class="stamp-box">V SMART STAMP</div>
-                    <span style="font-size: 5pt; color: #64748b; margin-top: 3px;">خاتم الإدارة المالية والقانونية</span>
-                </div>
-            </div>
-            <div class="legal-footer-box" style="border-style: solid; border-color: #b45309;">
-                <span style="font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px; display: block; margin-bottom: 4px;">اعتماد وتوقيع المدير المالي للشركة</span>
-                <div style="text-align: right; font-size: 6.5pt; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>الاسم: محمد محجوب مبروك</div>
-                    <div>الصفة: المدير المالي المركزي للشركة</div>
-                    <div>توقيع المدير المالي: <span class="print-field" style="min-width: 90px; height: 10px; border-bottom-style: dotted;"></span></div>
-                </div>
-            </div>
+
+        <!-- Document Date -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <div style="font-size: 11pt; color: #1e293b; font-weight: bold;">تاريخ المستند: ............................................</div>
+            <div style="font-size: 11pt; color: #1e293b; font-weight: bold;">الرقم المرجعي: MT-DOC-{doc_num:02d}</div>
         </div>
-        """
-    return html
 
+        <!-- Document Title -->
+        <div style="text-align: center; margin: 20px 0; padding: 10px; background-color: #f1f5f9; border: 1.5px solid #0f172a; border-radius: 4px;">
+            <h2 style="font-size: 14pt; font-weight: 800; color: #0f172a; border: none; background: transparent; padding: 0; margin: 0; text-align: center;">{title_ar}</h2>
+        </div>
 
-# ----------------- PAGE 32: Salary and Profit Transfer Authorization -----------------
-PAGES_CONTENT_21_30[32] = render_legal_document(
-    "16. استمارة تفويض تحويل الرواتب والأرباح الدورية للشركاء والمديرين",
-    "Salary and Profit Transfer Authorization & Payment Order",
-    "Ref-VS-016",
-    """
-    <p>تستخدم هذه الاستمارة لمنح تفويض صريح للإدارة المالية المركزية لشركة <strong>V Smart General Trading L.L.C.</strong> بتحويل كافة المستحقات من رواتب إدارية وتوزيعات الأرباح للشركاء:</p>
-
-    <div class="legal-section-title">أولاً: بيانات المفوض والمستفيد</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">الاسم الكامل للمستفيد:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المسمى الوظيفي والصفة القانونية:</td>
-            <td>[  ] شريك مؤسس  [  ] ممثل ميداني  [  ] مدير تنفيذي  [  ] أخرى</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: نوع وتفاصيل الحساب وتفويض الخصم والتحويل</div>
-    <p>بموجب هذا المستند، أفوض الإدارة المالية المركزية رسمياً بتحويل:</p>
-    <div class="print-box" style="line-height: 1.5; font-size: 7.2pt;">
-        [  ] الراتب والبدلات الشهرية المقررة بقيمة: <span class="print-field" style="min-width:100px;"></span> ج.م<br>
-        [  ] نسبة الأرباح الموزعة السنوية البالغة 25% من مجموع الحصص المحققة.<br>
-        التحويل إلى حسابي البنكي المسجل رسمياً بفرع بنك: <span class="print-field" style="min-width:120px;"></span> رقم الآيبان: <span class="print-field" style="min-width:180px;"></span>
-    </div>
-    <p style="margin-top:5px; font-size:6.5pt; color:#475569;">* يعتبر هذا التفويض مستنداً سارياً لإبراء ذمة الإدارة المالية تماماً فور إثبات التحويل البنكي أو قيد السند البنكي بدفاتر الشركة.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 33: Advance Payment Request Form -----------------
-PAGES_CONTENT_21_30[33] = render_legal_document(
-    "17. نموذج وطلب سلفة ودفعات مالية مقدمة عهدة تشغيلية",
-    "Official Advance Payment Request Form",
-    "Ref-VS-017",
-    """
-    <p>طلب مالي يقدم للإدارة المالية لشركة <strong>V Smart General Trading L.L.C.</strong> لاعتماد سلفة مالية أو دفعة مقدمة لتسيير الأعمال الطارئة بالمستودعات:</p>
-
-    <div class="legal-section-title">أولاً: تفاصيل وقيمة السلفة المطلوبة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">الاسم مقدم الطلب:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المبلغ المطلوب بالأرقام (ج.م):</td>
-            <td><strong><span class="print-field" style="min-width:150px;"></span> جنيه مصري</strong></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المبرر التجاري والجدوى للطلب:</td>
-            <td><span class="print-field" style="min-width:250px; height:20px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: طريقة السداد والخصم المحاسبي المقترح</div>
-    <p>يتعهد مقدم الطلب برد السلفة أو تسوية العهدة بموجب إيصالات فواتير معتمدة في موعد أقصاه <span class="print-field" style="min-width:100px;"></span>، أو خصمها من مستحقاته كالتالي:</p>
-    <p>[  ] خصم دفعة واحدة من راتب الشهر القادم  [  ] تقسيط على <span class="print-field" style="min-width:40px;"></span> أقساط شهرية متساوية.</p>
-
-    <div class="legal-section-title">ثالثاً: مراجعة واعتماد الإدارة المالية الحسابية</div>
-    <p>توصية إدارة الحسابات: [  ] مقبول بالكامل  [  ] مرفوض مع التعليل  [  ] معلق لحين جلب فواتير العهد السابقة.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 34: Cash Receipt Acknowledgement -----------------
-PAGES_CONTENT_21_30[34] = render_legal_document(
-    "18. سند استلام نقدية وإيصال قبض كاش رسمي للشركة",
-    "Official Cash Receipt Acknowledgement",
-    "Ref-VS-018",
-    """
-    <p>يستخدم لتوثيق عمليات استلام النقدية (الكاش) المقبوضة فورا لصالح خزينة شركة <strong>V Smart General Trading L.L.C.</strong> من العملاء أو الشركاء:</p>
-
-    <div class="legal-section-title">أولاً: تفاصيل النقدية المقبوضة والمطابقة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">رقم السند المالي المقيد:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">استلمنا من السيد / الشركة:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">مبلغ وقدره بالأرقام والحروف:</td>
-            <td><strong><span class="print-field" style="min-width:250px;"></span></strong></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">وذلك مقابل استحقاق:</td>
-            <td>[  ] ثمن بضائع مبيعات POS  [  ] سداد حصة رأس مال  [  ] أخرى: <span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: تفاصيل وعملية الحفظ والاعتماد بالخزينة</div>
-    <p>أقر أنا أمين الخزينة المستلم بأن المبلغ المذكور أعلاه قد تم جرد ومطابقة سلامته النقدية بالكامل وقيده بدفاتر الخزينة المركزية للشركة بموجب هذا المستند.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 35: Cash Payment Authorization -----------------
-PAGES_CONTENT_21_30[35] = render_legal_document(
-    "19. إذن صرف نقدية وتفويض مالي كاش معتمد للشركة",
-    "Official Cash Payment Authorization",
-    "Ref-VS-019",
-    """
-    <p>يستخدم هذا المستند لاعتماد وصرف المبالغ النقدية كاش من الخزينة لـشركة <strong>V Smart General Trading L.L.C.</strong> لتغطية النفقات العادية والطارئة:</p>
-
-    <div class="legal-section-title">أولاً: بيانات الصرف والقيمة المستهدفة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">يصرف كاش إلى السيد:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">مبلغ وقدره بالأرقام والحروف:</td>
-            <td><strong><span class="print-field" style="min-width:250px;"></span></strong></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">بند النفقة المحدد بالدفاتر:</td>
-            <td>[  ] إيجار مستودع  [  ] فواتير إنترنت/كهرباء  [  ] شراء بضائع عاجلة  [  ] صيانة</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: الاعتمادات المالية والرقابة الحسابية والتوقيع</div>
-    <p>يتعهد موظف الصرف بمطابقة الفواتير الضريبية الأصلية وإرفاقها بهذا السند لإنهاء قيد التسوية المحاسبي بالدفاتر المالية فوراً.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 36: Asset Handover Form -----------------
-PAGES_CONTENT_21_30[36] = render_legal_document(
-    "20. نموذج تسليم واستلام العهد والأصول الرأسمالية للشركة",
-    "Official Asset Handover & Receipt Form",
-    "Ref-VS-020",
-    """
-    <p>نموذج مخصص لإثبات وحفظ عهدة الأصول التقنية والإلكترونية والمعدات الممنوحة للموظفين في شركة <strong>V Smart General Trading L.L.C.</strong>:</p>
-
-    <div class="legal-section-title">أولاً: بيانات الطرف المستلم والموظف المسؤول</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">الاسم الكامل للمستلم:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">الوظيفة والقسم بالهيكل:</td>
-            <td>[  ] نائب ميداني  [  ] مندوب توزيع  [  ] مسؤول لوجستي  [  ] أخرى</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: مواصفات وحالة الأصول المسلمة عهدة</div>
-    <table class="legal-form-table">
-        <tr style="background:#f8fafc; font-weight:bold;">
-            <td>اسم الأصل / الجهاز بالتفصيل</td>
-            <td>الرقم التسلسلي Serial Number</td>
-            <td>الحالة الفنية عند التسليم</td>
-            <td>القيمة التقديرية للأصل</td>
-        </tr>
-        <tr>
-            <td>1. جهاز حاسوب POS ومشتملاته</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td>[  ] جديد  [  ] ممتاز  [  ] مستعمل بحالة جيدة</td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-        <tr>
-            <td>2. قارئ الباركود اللاسلكي الذكي</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td>[  ] جديد  [  ] ممتاز  [  ] مستعمل بحالة جيدة</td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-        <tr>
-            <td>3. طابعة فواتير وإيصالات حرارية</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td>[  ] جديد  [  ] ممتاز  [  ] مستعمل بحالة جيدة</td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثالثاً: إقرار وتعهد بالحفاظ والتسليم عند الطلب</div>
-    <p style="font-size: 6.5pt; color: #475569;">يتعهد الموقّع أدناه بالحفاظ التام على الأصول المسلمة إليه واستخدامها الحصري لأغراض العمل، وإعادتها فوراً وبحالة فنية سليمة للشركة عند الطلب أو إنهاء خدماته.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 37: Warehouse Responsibility Handover Form -----------------
-PAGES_CONTENT_21_30[37] = render_legal_document(
-    "21. نموذج تسليم واستلام العهد والمسؤولية الكاملة للمستودع",
-    "Warehouse Responsibility Handover Form",
-    "Ref-VS-021",
-    """
-    <p>مستند رسمي لإثبات ونقل عهدة المخزون والمسؤولية الأمنية واللوجستية بمستودع <strong>تاجر</strong> التابع لـشركة <strong>V Smart General Trading L.L.C.</strong>:</p>
-
-    <div class="legal-section-title">أولاً: بيانات أطراف عملية التسليم والاستلام الميداني</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">المستودع الجغرافي:</td>
-            <td style="width:35%;">[  ] طوخ الأقلام  [  ] ميت خميس</td>
-            <td style="width:15%; font-weight:bold; background:#f8fafc;">تاريخ الاستلام:</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المسلّم المسؤول الحالي:</td>
-            <td><span class="print-field" style="min-width:140px;"></span></td>
-            <td style="font-weight:bold; background:#f8fafc;">المستلم المسؤول الجديد:</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: مطابقة جرد المخزون الفعلي والأصول الثابتة</div>
-    <p>تم إجراء جرد شامل ومطابقة تامة لمحتويات المستودع وأسفرت النتيجة عن:</p>
-    <div class="print-box" style="line-height: 1.4; font-size:7pt;">
-        - إجمالي عدد كراتين المنتجات الغذائية والمشروبات الفعلي: <span class="print-field" style="min-width:100px;"></span> كرتونة.<br>
-        - حالة النظافة والتهوية والتأمين العام للمستودع: [  ] ممتاز وخالي من الملاحظات  [  ] ملاحظات مدونة بالتقرير الملحق.<br>
-        - حالة وجودة أجهزة كاميرات المراقبة الـ CCTV والتأمين الإلكتروني: [  ] سليم وتعمل بالكامل.
-    </div>
-    <p style="margin-top:5px; font-size:6.5pt; color:#475569;">* بموجب التوقيع أدناه، تنتقل المسؤولية الأمنية واللوجستية والمالية الكاملة للمستودع ومخزونه إلى عهدة المستلم الجديد.</p>
-    """,
-    "witness"
-)
-
-# ----------------- PAGE 38: Employee Appointment Approval Form -----------------
-PAGES_CONTENT_21_30[38] = render_legal_document(
-    "22. نموذج واعتماد تعيين موظف وانضمامه لهيكل العمل للشركة",
-    "Employee Appointment Approval Form",
-    "Ref-VS-022",
-    """
-    <p>يستخدم لاعتماد تعيين الموظفين والعمال في شركة <strong>V Smart General Trading L.L.C.</strong> ومستودعات تاجر وتحديد ميزانية الرواتب والبدلات:</p>
-
-    <div class="legal-section-title">أولاً: البيانات الشخصية والمهنية للمرشح للوظيفة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">الاسم الكامل للمرشح:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المسمى الوظيفي المستهدف:</td>
-            <td>[  ] نائب ميداني  [  ] مندوب توزيع  [  ] أمين مخزن  [  ] عامل تجميع</td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">القسم بالهيكل الاستراتيجي:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: تفاصيل الراتب الأساسي والامتيازات والبدلات المعتمدة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">الراتب الأساسي (ج.م):</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">البدلات والحوافز البيعية:</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">تاريخ مباشرة العمل الفعلي:</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td style="font-weight:bold; background:#f8fafc;">فترة التجربة والتقييم:</td>
-            <td>3 أشهر (مائة وعشرون يوماً)</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثالثاً: قرار ومصادقة مجلس الإدارة المشترك والشركاء</div>
-    <p>تم مراجعة الطلب والموافقة على التعيين: [  ] مقبول  [  ] مرفوض  [  ] معلق للحصول على المستندات الرسمية.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 39: Internal Warning Notice -----------------
-PAGES_CONTENT_21_30[39] = render_legal_document(
-    "23. نموذج وإنذار ولفت نظر رسمي داخلي للموظفين المقصرين",
-    "Official Internal Warning Notice",
-    "Ref-VS-023",
-    """
-    <p>نموذج رسمي يوجه للموظفين والعمال في حالة التقصير المهني أو إهمال السلامة ومستلزمات الأمن بمستودعات <strong>تاجر</strong>:</p>
-
-    <div class="legal-section-title">أولاً: بيانات الموظف الموجه إليه لفت النظر والإنذار</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">اسم الموظف بالكامل:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">المسمى الوظيفي والمستودع:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: أسباب لفت النظر ووصف المخالفة المرتكبة</div>
-    <div class="print-box" style="height: 38mm; font-size:7pt; line-height:1.45;">
-        تاريخ المخالفة الفعلي: <span class="print-field" style="min-width:100px;"></span><br>
-        وصف المخالفة التقصيرية بالتفصيل:<br>
-        [  ] التقصير في عمليات كنس وتعقيم ممرات تخزين الألبان والمشروبات يومياً.<br>
-        [  ] الإهمال في رص كراتين المياه على طبالي بلاستيكية مرتفعة عن الأرض 15 سم.<br>
-        [  ] التأخر الغير مبرر في تسليم طلبيات مبيعات الـ POS للبقالات.<br>
-        [  ] أخرى: <span class="print-field" style="min-width:350px;"></span>
+        <!-- Document Body -->
+        <div style="font-size: 10pt; line-height: 1.7; color: #1e293b; text-align: justify; margin-bottom: 20px;">
+            {body_html}
+        </div>
     </div>
 
-    <div class="legal-section-title">ثالثاً: الإجراء الجزئي المتخذ وتوقيع الموظف بالعلم</div>
-    <p>يترتب على تكرار المخالفة المذكورة لثلاث مرات الفصل النهائي من العمل دون حقوق أو مكافآت مع تحميل الموظف قيمة التلفيات.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 40: Confidentiality and Non-Disclosure Declaration -----------------
-PAGES_CONTENT_21_30[40] = render_legal_document(
-    "24. إقرار وتعهد السرية وحظر المنافسة وإفشاء أسرار المنصة",
-    "Confidentiality and Non-Disclosure Agreement (NDA)",
-    "Ref-VS-024",
-    """
-    <p>يتعهد موقع هذا الإقرار بالالتزام بالسرية المطلقة لحماية الأصول البرمجية وحركة العملاء للبقالات في شركة <strong>V Smart General Trading L.L.C.</strong>:</p>
-
-    <div class="legal-section-title">أولاً: أطراف التعهد والبيان</div>
-    <p>يتعهد الطرف الموقع أدناه (موظف/مستشار/شريك) بالحفاظ التام على سرية المعلومات التقنية والتجارية لشركة <strong>V Smart General Trading L.L.C.</strong> ومنصة <strong>تاجر</strong> ومستودعاتها.</p>
-
-    <div class="legal-section-title">ثانياً: تعريف الأسرار التجارية والبرمجية المحظورة</div>
-    <p>تشمل المعلومات السرية المحمية بموجب هذا التعهد وتعد أسرار تجارية هامة للشركة:</p>
-    <div class="print-box" style="line-height:1.4; font-size:7pt;">
-        - قائمة وأسماء وعناوين البقالات والسوبرماركت وقواعد البيانات المسجلة بالتطبيق.<br>
-        - أسعار الشراء والخصومات والبونص كاش الممنوحة من شركات المنصورة وطنطا.<br>
-        - الأكواد البرمجية وتصميم واجهات تطبيق POS ونظام الـ WMS للمستودعات.<br>
-        - استراتيجية التسعير الرشيدة ونموذج "فوارق القروش" التنافسي المعتمد.
+    <!-- Signatures and footer -->
+    <div>
+        {footer_html}
     </div>
+</div>
+"""
 
-    <div class="legal-section-title">ثالثاً: المسؤولية الجنائية والشرط الجزائي للمخالفة</div>
-    <p style="font-size: 6.5pt; color: #475569;">يوافق الطرف الموقع على سداد شرط جزائي عاجل وقدره 100,000 ج.م في حال ثبوت إفشائه لأي معلومة سرية أو استخدامها لتأسيس مشروع منافس في النطاق الجغرافي للجمهورية.</p>
-    """,
-    "witness"
-)
+# ----------------- PAGE 22: Document 6 - Company Asset Custody Agreement -----------------
+doc_6_body = """
+<p style="margin-bottom: 12px; font-size: 10.5pt;">بموجب هذه الاتفاقية الرسمية، يقر الموظف / الطرف الموقّع أدناه باستلام الأصول والأدوات التقنية واللوجستية التالية كعهدة عينية شخصية في ذمته المالية، ويتعهد بالحفاظ التام عليها وإعادتها فوراً للشركة بنفس الحالة الفنية عند طلبها أو عند إنهاء العمل:</p>
 
-# ----------------- PAGE 41: Receipt of Company Assets Declaration -----------------
-PAGES_CONTENT_21_30[41] = render_legal_document(
-    "25. إقرار رسمي باستلام سيارات أو عهد عينية ومعدات تشغيلية",
-    "Receipt of Company Assets and Vehicles Declaration",
-    "Ref-VS-025",
-    """
-    <p>تستخدم لتسجيل عهدة سيارات التوزيع أو الدراجات النارية والتروسيكلات الممنوحة لمناديب التوصيل في شركة <strong>V Smart General Trading L.L.C.</strong>:</p>
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">أولاً: بيانات الموظف المستلم للعهدة</div>
+<p style="margin-bottom: 10px; font-size: 10pt;">الاسم الكامل للموظف: .................................................................................................................................... <br>
+رقم الهوية الوطنية: .................................................... الوظيفة الحالية بالمستودع: ........................................................</p>
 
-    <div class="legal-section-title">أولاً: البيانات الفنية والتعريفية للمركبة أو العهدة المسلمة</div>
-    <table class="legal-form-table">
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثانياً: جدول تفصيل الأصول والمعدات المسلمة عهدة</div>
+<table style="width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.5pt;">
+    <thead>
+        <tr style="background-color: #0f172a; color: white;">
+            <th style="padding: 8px; border: 1px solid #cbd5e1; width: 35%; text-align: right;">الأصل المسلم عهدة</th>
+            <th style="padding: 8px; border: 1px solid #cbd5e1; width: 15%; text-align: right;">الكمية</th>
+            <th style="padding: 8px; border: 1px solid #cbd5e1; width: 25%; text-align: right;">الرقم التسلسلي / الموديل</th>
+            <th style="padding: 8px; border: 1px solid #cbd5e1; width: 25%; text-align: right;">توقيع المستلم بالاستلام الفعلي</th>
+        </tr>
+    </thead>
+    <tbody>
         <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">نوع المركبة / العهدة:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">1. قارئ الباركود اللاسلكي (Barcode Scanner)</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
         </tr>
         <tr>
-            <td style="font-weight:bold; background:#f8fafc;">رقم اللوحة / الشاسيه بالتفصيل:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">2. جهاز حاسوب مركزي وإدارة الـ POS</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
         </tr>
         <tr>
-            <td style="font-weight:bold; background:#f8fafc;">الشركة المصنعة والموديل والسنة:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: شروط الاستخدام والمسؤولية والالتزام بقوانين المرور</div>
-    <p>1. يقر المستلم بحصوله على رخصة قيادة سارية وحمله المركبة عهدة شخصية لاستخدامها فقط لتوصيل طلبيات البقالات للمستودع.<br>
-    2. يتعهد السائق بالصيانة الدورية للزيت والوقود وفحص سلامة الفرامل دورياً وجلب إيصالات الصيانة للمدير المالي لتسويتها.<br>
-    3. يتحمل السائق بمفرده كامل قيمة أي مخالفات مرورية تقع على المركبة بسبب مخالفته لقواعد المرور في جمهورية مصر العربية.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 42: Document Amendment Request Form -----------------
-PAGES_CONTENT_21_30[42] = render_legal_document(
-    "26. طلب رسمي لتعديل وثيقة أو نظام محاسبي وإداري معتمد",
-    "Official Document Amendment and Change Request Form",
-    "Ref-VS-026",
-    """
-    <p>نموذج مخصص لتنظيم التعديلات التشغيلية، التقنية، أو المالية على القوانين والمحاضر المعتمدة لشركة <strong>V Smart General Trading L.L.C.</strong>:</p>
-
-    <div class="legal-section-title">أولاً: بيانات الوثيقة والجهة صاحبة الطلب للتعديل</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">اسم وتفاصيل الوثيقة المستهدفة:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">3. كاميرات مراقبة IP عالية الدقة</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد 2 كاميرا</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
         </tr>
         <tr>
-            <td style="font-weight:bold; background:#f8fafc;">رقم المرجع والتاريخ للإصدار الفعلي:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">4. راوتر شبكات ذكي وأجهزة الربط</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
         </tr>
-    </table>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">5. أرفف تخزين معدنية ثقيلة (Shelving)</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">6. طبالي رص بلاستيكية / خشبية (Pallets)</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">7. مكتب إداري خشبي وكرسي متحرك</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">8. طابعة ليزر ثقيلة لإذن التسليم والفواتير</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">عدد ...........</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+            <td style="padding: 8px; border: 1px solid #cbd5e1;">.....................................</td>
+        </tr>
+    </tbody>
+</table>
+"""
 
-    <div class="legal-section-title">ثانياً: تفاصيل التعديل الفعلي المقترح وأسبابه ومبرراته</div>
-    <div class="print-box" style="height: 42mm; font-size:7pt; line-height:1.45;">
-        نص الوثيقة الأصلي المراد تعديله:<br>
-        <span class="print-field" style="min-width:450px; height:14px;"></span><br>
-        النص الجديد المقترح البديل بالكامل:<br>
-        <span class="print-field" style="min-width:450px; height:18px; border-bottom-style:solid;"></span><br>
-        المبررات والجدوى للتعديل لعمل المنصة: <span class="print-field" style="min-width:300px;"></span>
+doc_6_footer = """
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 9pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 6px;">إقرار وتوقيع الموظف المستلم</div>
+        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+            الاسم الكامل: .....................................................<br>
+            التوقيع الشخصي: ................................................<br>
+            التاريخ: ............................................................
+        </div>
     </div>
-
-    <div class="legal-section-title">ثالثاً: مراجعة وإقرار مجلس الإدارة للتنفيذ</div>
-    <p>تم دراسة الطلب وتقرر التعديل: [  ] مقبول ويفعل فوراً  [  ] مرفوض لعدم جدواه  [  ] مؤجل لحين الجلسة الاستشارية القادمة.</p>
-    """,
-    "standard"
-)
-
-# ----------------- PAGE 43: Internal Audit Observation Form -----------------
-PAGES_CONTENT_21_30[43] = render_legal_document(
-    "27. تقرير التدقيق المالي والرقابي الداخلي لمطابقة الخزينة",
-    "Internal Audit Observation & Compliance Form",
-    "Ref-VS-027",
-    """
-    <p>يستخدم لتوثيق وإثبات نتائج لجان المراجعة والمراقبة المالية الداخلية على أعمال الخزانة والمستودع لشركة <strong>V Smart General Trading L.L.C.</strong>:</p>
-
-    <div class="legal-section-title">أولاً: بيانات عملية الجرد والتدقيق المالي والمستودع</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">تاريخ ومكان التدقيق:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">الشخص المدقق عليه والمسؤولية:</td>
-            <td>[  ] أمين الخزينة  [  ] أمين مستودع طوخ الأقلام  [  ] نائب مبيعات POS</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: الملاحظات الرقابية والانحرافات المرصودة فعلياً</div>
-    <div class="print-box" style="height: 38mm; font-size:7pt; line-height:1.45;">
-        الملاحظات المرصودة وسير العمل الفعلي:<br>
-        [  ] عدم تطابق رصيد الكاش بالخزينة مع تقارير مبيعات POS وقيمة الفارق: <span class="print-field" style="min-width:100px;"></span> ج.م.<br>
-        [  ] وجود تلفيات أو عجز في جرد صنف: <span class="print-field" style="min-width:120px;"></span> بالمستودع.<br>
-        التوصية الفورية للإدارة المالية: <span class="print-field" style="min-width:350px;"></span>
+    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 9pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 4px; margin-bottom: 6px;">عن إدارة المستودعات والشركة المانحة</div>
+        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+            الاسم: محمد وليد حمودة (مدير العمليات)<br>
+            التوقيع والاعتماد: ................................................<br>
+            خاتم الشركة المعتمد: .............................................
+        </div>
     </div>
+</div>
+"""
 
-    <div class="legal-section-title">ثالثاً: إجراءات التصحيح والمدد المقررة للتسوية والالتزام</div>
-    <p>يتعهد المسؤول بتصحيح كافة الملاحظات وإعادة تسوية العجز في موعد أقصاه 7 أيام من تاريخه لتلافي العقوبات القانونية.</p>
-    """,
-    "standard"
+PAGES_CONTENT_21_30[22] = get_contract_page_wrapper(
+    "6. إقرار واتفاقية استلام عهدة أصول ومعدات الشركة العينية",
+    6,
+    doc_6_body,
+    doc_6_footer
 )
 
-# ----------------- PAGE 44: Inventory Count Report -----------------
-PAGES_CONTENT_21_30[44] = render_legal_document(
-    "28. تقرير الجرد الفعلي والسنوي للمخزون بالمستودعات",
-    "Inventory Count and Discrepancy Report",
-    "Ref-VS-028",
-    """
-    <p>تقرير معتمد يوثق عمليات الجرد الميداني الشامل لمحتويات مستودعات <strong>تاجر</strong> التابع لـشركة <strong>V Smart General Trading L.L.C.</strong>:</p>
 
-    <div class="legal-section-title">أولاً: بيانات الجرد والمطابقة الدفترية الرقمية بالباركود</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">المستودع وموقعه:</td>
-            <td style="width:35%;">[  ] طوخ الأقلام  [  ] ميت خميس</td>
-            <td style="width:15%; font-weight:bold; background:#f8fafc;">تاريخ الجرد الفعلي:</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">مسؤول لجنة الجرد المالي:</td>
-            <td><span class="print-field" style="min-width:140px;"></span></td>
-            <td style="font-weight:bold; background:#f8fafc;">تطابق النظام الدفتري:</td>
-            <td>[  ] مطابق بالكامل  [  ] فروقات تم تسجيلها</td>
-        </tr>
-    </table>
+# ----------------- PAGE 23: Document 7 - Operational Expense Request Form -----------------
+doc_7_body = """
+<p style="margin-bottom: 12px; font-size: 10.5pt;">تستخدم هذه الاستمارة لطلب واعتماد صرف مبالغ النقدية (كاش) لتغطية النفقات والمصاريف التشغيلية الطارئة والدورية للمستودعات ومواقع العمل الميداني:</p>
 
-    <div class="legal-section-title">ثانياً: جدول مطابقة الأصناف وسلع الاستقطاب الكبرى وفروقات الجرد</div>
-    <table class="legal-form-table">
-        <tr style="background:#f8fafc; font-weight:bold;">
-            <td>اسم المنتج وكود الباركود</td>
-            <td>الرصيد الدفتري بالنظام WMS</td>
-            <td>الرصيد الفعلي بالجرد الميداني</td>
-            <td>الفارق الفعلي (عجز / زيادة)</td>
-            <td>القيمة المالية للفارق (ج.م)</td>
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">أولاً: بيانات وتفاصيل النفقة المطلوبة</div>
+<p style="margin-bottom: 10px; font-size: 10pt;">اسم طالب الصرف الميداني: ................................................................................................................................ <br>
+المستودع المعني بالصرف: [  ] مستودع طوخ الأقلام   [  ] مستودع ميت خميس</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt;">
+    <thead>
+        <tr style="background-color: #0f172a; color: white;">
+            <th style="padding: 10px; border: 1px solid #cbd5e1; width: 40%; text-align: right;">بند النفقة التشغيلية المطلوبة</th>
+            <th style="padding: 10px; border: 1px solid #cbd5e1; width: 30%; text-align: right;">القيمة التقريبية (ج.م)</th>
+            <th style="padding: 10px; border: 1px solid #cbd5e1; width: 30%; text-align: right;">البيان والملاحظات والمستند المرفق</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">1. اشتراك الإنترنت والشبكة السريعة</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
         </tr>
         <tr>
-            <td>1. مياه معبأة (كرتونة)</td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">2. استهلاك الكهرباء والخدمات الطاقية</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
         </tr>
         <tr>
-            <td>2. زيت طعام عباد (زجاجة)</td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">3. خدمات النظافة والتعقيم اليومي الداخلي</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
         </tr>
         <tr>
-            <td>3. كرتونة منظفات ومساحيق</td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
-            <td><span class="print-field" style="min-width:85px;"></span></td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: bold;">4. صيانة طارئة للأرفف أو الباركود أو الكاميرات</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">...................................................</td>
         </tr>
-    </table>
-    """,
-    "standard"
+        <tr style="background-color: #f1f5f9; font-weight: bold;">
+            <td style="padding: 10px; border: 1px solid #cbd5e1;">إجمالي المبلغ المطلوب كاش للصرف</td>
+            <td style="padding: 10px; border: 1px solid #cbd5e1;" colspan="2">........................................................................................................................ جنيه مصري.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثانياً: تعهد ومطابقة إحضار الفواتير الأصلية</div>
+<p style="font-size: 9.5pt; line-height: 1.5; color: #475569;">
+يتعهد طالب الصرف بإحضار وتسليم الفواتير الضريبية والإيصالات الرسمية لمطابقة القيد المالي المحاسبي بالدفاتر في موعد أقصاه 72 ساعة فقط من تاريخ الاستلام الفعلي للكاش، ويتحمل كامل المسؤولية المالية في حال التقصير.
+</p>
+"""
+
+doc_7_footer = """
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">توقيع مقدم الطلب</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: .............................<br>
+            التوقيع: ...........................<br>
+            التاريخ: ............................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px; margin-bottom: 4px;">رأي ومراجعة الحسابات</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الحالة: [  ] مطابق للموازنة<br>
+            ملاحظات: ........................<br>
+            التوقيع: ...........................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px; margin-bottom: 4px;">اعتماد وتوقيع المدير المالي</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: محمد مبروك<br>
+            القرار: [  ] يعتمد الصرف فورا<br>
+            التوقيع والختم: ...................
+        </div>
+    </div>
+</div>
+"""
+
+PAGES_CONTENT_21_30[23] = get_contract_page_wrapper(
+    "7. استمارة طلب واعتماد النفقات والمصاريف التشغيلية للمستودع",
+    7,
+    doc_7_body,
+    doc_7_footer
 )
 
-# ----------------- PAGE 45: Stock Adjustment Authorization -----------------
-PAGES_CONTENT_21_30[45] = render_legal_document(
-    "29. إذن وتفويض رسمي لتسوية الفروقات وعجز المخزون بالدفاتر",
-    "Stock Adjustment and Inventory Correction Authorization",
-    "Ref-VS-029",
-    """
-    <p>يصدر هذا التفويض الحسابي من المدير المالي لشركة <strong>V Smart General Trading L.L.C.</strong> لتسوية ومعالجة عجز أو تلف السلع الغذائية بالمنظومة:</p>
 
-    <div class="legal-section-title">أولاً: تفاصيل العجز أو التلف المراد تسويته دفترياً ونظامياً</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">رقم تقرير الجرد المرفق:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">السبب الفعلي للمطابقة والتسوية:</td>
-            <td>[  ] تلف ناتج عن الرطوبة وعوامل الطقس  [  ] كسر عبوات  [  ] خطأ إدخال بالباركود</td>
-        </tr>
-    </table>
+# ----------------- PAGE 24: Document 8 - Terms and Conditions Acknowledgement -----------------
+doc_8_body = """
+<p style="margin-bottom: 12px; font-size: 10.5pt;">يتعهد ويقر الموقّع أدناه (سواء كان شريكاً، مديراً، أو موظفاً) بالالتزام التام والكامل بكافة السياسات، الشروط، الأحكام، ومواثيق العمل المعتمدة باللائحة الداخلية لشركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ومستودعات <strong>تاجر</strong>، والموضحة كالتالي:</p>
 
-    <div class="legal-section-title">ثانياً: تفاصيل وعملية قيد التسوية بالدفاتر وحساب الأرباح والخسائر</div>
-    <table class="legal-form-table">
-        <tr style="background:#f8fafc; font-weight:bold;">
-            <td>اسم المنتج الغذائي</td>
-            <td>الكمية للتسوية بالوحدة</td>
-            <td>سعر التكلفة الأصلي للوحدة</td>
-            <td>القيمة المالية الإجمالية للتسوية</td>
-        </tr>
-        <tr>
-            <td>1. <span class="print-field" style="min-width:140px;"></span></td>
-            <td><span class="print-field" style="min-width:60px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-        <tr>
-            <td>2. <span class="print-field" style="min-width:140px;"></span></td>
-            <td><span class="print-field" style="min-width:60px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-    </table>
-    <p style="margin-top:5px; font-size:6.5pt; color:#475569;">* يوجه لتسوية هذا العجز الفعلي وتحميله على حساب أرباح وخسائر الكيان لعدم ثبوت أي شبهة إهمال بشري من الطاقم الميداني.</p>
-    """,
-    "standard"
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">أولاً: بنود الالتزام التشغيلي والمهني بمستودعات تاجر</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">1. <strong>حوكمة الباركود الإلكتروني:</strong> يلتزم الموظف التزاماً صارماً بمسح الباركود الخاص بكل كرتونة أو صندوق سلع خارج من المستودع قبل مغادرته للبوابة بشكل ميكانيكي لضمان المطابقة اليومية الفورية للأرصدة.<br>
+2. <strong>جودة وسلامة الغذاء والسلع:</strong> يتعهد طاقم العمل بالالتزام بفرز وفحص صلاحية السلع، ورص كراتين المياه والأجبان والزيت على الطبالي المرتفعة، والفصل التام للمنظفات عن المواد الغذائية لمنع انتشار الروائح والتلوث.<br>
+3. <strong>الالتزام بإحداثيات وتتبع الـ GPS:</strong> يقر مندوب المبيعات والتوزيع بالتزامه بتأدية الزيارات للبقالات وتسجيل الطلبات من خلال النطاق الفعلي للبقالة بمسافة لا تزيد عن 20 متراً، ويمنع تسجيل أي طلبية وهمية خارج النطاق.</p>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثانياً: سرية المعلومات وحظر المنافسة وإفشاء البيانات</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">يقر الموقّع بالسرية التامة لبيانات البقالات المشتركة بالمنصة، وأسعار الشراء والخصومات والبونص النقدي من شركات المنصورة وطنطا، ويحظر تماماً استخدام أو إفشاء أو نسخ هذه البيانات لتأسيس أي نشاط تجاري منافس تحت طائلة القانون الجنائي والشرط الجزائي البالغ 100,000 ج.م.</p>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثالثاً: الإقرارات العامة والمسؤولية القانونية</div>
+<p style="font-size: 9.5pt; line-height: 1.5; color: #475569;">
+يقر الموقّع بأن أي مخالفة لأي من البنود الواردة في هذا الإقرار تعرضه للمساءلة القانونية المباشرة، وإيقاف كافة صلاحياته البرمجية والإدارية، وفصله الفوري من العمل مع احتفاظ الشركة بكامل حقوقها المالية والقضائية في طلب التعويض.
+</p>
+"""
+
+doc_8_footer = """
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 9pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 6px;">توقيع وإقرار الطرف المعني بالالتزام</div>
+        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+            الاسم الكامل: .....................................................<br>
+            رقم الهوية الوطنية: ................................................<br>
+            التوقيع الشخصي: ................................................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 10px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 9pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 4px; margin-bottom: 6px;">المصادقة والاعتماد من مجلس الإدارة</div>
+        <div style="text-align: right; font-size: 8pt; line-height: 1.5;">
+            الاسم والممثّل المفوّض: ..........................................<br>
+            الصفة والمسؤولية: .............................................<br>
+            التوقيع والختم الرسمي: .........................................
+        </div>
+    </div>
+</div>
+"""
+
+PAGES_CONTENT_21_30[24] = get_contract_page_wrapper(
+    "8. نموذج وإقرار الالتزام بالشروط والأحكام وسياسات العمل المعتمدة",
+    8,
+    doc_8_body,
+    doc_8_footer
 )
 
-# ----------------- PAGE 46: Procurement Approval Form -----------------
-PAGES_CONTENT_21_30[46] = render_legal_document(
-    "30. نموذج واعتماد طلب شراء وتوريد بضائع كاش للشركة",
-    "Official Procurement and Inventory Purchase Approval Form",
-    "Ref-VS-030",
-    """
-    <p>يستخدم لاعتماد ميزانيات شراء السلع الأساسية وسلع الاستقطاب من مصانع وموردي منطقة المنصورة وطنطا لـشركة <strong>V Smart General Trading L.L.C.</strong>:</p>
 
-    <div class="legal-section-title">أولاً: بيانات المورد والتفاصيل المالية لطلب الشراء المعتمد</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">اسم المورد / الشركة الوطنية:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">إجمالي قيمة الفاتورة بالأرقام:</td>
-            <td><strong><span class="print-field" style="min-width:150px;"></span> جنيه مصري</strong></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">طريقة السداد المطلوبة للتفعيل:</td>
-            <td>[  ] كاش فوري للحصول على خصم البونص  [  ] تحويل بنكي مقدم  [  ] شيك مؤجل</td>
-        </tr>
-    </table>
+# ----------------- PAGE 25: Document 9 - Partner Withdrawal and Capital Recovery Request -----------------
+doc_9_body = """
+<p style="margin-bottom: 12px; font-size: 10.5pt;">يقدم هذا الطلب رسمياً من الشريك الراغب في التخارج طواعية إلى مجلس إدارة شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ومستودع <strong>تاجر</strong>، بموجب ميثاق التأسيس المعتمد وفترة الإخطار القانونية البالغة 90 يوماً:</p>
 
-    <div class="legal-section-title">ثانياً: تفاصيل ومواصفات الأصناف والمشروبات المطلوبة</div>
-    <table class="legal-form-table">
-        <tr style="background:#f8fafc; font-weight:bold;">
-            <td>اسم المنتج وكود الباركود</td>
-            <td>الكمية المطلوبة بالكرتونة</td>
-            <td>سعر الشراء الفعلي للكرتونة</td>
-            <td>الإجمالي المالي المقدر كاش</td>
-        </tr>
-        <tr>
-            <td>1. مياه معبأة أحجام مختلفة</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-        <tr>
-            <td>2. كراتين زيت خليط وسكر</td>
-            <td><span class="print-field" style="min-width:100px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-            <td><span class="print-field" style="min-width:80px;"></span></td>
-        </tr>
-    </table>
-    """,
-    "standard"
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">أولاً: بيانات الشريك طالب التخارج والانسحاب</div>
+<p style="margin-bottom: 10px; font-size: 10pt;">الاسم الكامل للشريك طالب الانسحاب: .................................................................................................................... <br>
+الرقم القومي / جواز السفر: .................................................... الحصة الملكية الحالية بالشركة: 25% (خمسة وعشرون بالمائة).</p>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثانياً: آلية استرداد وتصفية الحصة المالية والضوابط المحاسبية</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">1. <strong>جرد وتدقيق مالي عاجل:</strong> يلتزم الشركاء بتشكيل لجنة جرد مالي وميداني فوري لكافة موجودات مستودعي طوخ الأقلام وميت خميس لتقييم السيولة والمخزون وحجم الأرباح والخسائر للشركة.<br>
+2. <strong>سداد الديون التجارية أولاً:</strong> تخصم كافة الالتزامات والديون التجارية للموردين من قيمة الحصة قبل التسوية والوفاء بها.<br>
+3. <strong>آلية التقسيط الآمن:</strong> تسدد الحصة المالية المستحقة للشريك المتخارج على أربع دفعات متساوية طوال عام مالي كامل لضمان استقرار التدفق المالي كاش لمستودع تاجر وعدم الإضرار بميزانية شراء المنتجات الغذائية الأساسية.</p>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثالثاً: وثائق ومستندات المطابقة المالية المرفقة بالطلب</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">برجاء إرفاق ما يلي لتأكيد سلامة المطابقة والحسابات الفنية:</p>
+<p style="font-size: 10pt; line-height: 1.6;">
+[  ] كشف حساب بنكي مسجل معتمد باسم الشريك المستلم بالبنك لتلقي التحويل المالي.<br>
+[  ] إقرار خطي ببراءة ذمة الإدارة المالية والشركاء الآخرين تماماً فور استلام الدفعة الرابعة والأخيرة من الحصة.<br>
+[  ] إقرار حظر المنافسة وإفشاء أسرار المنصة والزيارات الميدانية للبقالات طوال 3 سنوات اللاحقة للتخارج.
+</p>
+"""
+
+doc_9_footer = """
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">توقيع الشريك طالب الانسحاب</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: .............................<br>
+            التوقيع: ...........................<br>
+            التاريخ: ............................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px; margin-bottom: 4px;">مراجعة وقرار الشركاء الثلاثة</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            القرار: [  ] موافقة  [  ] تأجيل للجرد<br>
+            الملاحظات: ........................<br>
+            التواقيع: ...........................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px; margin-bottom: 4px;">مصادقة واعتماد المدير المالي</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: محمد مبروك<br>
+            الاعتماد: [  ] تم الجرد والجدولة<br>
+            التوقيع والختم: ...................
+        </div>
+    </div>
+</div>
+"""
+
+PAGES_CONTENT_21_30[25] = get_contract_page_wrapper(
+    "9. طلب انسحاب وتخارج شريك واسترداد الحصة التأسيسية كاش",
+    9,
+    doc_9_body,
+    doc_9_footer
 )
 
-# ----------------- PAGE 47: Supplier Registration Form -----------------
-PAGES_CONTENT_21_30[47] = render_legal_document(
-    "31. نموذج واستمارة تسجيل الموردين والشركات الوطنية المعتمدة",
-    "Official Supplier Registration & Validation Form",
-    "Ref-VS-031",
-    """
-    <p>تستخدم لتوثيق وتسجيل بيانات كبار مصانع وموزعي المواد الغذائية والمشروبات المعتمدين في شركة <strong>V Smart General Trading L.L.C.</strong> لضمان حوكمة الشراء:</p>
 
-    <div class="legal-section-title">أولاً: البيانات العامة والتعريفية للشركة الموردة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">اسم الشركة الموردة بالكامل:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">رقم السجل التجاري والبطاقة الضريبية:</td>
-            <td>سجل رقم: <span class="print-field" style="min-width:100px;"></span> بطاقة ضريبية رقم: <span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">العنوان الجغرافي والإدارة المركزية:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-    </table>
+# ----------------- PAGE 26: Document 10 - Official Warning Notice -----------------
+doc_10_body = """
+<p style="margin-bottom: 12px; font-size: 10.5pt;">يوجه هذا الإنذار الرسمي المكتوب من إدارة الموارد البشرية والتشغيل بشركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> إلى الموظف المخالف نتيجة للتقصير أو الإهمال المهني أو السلوكي بمستودعات ومنصة <strong>تاجر</strong>:</p>
 
-    <div class="legal-section-title">ثانياً: تفاصيل التواصل وممثلي الشركة والحساب البنكي للتسوية</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">اسم مندوب المبيعات المعني:</td>
-            <td style="width:30%;"><span class="print-field" style="min-width:140px;"></span></td>
-            <td style="width:20%; font-weight:bold; background:#f8fafc;">رقم هاتف المندوب:</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">الحساب البنكي والآيبان للمورد:</td>
-            <td colspan="3"><span class="print-field" style="min-width:350px;"></span></td>
-        </tr>
-    </table>
-    <p style="margin-top:5px; font-size:6.5pt; color:#475569;">* تلتزم إدارة الحسابات بالشركة بالتحقق من جودة ومطابقة صلاحية تراخيص المورد والتحقق من سلامة البضائع قبل تفعيل كود المورد على المنصة.</p>
-    """,
-    "standard"
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">أولاً: بيانات الموظف الموجه إليه الإنذار واللفت نظر</div>
+<p style="margin-bottom: 10px; font-size: 10pt;">اسم الموظف بالكامل: .................................................................................................................................... <br>
+المسمى الوظيفي الحالي: .................................................... القسم / المستودع التابع له: ........................................................</p>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثانياً: تفاصيل ونوع المخالفة التقصيرية المرصودة بالمستودع</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">الرجاء تحديد نوع وتفاصيل المخالفة التشغيلية الموجه على إثرها لفت النظر المكتوب:</p>
+<div style="border: 1px dashed #cbd5e1; background-color: #f8fafc; padding: 12px; font-size: 9.5pt; line-height: 1.8; border-radius: 4px; margin-bottom: 12px;">
+[  ] الإهمال الفني في حوكمة الباركود الإلكتروني للسلع وعجز الأرصدة بقاعدة البيانات AWS.<br>
+[  ] عدم الالتزام بنظام الفصل التام للمنظفات ومواد التنظيف الكيماوية عن المواد الغذائية الحساسة.<br>
+[  ] التقصير في إجراءات الكنس والنظافة والتعقيم اليومي لممرات تخزين مياه الشرب والألبان.<br>
+[  ] عدم تسجيل طلبيات مبيعات POS من الإحداثيات الفعلية لل GPS للبقالات والعملاء الميدانيين.<br>
+المخالفة بالتفصيل: ..................................................................................................................................................<br>
+......................................................................................................................................................................................
+</div>
+
+<div class="legal-section-title" style="font-size: 11pt; margin-top: 15px;">ثالثاً: الإجراء الجزائي المترتب وتوقيع الموظف بالعلم والرد المكتوب</div>
+<p style="margin-bottom: 8px; font-size: 10pt;">الإجراء الإداري المتخذ: [  ] لفت نظر أول   [  ] إنذار ثاني مع خصم من الراتب   [  ] إيقاف مؤقت عن العمل لمدة ............ أيام.<br>
+• رد وتعليل الموظف المكتوب على الإنذار: ..................................................................................................................</p>
+"""
+
+doc_10_footer = """
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1.5px solid #0f172a; padding-top: 12px; padding-bottom: 10px;">
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">توقيع الموظف بالعلم بالإنذار</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: .............................<br>
+            التوقيع: ...........................<br>
+            التاريخ: ............................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #0284c7; border-bottom: 1px solid #0284c7; padding-bottom: 2px; margin-bottom: 4px;">توقيع واعتماد مدير التشغيل</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الاسم: محمد وليد حمودة<br>
+            الصفة: مدير الجودة والسلامة<br>
+            التوقيع: ...........................
+        </div>
+    </div>
+    <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: center; border-radius: 4px; height: 35mm; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 8.5pt; font-weight: bold; color: #b45309; border-bottom: 1px solid #b45309; padding-bottom: 2px; margin-bottom: 4px;">مصادقة وختم الشركة الرسمي</div>
+        <div style="text-align: right; font-size: 7.5pt; line-height: 1.4;">
+            الجهة: الموارد البشرية والتشغيل<br>
+            حالة الإجراء: [  ] تم التسجيل بالملف<br>
+            الختم والتوقيع: ...................
+        </div>
+    </div>
+</div>
+"""
+
+PAGES_CONTENT_21_30[26] = get_contract_page_wrapper(
+    "10. إنذار رسمي كتابي ولفت نظر داخلي للموظف المخالف",
+    10,
+    doc_10_body,
+    doc_10_footer
 )
 
-# ----------------- PAGE 48: Customer Credit Approval Form -----------------
-PAGES_CONTENT_21_30[48] = render_legal_document(
-    "32. نموذج طلب واعتماد التسهيلات الائتمانية والبيع الآجل للبقالات الكبرى",
-    "Customer Credit Approval & Limits Authorization Form",
-    "Ref-VS-032",
-    """
-    <p>يستخدم هذا النموذج لتنظيم مبيعات الآجل للعملاء الاستراتيجيين للبقالات والسوبرماركت الكبرى لـشركة <strong>V Smart General Trading L.L.C.</strong> لضمان حماية السيولة:</p>
-
-    <div class="legal-section-title">أولاً: البيانات التعريفية للعميل وحجم مبيعات الـ POS بالمنصة</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:30%; font-weight:bold; background:#f8fafc;">اسم العميل / البقالة بالكامل:</td>
-            <td style="width:70%;"><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">العنوان التجاري الفعلي ورقم السجل:</td>
-            <td><span class="print-field" style="min-width:250px;"></span></td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">متوسط المبيعات الشهرية الحالية بالمنصة:</td>
-            <td><strong><span class="print-field" style="min-width:150px;"></span> جنيه مصري</strong></td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثانياً: التسهيلات الائتمانية الموصى بها وسقف الدين وفترة التحصيل</div>
-    <table class="legal-form-table">
-        <tr>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">سقف الائتمان المقترح (ج.م):</td>
-            <td style="width:25%;"><span class="print-field" style="min-width:100px;"></span></td>
-            <td style="width:25%; font-weight:bold; background:#f8fafc;">فترة السداد القصوى المسموحة:</td>
-            <td style="width:25%;">[  ] 7 أيام  [  ] 15 يوماً  [  ] 30 يوماً</td>
-        </tr>
-        <tr>
-            <td style="font-weight:bold; background:#f8fafc;">شروط الضمان المقبولة قانوناً:</td>
-            <td colspan="3">[  ] شيك على بياض كضمان مالي  [  ] إيصال أمانة موقع يدوياً بقيمة: <span class="print-field" style="min-width:100px;"></span> ج.م.</td>
-        </tr>
-    </table>
-
-    <div class="legal-section-title">ثالثاً: قرار ومصادقة المدير المالي ومجلس الإدارة المشترك</div>
-    <p>القرار المالي النهائي: [  ] مقبول بسقف: <span class="print-field" style="min-width:80px;"></span> ج.م  [  ] مرفوض لارتفاع مخاطر التحصيل والسيولة.</p>
-    """,
-    "standard"
-)
-
-print("pages_21_30.py successfully redefined with Pages 32-48!")
+print("pages_21_30.py completely redefined with Documents 6-10!")
