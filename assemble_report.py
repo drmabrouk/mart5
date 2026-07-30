@@ -23,7 +23,7 @@ for k, v in PAGES_11_15.items():
 for k, v in PAGES_16_20.items():
     ALL_PAGES[k] = v
 
-# Pages 21 to 30
+# Pages 21 to 30 (should be empty for our 20-page document)
 for k, v in PAGES_21_30.items():
     ALL_PAGES[k] = v
 
@@ -54,7 +54,7 @@ for page_num in sorted(ALL_PAGES.keys()):
             <div class="logo-area">
                 <span class="logo-text">تاجر</span>
             </div>
-            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.0</div>
+            <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.5</div>
         </div>
         <div class="page-content">
 """
@@ -63,7 +63,7 @@ for page_num in sorted(ALL_PAGES.keys()):
         </div>
         <div class="doc-footer">
             <div>تاجر للتجارة والتقنية - دراسة الجدوى الاستثمارية</div>
-            <div class="page-num">صفحة {page_num} من 30</div>
+            <div class="page-num">صفحة {page_num} من 20</div>
         </div>
     </div>
 """
@@ -77,4 +77,4 @@ html_out += """
 with open("MART.html", "w", encoding="utf-8") as f:
     f.write(html_out)
 
-print("MART.html compiled successfully with exactly 30 pages!")
+print("MART.html compiled successfully with exactly 20 pages!")
