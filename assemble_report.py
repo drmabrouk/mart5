@@ -19,11 +19,11 @@ for k, v in PAGES_CONTENT.items():
 for k, v in PAGES_11_15.items():
     ALL_PAGES[k] = v
 
-# Pages 16 to 31
+# Page 16 and Documents 1-5 (Pages 17-21)
 for k, v in PAGES_16_20.items():
     ALL_PAGES[k] = v
 
-# Pages 32 to 48
+# Documents 6-10 (Pages 22-26)
 for k, v in PAGES_21_30.items():
     ALL_PAGES[k] = v
 
@@ -34,7 +34,7 @@ html_out = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>دراسة جدوى تفصيلية شاملة - منصة ومستودعات تاجر (Tager)</title>
+    <title>دراسة جدوى تفصيلية شاملة - شركة مارتديا للتجارة والتوزيع ذ.م.م (تاجر)</title>
     <!-- خطوط متميزة ومحملة عبر الويب للتصميم الرقمي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -54,17 +54,30 @@ for page_num in sorted(ALL_PAGES.keys()):
     <div class="page-container" id="page-{page_num}">
         <div class="doc-header">
             <div class="logo-area">
-                <span class="logo-text">تاجر</span>
+                <span class="logo-text">مارتديا</span>
             </div>
             <div class="meta-info">دراسة جدوى استراتيجية متكاملة V6.5</div>
         </div>
         <div class="page-content">
 """
     html_out += ALL_PAGES[page_num]
-    html_out += f"""
+
+    # Contract page footers should read Martdia Trading & Distribution Co. (L.L.C.) | www.martdia.com | Info@martdia.com
+    # While non-contract pages read standard Martdia feasibility report footer.
+    if page_num >= 17:
+        html_out += f"""
         </div>
         <div class="doc-footer">
-            <div>V Smart General Trading L.L.C. - دراسة الجدوى الاستثمارية</div>
+            <div style="font-weight: bold; color: #0284c7;">Martdia Trading & Distribution Co. (L.L.C.) | www.martdia.com | Info@martdia.com</div>
+            <div class="page-num">صفحة {page_num} من {total_pages}</div>
+        </div>
+    </div>
+"""
+    else:
+        html_out += f"""
+        </div>
+        <div class="doc-footer">
+            <div>شركة مارتديا للتجارة والتوزيع ذ.م.م - دراسة الجدوى الاستثمارية</div>
             <div class="page-num">صفحة {page_num} من {total_pages}</div>
         </div>
     </div>
