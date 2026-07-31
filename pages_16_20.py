@@ -98,7 +98,7 @@ def get_contract_page_wrapper(title_ar, doc_num, body_html, footer_html):
         </div>
 
         <!-- Document Body -->
-        <div style="font-size: 8.8pt; line-height: 1.6; color: #1e293b; text-align: justify; margin-bottom: 12px;">
+        <div style="font-size: 9.3pt; line-height: 1.65; color: #1e293b; text-align: justify; margin-bottom: 15px;">
             {body_html}
         </div>
     </div>
@@ -128,10 +128,10 @@ doc_1_body = """
 <p style="margin-bottom: 10px; margin-top: 10px;"><strong>الطرف الثاني (المستأجر):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ويمثلها الشريك المفوّض: السيد <strong>مازن السيد</strong>.</p>
 
 <div class="legal-section-title" style="margin-top: 12px; margin-bottom: 4px;">البند الأول: موضوع الإيجار والموقع والمساحة والمواصفات الفنية للمستودع</div>
-<p style="margin-bottom: 8px;">أجر الطرف الأول للطرف الثاني بموجب هذا العقد مستودعاً مخصصاً لتخزين المواد الغذائية والمشروبات سريعة الدوران والمنظفات، يقع في <strong>طوخ الأقلام, مركز السنبلاوين، الدقهلية</strong> وبمساحة إجمالية تبلغ 150 meter مربع كاملة الحيازة والصلاحية الإنشائية واللوجستية والأمنية، ويصلح لتركيب أرفف التخزين الثقيلة وكاميرات المراقبة التخصصية.</p>
+<p style="margin-bottom: 8px;">أجر الطرف الأول للطرف الثاني بموجب هذا العقد مستودعاً مخصصاً لتخزين المواد الغذائية والمشروبات سريعة الدوران والمنظفات، يقع في <strong>طوخ الأقلام, مركز السنبلاوين، الدقهلية</strong> وبمساحة إجمالية تبلغ 90 متراً مربعاً كاملة الحيازة والصلاحية الإنشائية واللوجستية والأمنية، ويصلح لتركيب أرفف التخزين الثقيلة وكاميرات المراقبة التخصصية.</p>
 
 <div class="legal-section-title" style="margin-top: 12px; margin-bottom: 4px;">البند الثاني: القيمة الإيجارية وطريقة السداد ودعم فترة الانطلاق للشركة</div>
-<p style="margin-bottom: 8px;">• يقر الطرفان بمساهمة ودعم الشريك <strong>مازن السيد</strong> بتوفير المستودع مجاناً بالكامل دون أي قيمة إيجارية طوال الستة أشهر الأولى للنشاط كدعم عيني استراتيجي لانطلاقة الشركة وتسهيل العمل الميداني.<br>
+<p style="margin-bottom: 8px;">• يقر الطرفان بمساهمة ودعم الشريك <strong>مازن السيد</strong> بتوفير المستودع مجاناً بالكامل دون أي قيمة إيجارية طوال الشهرين الأولين لتشغيل النشاط كدعم عيني استراتيجي لانطلاقة الشركة وتسهيل العمل الميداني.<br>
 • بعد انتهاء فترة الدعم المجانية، يتفق الطرفان على أجرة شهرية متفق عليها كتابةً تبلغ قيمتها بالجنيه المصري:</p>
 <div class="custom-form-group" style="margin-top: 12px; background-color: #f8fafc; padding: 8px; border: 1.5px dashed #cbd5e1; border-radius: 4px;">
     <span class="custom-form-label">الأجرة الشهرية المعتمدة لاحقاً كاش:</span>
@@ -174,7 +174,7 @@ PAGES_CONTENT_16_20[20] = get_contract_page_wrapper(
 # ----------------- PAGE 21: Document 2 - Employment Contract -----------------
 doc_2_body = """
 <p style="margin-bottom: 10px;">بموجب أحكام قانون العمل المصري رقم 12 لسنة 2003، تم إبرام هذا العقد المبدئي للعمل الفردي بين كل من:</p>
-<p style="margin-bottom: 8px;"><strong>الطرف الأول (صاحب العمل):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ويمثلها المدير المالي السيد محمد مبروك.</p>
+<p style="margin-bottom: 8px;"><strong>الطرف الأول (صاحب العمل):</strong> شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م</strong> ويمثلها المدير المالي السيد محمد محجوب علي مبروك.</p>
 <p style="margin-bottom: 8px;"><strong>الطرف الثاني (الموظف):</strong></p>
 
 <div class="custom-form-group" style="margin-bottom: 10px;">
@@ -219,7 +219,7 @@ doc_2_footer = """
     <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
         <div style="font-size: 9pt; font-weight: bold; color: #ff9900; border-bottom: 1px solid #ff9900; padding-bottom: 4px;">عن إدارة الشركة (الطرف الأول)</div>
         <div style="font-size: 8pt; line-height: 1.6;">
-            الاسم والاعتماد: محمد مبروك (المدير المالي)<br>
+            الاسم والاعتماد: محمد محجوب علي مبروك (المدير المالي)<br>
             التوقيع والختم الرسمي: ..................................................
         </div>
     </div>
@@ -239,7 +239,7 @@ PAGES_CONTENT_16_20[21] = get_contract_page_wrapper(
 
 # ----------------- PAGE 22: Document 3 - Advance Payment Request Form -----------------
 doc_3_body = """
-<p style="margin-bottom: 10px;">يقدم هذا الطلب رسمياً للإدارة المالية والمدير المالي المركزي السيد محمد مبروك لاعتماد وصرف سلفة مالية أو دفعة مقدمة كاش:</p>
+<p style="margin-bottom: 10px;">يقدم هذا الطلب رسمياً للإدارة المالية والمدير المالي المركزي السيد محمد محجوب علي مبروك لاعتماد وصرف سلفة مالية أو دفعة مقدمة كاش:</p>
 
 <div class="custom-form-group" style="margin-bottom: 12px;">
     <span class="custom-form-label">اسم طالب السلفة المالي:</span>
@@ -295,7 +295,7 @@ doc_3_footer = """
     <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
         <div style="font-size: 8.5pt; font-weight: bold; color: #800020; border-bottom: 1px solid #800020; padding-bottom: 2px;">اعتماد المدير المالي</div>
         <div style="font-size: 7.5pt; line-height: 1.4;">
-            الاسم: محمد مبروك<br>
+            الاسم: محمد محجوب علي مبروك<br>
             التوقيع والاعتماد: ...........................
         </div>
     </div>
@@ -371,7 +371,7 @@ doc_4_footer = """
     <div style="border: 1px dashed #cbd5e1; padding: 8px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
         <div style="font-size: 9pt; font-weight: bold; color: #ff9900; border-bottom: 1px solid #ff9900; padding-bottom: 4px;">اعتماد وتصديق المدير المالي</div>
         <div style="font-size: 8pt; line-height: 1.6;">
-            الاسم: محمد مبروك (المدير المالي)<br>
+            الاسم: محمد محجوب علي مبروك (المدير المالي)<br>
             التوقيع والختم المالي للشركة: ...................................................
         </div>
     </div>
@@ -493,7 +493,7 @@ doc_6_body = """
     <span class="custom-form-label">اسم طالب الصرف الميداني:</span>
     <span class="custom-form-input"></span>
 </div>
-<p style="margin-bottom: 10px;">المستودع المعني بالصرف: [  ] مستودع طوخ الأقلام   [  ] مستودع ميت خميس (المنصورة)</p>
+<p style="margin-bottom: 10px;">المستودع المعني بالصرف: [  ] مستودع طوخ الأقلام   [  ] مستودع قرية نقيطة (المنصورة)</p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 8.2pt;">
     <thead>
@@ -555,7 +555,7 @@ doc_6_footer = """
     <div style="border: 1px dashed #cbd5e1; padding: 6px; text-align: right; border-radius: 4px; height: 32mm; display: flex; flex-direction: column; justify-content: space-between;">
         <div style="font-size: 8.5pt; font-weight: bold; color: #800020; border-bottom: 1px solid #800020; padding-bottom: 2px;">اعتماد المدير المالي</div>
         <div style="font-size: 7.5pt; line-height: 1.4;">
-            الاسم: محمد مبروك<br>
+            الاسم: محمد محجوب علي مبروك<br>
             التوقيع والاعتماد: ...........................
         </div>
     </div>
