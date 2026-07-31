@@ -493,7 +493,7 @@ tr:nth-child(even) td {
     vertical-align: bottom;
 }
 .custom-form-group {
-    margin-bottom: 12px; /* Increased vertical spacing between fields */
+    margin-bottom: 16px; /* Increased vertical spacing between fields */
     display: flex;
     align-items: center;
 }
@@ -501,13 +501,13 @@ tr:nth-child(even) td {
     font-weight: 800;
     color: var(--primary);
     white-space: nowrap;
-    font-size: 9pt; /* Enlarged label text */
+    font-size: 9.5pt; /* Enlarged label text */
 }
 .custom-form-input {
     flex-grow: 1;
-    border-bottom: 2px solid var(--primary); /* Robust writing lines */
+    border-bottom: 2.2px solid var(--primary); /* Robust writing lines */
     margin-right: 8px;
-    height: 24px; /* Significantly expanded handwriting area height */
+    height: 28px; /* Significantly expanded handwriting area height */
 }
 .dashed-stamp-box {
     border: 2px dashed var(--accent);
@@ -523,6 +523,18 @@ tr:nth-child(even) td {
     text-align: center;
     line-height: 1.2;
     margin: 4px auto;
+}
+.legal-section-title {
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--primary);
+    border-right: 3.5px solid var(--accent);
+    padding-right: 8px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    background-color: var(--accent-light);
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 """
 
