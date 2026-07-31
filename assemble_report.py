@@ -15,15 +15,15 @@ ALL_PAGES = {}
 for k, v in PAGES_CONTENT.items():
     ALL_PAGES[k] = v
 
-# Pages 11 to 15
+# Pages 11 to 18
 for k, v in PAGES_11_15.items():
     ALL_PAGES[k] = v
 
-# Page 16 and Documents 1-5 (Pages 17-21)
+# Pages 19 to 25
 for k, v in PAGES_16_20.items():
     ALL_PAGES[k] = v
 
-# Documents 6-12 (Pages 22-28)
+# Pages 26 to 33
 for k, v in PAGES_21_30.items():
     ALL_PAGES[k] = v
 
@@ -49,8 +49,8 @@ html_out += """
 """
 
 for page_num in sorted(ALL_PAGES.keys()):
-    # Dynamic header metadata for Appendix documents (Pages 17-28)
-    if page_num >= 17:
+    # Dynamic header metadata for Appendix documents (Pages 19-33)
+    if page_num >= 19:
         header_meta = "أي كشط أو تغيير أو تعديل غير مصرح به يجعل هذا المستند باطلاً"
     else:
         header_meta = "دراسة جدوى استراتيجية متكاملة"
@@ -70,11 +70,11 @@ for page_num in sorted(ALL_PAGES.keys()):
 
     # Contract page footers should read Martdia Trading & Distribution Co. (L.L.C.) | www.martdia.com | Info@martdia.com
     # While non-contract pages read standard Martdia feasibility report footer.
-    if page_num >= 17:
+    if page_num >= 19:
         html_out += f"""
         </div>
         <div class="doc-footer">
-            <div style="font-weight: bold; color: #0284c7;">Martdia Trading & Distribution Co. (L.L.C.) | www.martdia.com | Info@martdia.com</div>
+            <div style="font-weight: bold; color: #ff9900;">Martdia Trading & Distribution Co. (L.L.C.) | www.martdia.com | Info@martdia.com</div>
             <div class="page-num">صفحة {page_num} من {total_pages}</div>
         </div>
     </div>

@@ -1,39 +1,39 @@
 # -*- coding: utf-8 -*-
 import sys
 
-# Define Pages 1 to 10 for Martdia Feasibility Study
+# Define Pages 1 to 10 for Martdia Feasibility Study (Premium Redesigned Layout)
 PAGES_CONTENT = {}
 
 # ----------------- PAGE 1 -----------------
 PAGES_CONTENT[1] = """
 <div class="cover-wrapper" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
     <div class="cover-top" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-        <div class="logo-area" style="display: flex; align-items: center; gap: 10px;">
-            <svg class="svg-icon" style="width: 50px; height: 50px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="logo-area" style="display: flex; align-items: center; gap: 12px;">
+            <svg class="svg-icon" style="width: 55px; height: 55px; color: var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div style="text-align: right;">
-                <div class="logo-text" style="font-size: 14pt; font-weight: 800; color: var(--primary);">مارتديا</div>
-                <div style="font-size: 8pt; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">MARTDIA</div>
+                <div class="logo-text" style="font-size: 16pt; font-weight: 900; color: var(--primary);">مارتديا</div>
+                <div style="font-size: 9pt; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">MARTDIA</div>
             </div>
         </div>
-        <span class="badge-accent" style="font-size: 9pt; padding: 6px 12px; border-radius: 50px;">نسخة الاعتماد النهائي V6.5</span>
+        <span class="badge-accent" style="font-size: 10pt; padding: 8px 16px; border-radius: 50px;">نسخة الاعتماد النهائي V8.0</span>
     </div>
 
     <div class="cover-center" style="margin: auto 0; text-align: center;">
-        <div class="cover-title-main" style="font-size: 23pt; font-weight: 900; color: var(--primary); line-height: 1.45; margin-bottom: 12px;">
+        <div class="cover-title-main" style="font-size: 26pt; font-weight: 900; color: var(--primary); line-height: 1.5; margin-bottom: 15px;">
             دراسة الجدوى الاستثمارية والتشغيلية
         </div>
-        <div class="cover-subtitle" style="font-size: 12pt; color: var(--accent); max-width: 90%; margin: 0 auto 15px auto; line-height: 1.5; font-weight: bold;">
+        <div class="cover-subtitle" style="font-size: 13pt; color: var(--accent); max-width: 95%; margin: 0 auto 20px auto; line-height: 1.6; font-weight: bold;">
             شركة مارتديا للتجارة والتوزيع ذ.م.م<br>
-            <span style="font-size: 9.5pt; color: var(--text-muted); font-weight: normal;">تأسيس وتشغيل منظومة المستودعات الذكية وسلاسل الإمداد الرقمية لتوزيع السلع الاستهلاكية الأساسية في الدلتا والمدن الإقليمية بمصر</span>
+            <span style="font-size: 10.5pt; color: var(--text-muted); font-weight: normal;">تأسيس وتشغيل منظومة المستودعات الذكية وسلاسل الإمداد الرقمية لتوزيع السلع الاستهلاكية الأساسية في الدلتا والمدن الإقليمية بمصر</span>
         </div>
-        <div class="cover-divider" style="width: 140px; height: 5px; background: linear-gradient(to left, var(--accent), var(--gold)); margin: 0 auto 20px auto; border-radius: 3px;"></div>
+        <div class="cover-divider" style="width: 150px; height: 6px; background-color: var(--accent); margin: 0 auto 25px auto; border-radius: 3px;"></div>
 
-        <div class="cover-meta-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; text-align: right; background-color: var(--bg-base); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px;">
+        <div class="cover-meta-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; text-align: right; background-color: var(--bg-base); border: 1.5px solid var(--border-color); padding: 22px; border-radius: 8px;">
             <div class="meta-item">
                 <strong>الشركاء المؤسسون:</strong>
-                <span>أحمد مبروك، محمد مبروك، محمد وليد حمودة، مازن السيد</span>
+                <span>أحمد مبروك، محمد محجوب مبروك، محمد وليد حمودة، مازن السيد</span>
             </div>
             <div class="meta-item">
                 <strong>موقع المستودع الافتتاحي:</strong>
@@ -50,8 +50,8 @@ PAGES_CONTENT[1] = """
         </div>
     </div>
 
-    <div class="cover-bottom" style="border-top: 1px solid var(--border-color); padding-top: 15px; text-align: center;">
-        <p style="font-size: 8.5pt; color: var(--text-muted); margin-bottom: 0;">شركة مارتديا للتجارة والتوزيع ذ.م.م (Martdia Trading & Distribution Co. L.L.C.) - الدقهلية، جمهورية مصر العربية</p>
+    <div class="cover-bottom" style="border-top: 1.5px solid var(--border-color); padding-top: 20px; text-align: center;">
+        <p style="font-size: 9.5pt; color: var(--text-muted); margin-bottom: 0;">شركة مارتديا للتجارة والتوزيع ذ.م.م (Martdia Trading & Distribution Co. L.L.C.) - الدقهلية، جمهورية مصر العربية</p>
     </div>
 </div>
 """
@@ -61,13 +61,13 @@ PAGES_CONTENT[2] = """
 <h1>1. الملخص التنفيذي للمشروع وجدول المحتويات</h1>
 <p>تقدم هذه الدراسة نموذج عمل رائد ومبتكر تحت مظلة شركة <strong>مارتديا للتجارة والتوزيع ذ.م.م (Martdia Trading & Distribution Co. L.L.C.)</strong>، وهي مبادرة تقنية لوجستية متخصصة في تجارة وتوزيع المواد الغذائية والسلع الاستهلاكية سريعة الدوران في ريف الدلتا بجمهورية مصر العربية. تهدف الشركة إلى سد الفجوة التنظيمية بين كبار المصنعين ومحلات البقالة الصغيرة بالتجزئة عبر توفير منصة طلبات رقمية متطورة، مدعومة بشبكة مستودعات ريفية ذكية تمتاز بكفاءة تشغيلية عالية وتكلفة تأسيس اقتصادية للغاية.</p>
 
-<div class="info-callout" style="margin-top: 10px;">
+<div class="info-callout" style="margin-top: 12px; margin-bottom: 12px;">
     <h5>الرؤية الأساسية والأثر التجاري:</h5>
     <p>يتيح نموذج "مارتديا" توفير السلع الأساسية والمشروبات والمنظفات للبقالات المحلية بأسعار منافسة جداً مع ميزة التوصيل المجاني الفوري، اعتماداً على الشراء النقدي (الكاش) المباشر من المصانع بخصومات قصوى، وإدارة أسطول توصيل محلي متدرج، بالإضافة لحوكمة الرقابة بالباركود ومنظومة المراقبة السحابية لضمان تصفير نسب التلف أو السرقة والعجز المالي.</p>
 </div>
 
-<h2>جدول المحتويات التفصيلي لدراسة الجدوى (28 صفحة معتمدة)</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+<h2>جدول المحتويات التفصيلي لدراسة الجدوى (33 صفحة معتمدة)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th style="width: 15%; text-align: center;">رقم الصفحة</th>
@@ -77,84 +77,49 @@ PAGES_CONTENT[2] = """
     </thead>
     <tbody>
         <tr>
-            <td style="text-align: center; font-weight: bold;">1</td>
-            <td>غلاف الدراسة المعتمد وبيانات التأسيس</td>
-            <td>الشركاء، رأس المال، التاريخ، والموقع الافتتاحي للمشروع.</td>
+            <td style="text-align: center; font-weight: bold;">1 - 3</td>
+            <td>غلاف الدراسة، الملخص التنفيذي، ورؤية التوسع الجغرافي</td>
+            <td>الشركاء، التأسيس، ونموذج التوسع ثلاثي المراحل للدراسة.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">2</td>
-            <td>الملخص التنفيذي للمشروع وجدول المحتويات</td>
-            <td>رؤية المنصة، المزايا التنافسية وهيكل الفهرس العام.</td>
+            <td style="text-align: center; font-weight: bold; color: var(--accent);">4</td>
+            <td><strong>الهوية البصرية للشركة (Corporate Visual Identity)</strong></td>
+            <td>أنظمة الألوان، الخطوط، الأنماط، ومبادئ تصميم واجهات مارتديا.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">3</td>
-            <td>الوصف العام للمشروع ورؤية التوسع الجغرافي</td>
-            <td>نموذج التوسع ذو الثلاث مراحل (طوخ الأقلام -> ميت خميس -> الإسماعيلية).</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold;">4</td>
-            <td>هيكل الشركاء المؤسسين وتوزيع الحصص الملكية</td>
-            <td>رأس المال التأسيسي (200k ج.م) والمسؤوليات والإنابات العائلية الميدانية.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold;">5</td>
-            <td>المواقع والمقرات والدعم الإيجاري التأسيسي</td>
-            <td>مساهمة طوخ الأقلام (مازن السيد) وميت خميس (أحمد مبروك) المجانية.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold; color: var(--accent);">6</td>
-            <td><strong>تحليل وحساب التكاليف التشغيلية للمستودعات</strong></td>
-            <td>تكلفة التشغيل الشهرية (EGP 2,500)، تفاصيل الإيجار والكهرباء والإنترنت.</td>
+            <td style="text-align: center; font-weight: bold;">5 - 6</td>
+            <td>هيكل الشركاء المؤسسين والمقرات والترتيبات الإيجارية</td>
+            <td>رأس مال البضائع (200k ج.م) والترتيبات المجانية للمخازن التأسيسية.</td>
         </tr>
         <tr>
             <td style="text-align: center; font-weight: bold;">7</td>
-            <td>البنية التكنولوجية ونظام الأمن والتحكم السحابي</td>
-            <td>منظومة الباركود، الكاميرات الذكية، وموازنة التقنية المستقلة (50k ج.م).</td>
+            <td>تحليل وحساب التكاليف التشغيلية وموازنة النفقات</td>
+            <td>تكلفة تشغيل المستودع شهرياً (EGP 2,500) وهيكل OPEX الفعلي.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">8</td>
-            <td>اللوجستيات وتدرج أسطول النقل والمناطق الجغرافية</td>
-            <td>التوصيل بالتوك توك ثم التروسيكل ثم ربع نقل، ومسارات التوزيع الديناميكية.</td>
+            <td style="text-align: center; font-weight: bold;">8 - 9</td>
+            <td>البنية التكنولوجية والمراقبة الأمنية والتحكم السحابي</td>
+            <td>نظام الباركود، CCTV، وتكاليف أجهزة TP-Link Tapo C225 وحوكمة الـ CapEx.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">9</td>
-            <td>استراتيجية التواصل والمبيعات وتفعيل البقالات</td>
-            <td>قنوات WhatsApp Business، الهاتف الموحد، ودور الشركاء ميدانياً.</td>
+            <td style="text-align: center; font-weight: bold;">10 - 12</td>
+            <td>اللوجستيات وتدرج أسطول النقل والمبيعات الميدانية</td>
+            <td>التوصيل المحلي، قنوات WhatsApp Business والمبيعات والزيارات.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">10</td>
-            <td>منهجية الشراء المستدامة وعلاقات الموزعين بالدقهلية</td>
-            <td>التعاقد المباشر في المنصورة، حماية السيولة، وشراء أصول مادية قابلة للتسييل.</td>
+            <td style="text-align: center; font-weight: bold;">13 - 16</td>
+            <td>منهجية الشراء المستدامة وأولويات السلع الاستهلاكية وتسعيرها</td>
+            <td>صفقات المنصورة كاش، مصفوفات السلع، ونموذج فوارق القروش التنافسي.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">11</td>
-            <td>أولويات شراء السلع وترتيب مصفوفة المنتجات (أ)</td>
-            <td>دراسة فئات المياه، المشروبات، الزيت، السكر، المنظفات (بدون أرز ودقيق).</td>
+            <td style="text-align: center; font-weight: bold;">17 - 18</td>
+            <td>الخطط والتوقعات المالية والامتثال وسلامة المستودعات</td>
+            <td>أرباح الخمس سنوات، العائد على الاستثمار، الحماية المدنية وسلامة التخزين.</td>
         </tr>
         <tr>
-            <td style="text-align: center; font-weight: bold;">12</td>
-            <td>الخطة المالية الشاملة وموازنة الإنشاء والتشغيل</td>
-            <td>تحليل ميزانية الأصول والسيولة، والافتراضات المالية التأسيسية.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold;">13</td>
-            <td>التوقعات المالية الخمسية ونمو الإيرادات والمبيعات</td>
-            <td>النمو التراكمي من العام الأول للعام الخامس ومعدل احتجاز الأرباح للتوسع.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold;">14</td>
-            <td>تحليل نقطة التعادل ومعدل العائد الاستثماري (ROI)</td>
-            <td>حساب نقطة التعادل اليومية والشهرية، ومعدلات استرداد رأس المال الأول.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold;">15</td>
-            <td>الامتثال القانوني، التراخيص، الحماية المدنية والسلامة</td>
-            <td>الصحة والنظافة الدورية، معايير فرز البضائع، وتجنب مخاطر التخزين.</td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold; color: var(--gold);">16-28</td>
-            <td>ملحق النماذج القانونية والسجلات الإدارية الجاهزة للتوقيع</td>
-            <td>12 عقداً واستمارة رسمية مطبوعة ومطورة للتوقيع اليدوي.</td>
+            <td style="text-align: center; font-weight: bold; color: var(--secondary);">19 - 33</td>
+            <td><strong>ملحق المستندات القانونية والتشغيلية المعتمدة (12 وثيقة)</strong></td>
+            <td>عقد الإيجار، التعهدات، التفويض الإداري، وعقد الشراكة الحاكم الممتد.</td>
         </tr>
     </tbody>
 </table>
@@ -168,23 +133,23 @@ PAGES_CONTENT[3] = """
 <h2>مراحل التوسع والانتشار الجغرافي الثلاث المعتمدة للمشروع</h2>
 <p>لضمان حماية رأس المال وتجنب التبذير في المصاريف الرأسمالية الأولى، تتبنى الشركة استراتيجية نمو متدرجة ومحكمة جغرافياً عبر 3 فترات زمنية واضحة:</p>
 
-<div class="step-timeline" style="margin: 15px 0;">
-    <div class="timeline-node completed" style="width: 30%;">
+<div class="step-timeline" style="margin: 20px 0;">
+    <div class="timeline-node completed" style="width: 32%;">
         <div class="node-circle">1</div>
-        <div class="node-text"><strong>المرحلة الأولى: مستودع طوخ الأقلام</strong><br>مركز السنبلاوين • تغطية ريفية شاملة وتثبيت نموذج التكنولوجيا والتشغيل والباركود.</div>
+        <div class="node-text"><strong>طوخ الأقلام</strong><br>المرحلة الأولى • تغطية ريفية شاملة وتثبيت نموذج التكنولوجيا والباركود بالمستودع.</div>
     </div>
-    <div class="timeline-node completed" style="width: 35%;">
+    <div class="timeline-node completed" style="width: 36%;">
         <div class="node-circle">2</div>
-        <div class="node-text"><strong>المرحلة الثانية: مستودع ميت خميس</strong><br>مركز المنصورة • تمدد نحو حواضر الدقهلية والمدن الكبرى ودمج الجملة بالتجزئة.</div>
+        <div class="node-text"><strong>ميت خميس</strong><br>المرحلة الثانية • تمدد نحو حواضر الدقهلية والمنصورة ودمج الجملة بالتجزئة.</div>
     </div>
-    <div class="timeline-node" style="width: 30%;">
+    <div class="timeline-node" style="width: 32%;">
         <div class="node-circle">3</div>
-        <div class="node-text"><strong>المرحلة الثالثة: الإسماعيلية</strong><br>التمدد خارج الدلتا لتغطية مدن القناة والشرق والمركز الإقليمي المتقدم.</div>
+        <div class="node-text"><strong>الإسماعيلية</strong><br>المرحلة الثالثة • Tمدد خارج الدلتا لتغطية مدن القناة والشرق والمركز اللوجستي المتقدم.</div>
     </div>
 </div>
 
 <h2>تحليل ومستهدفات مراحل التوسع الجغرافي للشركة</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th>المرحلة التوسعية والمركز</th>
@@ -219,19 +184,99 @@ PAGES_CONTENT[3] = """
     </tbody>
 </table>
 
-<div class="gold-callout" style="margin-top: 10px;">
+<div class="gold-callout" style="margin-top: 12px;">
     <h5>شرط الحوكمة والأمن المالي للانتقال الجغرافي:</h5>
     <p>يحظر تماماً تفعيل فرع ميت خميس أو تصفية أي مبالغ لتأسيس فروع جديدة إلا بعد وصول مستودع طوخ الأقلام لصافي أرباح تشغيلية متتالية ومستقرة طوال 3 أشهر على الأقل، لضمان متانة الكود التجاري للشركة وحماية رأس مال الشركاء من الهزات المفاجئة.</p>
 </div>
 """
 
-# ----------------- PAGE 4 -----------------
+# ----------------- PAGE 4 (NEW: Corporate Visual Identity) -----------------
 PAGES_CONTENT[4] = """
-<h1>3. هيكل الشركاء المؤسسين وتوزيع الحصص والمسؤوليات والإنابات</h1>
-<p>يتألف الهيكل التأسيسي لشركة <strong>مارتديا</strong> من أربعة شركاء مؤسسين بحصص متساوية تماماً وتكامل منسق في الأدوار والقدرات التنفيذية والمالية لضمان تصفير نسب التداخل بالصلاحيات الإدارية، وتوزيع الأدوار والمسؤوليات اليومية وفق الآتي:</p>
+<h1>3. الهوية البصرية للشركة وأنظمة البراندينغ</h1>
+<p>تتبنى شركة <strong>مارتديا</strong> نظاماً بصرياً حديثاً واحترافياً مستوحى من كبرى المنصات التجارية العالمية (مثل أمازون وإيباي) لتقديم صورة ذهنية تتسم بالثقة، الديناميكية، والكفاءة اللوجستية المطلقة. نوضح في هذا القسم الدليل المتكامل للهوية البصرية للعلامة التجارية لضمان توافق جميع التصاميم، المطبوعات، والواجهات الرقمية مستقبلاً:</p>
+
+<h2>لوحة الألوان الأساسية والثنائية المعتمدة (HEX Codes)</h2>
+<div style="display: flex; gap: 15px; margin: 15px 0;">
+    <!-- Primary Neutral -->
+    <div style="flex: 1; border: 1.5px solid var(--border-color); border-radius: 6px; overflow: hidden; text-align: center; background: #ffffff;">
+        <div style="height: 40px; background-color: #1a1a1a;"></div>
+        <div style="padding: 8px; font-size: 8.5pt;">
+            <strong style="color: #1a1a1a;">اللون الأساسي المهيمن</strong><br>
+            <span>Charcoal Black</span><br>
+            <code>#1a1a1a</code>
+        </div>
+    </div>
+    <!-- Primary Accent -->
+    <div style="flex: 1; border: 1.5px solid var(--border-color); border-radius: 6px; overflow: hidden; text-align: center; background: #ffffff;">
+        <div style="height: 40px; background-color: #ff9900;"></div>
+        <div style="padding: 8px; font-size: 8.5pt;">
+            <strong style="color: #ff9900;">اللكنة النشطة والتحفيز</strong><br>
+            <span>Amazon Orange</span><br>
+            <code>#ff9900</code>
+        </div>
+    </div>
+    <!-- Secondary Accent -->
+    <div style="flex: 1; border: 1.5px solid var(--border-color); border-radius: 6px; overflow: hidden; text-align: center; background: #ffffff;">
+        <div style="height: 40px; background-color: #800020;"></div>
+        <div style="padding: 8px; font-size: 8.5pt;">
+            <strong style="color: #800020;">التمييز والتحذير القانوني</strong><br>
+            <span>Burgundy</span><br>
+            <code>#800020</code>
+        </div>
+    </div>
+</div>
+
+<h2>أدلة ومبادئ التصميم والهوية المؤسسية (Brand Guidelines)</h2>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8.2pt;">
+    <thead>
+        <tr>
+            <th style="width: 25%;">العنصر التصميمي</th>
+            <th style="width: 35%;">المعيار المعتمد بالهوية</th>
+            <th style="width: 40%;">التطبيق الميداني والتقني في مارتديا</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>الخطوط والتايبوجرافي</strong></td>
+            <td>خط <strong>Cairo</strong> بأوزان متعددة.</td>
+            <td>تستخدم الأوزان الثقيلة (Bold/Black) للعناوين، والوزن العادي للنصوص.</td>
+        </tr>
+        <tr>
+            <td><strong>نمط الأيقونات</strong></td>
+            <td>أحادية اللون، رفيعة ومغلقة (Monochrome Line)</td>
+            <td>تجنب الألوان المتعددة لضمان الوضوح التام في المطبوعات الورقية.</td>
+        </tr>
+        <tr>
+            <td><strong>نمط واجهة المستخدم</strong></td>
+            <td>تخطيط أبيض مسطح (Clean Flat Design)</td>
+            <td>مساحات مريحة للعين، خلفيات بيضاء بالكامل، وحدود رمادية واضحة.</td>
+        </tr>
+        <tr>
+            <td><strong>تصميم الأزرار</strong></td>
+            <td>حواف مستديرة برفق مع خلفية برتقالية نشطة</td>
+            <td>مخصصة لجذب النقرات وتسهيل حركة البقالين داخل التطبيق.</td>
+        </tr>
+        <tr>
+            <td><strong>الجداول والرسوم</strong></td>
+            <td>رؤوس داكنة Charcoal وحواف واضحة</td>
+            <td>تجنب التدرجات اللونية المعقدة لتسهيل الطباعة السريعة بالليزر.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info-callout" style="margin-top: 12px;">
+    <h5>قوانين حظر استخدام وتغيير الألوان:</h5>
+    <p>يُحظر تماماً استخدام اللون البرتقالي في نصوص التحذير أو التخارج المالي، بل يقتصر استخدام اللون البرغندي (#800020) في أعلى ترويسات المستندات الرسمية والتحذيرات لإضفاء الطابع الرادع والقانوني الصارم للشركة.</p>
+</div>
+"""
+
+# ----------------- PAGE 5 (Shifted) -----------------
+PAGES_CONTENT[5] = """
+<h1>4. هيكل الشركاء المؤسسين وتوزيع الحصص والمسؤوليات والإنابات</h1>
+<p>يتألف الهيكل التأسيسي لشركة <strong>مارتديا</strong> من أربعة الشركاء مؤسسين بحصص متساوية تماماً وتكامل منسق في الأدوار والقدرات التنفيذية والمالية لضمان تصفير نسب التداخل بالصلاحيات الإدارية، وتوزيع الأدوار والمسؤوليات اليومية وفق الآتي:</p>
 
 <h2>جدول الحصص والصفة القانونية والمسؤولية المركزية للشركاء الأربعة</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th>الاسم القانوني للشرك المؤسس</th>
@@ -250,7 +295,7 @@ PAGES_CONTENT[4] = """
             <td>التطوير التكنولوجي، السحابة، والخطط الاستراتيجية.</td>
         </tr>
         <tr>
-            <td><strong>محمد مبروك</strong></td>
+            <td><strong>محمد محجوب مبروك</strong></td>
             <td>50,000 جنيه مصري</td>
             <td><strong>25.0%</strong></td>
             <td>المدير المالي المركزي</td>
@@ -289,13 +334,13 @@ PAGES_CONTENT[4] = """
 
 <div class="danger-callout" style="margin-top: 10px;">
     <h5>قواعد حوكمة التفويض المالي واللوجستي للنواب:</h5>
-    <p>يلتزم النواب الميدانيون (آدم مبروك ومحمود حمودة) بصرامة بالحد المالي للمصروفات الفورية اليومية المقدر بـ 1,000 ج.م فقط كحد أقصى للعملية الواحدة، ويتطلب أي مصروف يتجاوز ذلك موافقة كتابية مسبقة من المدير المالي محمد مبروك عبر الجروب المركزي للشركة.</p>
+    <p>يلتزم النواب الميدانيون (آدم مبروك ومحمود حمودة) بصرامة بالحد المالي للمصروفات الفورية اليومية المقدر بـ 1,000 ج.م فقط كحد أقصى للعملية الواحدة، ويتطلب أي مصروف يتجاوز ذلك موافقة كتابية مسبقة من المدير المالي محمد محجوب مبروك عبر الجروب المركزي للشركة.</p>
 </div>
 """
 
-# ----------------- PAGE 5 -----------------
-PAGES_CONTENT[5] = """
-<h1>4. المواقع والمقرات والترتيبات الإيجارية التأسيسية للمستودعات</h1>
+# ----------------- PAGE 6 (Shifted) -----------------
+PAGES_CONTENT[6] = """
+<h1>5. المواقع والمقرات والترتيبات الإيجارية التأسيسية للمستودعات</h1>
 <p>تمثل الأصول العقارية والمستودعات حجر الأساس المادي لعمليات شركة <strong>مارتديا</strong>. ولضمان تحصين رأس مال الشركاء في الفترات الأولى وتوجيه كامل الكاش البالغ (200,000 جنيه مصري) حصرياً لشراء البضائع والمنتجات الاستهلاكية وتدويرها السريع لرفع السيولة، تبتكر الشركة ترتيبات إيجارية استثنائية واقتصادية للغاية بالتعاون الوثيق مع الشركاء المؤسسين، كالتالي:</p>
 
 <h2>1. مقر الانطلاق والمستودع الأول: طوخ الأقلام، السنبلاوين</h2>
@@ -308,14 +353,14 @@ PAGES_CONTENT[5] = """
 <p>• <strong>الدعم والتمويل العيني المجاني للافتتاح:</strong> كجزء من تعزيز التوسع التدريجي وتقليل الكلف الرأسمالية الأولى، يتعهد الشريك <strong>أحمد مبروك</strong> بتوفير عقار ومستودع فرع <strong>ميت خميس (المنصورة)</strong> دون أي تكلفة إيجارية خلال فترة الإطلاق والتشغيل الأولى لهذا الفرع، كإسهام عيني داعم منه لتمكين الشركة من بلوغ مرحلة استقرار الأرباح وتأمين كود النمو التشغيلي قبل مراجعة الشروط الإيجارية مستقبلاً.</p>
 
 <h2>المزايا اللوجستية والتجارية لمواقع المستودعات المحددة للشركة</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th>اسم موقع المستودع</th>
-            <th>الخصائص والروابط الطرقية اللوجستية</th>
-            <th>متوسط المساحة الإجمالية</th>
+            <th>الخصائص والروابط اللوجستية</th>
+            <th>المساحة الإجمالية</th>
             <th>فترة الدعم والترتيب الإيجاري التأسيسي</th>
-            <th>متوسط القيمة الإيجارية اللاحقة المتوقعة</th>
+            <th>القيمة الإيجارية اللاحقة المتوقعة</th>
         </tr>
     </thead>
     <tbody>
@@ -335,20 +380,15 @@ PAGES_CONTENT[5] = """
         </tr>
     </tbody>
 </table>
-
-<div class="info-callout" style="margin-top: 10px;">
-    <h5>قوة الأثر التجاري للترتيبات الإيجارية المدعومة:</h5>
-    <p>إن توفير مقرات المستودعات مجاناً في الفترات التأسيسية يوفر على الشركاء ما يزيد عن 20,000 جنيه مصري كاش كإيجارات أولى، مما يتيح استغلال كامل رأس المال في شراء المواد الاستهلاكية سريعة الدوران كاش والحصول على الخصومات القصوى من المصانع.</p>
-</div>
 """
 
-# ----------------- PAGE 6 -----------------
-PAGES_CONTENT[6] = """
-<h1>5. تحليل وحساب التكاليف التشغيلية للمستودعات</h1>
+# ----------------- PAGE 7 (Shifted & Redesigned Chart) -----------------
+PAGES_CONTENT[7] = """
+<h1>6. تحليل وحساب التكاليف التشغيلية للمستودعات</h1>
 <p>تعتمد هيكلة أعمال <strong>مارتديا</strong> على الكفاءة القصوى وضغط التكاليف التشغيلية الثابتة (OPEX Optimization). نوضح في هذا القسم تفاصيل النفقات التشغيلية الدورية المخططة لكل مستودع من مستودعي الشركة (طوخ الأقلام وميت خميس بالمنصورة) بعد انتهاء فترات الدعم المجانية، حيث تم حساب الكلفة الاقتصادية الفعلية بناءً على معطيات واقعية لريف الدقهلية ومركز المنصورة، كالتالي:</p>
 
 <h2>هيكل التكاليف التشغيلية والخدمية الشهرية المتوقعة لكل مستودع</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 7.8pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th>عنصر النفقة التشغيلية المعتمد</th>
@@ -391,118 +431,146 @@ PAGES_CONTENT[6] = """
     </tbody>
 </table>
 
-<h2>تحليل وضبط استهلاك الطاقة والخدمات في المستودع</h2>
-<p>• <strong>انخفاض استهلاك الطاقة والكهرباء (50 - 100 ج.م شهرياً):</strong> لا يشتمل نشاط مارتديا على تشغيل برادات ضخمة أو آلات تصنيع مستمرة الاستهلاك، بل يقتصر الاستخدام على تخزين المواد الغذائية الجافة والمشروبات سريعة الحركة. وتعمل أجهزة الحاسوب والـ POS بتقنيات توفير طاقة متطورة وتعمل لساعات عمل محدودة، بينما يتم استخدام الإنارة الليد الموفرة حصرياً وفقط في أوقات وجود الموظفين والنائبين لتجهيز وشحن الطلبيات، مما يضمن خفض استهلاك الطاقة ليتراوح بين 50 إلى 100 جنيه مصري شهرياً كحد أقصى.<br>
-• <strong>الإنترنت كعصب للمنظومة والتحكم عن بعد (300 - 350 ج.م شهرياً):</strong> يمثل الإنترنت فائق السرعة النفقة الخدمية الأهم بالمستودع لربط نظام الباركود الإلكتروني ونظام الـ POS وبث المراقبة المباشرة لكاميرات الـ IP السحابية لمجلس الإدارة عن بعد، لذلك تم تخصيص اشتراك شهري معتمد من كبرى شركات الاتصالات لضمان استقرار البث وعدم الانقطاع.</p>
+<h2>المظهر البصري لهيكل النفقات التشغيلية (Executive OPEX Dashboard)</h2>
+<div style="text-align: center; margin: 15px 0;">
+    <svg viewBox="0 0 620 140" style="width: 100%; height: auto; font-family: 'Cairo', sans-serif; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px;">
+        <!-- Title & Total -->
+        <text x="600" y="25" fill="#1a1a1a" font-size="10pt" font-weight="900" text-anchor="end">توزيع النفقات التشغيلية الشهرية (المجموع: 2,500 ج.م)</text>
 
-<h2>تحليل ومخطط بياني لهيكل النفقات التشغيلية الإجمالية للمستودع</h2>
-<div style="text-align: center; margin: 10px 0;">
-    <svg viewBox="0 0 600 130" style="width: 100%; height: auto; font-family: 'Cairo', sans-serif; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 5px;">
-        <!-- Rent Bar -->
-        <rect x="20" y="30" width="380" height="30" fill="#0f172a" rx="3" />
-        <text x="30" y="50" fill="#ffffff" font-size="8pt" font-weight="bold">إيجار العقار: 2,000 ج.م (80%)</text>
+        <!-- Rent block (80%) -->
+        <rect x="20" y="45" width="464" height="40" fill="#1a1a1a" rx="4" />
+        <text x="252" y="69" fill="#ffffff" font-size="9pt" font-weight="900" text-anchor="middle">الإيجار الفعلي: 2,000 ج.م (80%)</text>
 
-        <!-- Internet Bar -->
-        <rect x="410" y="30" width="110" height="30" fill="#0284c7" rx="3" />
-        <text x="420" y="50" fill="#ffffff" font-size="8pt" font-weight="bold">الإنترنت: 350 ج.م (14%)</text>
+        <!-- Internet block (14%) -->
+        <rect x="489" y="45" width="81" height="40" fill="#ff9900" rx="4" />
+        <text x="529" y="69" fill="#ffffff" font-size="8pt" font-weight="900" text-anchor="middle">إنترنت: 14%</text>
 
-        <!-- Electricity & Utilities Bar -->
-        <rect x="530" y="30" width="50" height="30" fill="#b45309" rx="3" />
-        <text x="535" y="80" fill="#b45309" font-size="7.5pt" font-weight="bold">الكهرباء والمياه: 150 ج.م (6%)</text>
+        <!-- Utilities block (6%) -->
+        <rect x="575" y="45" width="25" height="40" fill="#800020" rx="4" />
+        <text x="587" y="105" fill="#800020" font-size="7.5pt" font-weight="900" text-anchor="middle">خدمات: 6%</text>
 
-        <text x="300" y="110" fill="#64748b" font-size="8.5pt" font-weight="bold" text-anchor="middle">إجمالي الموازنة التشغيلية الثابتة شهرياً = 2,500 جنيه مصري لكل مستودع</text>
+        <!-- Legend -->
+        <circle cx="30" cy="115" r="5" fill="#1a1a1a" />
+        <text x="40" y="119" fill="#1a1a1a" font-size="8pt" font-weight="700">إيجار المخزن</text>
+
+        <circle cx="160" cy="115" r="5" fill="#ff9900" />
+        <text x="170" y="119" fill="#1a1a1a" font-size="8pt" font-weight="700">اشتراك الإنترنت السحابي</text>
+
+        <circle cx="350" cy="115" r="5" fill="#800020" />
+        <text x="360" y="119" fill="#1a1a1a" font-size="8pt" font-weight="700">الكهرباء والمرافق العامة</text>
     </svg>
-</div>
-
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>قواعد حوكمة المصروفات التشغيلية:</h5>
-    <p>يتولى المدير المالي محمد مبروك سداد اشتراكات الإنترنت والكهرباء والإيجار مباشرة للجهات المستحقة إلكترونياً، ويحظر استخدام الكاش المحصل من البقالات بالمستودع لسداد أي من هذه الفواتير لضمان مركزية الحسابات.</p>
 </div>
 """
 
-# ----------------- PAGE 7 -----------------
-PAGES_CONTENT[7] = """
-<h1>6. البنية التكنولوجية ونظام الأمن والتحكم الرقمي السحابي</h1>
+# ----------------- PAGE 8 (Shifted) -----------------
+PAGES_CONTENT[8] = """
+<h1>7. البنية التكنولوجية ونظام الأمن والتحكم الرقمي السحابي</h1>
 <p>تمثل التكنولوجيا العصب المحرك والعمود الفقري لنموذج عمل <strong>مارتديا</strong>. بدلاً من الحسابات الورقية التقليدية العرضة للضياع والسرقة، صممنا نظاماً برمجياً مغلقاً سحابياً يربط كافة أطراف العملية اللوجستية والمالية من الاستلام في مستودع طوخ الأقلام إلى التسليم والتحصيل اليومي بالميدان:</p>
 
 <h2>مكونات وهيكل المنظومة الرقمية للشركة</h2>
 <p>1. <strong>تطبيق مارتديا للهواتف الذكية:</strong> واجهة استخدام عربية فائقة البساطة مخصصة للبقالات وسوبرماركت القرى للطلب المباشر ومقارنة الأسعار.<br>
 2. <strong>نظام إدارة المستودعات والـ POS (WMS Cloud):</strong> نظام تحكم سحابي لمراقبة مستويات البضائع بالباركود، وتوليد فواتير مميكنة فورا.<br>
-3. <strong>التحكم اللحظي عبر مسح الباركود (POS Scanner):</strong> يتم تعيين كود باركود فريد مخصص لكل كرتونة أو صندوق بضائع بالمستودع (مثل المياه، العصائر، الزيت، السكر، المنظفات). ويتم إجبار طاقم المخازن على مسح باركود كل صنف خارج ميكانيكياً بواسطة قارئ الليزر اللاسلكي قبل مغادرة البوابة، مما يضمن تحديثاً فورياً للأرصدة وتصفير نسب العجز البشري أو السرقة تاما.<br>
-4. <strong>البث والتحكم الأمني عن بعد (IP Surveillance System):</strong> يتجهز المستودع بكاميرات مراقبة عالية الجودة (IP Cameras) تغطي البوابات وممرات التخزين ورصيف الشحن، وتعمل على مدار 24 ساعة برؤية ليلية واضحة (Night Vision) واستشعار للحركة (Motion Detection). ويتم ربط الكاميرات بالإنترنت السحابي لبث البث الحي المباشر لجميع الشركاء لمراقبة ومتابعة المستودع عن بعد في أي وقت.</p>
+3. <strong>التحكم اللحظي عبر مسح الباركود (POS Scanner):</strong> يتم تعيين كود باركود فريد مخصص لكل كرتونة أو صندوق بضائع بالمستودع (مثل المياه، العصائر، الزيت، السكر، المنظفات). ويتم إجبار طاقم المخازن على مسح باركود كل صنف خارج ميكانيكياً بواسطة قارئ الليزر اللاسلكي قبل مغادرة البوابة، مما يضمن تحديثاً فورياً للأرصدة وتصفير نسب العجز البشري أو السرقة تاما.</p>
 
-<h2>الموازنة الرأسمالية والتمويل التكنولوجي والأمني المستقل (Tech CapEx)</h2>
-<p>نظراً لأهمية حوكمة وضبط المشروع فتشكل نفقات التأسيس التكنولوجي والأمني ميزانية رأسمالية مستقلة يتم تمويلها وسدادها بالتساوي والعدل التام بين الشركاء الأربعة، وهي منفصلة تماماً ومستقلة عن مبلغ الـ <strong>200,000 جنيه مصري</strong> المخصصة لشراء البضائع الأولية:</p>
+<h2>الموازنة الرأسمالية والتمويل التكنولوجي المالي (Tech CapEx)</h2>
+<p>نظراً لأهمية حوكمة وضبط المشروع فتشكل نفقات التأسيس التكنولوجي والأمني ميزانية رأسمالية مستقلة يتم تمويلها وسدادها بالتساوي والعدل التام بين الشركاء الأربعة، وهي منفصلة تماماً ومستقلة عن مبلغ الـ <strong>200,000 جنيه مصري</strong> المخصصة لشراء البضائع والمنتجات الاستهلاكية الأولية:</p>
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 7.2pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 8.2pt;">
     <thead>
         <tr>
-            <th>البند التكنولوجي والأمني المعتمد</th>
-            <th>الخصائص والخصائص التقنية الفنية للمعدات</th>
-            <th>تكلفة مستودع طوخ الأقلام (ج.م)</th>
+            <th>البند التكنولوجي المعتمد للتشغيل</th>
+            <th>الخصائص والوظائف التقنية الفنية للمعدات</th>
+            <th>كلفة طوخ الأقلام (ج.م)</th>
             <th>حصة الشريك الواحد (25%)</th>
-            <th>المساهمة المالية لشراء البضائع</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><strong>نظام الكاميرات السحابية IP</strong></td>
-            <td>4 كاميرات بدقة 4K مع جهاز تسجيل NVR وهارد 2 تيرا وشبكة رؤية ليلية.</td>
-            <td>12,000 ج.م</td>
-            <td>3,000 ج.م</td>
-            <td>منفصل ومستقل تماماً</td>
-        </tr>
         <tr>
             <td><strong>المعدات والشبكات الداخلية</strong></td>
             <td>راوتر ذكي، سويتش 8 بورت، كابلات Cat6، وجهاز إنترنت احتياطي 4G.</td>
             <td>6,000 ج.م</td>
             <td>1,500 ج.م</td>
-            <td>منفصل ومستقل تماماً</td>
         </tr>
         <tr>
             <td><strong>أجهزة الـ POS والباركوود</strong></td>
             <td>2 قارئ باركود لاسلكي ليزر، وجهاز POS محمول مع طابعة فواتير للمندوب.</td>
             <td>10,000 ج.م</td>
             <td>2,500 ج.م</td>
-            <td>منفصل ومستقل تماماً</td>
         </tr>
         <tr>
             <td><strong>الحواسب والطابعات الإدارية</strong></td>
             <td>كمبيوتر مركزي لإدارة المخازن، وطابعة ليزر ثقيلة لإذن التجميع والفواتير.</td>
             <td>14,000 ج.م</td>
             <td>3,500 ج.م</td>
-            <td>منفصل ومستقل تماماً</td>
         </tr>
         <tr>
             <td><strong>التراخيص والبرمجيات السحابية</strong></td>
-            <td>رخصة سنوية لتطبيق مارتديا، وقاعدة بيانات AWS مشفرة، وتثبيت وتنزيل المنظومة.</td>
+            <td>رخصة سنوية لتطبيق مارتديا، وقاعدة بيانات AWS مشفرة، وتثبيت المنظومة.</td>
             <td>8,000 ج.م</td>
             <td>2,000 ج.م</td>
-            <td>منفصل ومستقل تماماً</td>
         </tr>
         <tr class="table-total">
-            <td>إجمالي ميزانية التقنية والأمن</td>
+            <td>إجمالي ميزانية التقنية الأساسية</td>
             <td>تجهيز تقني وتأمين أمني كامل للمستودع الأول</td>
-            <td><strong>50,000 جنيه مصري</strong></td>
-            <td><strong>12,500 جنيه مصري</strong></td>
-            <td><strong>مستقلة عن كابيتال البضائع (200k)</strong></td>
+            <td><strong>38,000 جنيه مصري</strong></td>
+            <td><strong>9,500 جنيه مصري</strong></td>
         </tr>
     </tbody>
 </table>
-
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>قواعد أمن وحماية البيانات السحابية:</h5>
-    <p>يتم استضافة قاعدة بيانات مارتديا على سحابة AWS مع تفعيل تشفير كامل وتوليد نسخ احتياطي تلقائي كل ساعة، ويحظر تعديل أسعار البضائع بالتطبيق إلا من خلال حساب الشريك التقني أحمد مبروك لضمان سلامة الحوكمة التقنية.</p>
-</div>
 """
 
-# ----------------- PAGE 8 -----------------
-PAGES_CONTENT[8] = """
-<h1>7. اللوجستيات وتدرج أسطول النقل والمناطق الجغرافية للتوزيع</h1>
+# ----------------- PAGE 9 (NEW: Warehouse Monitoring & Security) -----------------
+PAGES_CONTENT[9] = """
+<h1>8. البنية الأمنية ونظام مراقبة المخازن وحماية الأصول</h1>
+<p>لحماية المخزون والسلع الغذائية والمشروبات المخزنة داخل مستودعات <strong>مارتديا</strong> من مخاطر السطو أو العجز الداخلي، وتسهيل الإشراف والمراقبة الدائمة من قبل كافة الشركاء المؤسسين دون الاضطرار للتواجد البدني المستمر بالموقع، تم إقرار نظام مراقبة أمنية متكامل وعالي الدقة يربط المستودع بالسحابة مباشرة.</p>
+
+<h2>مكونات وتفاصيل نظام كاميرات المراقبة التخصصي</h2>
+<p>تقرر تجهيز كل مستودع من مستودعات الشركة (طوخ الأقلام وميت خميس) بنظام المراقبة السحابي الذكي المعتمد على الأجهزة التالية لضمان التغطية المستمرة والشاملة للبوابات والممرات الداخلية:</p>
+<p>• <strong>كاميرات Tapo C225 الذكية:</strong> تركيب كاميرتين من طراز <strong>TP-Link Tapo C225</strong> فائقة الدقة والذكاء الاصطناعي لتغطية صالة التحرير والتخزين بالكامل وممرات التحميل والتنزيل. وتتميز هذه الكاميرات بالرؤية الليلية الواضحة (Night Vision)، وتتبع الحركة، وإمكانية التحكم بزاوية البث 360 درجة عن بعد عبر تطبيق الهاتف المحمول الخاص بالشركاء.<br>
+• <strong>بطاقات الذاكرة المخصصة 256 GB:</strong> يتم تزويد كل كاميرا ببطاقة ذاكرة (MicroSD Card) سعة <strong>256 جيجابايت</strong> لضمان تسجيل فيديو مستمر ومتواصل على مدار 24 ساعة دون توقف، وتأمين حماية السجلات المحلية والرجوع إليها عند الحاجة.<br>
+• <strong>الإخطارات والتحذيرات اللحظية:</strong> يرتبط النظام بالواي فاي ليقوم بإرسال إشعارات فورية على هواتف الشركاء الأربعة في حال رصد أي حركة مشبوهة داخل المستودع خارج ساعات العمل الرسمية.</p>
+
+<h2>جدول تقدير الكلفة المالية المخصصة لمعدات المراقبة الأمنية</h2>
+<p>نوضح هنا تفاصيل التكلفة التقديرية لشراء أجهزة المراقبة لكل مستودع، وهي ميزانية فرعية من موازنة CapEx المستقلة عن كابيتال البضائع:</p>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8.5pt;">
+    <thead>
+        <tr>
+            <th style="width: 45%;">البيان وجهاز المراقبة</th>
+            <th style="width: 25%; text-align: center;">الكمية المطلوبة</th>
+            <th style="width: 30%; text-align: center;">التكلفة الإجمالية المقدرة (ج.م)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>كاميرات TP-Link Tapo C225 الذكية</strong></td>
+            <td style="text-align: center; font-weight: bold;">2 كاميرا</td>
+            <td style="text-align: center; font-weight: bold; color: var(--primary);">~ 5,200 ج.م</td>
+        </tr>
+        <tr>
+            <td><strong>بطاقات ذاكرة عالية التحمل MicroSD 256 GB</strong></td>
+            <td style="text-align: center; font-weight: bold;">2 بطاقة</td>
+            <td style="text-align: center; font-weight: bold; color: var(--primary);">~ 4,400 ج.م</td>
+        </tr>
+        <tr class="table-total">
+            <td>إجمالي ميزانية حماية المستودع الأول</td>
+            <td style="text-align: center;">—</td>
+            <td style="text-align: center; color: var(--secondary);">~ 9,600 جنيه مصري</td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 8.2pt; font-style: italic; color: var(--text-muted); margin-top: 5px;">تنبيه: الأرقام السابقة هي كلفة تقديرية أولية خاضعة للتغير البسيط صعوداً أو هبوطاً وفقاً لأسعار الموردين المحليين وقت الشراء والتثبيت الفعلي بالدقهلية.</p>
+
+<h2>قواعد حوكمة موازنة التأسيس ونظام تخارج الشركاء</h2>
+<p>تعتبر نفقات وتكاليف تجهيز وتأسيس المستودعات (بما في ذلك كاميرات المراقبة Tapo، أجهزة الراوتر والإنترنت، الأرفف الحديدية الثقيلة، طبالي الرص، الحواسب، وأجهزة الباركود) بمثابة <strong>نفقات تأسيسية رأسمالية مشتركة (Shared Infrastructure CapEx)</strong>. وفي حال تخارج أي شريك من الشركاء طواعية من أعمال الشركة، فإن هذه الأصول والتجهيزات تظل <strong>أصولاً ثابتة دائمة مملوكة بالكامل لشركة مارتديا وغير قابلة للاسترداد أو التسييل الفردي</strong>، وتتم التسويات المالية للتخارج بناءً على المستندات المحاسبية والفواتير الموثقة فقط وحصرياً لضمان عدم تأثر البنية التحتية للمشروع.</p>
+"""
+
+# ----------------- PAGE 10 (Shifted) -----------------
+PAGES_CONTENT[10] = """
+<h1>9. اللوجستيات وتدرج أسطول النقل والمناطق الجغرافية للتوزيع</h1>
 <p>تتبنى <strong>مارتديا</strong> نموذجاً مرناً وتدريجياً للتوزيع اللوجستي للتغلب على كلفة الوقود وصغر الميزانية التأسيسية الأولى. نظراً لمحدودية الموارد اللوجستية عند مرحلة الإطلاق وصفر سيارات مملوكة، لن يتم اقتناء سيارة شحن أو تروسيكل فوراً في اليوم الأول لشراء أصول مكلفة تهدر كاش المشتريات. وبدلاً من ذلك، ستتم الاستعانة بوسائل نقل ريفية محلية واقتصادية للغاية مثل <strong>التوك توك (Tuk-Tuk)</strong> أو العربات المحلية بالمنطقة لنقل وتوصيل الطلبات للقرى القريبة الملاصقة للمستودع الأول بطوخ الأقلام. ومع زيادة حجم المبيعات ونمو التدفق المالي، سنقوم بالانتقال التدريجي لتملك وتشغيل أسطول لوجستي منظم يتكامل كالآتي:</p>
 
 <h2>جدول ومراحل نمو وتدرج أسطول التوزيع اللوجستي للشركة</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 8.5pt;">
     <thead>
         <tr>
             <th>وسيلة النقل اللوجستية والمرحلة</th>
@@ -536,157 +604,6 @@ PAGES_CONTENT[8] = """
         </tr>
     </tbody>
 </table>
-
-<h2>مخطط مناطق التوصيل المتدرجة جغرافياً (Scalable Delivery Zones)</h2>
-<p>تم تصميم البنية البرمجية لمنصة مارتديا لتدعم تقسيم قطاعات التوصيل إلى مناطق ديناميكية متدرجة (Zone-Based Logistics) تتوسع تدريجياً بالتوازي مع تطور القدرات اللوجستية والمعدات، كالآتي:</p>
-<p>• <strong>المنطقة الأولى (شعاع 5 كم):</strong> تشمل قرية طوخ الأقلام والمحيط الزراعي الملاصق، وتخدم بالكامل في الأسبوع الأول بالاعتماد على حلول النقل المحلية والتوكتوك.<br>
-• <strong>المنطقة الثانية (شعاع 10 كم):</strong> تمتد لتغطي كامل أطراف مركز السنبلاوين والقرى الكبرى المحيطة به، ويبدأ خدمتها مع اقتناء التروسيكل التجاري الأول لتسريع وتيرة التحميل والتعبئة.<br>
-• <strong>المنطقة الثالثة (شعاع 15 كم فما فوق):</strong> نطاق التوصيل والانتشار الإقليمي المتقدم الذي يربط فروع مستودعات طوخ الأقلام ومستودع <strong>ميت خميس</strong> بالمنصورة، مما يتيح تخديم وتغذية كبرى المحلات والمدن المجاورة تدريجياً لضمان تكامل السيطرة الجغرافية لشبكة مستودعات الشركة دون تحميل السيولة أي تكاليف تشغيل ضخمة في البدايات.</p>
-
-<div class="danger-callout" style="margin-top: 10px;">
-    <h5>ضوابط ومعايير حماية وسلامة السائقين والأسطول:</h5>
-    <p>يمنع تماماً شحن أي وسيلة نقل أو تروسيكل بحمولة زائدة عن طاقتها الاستيعابية المعتمدة لتفادي حوادث الطرق وتجنب تكرار الصيانة، مع فحص ضغط الإطارات ومستوى الزيت والمكابح أسبوعياً بمعرفة الممثل الميداني محمود حمودة لضمان أمن حركة النقل.</p>
-</div>
 """
 
-# ----------------- PAGE 9 -----------------
-PAGES_CONTENT[9] = """
-<h1>8. استراتيجية التواصل المباشر وتفعيل بقالات القرى والمحلات الميدانية</h1>
-<p>لتأمين نمو متسارع لقاعدة التجار وضمان تحقيق مبيعات تفوق المستهدفات، تطبق مارتديا مزيجاً متوازناً من استراتيجيات التسويق المباشر والميداني المصمم خصيصاً لطبيعة ريف مصر والدلتا، معتمدين على قنوات اتصال حديثة وسريعة لبناء جسور ثقة متينة وعلاقات مستديمة، كالتالي:</p>
-
-<h2>قنوات التواصل الرقمية والدعم المباشر للبقالات والمقاهي</h2>
-<p>تعتمد مارتديا على نظام تواصل ثنائي القنوات يدمج بين السهولة التقنية والسرعة البشرية لحل مشاكل التجار وزيادة مبيعاتهم:</p>
-<p>• <strong>الخط الساخن وحساب WhatsApp Business الموحد:</strong> تخصص الشركة هاتف خدمة عملاء موحد وحساب <strong>واتساب للأعمال (WhatsApp Business)</strong> رسمي كقناة تواصل تفاعلية فورية. يتم استخدام هذه القناة لإرسال قوائم الأسعار المحدثة دورياً كصور وملفات PDF سهلة التداول للبقالات، الإعلان عن توافر أصناف المياه والغازيات والمنظفات والسلع الاستهلاكية الفورية بالمستودع، وتوزيع منشورات العروض الأسبوعية، بالإضافة لتلقي شكاوى التجار والتعامل مع طلبات الارتجاع الفوري خلال دقائق معدودة.<br>
-• <strong>برنامج "ادعُ زميلك واربح" (Viral Referral Program):</strong> يتيح التطبيق لكل بقال دعوة تاجر تجزئة آخر بالمنطقة للانضمام للمنصة. وعندما يقوم التاجر الجديد بإتمام أول طلبية ناجحة بقيمة 1,000 ج.م على الأقل، يحصل كل من الداعي والمدعو على خصم نقدي فوري بقيمة 100 ج.م على طلبياتهم التالية، مما يقلل كلفة الاستقطاب الإعلاني إلى الصفر.</p>
-
-<h2>المساهمة النشطة والفعالة للشركاء في تطوير المبيعات</h2>
-<p>يلتزم كل شريك من الشركاء الأربعة بالمساهمة الفعالة والنشطة في استقطاب وتوطيد العلاقات المباشرة مع بقالات ومحلات المنطقة وإبرام اتفاقات توريد طويلة الأجل. ونخص بالذكر الأثر المحوري لتواجد الشريك <strong>مازن السيد</strong> الميداني القوي والدائم في طوخ الأقلام؛ حيث تساهم شبكة علاقاته الواسعة وقدرته على التواصل المباشر مع تجار التجزئة وبقالات مركز السنبلاوين في تذليل كافة عقبات الترويج، وبناء الثقة المباشرة والسريعة معهم وتثبيت التطبيق على هواتفهم، مما يختصر تكلفة وزمن الانتشار بشكل كبير.</p>
-
-<h2>جدول خطة الزيارات الميدانية للمندوبين المبيعات حول مستودع طوخ الأقلام</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 7.8pt;">
-    <thead>
-        <tr>
-            <th>يوم الزيارات الميدانية</th>
-            <th>المنطقة الجغرافية المستهدفة</th>
-            <th>عدد البقالات المخطط زيارتها</th>
-            <th>المبيعات المستهدفة باليوم</th>
-            <th>الهدف التسويقي والمستهدف الرئيسي للزيارة</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>السبت</strong></td>
-            <td>طوخ الأقلام والقرى المجاورة المباشرة للمستودع.</td>
-            <td>35 بقالة ومحل</td>
-            <td>25,000 ج.م</td>
-            <td>زيارات مباشرة وتثبيت التطبيق وشرح عروض المياه والمنظفات.</td>
-        </tr>
-        <tr>
-            <td><strong>الأحد</strong></td>
-            <td>مدينة السنبلاوين (حي المعاهدة وحي البستان).</td>
-            <td>40 بقالة وسوبرماركت</td>
-            <td>35,000 ج.م</td>
-            <td>تسجيل التجار الجدد وعرض قائمة أسعار السكر والزيت المنافسة.</td>
-        </tr>
-        <tr>
-            <td><strong>الإثنين</strong></td>
-            <td>قرى غرب السنبلاوين (الروضة وبسطوي وحواضرها).</td>
-            <td>30 بقالة ومحل</td>
-            <td>22,000 ج.م</td>
-            <td>استقطاب كبار تجار التجزئة وعرض حوافز كروت الخصم الفوري.</td>
-        </tr>
-        <tr>
-            <td><strong>الثلاثاء</strong></td>
-            <td>مدينة السنبلاوين (المنطقة الجنوبية والقرى الملاصقة).</td>
-            <td>42 بقالة ومحل تجاري</td>
-            <td>38,000 ج.م</td>
-            <td>طرح عروض المنظفات والمشروبات لرفع قيمة الفاتورة الإجمالية كاش.</td>
-        </tr>
-        <tr>
-            <td><strong>الأربعاء</strong></td>
-            <td>قرى شرق السنبلاوين والحدود المشتركة مع ديرب نجم.</td>
-            <td>28 بقالة ومحل ريفي</td>
-            <td>20,000 ج.م</td>
-            <td>توسيع مسارات الانتشار وتوزيع بروشور فروق أسعار مارتديا.</td>
-        </tr>
-        <tr>
-            <td><strong>الخميس</strong></td>
-            <td>مدينة المنصورة (ميت خميس والنطاق السكني المحيط بها).</td>
-            <td>25 سوبرماركت كبير</td>
-            <td>40,000 ج.م</td>
-            <td>استهداف كبار البقالات ومجهزي المطاعم ذات معدل الطلب المرتفع.</td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>قواعد حوكمة جودة العمل الميداني للمندوبين:</h5>
-    <p>يرتبط تطبيق المبيعات المحمول بإحداثيات الـ GPS للبقالة، ويمنع المندوب تماماً من تسجيل أي طلبية للتاجر إلا في حال وجوده الفعلي داخل نطاق البقالة بمسافة لا تزيد عن 20 متراً، لضمان الانضباط التام وجودة التغطية الميدانية للشركة.</p>
-</div>
-"""
-
-# ----------------- PAGE 10 -----------------
-PAGES_CONTENT[10] = """
-<h1>9. منهجية الشراء المستدامة وعلاقات الموزعين والمصانع بالدقهلية</h1>
-<p>تبنت <strong>مارتديا</strong> عمداً استراتيجية نمو تدريجي ومستدام (Gradual & Sustainable Growth Strategy)، حيث تبدأ بنطاق عمل مدروس ومرن يركز بشكل كامل على فئات السلع الاستهلاكية ذات الطلب المتكرر والقيمة المادية الصلبة القابلة للتسييل. يمثل مخزون المواد الغذائية والمشروبات أصولاً عينية تحتفظ بقيمتها التجارية الفورية وتتداول بيسر تحت أي ظرف، مما يحصن رأس مال الشركاء ضد مخاطر التضخم أو كساد الأسواق وعقد الصفقات. ولتجنب تجميد رأس المال التأسيسي الأول (200,000 ج.م)، نعتمد سياسة شراء دقيقة ترتب المنتجات والسلع وفقاً للمعايير الاستراتيجية والربحية والموسمية وسرعة الدوران:</p>
-
-<h2>التوريد المباشر والتحالف مع كبار الموزعين بالمنصورة</h2>
-<p>تركز إدارة المشتريات على إقامة علاقات تجارية مباشرة مع كبرى المصانع والشركات المنتجة والوكلاء المعتمدين لتجنب تعدد الحلقات والوسطاء الذين يلتهمون هامش الربح. ويشمل ذلك الشراء المباشر من مراكز التوزيع الإقليمية التابعة لكبرى شركات المشروبات الغازية، ومياه الشرب المعبأة، والسلع الغذائية الوطنية في منطقة <strong>المنصورة</strong> لضمان الحصول على أقل الأسعار التنافسية كاش، وتفعيل اتفاقيات البونص العيني (كرتونة مجانية لكل 10 كرتونة مشتراة كاش) لرفع الهامش الفعلي للشركة.</p>
-
-<h2>مصفوفة تقييم وتصنيف الشركات الموردة لـ مارتديا</h2>
-<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 7.2pt;">
-    <thead>
-        <tr>
-            <th>عنصر ومعيار التقييم الفني للمورد</th>
-            <th>الوزن النسبي</th>
-            <th>مؤشر الأداء والقياس الدقيق (KPI)</th>
-            <th>المستهدف المقبول لاعتماد المورد</th>
-            <th>الإجراء المحاسبي والتشغيلي عند تدني التقييم</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>الخصم المالي الإضافي للكاش</strong></td>
-            <td>30% من التقييم</td>
-            <td>نسبة الخصم النقدي الممنوح مقابل السداد الفوري الفوري.</td>
-            <td>خصم لا يقل عن 4.5% - 7.0%</td>
-            <td>تقليل حجم الطلبات والبحث الفوري عن موردين ومصانع بديلة بالمنصورة.</td>
-        </tr>
-        <tr>
-            <td><strong>سرعة وزمن تلبية الطلبيات</strong></td>
-            <td>25% من التقييم</td>
-            <td>الوقت المستغرق بالدقائق من تأكيد الشراء لوصول الشحنة للمستودع.</td>
-            <td>أقل من 24 - 48 ساعة فقط</td>
-            <td>إنذار المورد وتطبيق غرامات تأخير لوجستي أو خصم مالي عاجل.</td>
-        </tr>
-        <tr>
-            <td><strong>سلامة وجودة الكراتين وتكامل التغليف</strong></td>
-            <td>20% من التقييم</td>
-            <td>نسبة الكراتين المعيبة أو التالفة المستلمة بكل شحنة.</td>
-            <td>أقل من 0.5% من إجمالي التوريد</td>
-            <td>إعادة التالفات فورا للمورد ورفض سداد قيمتها المالية محاسبياً.</td>
-        </tr>
-        <tr>
-            <td><strong>مرونة أحجام التوريد والشحن</strong></td>
-            <td>15% من التقييم</td>
-            <td>الحد الأدنى لقيمة أو حجم الطلبية المشترط للشحن للمستودع.</td>
-            <td>قبول كميات مرنة (بالكرتونة)</td>
-            <td>البحث عن اتفاقيات تجميع شحن مشترك لتقليل كلفة النقل.</td>
-        </tr>
-        <tr>
-            <td><strong>عمر الصلاحية المتبقي للمنتج</strong></td>
-            <td>10% من التقييم</td>
-            <td>النسبة المئوية لعمر الصلاحية المتبقي للبضاعة عند استلامها.</td>
-            <td>لا يقل عن 80% من عمر الصلاحية الإجمالي</td>
-            <td>رفض الشحنة فورا وإرجاعها على سيارة المورد قبل التوقيع.</td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="gold-callout" style="margin-top: 10px;">
-    <h5>قاعدة التحوط وتعدد الموردين (Dual Sourcing):</h5>
-    <p>تلتزم إدارة المشتريات بتوفير وتأمين موردين اثنين على الأقل لكل صنف أساسي بالمستودع لضمان عدم تعرض مارتديا لمخاطر انقطاع المخزون أو الابتزاز السعري من أي مورد منفرد بالمنطقة.</p>
-</div>
-"""
-
-print("pages_1_10.py successfully refactored with Martdia Feasibility branding!")
+print("pages_1_10.py fully compiled and updated with full partner name محمد محجوب مبروك and correct Table of Contents!")
